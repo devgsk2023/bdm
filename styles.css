@@ -263,15 +263,11 @@ nav {
     row-gap: 20px;
 }
 .banner-content.medium {
-    width: 605px;
+    width: 639px;
 }
 
 .banner-content.medium h1{
     color: #FFF;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    -webkit-text-stroke-width: 1;
-    -webkit-text-stroke-color: #000;
-    font-family: Inter;
     font-size: 65px;
     font-style: normal;
     font-weight: 700;
@@ -290,16 +286,16 @@ nav {
     display: flex;
     /* gap: 10px; */
     justify-content: space-evenly;
-    gap: 44px;
-    border: 1px solid white;
+    gap: 40px;
+    border: 2px solid white;
     padding: 10px 10px;
     border-radius: 31px;
-    max-width: 639px;
+    width: 644px;
 }
 
 .buttons button {
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -383,6 +379,7 @@ nav {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin: 0px;
 
 }
 
@@ -444,8 +441,12 @@ nav {
     color: white;
     font-size: 32px;
     font-weight: bolder;
+    margin: 0px;
 }
+.meningitis-bacteriana p{
+    font-size: 20px;
 
+}
 .meningitis-meningococo {
     padding: 4% 5%;
     background-color: #9794EB;
@@ -485,12 +486,17 @@ nav {
 .serogrupos {
     display: flex;
     justify-content: space-between;
+    gap: 82px;
     
 }
 
 .columna1, .columna2 {
     flex: 1;
     margin: 10px;
+}
+.columna1{
+    margin: 0px;
+    width: 60%;
 }
 
 .columna2 {
@@ -500,6 +506,7 @@ nav {
     flex-direction: column;
     row-gap: 35px;
     margin-top: 70px;
+    width: 40%;
 }
 
 
@@ -508,7 +515,7 @@ nav {
     color: #FFF;
     font-size: 27px;
     font-weight: 700;
-    margin-top: 40px;
+    margin: 00px 0px 0px 0px ;
 }
 
 .serogrupos p {
@@ -702,7 +709,7 @@ footer a {
     width: 545px;
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    
 }
 .legend {
     display: flex;
@@ -753,7 +760,7 @@ footer a {
 
 .datos {
     
-    padding: 40px;
+    padding: 0px 40px;
     color: #FFF;
     font-size: 21px;
     font-style: normal;
@@ -797,6 +804,7 @@ footer a {
     font-weight: bold;
     text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 /* <!-- ---------- FIN CAUSA -----------> */
@@ -813,6 +821,10 @@ footer a {
     flex-direction: column;
     position: relative;
     /* overflow: hidden; */
+    height: 330px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .contenedor.virus {
@@ -820,11 +832,13 @@ footer a {
     background-repeat: no-repeat;
     background-size: cover;
     max-height: 330px;
+    display: flex;
+    justify-content: space-between;
 
 
 }
 
-.contenedor::before {
+/* .contenedor::before {
     content: '';
     position: absolute;
     top: 0;
@@ -834,7 +848,7 @@ footer a {
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
     border-radius: 24px;
-}
+} */
 
 .virus-textos {
     margin: 42px 42px 0px 42px; 
@@ -845,7 +859,7 @@ footer a {
 
 .virus-textos h3 {
     font-size: 32px;
-    
+    margin: 0px;
 }
 
 .virus-textos p {
@@ -881,40 +895,41 @@ footer a {
 }
 .ver-mas a{
     color: white;
+    text-decoration: none;
 }
 
 /* <!-- ---------- FIN VIRUS - HONGOS - PARASITOS  -----------> */
 
 /* <!-- ---------- Síntomas de la meningitis  -----------> */
 
+.container{
+    padding: 0% 5%;
+}
 
-
-.sintomas{
+.sintomas {
     background-color: #9794EB;
-    margin-top: 150px;
+    margin-top: 80px;
     border-radius: 30px;
+    margin-bottom: 16px;
 }
 .columna-sintomas {
     display: flex;
     justify-content: space-between;
-    padding: 30px 50px 20px 50px;
+    padding: 0px 50px 0px 50px;
     align-items: center;
-    margin: 49px 0px;
 }
-.columna-sintomas h2{
+.columna-sintomas h2 {
     color: #F9F9F9;
-
+    margin: 0px;
     font-size: 68px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-
+    margin-top: 49px;
 }
 
 .columna-sintomas.main {
-    margin-top: 0px;
-    padding-top: 0px;
-    margin-bottom: 60px;
+    margin: 45px 0px 45px 0px;
 
 }
 
@@ -1007,7 +1022,7 @@ display: none;
 /* <!-- ---------- Transmisión de la meningitis  -----------> */
 .dos-columnas{
     display: flex;
-    gap: 20px;
+    gap: 16px;
     justify-content: space-between;
 }
 .contenedor-sintomas.izquierda{
@@ -1104,21 +1119,22 @@ display: none;
 
 /* <!-- ---------- Container amarillo  -----------> */
 
-.container-yelLow{
+.container-yelLow {
     background-color: #FFF59B;
     padding: 5%;
     font-size: 32px;
     text-align: center;
+    margin-top: 55px;
 }
 
-.container-yelLow p{
+.container-yelLow p {
     margin-bottom: 8px;
     color: #1E1E1E;
-    
     font-size: 32px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    text-align: center;
 }
 
 .texto-bold {
@@ -1136,12 +1152,11 @@ display: none;
 .container.mundo-meningitis{
     display: flex;
     gap: 0;
-   
+   padding: 0px;
 
 }
 .color.box-celeste {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 5%;
     justify-content: center;
     background: #89D7F0;
     display: flex;
@@ -1154,6 +1169,7 @@ display: none;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin: 0px 0px 24px 0px;
 }
 
 .color.box-celeste p{
@@ -1162,6 +1178,7 @@ display: none;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin: 0px;
 }
 
 .box-imagen{
@@ -1190,7 +1207,7 @@ display: none;
 }
 
 .footer-texto h2{
-
+    margin: 0px;
     color: #FFF;
     text-align: center;
     font-size: 38px;
@@ -1253,8 +1270,8 @@ display: none;
 /* <!-- ---------- referencias  -----------> */
 
 .tab-container {
-    padding: 5% 10%;
-    background: #F3F3F3;
+    padding: 5% 5%;
+
 }
 
 .tab {
@@ -1288,7 +1305,7 @@ display: none;
 }
 
 .tab-content p {
-    background: #f4f4f4;
+    
     margin: 5px 0;
     padding: 10px;
     color: #000;
@@ -2600,7 +2617,7 @@ header.meningitis-hongos-banner{
 /* <!-- ---------- Footer  -----------> */
 
 footer{
-    padding: 5% 10%;
+    padding: 5% 5%;
     background: #F3F3F3;
 }
 .contenedor-footer {
