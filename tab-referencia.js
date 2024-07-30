@@ -2,11 +2,11 @@ function abrirTab() {
     var contenido = document.getElementById('tab-content');
     var icono = document.getElementById('tab-icon');
     
-    if (contenido.style.display === 'none' || contenido.style.display === '') {
-        contenido.style.display = 'block';
-        icono.className = 'fas fa-minus';
-    } else {
-        contenido.style.display = 'none';
+    if (contenido.classList.contains('open')) {
+        contenido.classList.remove('open');
         icono.className = 'fas fa-plus';
+    } else {
+        contenido.classList.add('open');
+        icono.className = 'fas fa-minus';
     }
 }

@@ -66,3 +66,52 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+
+// ruleta javascript
+
+document.addEventListener("DOMContentLoaded", function() {
+    const items = document.querySelectorAll('.container-ruleta div');
+    const bloques = document.querySelectorAll('.bloque');
+    const subcontenedor = document.querySelector('.subcontenedor');
+
+    // Mostrar solo el primer bloque como predeterminado
+    if (bloques.length > 0) {
+        bloques[0].classList.add('activo');
+    }
+
+    items.forEach((item) => {
+        item.addEventListener('click', () => {
+            // Ocultar todos los bloques
+            bloques.forEach((bloque) => {
+                bloque.classList.remove('activo');
+                bloque.style.opacity = 0;
+                bloque.style.visibility = 'hidden';
+                bloque.style.position = 'absolute'; // Asegurar que los bloques ocultos no afectan el layout
+            });
+
+            // Mostrar el bloque correspondiente
+            const targetId = item.getAttribute('data-target');
+            const targetBlock = document.getElementById(targetId);
+            if (targetBlock) {
+                targetBlock.classList.add('activo');
+                targetBlock.style.opacity = 1;
+                targetBlock.style.visibility = 'visible';
+                targetBlock.style.position = 'relative'; // Volver a ajustar la posición del bloque visible
+                // Ajustar la altura del subcontenedor basado en el bloque activo
+                subcontenedor.style.height = 'auto'; // Permitir altura automática primero
+                const height = targetBlock.scrollHeight;
+                subcontenedor.style.height = `${height}px`; // Luego, ajustar a la altura del bloque activo
+            }
+        });
+    });
+
+    // Ajustar la altura del subcontenedor al cargar la página con el primer bloque activo
+    window.addEventListener('load', () => {
+        if (bloques.length > 0) {
+            const bloqueActivo = bloques[0];
+            subcontenedor.style.height = `${bloqueActivo.scrollHeight}px`;
+        }
+    });
+});
+
