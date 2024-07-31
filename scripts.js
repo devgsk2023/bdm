@@ -115,3 +115,31 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Toggle menu on mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    const closeButton = document.querySelector('.menu-close');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('open');
+    });
+
+    closeButton.addEventListener('click', () => {
+        menu.classList.remove('open');
+    });
+
+    // Close the menu when clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menu.classList.remove('open');
+        }
+    });
+});
+
+
+//slider tabs vacunas 
+
+
