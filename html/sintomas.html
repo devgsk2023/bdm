@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meningitis bacteriana</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="ruleta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,24 +38,24 @@
                 <div class="progress-bar-fijo"></div>
                 <div class="progress-bar"></div>
                 <li>
-                    <a href="/index.html">Home</a>
+                    <a href="/html/index.html">Home</a>
                     
                 </li>
                 <li>
-                    <a href="/sintomas.html">Síntomas</a>
+                    <a href="/html/sintomas.html">Síntomas</a>
                     
                 </li>
                 <li>
                     <a href="#">Causas</a>
                     <ul class="submenu">
-                        <li data-image="/imagenes/bacterias.png"><a href="/meningitis-bacteriana.html">Bacteriana</a></li>
-                        <li data-image="/imagenes/meningitis-por-virus.png"><a href="/meningitis-por-virus.html">Viral</a></li>
-                        <li data-image="/imagenes/hongos10.png"><a href="/meningitis-por-hongos.html">Hongos</a></li>
-                        <li data-image="/imagenes/parasitos.png"><a href="/meningitis-por-parasitos.html">Parásitos</a></li>
+                        <li data-image="/imagenes/bacterias.png"><a href="/html/meningitis-bacteriana.html">Bacteriana</a></li>
+                        <li data-image="/imagenes/meningitis-por-virus.png"><a href="/html/meningitis-por-virus.html">Viral</a></li>
+                        <li data-image="/imagenes/hongos10.png"><a href="/html/meningitis-por-hongos.html">Hongos</a></li>
+                        <li data-image="/imagenes/parasitos.png"><a href="/html/meningitis-por-parasitos.html">Parásitos</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/vacunas.html">Vacunación</a>
+                    <a href="/html/vacunas.html">Vacunación</a>
                     
                 </li>
             </ul>
@@ -223,35 +223,34 @@
 
                 <!-- ---------- Referencias ----------->
                 <div class="tab-container">
-                    <div class="tab">
-                        <button class="tab-button" onclick="abrirTab()">
-                            Referencias 
-                        </button>
-                        <i id="tab-icon" class="fas fa-plus"></i>
+                    <div class="tab" onclick="abrirTab()" style="cursor: pointer; display: flex; align-items: center;">
+                        <span class="tab-button">
+                            Referencias
+                        </span>
+                        <i id="tab-icon" class="fas fa-plus" style="margin-left: 8px;"></i>
                     </div>
                     <div id="tab-content" class="tab-content">
-                        <p>¹ Organización Mundial de la Salud (OMS): Meningitis, en https://www.who.int/news-room/fact-sheets/detail/meningitis (último acceso junio 2024)</p>
-                        <p>² Adaptado de Encyclopaedia Britannica: “Meninges en  https://www.britannica.com/science/meninges (último acceso junio 2024)</p>
-                        <p>³ Centers for Disease Control and Prevention (CDC). Meningitis en https://www.cdc.gov/meningitis/index.html (último acceso junio 2024).</p>
-                        <p>⁴ Organización Panamericana de la Salud (OPS): Meningococo, en https://www.paho.org/es/temas/meningococo (último acceso junio 2024).</p>   
-                        <p>⁵ Organización Mundial de la Salud (OMS): Health-topics. “Meningitis”, en https://www.who.int/health-topics/meningitis#tab=tab_1 (último acceso junio 2024).</p>  
-                        <p>⁶ Ministerio de Salud de la Nación Argentina: “Fundamentos de la introducción de la vacuna tetravalente (ACYW) conjugada contra meningococo al calendario nacional de inmunizaciones” https://bancos.salud.gob.ar/recurso/lineamientos-tecnicos-vacuna-meningococo (último acceso junio 2024).</p>    
-                        <p>⁷ Ministerio de Salud de la Nación Argentina: “Huespedes especiales: Estrategia de vacunación contra el meningococo en Argentina”  en  https://bancos.salud.gob.ar/recurso/huespedes-especiales-estrategia-de-vacunacion-contra-meningococo-de-argentina (último acceso junio 2024).</p> 
-                        <p>⁸ SIREVA-Argentina. Informe Argentina 2023. SIREVA II. Servicio Antimicrobianos. Dpto. Bacteriología, Instituto Nacional de Enfermedades Infecciosas (INEI) - ANLIS “Dr. Carlos G. Malbrán SIREVA (Sistema de Redes de Vigilancia de los Agentes Bacterianos Responsables de Neumonía y Meningitis) - Página web de Bacteriología Clínica INEI-ANLIS (jimdofree.com) (último acceso junio 2024).</p>  
-                        <p>⁹ Centers for Disease Control and Prevention (CDC). About Viral Meningitis, en https://www.cdc.gov/meningitis/about/viral-meningitis.html (último acceso junio 2024).</p> 
-                        <p>¹⁰ Centers for Disease Control and Prevention (CDC). About Fungal Meningitis, en https://www.cdc.gov/meningitis/about/fungal-meningitis.html (último acceso junio 2024).</p>
-                        <p>¹¹ Centers for Disease Control and Prevention (CDC). About Parasitic Meningitis, en https://www.cdc.gov/meningitis/about/parasitic-meningitis.html (último acceso junio 2024).</p>   
-                        <p>¹² Organización Mundial de la Salud (OMS): Defeating Meningitis by 2030, en https://www.who.int/initiatives/defeating-meningitis-by-2030 (último acceso junio 2024).</p>    
-                        <p>¹³ Ministerio de Salud de la Nación Argentina. Calendario Nacional de Vacunación, en https://www.argentina.gob.ar/salud/vacunas (último acceso junio 2024).</p>    
-                        <p>¹⁴ Organización Panamericana de la Salud (OPS): “Vigilancia de las neumonías y meningitis bacterianas en menores de cinco años” https://iris.paho.org/handle/10665.2/51883 (último acceso junio 2024).</p>  
-                        <p>¹⁵ Ministerio de Sanidad, Servicios Sociales e Igualdad de España: “Guía de práctica clínica sobre el manejo de la enfermedad meningocócica invasiva" https://portal.guiasalud.es/wp-content/uploads/2018/12/GPC_525_EMI_ICS_resum.pdf (último acceso junio 2024).</p>
-                        <p>¹⁶ Centers for Disease Control and Prevention (CDC). About Meningococcal Disease. https://www.cdc.gov/meningococcal/about/index.html (último acceso junio 2024).</p>  
-                        <p>¹⁷ Mayo Clinic: Meningitis, descripción general en https://www.mayoclinic.org/es-es/diseases-conditions/meningitis/symptoms-causes/syc-20350508 (último acceso junio 2024).Organización Panamericana de la Salud (OPS): Inmunización. https://www.paho.org/es/temas/in</p> 
-                        <p>¹⁸ Inmunización - OPS/OMS | Organización Panamericana de la Salud (paho.org) (último acceso junio 2024).</p>    
+                        <p><sup>1</sup> Organización Mundial de la Salud (OMS): Meningitis, en https://www.who.int/news-room/fact-sheets/detail/meningitis (último acceso junio 2024)</p>
+                        <p><sup>2</sup> Adaptado de Encyclopaedia Britannica: “Meninges en  https://www.britannica.com/science/meninges (último acceso junio 2024)</p>
+                        <p><sup>3</sup> Centers for Disease Control and Prevention (CDC). Meningitis en https://www.cdc.gov/meningitis/index.html (último acceso junio 2024).</p>
+                        <p><sup>4</sup> Organización Panamericana de la Salud (OPS): Meningococo, en https://www.paho.org/es/temas/meningococo (último acceso junio 2024).</p>   
+                        <p><sup>5</sup> Organización Mundial de la Salud (OMS): Health-topics. “Meningitis”, en https://www.who.int/health-topics/meningitis#tab=tab_1 (último acceso junio 2024).</p>  
+                        <p><sup>6</sup>Ministerio de Salud de la Nación Argentina: “Fundamentos de la introducción de la vacuna tetravalente (ACYW) conjugada contra meningococo al calendario nacional de inmunizaciones” https://bancos.salud.gob.ar/recurso/lineamientos-tecnicos-vacuna-meningococo (último acceso junio 2024).</p>    
+                        <p><sup>7</sup> Ministerio de Salud de la Nación Argentina: “Huespedes especiales: Estrategia de vacunación contra el meningococo en Argentina”  en  https://bancos.salud.gob.ar/recurso/huespedes-especiales-estrategia-de-vacunacion-contra-meningococo-de-argentina (último acceso junio 2024).</p> 
+                        <p><sup>8</sup> SIREVA-Argentina. Informe Argentina 2023. SIREVA II. Servicio Antimicrobianos. Dpto. Bacteriología, Instituto Nacional de Enfermedades Infecciosas (INEI) - ANLIS “Dr. Carlos G. Malbrán SIREVA (Sistema de Redes de Vigilancia de los Agentes Bacterianos Responsables de Neumonía y Meningitis) - Página web de Bacteriología Clínica INEI-ANLIS (jimdofree.com) (último acceso junio 2024).</p>  
+                        <p><sup>9</sup> Centers for Disease Control and Prevention (CDC). About Viral Meningitis, en https://www.cdc.gov/meningitis/about/viral-meningitis.html (último acceso junio 2024).</p> 
+                        <p><sup>10</sup> Centers for Disease Control and Prevention (CDC). About Fungal Meningitis, en https://www.cdc.gov/meningitis/about/fungal-meningitis.html (último acceso junio 2024).</p>
+                        <p><sup>11</sup> Centers for Disease Control and Prevention (CDC). About Parasitic Meningitis, en https://www.cdc.gov/meningitis/about/parasitic-meningitis.html (último acceso junio 2024).</p>   
+                        <p><sup>12</sup> Organización Mundial de la Salud (OMS): Defeating Meningitis by 2030, en https://www.who.int/initiatives/defeating-meningitis-by-2030 (último acceso junio 2024).</p>    
+                        <p><sup>13</sup> Ministerio de Salud de la Nación Argentina. Calendario Nacional de Vacunación, en https://www.argentina.gob.ar/salud/vacunas (último acceso junio 2024).</p>    
+                        <p><sup>14</sup> Organización Panamericana de la Salud (OPS): “Vigilancia de las neumonías y meningitis bacterianas en menores de cinco años” https://iris.paho.org/handle/10665.2/51883 (último acceso junio 2024).</p>  
+                        <p><sup>15</sup> Ministerio de Sanidad, Servicios Sociales e Igualdad de España: “Guía de práctica clínica sobre el manejo de la enfermedad meningocócica invasiva" https://portal.guiasalud.es/wp-content/uploads/2018/12/GPC_525_EMI_ICS_resum.pdf (último acceso junio 2024).</p>
+                        <p><sup>16</sup> Centers for Disease Control and Prevention (CDC). About Meningococcal Disease. https://www.cdc.gov/meningococcal/about/index.html (último acceso junio 2024).</p>  
+                        <p><sup>17</sup>Mayo Clinic: Meningitis, descripción general en https://www.mayoclinic.org/es-es/diseases-conditions/meningitis/symptoms-causes/syc-20350508 (último acceso junio 2024).Organización Panamericana de la Salud (OPS): Inmunización. https://www.paho.org/es/temas/in</p> 
+                        <p><sup>18</sup> Inmunización - OPS/OMS | Organización Panamericana de la Salud (paho.org) (último acceso junio 2024).</p>    
                     </div>
                 </div>
                 <!-- ---------- fin Referencias ----------->
-
 
 
     </main>   
@@ -264,17 +263,17 @@
 
         <div class="contenedor-footer">
             <img src="/imagenes/logo-gsk.png" alt="Logo-gsk">
-            <a href="#">TÉRMINOS Y CONDICIONES</a>
-            <a href="#">POLÍTICA DE PRIVACIDAD</a>
-            <a href="#">POLÍTICA DE COOKIES</a>
+            <a href="/#">TÉRMINOS Y CONDICIONES</a>
+            <a href="/#">POLÍTICA DE PRIVACIDAD</a>
+            <a href="/#">POLÍTICA DE COOKIES</a>
 
         </div>
 
     </footer>
 
-    <script src="/ruleta.js"></script>
-    <script src="/scripts.js"></script>
-    <script src="/tab-referencia.js"></script>
+    <script src="/js/ruleta.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/tab-referencia.js"></script>
 
 
 </body>

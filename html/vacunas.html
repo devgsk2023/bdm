@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDM - Vacunas</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b0e3ce937d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <!-- ----------HEADER--------- -->
+    <header class="tipos">
+        <section class="contenedor-menu">
+            <img src="/imagenes/logo.png" alt="Logo" class="logo">
+            <nav>
+                <button class="menu-toggle">☰</button>
+            </nav>
+        </section>
+        
+        <!-- Pop-up del Menú -->
+        <div id="menu-popup" class="menu-popup">
+            <div class="menu-content">
+                <div class="Contenedor-popup">
+                    <img src="/imagenes/logo.png" alt="Logo" class="logo">
+                    <button class="close-button">&times;</button>
+                </div>
+                <ul class="menu-activo">
+                    <div class="progress-bar-fijo"></div>
+                    <div class="progress-bar"></div>
+                    <li>
+                        <a href="/html/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="/html/sintomas.html">Síntomas</a>
+                    </li>
+                    <li>
+                        <a href="#">Causas</a>
+                        <ul class="submenu">
+                            <li data-image="/imagenes/bacterias.png"><a href="/html/meningitis-bacteriana.html">Bacteriana</a></li>
+                            <li data-image="/imagenes/meningitis-por-virus.png"><a href="/html/meningitis-por-virus.html">Viral</a></li>
+                            <li data-image="/imagenes/hongos10.png"><a href="/html/meningitis-por-hongos.html">Hongos</a></li>
+                            <li data-image="/imagenes/parasitos.png"><a href="/html/meningitis-por-parasitos.html">Parásitos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/html/vacunas.html">Vacunación</a>
+                    </li>
+                </ul>
+                <div class="image-container">
+                    <img src="" alt="Descripción de la imagen" id="menu-image">
+                </div>
+            </div>
+        </div>
+    
+        <section class="banner">
+            <div class="banner-content xl botones">
+                <h1>Vacunación es prevención</h1>
+                <p>Las vacunas protegen a la población durante toda la vida y es el mayor acto de prevención frente a la posibilidad de contraer enfermedades graves que podrían provocar discapacidades o incluso la muerte. Es importante que todas las personas estén al día con las vacunas recomendadas para evitar posibles exposiciones y propagaciones de enfermedades graves.</p>
+            </div>
+        </section>
+        <div class="descargar">
+            <button class="custom-button1">
+                Descargar calendario
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M15.9997 21.3335L9.33301 14.6668L11.1997 12.7335L14.6663 16.2002V5.3335H17.333V16.2002L20.7997 12.7335L22.6663 14.6668L15.9997 21.3335ZM7.99967 26.6668C7.26634 26.6668 6.63879 26.4059 6.11701 25.8842C5.59523 25.3624 5.3339 24.7344 5.33301 24.0002V20.0002H7.99967V24.0002H23.9997V20.0002H26.6663V24.0002C26.6663 24.7335 26.4055 25.3615 25.8837 25.8842C25.3619 26.4068 24.7339 26.6677 23.9997 26.6668H7.99967Z" fill="white"/>
+                  </svg>
+            </button>
+        </div>
+    </header>
+    
+    <!-- ---------- FIN HEADER----------->
+    
+    <main>
+        <!-- ---------- calendario de vacunacion ----------->
+        <div class="contenedor-vacunas">
+            <div class="vacunas-texto">
+                <h2>Calendario de vacunación</h2>
+                <p>Argentina tiene un Calendario Nacional robusto y completo, que es modelo en la región y en el mundo. Este Calendario incluye vacunas para las diferentes etapas de la vida, además de contemplar situaciones epidemiológicas particulares, contribuyendo a prevenir y controlar 25 infecciones.¹³</p>
+            </div>
+            <div class="titulo-subcontenedor">
+                <h2>Seleccioná una etapa de vida:</h2>
+            </div>
+            <div class="vacunas-tabs">
+                <ul class="tab-ul">
+                    <li class="li li-1 activo"><img src="/svg/reciennacidos.svg" alt="">Recien nacidos</li>
+                    <li class="li li-2"><img src="/svg/año-de-vida.svg" alt="">Hasta el año de vida</li>
+                    <li class="li li-3"><img src="/svg/2años.svg" alt="">Hasta los 2 años</li>
+                    <li class="li li-4"><img src="/svg/5anios.svg" alt="">5 Años</li>
+                    <li class="li li-5"><img src="/svg/11años.svg" alt="">11 Años</li>
+                    <li class="li li-6"><img src="/svg/jovenes-adultos.svg" alt="">Jóvenes y adultos</li>
+                    <li class="li li-7"><img src="/svg/embarazadas.svg" alt="">Embarazadas</li>
+                </ul>
+                <div class="subcontenedor">
+                    <!-- ---------- tabs amarillos ----------->
+                    <div class="bloque c1 activo">
+                        <div class="item amarillo">
+                            <h3>Hepatitis B</h3>
+                            <p>Antes de egresar de la maternidad</p>
+                        </div>
+                        <div class="item amarillo">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                    </div>
+                    <!-- ---------- tabs verdes ----------->
+                    <div class="bloque c2">
+                        <div class="item verde">
+                            <h3>Neumococo Conjugada</h3>
+                            <p>2, 4 y 12 meses</p>
+                        </div>
+                        <div class="item verde">
+                            <h3>Rotavirus</h3>
+                            <p>2 y 4 meses</p>
+                        </div>
+                        <div class="item verde">
+                            <h3>Quíntuple</h3>
+                            <p>2, 4 y 6 meses</p>
+                        </div>
+                        <div class="item verde">
+                            <h3>IPV inactivada</h3>
+                            <p>2, 4 y 6 meses</p>
+                        </div>
+                        <div class="item verde">
+                            <h3>Meningococo ACWY</h3>
+                            <p>2, 4 y 6 meses</p>
+                        </div>
+                        <div class="item verde">
+                            <h3>Gripe</h3>
+                            <p>A partir de los 6 meses</p>
+                        </div>
+                        <div class="item verde">
+                            <h3>Hepatitis A</h3>
+                            <p>12 meses</p>
+                        </div>
+                        <div class="item verde">
+                            <h3>Triple Viral SRP</h3>
+                            <p>12 meses</p>
+                        </div>
+                    </div>
+                    <!-- ---------- tabs naranjas ----------->
+                    <div class="bloque c3">
+                        <div class="item naranja row-3">
+                            <h3>Varicela</h3>
+                            <p>15 meses</p>
+                        </div>
+                        <div class="item naranja row-3">
+                            <h3>Meningococo ACWY</h3>
+                            <p>15 meses</p>
+                        </div>
+                        <div class="item naranja row-3">
+                            <h3>Quíntuple</h3>
+                            <p>15-18 meses</p>
+                        </div>
+                        <div class="item naranja row-2">
+                            <h3>Fiebre amarilla</h3>
+                            <p>18 meses, residentes en zona de riesgo</p>
+                        </div>
+                        <div class="item naranja row-2">
+                            <h3>Gripe</h3>
+                            <p>Hasta los 24 meses</p>
+                        </div>
+                    </div>
+                    <!-- ---------- tabs fuscia ----------->
+                    <div class="bloque c4">
+                        <div class="item fuscia row-3">
+                            <h3>IPV inactivada</h3>
+                            <p></p>
+                        </div>
+                        <div class="item fuscia row-3">
+                            <h3>Triple Bacteriana Celular</h3>
+                            <p></p>
+                        </div>
+                        <div class="item fuscia row-3">
+                            <h3>Varicela</h3>
+                            <p></p>
+                        </div>
+                        <div class="item fuscia row-2">
+                            <h3>Triple Viral</h3>
+                            <p></p>
+                        </div>
+                        <div class="item fuscia row-2">
+                            <h3>Gripe</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                    <!-- ---------- tabs violetas ----------->
+                    <div class="bloque c5">
+                        <div class="item violeta row-2">
+                            <h3>Hepatitis B</h3>
+                            <p>Antes de egresar de la maternidad</p>
+                        </div>
+                        <div class="item violeta row-2">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                        <div class="item violeta row-3">
+                            <h3>Hepatitis B</h3>
+                            <p>Antes de egresar de la maternidad</p>
+                        </div>
+                        <div class="item violeta row-3">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                        <div class="item violeta row-3">
+                            <h3>Hepatitis B</h3>
+                            <p>Antes de egresar de la maternidad</p>
+                        </div>
+                        <div class="item violeta row-2">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                        <div class="item violeta row-2">
+                            <h3>Hepatitis B</h3>
+                            <p>Antes de egresar de la maternidad</p>
+                        </div>
+                    </div>
+                    <!-- ---------- tabs aqua ----------->
+                    <div class="bloque c6">
+                        <div class="item aqua row-3">
+                            <h3>Hepatitis B</h3>
+                            <p>Antes de egresar de la maternidad</p>
+                        </div>
+                        <div class="item aqua row-3">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                        <div class="item aqua row-3">
+                            <h3>Hepatitis B</h3>
+                            <p>Antes de egresar de la maternidad</p>
+                        </div>
+                        <div class="item aqua row-2">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                        <div class="item aqua row-2">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                        <div class="item aqua texto">
+                            <h2>Personal de Salud</h2>
+                        </div>
+                        <div class="item aqua row-2">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                        <div class="item aqua row-2">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                        <div class="item aqua texto">
+                            <h2>Adultos mayores (a partir de 65 años)</h2>
+                        </div>
+                        <div class="item aqua row-3">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                        <div class="item aqua row-3">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                        <div class="item aqua row-3">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                        <div class="item aqua texto">
+                            <h2>Puerperio</h2>
+                        </div>
+                        <div class="item aqua row-6">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                    </div>
+                    <!-- ---------- tabs rosa ----------->
+                    <div class="bloque c7">
+                        <div class="item rosa row-6">
+                            <p class="icon-text">
+                                <img src="/svg/ph_info.svg" alt="icono" class="icon"> 
+                                Las vacunas deben administrarse en cada embarazo
+                            </p>
+                        </div>
+                        <div class="item rosa row-3">
+                            <h3>Hepatitis B</h3>
+                            <p>Antes de egresar de la maternidad</p>
+                        </div>
+                        <div class="item rosa row-3">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                        <div class="item rosa row-3">
+                            <h3>BCG</h3>
+                            <p>Aplicar en las primeras 12 horas de vida</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ---------- fin calendario de vacunacion ----------->
+
+        <!-- ---------- footer top----------->
+        <div class="footer-top">
+            <div class="footer-texto">
+                <h2>Consultá con tu médico o médica <br> acerca de la prevención de la Meningitis</h2>
+                <p>Cuidá la salud de los que te rodean</p>
+            </div>
+            <div class="footer-redes">
+                <p>Compartir:</p>
+                <div class="redes">
+                    <div class="redes-icon">
+                        <img src="/svg/jam_facebook.svg" alt="Fiebre">
+                    </div>
+                    <div class="redes-icon">
+                        <img src="/svg/ic_baseline-whatsapp.svg" alt="Cuello rígido">
+                    </div>
+                    <div class="redes-icon">
+                        <img src="/svg/prime_twitter.svg" alt="Irritabilidad">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ---------- fin footer top----------->
+        <!-- ---------- Referencias ----------->
+        <div class="tab-container">
+            <div class="tab" onclick="abrirTab()" style="cursor: pointer; display: flex; align-items: center;">
+                <span class="tab-button">
+                    Referencias
+                </span>
+                <i id="tab-icon" class="fas fa-plus" style="margin-left: 8px;"></i>
+            </div>
+            <div id="tab-content" class="tab-content">
+                <p><sup>1</sup> Organización Mundial de la Salud (OMS): Meningitis, en https://www.who.int/news-room/fact-sheets/detail/meningitis (último acceso junio 2024)</p>
+                <p><sup>2</sup> Adaptado de Encyclopaedia Britannica: “Meninges en  https://www.britannica.com/science/meninges (último acceso junio 2024)</p>
+                <p><sup>3</sup> Centers for Disease Control and Prevention (CDC). Meningitis en https://www.cdc.gov/meningitis/index.html (último acceso junio 2024).</p>
+                <p><sup>4</sup> Organización Panamericana de la Salud (OPS): Meningococo, en https://www.paho.org/es/temas/meningococo (último acceso junio 2024).</p>   
+                <p><sup>5</sup> Organización Mundial de la Salud (OMS): Health-topics. “Meningitis”, en https://www.who.int/health-topics/meningitis#tab=tab_1 (último acceso junio 2024).</p>  
+                <p><sup>6</sup>Ministerio de Salud de la Nación Argentina: “Fundamentos de la introducción de la vacuna tetravalente (ACYW) conjugada contra meningococo al calendario nacional de inmunizaciones” https://bancos.salud.gob.ar/recurso/lineamientos-tecnicos-vacuna-meningococo (último acceso junio 2024).</p>    
+                <p><sup>7</sup> Ministerio de Salud de la Nación Argentina: “Huespedes especiales: Estrategia de vacunación contra el meningococo en Argentina”  en  https://bancos.salud.gob.ar/recurso/huespedes-especiales-estrategia-de-vacunacion-contra-meningococo-de-argentina (último acceso junio 2024).</p> 
+                <p><sup>8</sup> SIREVA-Argentina. Informe Argentina 2023. SIREVA II. Servicio Antimicrobianos. Dpto. Bacteriología, Instituto Nacional de Enfermedades Infecciosas (INEI) - ANLIS “Dr. Carlos G. Malbrán SIREVA (Sistema de Redes de Vigilancia de los Agentes Bacterianos Responsables de Neumonía y Meningitis) - Página web de Bacteriología Clínica INEI-ANLIS (jimdofree.com) (último acceso junio 2024).</p>  
+                <p><sup>9</sup> Centers for Disease Control and Prevention (CDC). About Viral Meningitis, en https://www.cdc.gov/meningitis/about/viral-meningitis.html (último acceso junio 2024).</p> 
+                <p><sup>10</sup> Centers for Disease Control and Prevention (CDC). About Fungal Meningitis, en https://www.cdc.gov/meningitis/about/fungal-meningitis.html (último acceso junio 2024).</p>
+                <p><sup>11</sup> Centers for Disease Control and Prevention (CDC). About Parasitic Meningitis, en https://www.cdc.gov/meningitis/about/parasitic-meningitis.html (último acceso junio 2024).</p>   
+                <p><sup>12</sup> Organización Mundial de la Salud (OMS): Defeating Meningitis by 2030, en https://www.who.int/initiatives/defeating-meningitis-by-2030 (último acceso junio 2024).</p>    
+                <p><sup>13</sup> Ministerio de Salud de la Nación Argentina. Calendario Nacional de Vacunación, en https://www.argentina.gob.ar/salud/vacunas (último acceso junio 2024).</p>    
+            </div>
+        </div>
+        <!-- ---------- fin Referencias ----------->
+    </main>
+
+    <footer>
+        <P>NP-AR-MNU-WCNT-240001 - Junio 2024.</P>
+        <P>Para mayor información consulte a su médico.GSK Biopharma Argentina S.A. Av del Libertador 7202, Piso 4, CABA, Buenos Aires, Argentina. Para consultas sobre nuestros productos, consultas de calidad o reporte de eventos adversos puede comunicarse al 0800 220 4752.</P>
+        <div class="contenedor-footer">
+            <img src="/imagenes/logo-gsk.png" alt="Logo-gsk">
+            <a href="/#">TÉRMINOS Y CONDICIONES</a>
+            <a href="/#">POLÍTICA DE PRIVACIDAD</a>
+            <a href="/#">POLÍTICA DE COOKIES</a>
+        </div>
+    </footer>
+
+    <script src="/js/tab-tipos.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/tab-referencia.js"></script>
+</body>
+</html>
