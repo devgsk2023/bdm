@@ -287,7 +287,7 @@ nav {
     display: flex;
     /* gap: 10px; */
     justify-content: space-evenly;
-    gap: 40px;
+    gap: 30px;
     border: 2px solid white;
     padding: 10px 10px;
     border-radius: 31px;
@@ -458,13 +458,25 @@ nav {
     
 }
 
-.meningitis-meningococo h3 {
+section.meningitis-meningococo {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+ .meningitis-meningococo h3 {
+    display: inline-block;
     color: white;
-    text-decoration: underline;
+    border-bottom: 2px solid white; 
+    padding-bottom: 3px; 
     font-size: 32px;
     font-weight: bold;
     text-align: center;
-}
+}  
+
+
+
 
 .meningitis-meningococo p {
     border-radius: 16px;
@@ -505,10 +517,10 @@ nav {
 .columna2 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
-    row-gap: 35px;
-    margin-top: 70px;
+    /* row-gap: 35px; */
+    /* margin-top: 70px; */
     width: 40%;
 }
 
@@ -567,11 +579,10 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px; /* Ajusta según el tamaño de tu imagen */
-    height: 300px; /* Ajusta según el tamaño de tu imagen */
+    
 }
 
-.ondas {
+/* .ondas {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -582,7 +593,7 @@ nav {
                 radial-gradient(circle, transparent 80%, #C2BFF5 81%, transparent 82%),
                 radial-gradient(circle, transparent 90%, #C2BFF5 91%, transparent 92%);
     z-index: 1;
-}
+} */
 
 
 
@@ -622,6 +633,7 @@ nav {
 }
 .columna1.Prevención-es-vacunación p{
     font-size: 20px;
+    font-weight:300;
 
 }
 
@@ -750,6 +762,7 @@ footer a {
     width: 545px;
     display: flex;
     justify-content: space-between;
+    margin-top:44px;
     
 }
 .legend {
@@ -759,14 +772,15 @@ footer a {
     gap: 19px;
     padding: 10px;
     border-radius: 5px;
-    font-family: Arial, sans-serif;
+    
 }
 .legend-item {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 20px;
+    font-family:"inter"
 }
 
 .legend-p{
@@ -814,6 +828,7 @@ footer a {
     justify-content: center;
     display: flex;
     align-items: center;
+    margin-top:44px;
 }
 .datos p{
     color: #FFF;
@@ -1321,7 +1336,7 @@ display: none;
 /* <!-- ---------- referencias  -----------> */
 
 .tab-container {
-    padding: 5% 5%;
+    padding: 4% 4%;
 
 }
 
@@ -1494,8 +1509,12 @@ background-color: #7666EA;
 /* <!-- ---------- FIN Meningitis bacteriana ¿que es?  -----------> */
 
 /* <!-- ----------  SINTOMAS  -----------> */
+
 sup{
     font-size: 10px;
+}
+.sup-medium{
+    font-size:20px
 }
 
 .sintomas-meningistis {
@@ -2705,7 +2724,7 @@ header.meningitis-hongos-banner{
     
 }
 
-@media (max-width:1275px){
+@media only screen and (max-width:1275px){
     .container-ruleta div{
         clip-path: polygon(75% 1%, 50% 99%, 0% 0%);
         
@@ -2758,7 +2777,7 @@ footer img{
 
 /* <!-- ------------------------------ RESPONSIVE QUE ES LA MENINGITIS CSS ------------------------------> */
 
-@media (max-width:1300px){
+@media only screen and (max-width:1300px){
     .svg-ocultar {
         display: none;
     }
@@ -2768,9 +2787,15 @@ footer img{
     }
     .columna-sintomas.main {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        justify-items: center; /* Centrar horizontalmente */
-        align-items: center;   /* Centrar verticalmente */
+        grid-template-columns: repeat(7, 1fr);
+        justify-items: center;
+        align-items: center;
+        padding:20px;
+    }
+    .icono img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
     }
     .banner {
       
@@ -2789,15 +2814,23 @@ footer img{
         background-size: cover;
         background-position: center;
     }
+    .columna-sintomas.footer {
+        font-size:22px;
+    }
+
+    
 
 
 }
 
 
+
+
+
 @media (max-width:1255px){
     .columna-sintomas.main {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(7, 1fr);
         /* justify-items: center; */
         /* align-items: center; */
         justify-content: space-between;
@@ -2874,7 +2907,7 @@ footer img{
 
 
 
-@media (max-width:1000px) {
+@media only screen and (max-width:1058px) {
     h2{
         font-size: 28px;
 
@@ -2930,7 +2963,7 @@ footer img{
         color: white;
     }
     .meningitis-meningococo h3 {
-        font-size: 24px;
+        font-size: 22px;
     }
     .meningitis-meningococo p{
         font-size: 16px;
@@ -3361,8 +3394,12 @@ footer img{
         font-size: 28px;
     }
     .columna-sintomas.main {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         
+    }
+
+    .icono-centrado{
+        grid-column:100%;
     }
     .columna-sintomas.footer.secuelas h3{
         font-size: 16px;
@@ -3533,6 +3570,10 @@ footer img{
     .vacunas-tabs::-webkit-scrollbar {
         display: none;
     }
+    .legend-p{
+        font-size: 20px;
+        margin-top:10px;
+    }
 }
 
 
@@ -3560,7 +3601,9 @@ footer img{
 
 
 
-@media (max-width:800px){
+
+
+@media only screen and (max-width:800px){
 /* <!-- ------------------------------ menu ------------------------------> */
 .menu {
     display: none; /* Ocultar el menú inicialmente */
@@ -3673,7 +3716,32 @@ footer img{
         flex-direction: column;
         gap: 30px;
     }
+    .columna-sintomas.main {
+        grid-template-columns: auto auto auto;
+        
+    }
 
+    .icono-centrado{
+        grid-column:100%;
+    }
+    .columna-sintomas{
+        padding:normal;
+        align-items:start;
+    }
+    .columna-sintomas h2{
+        text-align:left;
+    }
 }
 
 
+@media only screen and (max-width : 1274px) {
+    .meningitis-meningococo p{
+        font-size:18px;
+        
+
+    }
+    .legend-p{
+        font-size: 20px;
+        margin-top:10px;
+    }
+}
