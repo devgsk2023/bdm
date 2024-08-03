@@ -170,6 +170,8 @@ ul.submenu {
 
 
 
+
+
 /* <!-- ---------- HEADER --------- --> */
 .contenedor-menu {
     display: flex;
@@ -1371,14 +1373,18 @@ display: none;
 }
 
 .tab-content p {
-    
     margin: 5px 0;
-    padding: 10px;
+    padding: 4px 0px;
     color: #000;
     font-size: 12px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    font-family: 'Inter';
+}
+
+.tab-content sup{
+    font-size: 12px;
 }
 
 /* <!-- ---------- fin referencias  -----------> */
@@ -1511,7 +1517,7 @@ background-color: #7666EA;
 /* <!-- ----------  SINTOMAS  -----------> */
 
 sup{
-    font-size: 10px;
+    font-size: 14px;
 }
 .sup-medium{
     font-size:20px
@@ -3217,7 +3223,8 @@ footer img{
         align-items: start;
     }
     .banner-content.medium h1{
-        font-size: 28px;
+        font-size: 32px;
+        margin: 32px 32px 0px 32px;
 
     }
     .buttons {
@@ -3304,7 +3311,7 @@ footer img{
     }
     .banner-content.botones {
         justify-content: center   ;
-        align-items: center;
+        align-items: start;
     }
     .vacunacion-container-hijo.top{
         flex-direction: column;
@@ -3643,8 +3650,29 @@ footer img{
 
 @media only screen and (max-width:800px){
 /* <!-- ------------------------------ menu ------------------------------> */
-.menu {
-    display: none; /* Ocultar el menú inicialmente */
+
+.banner-content.botones {
+    justify-content: center;
+    align-items: start;
+    width: 90%;
+    padding: 0px;
+    margin: 0px;
+}
+.buttons button{
+    width: 137px;
+    border: none;
+
+}
+.buttons a{
+    width: 60%;
+}
+.buttons{
+    
+    overflow: auto;
+    justify-content: start;
+}
+.buttons button:active{
+    background-color: white;
 }
 
 .menu.open {
@@ -3719,10 +3747,9 @@ footer img{
         background-position: bottom;
         background-repeat: no-repeat;
         height: 64vh;
+        padding: 0px;
     }
-    .buttons{
-        display: none;
-    }
+    
     /* <!-- ------------------------------ FIN RESPONSIVE QUE ES LA MENINGITIS CSS ------------------------------> */
 
     /* <!-- ------------------------------  RESPONSIVE meningococo  ------------------------------> */
@@ -3743,17 +3770,14 @@ footer img{
     .transmision-hijo.derecha{
         width: 90%;
     }
-    .buttons button{
-        width: 250px;
-
-    }
+    
     .logo {
         width: 48%;
     }
-    .buttons {
+    /* .buttons {
         flex-direction: column;
         gap: 30px;
-    }
+    } */
     .columna-sintomas.main {
         grid-template-columns: auto auto auto;
         
@@ -3769,6 +3793,10 @@ footer img{
     .columna-sintomas h2{
         text-align:left;
     }
+    
+    
+
+
 }
 
 
