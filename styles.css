@@ -2812,7 +2812,7 @@ footer img{
         align-items: center;
         text-align: left;
         color: white;
-        padding: 0% 5%;
+        
         
     }
     
@@ -3281,7 +3281,7 @@ footer img{
         align-items: start;
         justify-content: center;
         text-align: center;
-        padding: 20px;
+        /* padding: 20px; */
         
     }
     section.banner {
@@ -3556,6 +3556,7 @@ footer img{
         -webkit-overflow-scrolling:touch;
         scroll-behavior: smooth;
         flex-direction: column;
+        
     }
 
     .vacunas-tabs.tab-ul {
