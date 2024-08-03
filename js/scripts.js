@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Manejo del menú toggle
     document.querySelector('.menu-toggle').addEventListener('click', () => {
         document.querySelector('.menu').classList.toggle('show');
@@ -9,15 +9,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuPopup = document.getElementById("menu-popup");
     const closeButton = document.querySelector(".close-button");
 
-    menuToggle.addEventListener("click", function() {
+    menuToggle.addEventListener("click", function () {
         menuPopup.style.display = "block";
     });
 
-    closeButton.addEventListener("click", function() {
+    closeButton.addEventListener("click", function () {
         menuPopup.style.display = "none";
     });
 
-    window.addEventListener("click", function(event) {
+    window.addEventListener("click", function (event) {
         if (event.target === menuPopup) {
             menuPopup.style.display = "none";
         }
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuImage = document.getElementById("menu-image");
 
     menuItems.forEach(item => {
-        item.addEventListener("mouseenter", function() {
+        item.addEventListener("mouseenter", function () {
             const submenu = this.querySelector(".submenu");
             if (submenu) {
                 submenu.style.display = "flex";
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             progressBar.style.left = `${itemRect.left - containerRect.left}px`;
         });
 
-        item.addEventListener("mouseleave", function() {
+        item.addEventListener("mouseleave", function () {
             const submenu = this.querySelector(".submenu");
             if (submenu) {
                 submenu.style.display = "none";
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     submenuItems.forEach(item => {
-        item.addEventListener("mouseenter", function() {
+        item.addEventListener("mouseenter", function () {
             const imageUrl = this.getAttribute("data-image");
             if (imageUrl) {
                 menuImage.src = imageUrl;
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        item.addEventListener("mouseleave", function() {
+        item.addEventListener("mouseleave", function () {
             imageContainer.style.display = "none";
         });
     });
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // ruleta javascript
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll('.container-ruleta div');
     const bloques = document.querySelectorAll('.bloque');
     const subcontenedor = document.querySelector('.subcontenedor');
@@ -82,7 +82,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     items.forEach((item) => {
         item.addEventListener('click', () => {
-            // Ocultar todos los bloques
+            items.forEach(i => i.classList.remove('active'));
+
+            // Añadir la clase 'active' al elemento clickeado
+            item.classList.add('active');
             bloques.forEach((bloque) => {
                 bloque.classList.remove('activo');
                 bloque.style.opacity = 0;
@@ -117,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Toggle menu on mobile
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
@@ -132,11 +135,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Close the menu when clicking outside of it
-    window.addEventListener('click', function(event) {
+    window.addEventListener('click', function (event) {
         if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
             menu.classList.remove('open');
         }
     });
+
+
 });
 
 

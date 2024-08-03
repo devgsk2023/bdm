@@ -2802,41 +2802,16 @@ header.meningitis-hongos-banner {
     transform: rotate(261.2deg);
 }
 
-.container-ruleta .one:hover {
+.container-ruleta div:hover {
     background-color: white;
     color: #9491EB;
     cursor: pointer;
 }
 
-.container-ruleta .two:hover {
+.container-ruleta .active {
     background-color: white;
     color: #9491EB;
-    cursor: pointer;
-
 }
-
-.container-ruleta .three:hover {
-    background-color: white;
-    color: #9491EB;
-    cursor: pointer;
-
-}
-
-.container-ruleta .four:hover {
-    background-color: white;
-    color: #9491EB;
-    cursor: pointer;
-
-}
-
-.container-ruleta .five:hover {
-    background-color: white;
-    color: #9491EB;
-    cursor: pointer;
-
-}
-
-
 
 .container-ruleta p {
 
