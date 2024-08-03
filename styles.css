@@ -2526,14 +2526,17 @@ header.meningitis-hongos-banner{
 }
   
   .container-ruleta {
-    width: 500px;
-    height: 500px;
+    
+    width: 80vw;
+    height: 80vw;
+    max-width: 525px;
+    max-height: 525px;
     background-color: white;
     border-radius: 50%;
     border: 5px solid white;
     position: relative;
     overflow: hidden;
-    transition: 5s;
+    /* transition: 5s; */
 }
 
 
@@ -2584,55 +2587,55 @@ header.meningitis-hongos-banner{
   
 
 .one p {
-	transform: rotate(0deg) translate(-13px, -44px)
+	transform: rotate(28deg) translate(-40px, -13px);
 }
 .two p{
-	transform: rotate(-70deg) translate(33px, -44px);
+	transform: rotate(-45deg) translate(15px, -35px);
 }
 
 .three p{
-	transform: rotate(217deg) translate(41px, 6px);
+	transform: rotate(245deg) translate(55px, -14px);
 }
 
 .four p{
-	transform: rotate(147deg) translate(-9px, 46px);
+	transform: rotate(172deg) translate(20px, 46px);
 }
 
 .five p{
-	transform: rotate(70deg) translate(-54px, 10px);
+	transform: rotate(100deg) translate(-40px, 40px);
 }
 
 
 .container-ruleta .one {
 	background-color: #9794EB;
-	transform: rotate(0deg);
+	transform: rotate(333.2deg);
 	
   }
 
 
   .container-ruleta .two {
 	background-color: #9794EB;
-	transform: rotate(72deg);
+	transform: rotate(45.2deg);
   }
 
 
   
   .container-ruleta .three {
 	background-color: #9794EB;
-	transform: rotate(144deg);
+	transform: rotate(117.2deg);
   }
 
 
   
   .container-ruleta .four {
 	background-color: #9794EB;
-	transform: rotate(216deg);
+	transform: rotate(189.2deg);
   }
 
   
   .container-ruleta .five {
 	background-color: #9794EB;
-	transform: rotate(288deg);
+	transform: rotate(261.2deg);
   }
 
 .container-ruleta .one:hover{
@@ -2666,6 +2669,8 @@ header.meningitis-hongos-banner{
 	
   }
 
+
+
 .container-ruleta p{
     
     width: 100px;
@@ -2678,8 +2683,11 @@ header.meningitis-hongos-banner{
 }
 
   #spin {
-    width: 15vw;
-    height: 15vw;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    height: 20vw;
     max-width: 202.129px;
     max-height: 202.129px;
     background-color: #7666EA;
@@ -2698,8 +2706,7 @@ header.meningitis-hongos-banner{
     align-items: center;
     justify-content: center;
     z-index: 10;
-    top: 149px;
-    left: 144px;
+   
 }
 
 .contenedor-alerta{
@@ -2708,6 +2715,7 @@ header.meningitis-hongos-banner{
     
 
 }
+
 .custom-button.amarillo{
     border-radius: 8px;
     background: #FFF59B;
@@ -2725,10 +2733,10 @@ header.meningitis-hongos-banner{
 }
 
 @media only screen and (max-width:1275px){
-    .container-ruleta div{
+    /* .container-ruleta div{
         clip-path: polygon(75% 1%, 50% 99%, 0% 0%);
         
-    }
+    } */
 
 
 }
@@ -3576,30 +3584,60 @@ footer img{
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width:1200px){
     .contenedor-ruleta {
-        display: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        width: 100%;
+        justify-content: center;
+        padding: 40px 0;
     }
     .contenedor-alerta{
         display: none;
     }
+    #spin {
+        font-size: 12px;
+    }
+    .contenedor-ruleta-derecha{
+        width: 100%;
+        
+    }
+    .contenedor-ruleta-izquierda{
+        height: 100%;
+        max-height: 500px;
+    }
+    .one p {
+        transform: rotate(0deg) translate(-13%, -50%);
+    }
+    .two p {
+        transform: rotate(-70deg) translate(27%, -57%);
+    }
+    .three p {
+        transform: rotate(217deg) translate(30%, 20%);
+    }
+    .four p {
+        transform: rotate(147deg) translate(-2%, 70%);
+    }
+    .five p {
+        transform: rotate(70deg) translate(-37%, 10%);
+    }
+    
 }
 
-
+@media (max-width: 500px) {
+    #spin {
+       height: 133px;
+       width: 133px;
+    }
+    .container-ruleta{
+        /* width: 300px;
+        height: 300px; */
+    }
+    .container-ruleta div p {
+        font-size: 14px;
+    }
+}
 
 
 
