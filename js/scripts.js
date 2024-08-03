@@ -140,6 +140,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-//slider tabs vacunas 
+//los 4 botones del home en el banner 
+
+
+
+
+
 
 
