@@ -337,6 +337,7 @@ nav {
     color: #7666EA;
 }
 
+
 @media (max-width: 768px) {
     .menu {
         display: none;
@@ -1081,6 +1082,8 @@ footer a {
     text-decoration: none;
     transition: background-color 0.3s;
     height: 60px;
+    font-family: Inter;
+
 }
 
 .custom-button1.derecha {
@@ -1093,7 +1096,7 @@ footer a {
 
 
 .custom-button1 svg {
-    margin-left: 0px;
+    margin-left: 8px;
     fill: white;
     font-size: 16px;
 }
@@ -2064,6 +2067,12 @@ sup {
 
 }
 
+@media (min-width: 1200px) {
+    #vacunacion__header {
+        padding-left: 100px;
+    }
+}
+
 
 /* <!-- -----------------------------------------------------------  fin  TIPOS DE MENINGITIS -------------------------------------------> */
 
@@ -2096,6 +2105,7 @@ sup {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-top: 0px;
     margin-bottom: 24px;
 
 }
@@ -2131,6 +2141,12 @@ sup {
     margin: 3% 0% 4% 0%;
 }
 
+@media (min-width: 1200px) {
+    .vacunas-texto p {
+        margin: 32px 0px 80px 0px;
+    }
+}
+
 /* <!-- ---------- fin seccion calendario de vacunas -----------> */
 
 
@@ -2140,9 +2156,6 @@ sup {
     padding: 0% 5%;
     background: #F2F8F8;
     max-width: 120em;
-
-
-
 }
 
 .contenedor-vacunas .tab-ul {
@@ -2152,6 +2165,11 @@ sup {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+}
+
+.tab-ul {
+    margin-top: 0px;
+    margin-bottom: 60px;
 }
 
 .contenedor-vacunas .li {
@@ -2171,11 +2189,12 @@ sup {
     border: 3px solid #BFBFBF;
     color: #BFBFBF;
     z-index: 100;
+    font-size: 18px;
 
 }
 
 .contenedor-vacunas .li.activo {
-
+    border: none;
     color: white;
 }
 
@@ -2214,6 +2233,13 @@ sup {
     /* Coloca el bloque activo en su posición normal */
 }
 
+.bloque.activo h3 {
+    font-family: Inter;
+    font-size: 20px;
+    font-style: bold;
+    margin: 0px;
+}
+
 .bloque.activo h1 {
 
     font-family: Inter;
@@ -2224,9 +2250,10 @@ sup {
 }
 
 .bloque.activo p {
-    font-size: 18px;
+    margin: 8px 0px 0px 0px;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: normal;
 }
 
@@ -2245,6 +2272,8 @@ sup {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin-top: 0px;
+    margin-bottom: 40px;
 }
 
 
@@ -2514,6 +2543,11 @@ header.meningitis-hongos-banner {
     background: #7666EA;
 }
 
+.sup-medium {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
 .texto-hongos,
 .imagen-hongos {
     flex: 1;
@@ -2769,6 +2803,13 @@ header.meningitis-hongos-banner {
     transform: rotate(100deg) translate(-40px, 40px);
 }
 
+/* medidas para macbook air 2023 */
+@media (min-width: 1270px) and (max-width: 1280px) and (min-height: 750px) and (max-height: 800px) {
+    .container-ruleta .one {
+        transform: rotate(2deg);
+
+    }
+}
 
 .container-ruleta .one {
     background-color: #9794EB;
@@ -3033,9 +3074,9 @@ footer img {
         height: auto;
     }
 
-    br {
+    /* br {
         display: none;
-    }
+    } */
 
     .columna-1-sintomas ul {
         display: grid;
@@ -3718,6 +3759,7 @@ footer img {
 
     .vacunas-texto h2 {
         font-size: 32px;
+
     }
 
     .titulo-subcontenedor h2 {
@@ -4268,6 +4310,7 @@ footer img {
     .container-input__search-map {
         order: -3;
     }
+
     .container-input__search-map h2 {
         color: #FFF;
         font-family: Inter;
@@ -4276,6 +4319,7 @@ footer img {
         font-weight: 600;
         line-height: normal;
     }
+
     .card--result h4 {
         color: #FFF;
         font-family: Inter;
@@ -4284,6 +4328,7 @@ footer img {
         font-weight: 700;
         line-height: normal;
     }
+
     .card--result p {
         color: #FFF;
         font-family: Inter;
@@ -4326,12 +4371,21 @@ footer img {
     }
 }
 
-/* @media (min-width: 768px) {
-    .container--map-main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center
-        align-items: center;
-        padding: 0% 5%;
-        background: #F2F8F8;
+@media (min-width: 1270px) and (max-width: 1280px) and (min-height: 750px) and (max-height: 800px) {
+    .container-ruleta .one {
+        transform: rotate(333deg);
+
     }
+
+    .container-ruleta .two {
+        transform: rotate(44deg);
+    }
+
+    .container-ruleta .three {
+        transform: rotate(114.9deg);
+    }
+
+    .container-ruleta .four {
+        transform: rotate(187.9deg);
+    }
+}
