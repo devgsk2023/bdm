@@ -311,7 +311,7 @@ nav {
     /* gap: 10px; */
     justify-content: space-evenly;
     gap: 30px;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     padding: 10px 10px;
     border-radius: 31px;
     width: 644px;
@@ -3518,7 +3518,7 @@ section.contenedor-menu.meningitis-menu {
 
     .banner-content.medium h1 {
         font-size: 32px;
-        margin: 100px 32px 0px 32px;
+        margin: 54px 0px 0px 32px;
 
     }
     
@@ -4071,7 +4071,7 @@ section.contenedor-menu.meningitis-menu {
         background-size: cover;
         background-position: bottom;
         background-repeat: no-repeat;
-        height: 75vh;
+        height: 100vh;
         padding: 0px;
     }
 
