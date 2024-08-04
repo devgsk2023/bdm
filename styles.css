@@ -1254,7 +1254,7 @@ footer a {
 
 .container-yelLow {
     background-color: #FFF59B;
-    padding: 5%;
+    padding: 8%;
     font-size: 32px;
     text-align: center;
     margin-top: 55px;
@@ -2585,7 +2585,7 @@ header.meningitis-hongos-banner {
 }
 
 .sup-medium {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Inter';
     font-size: 20px;
 }
 
@@ -2722,9 +2722,7 @@ header.meningitis-hongos-banner {
     margin-bottom: 40px;
 }
 
-.banner-content.medium.parasitos h1 {
-    font-size: 80px;
-}
+
 
 
 /* <!-- -----------------------------------------------------------  Comienzo css pagina meningitis por sintomas  -------------------------------------------> */
@@ -2960,6 +2958,9 @@ header.meningitis-hongos-banner {
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+.banner-content.medium.parasitos h1 {
+    font-size: 80px;
 }
 
 @media only screen and (max-width:1275px) {
@@ -3500,7 +3501,7 @@ section.contenedor-menu.meningitis-menu {
 
     .color.box-celeste {
         height: 293px;
-        padding: 0% 5%;
+        padding: 8%;
         gap: 8px;
     }
 
@@ -3522,7 +3523,7 @@ section.contenedor-menu.meningitis-menu {
     }
 
     .footer-texto h2 {
-        font-size: 22px;
+        font-size: 21px;
     }
 
     .footer-texto p {
@@ -3764,7 +3765,7 @@ section.contenedor-menu.meningitis-menu {
     }
 
     .icono-centrado {
-        grid-column: 100%;
+        grid-column: 1 / 4;
     }
 
     .columna-sintomas.footer.secuelas h3 {
@@ -4477,6 +4478,9 @@ section.contenedor-menu.meningitis-menu {
         margin-bottom: 40px;
         font-family: 'Inter';
     }
+    .banner-content.medium.parasitos h1 {
+        font-size: 32px;
+    }
 
 }
 
@@ -4509,6 +4513,7 @@ section.contenedor-menu.meningitis-menu {
     .contenedor-ruleta-izquierda {
         height: 100%;
         max-height: 500px;
+        width: 70%;
     }
 
     .one p {
