@@ -338,15 +338,12 @@ nav {
     /* gap: 10px; */
     justify-content: space-evenly;
     gap: 30px;
-    /* border: 2px solid white; */
+    border: 2px solid white;
     padding: 10px 10px;
     border-radius: 31px;
     width: 644px;
 }
-.buttons a{
-    border: 1px solid white;
-        border-radius: 21px;
-    }
+
 
 
 .buttons button {
@@ -1045,6 +1042,12 @@ footer a {
     margin-top: 80px;
     border-radius: 30px;
     margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+
+}
+.columna-sintomas.top {
+    align-items: center;
 }
 
 .columna-sintomas {
@@ -3102,7 +3105,7 @@ section.contenedor-menu.meningitis-menu {
         /* margin: 0 auto; */
         justify-content: space-between;
         align-items: center;
-        padding: 0px;
+        /* padding: 0px; */
         float: right;
         gap: 24px;
     }
@@ -3162,7 +3165,7 @@ section.contenedor-menu.meningitis-menu {
         /* justify-items: center; */
         /* align-items: center; */
         justify-content: space-between;
-        padding: 0px;
+        
     }
 
     .serogrupos-letras {
@@ -4538,6 +4541,35 @@ section.contenedor-menu.meningitis-menu {
     .banner-content.medium.parasitos h1 {
         font-size: 32px;
     }
+    header.meningitis-hongos-banner {
+        height: 45vh;
+    }
+    .texto-hongos, .imagen-hongos{
+        flex: auto;
+    }
+    .grupo-riesgo.parasitos-titulo h2{
+        color: #FFF;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .container-hongos {
+        flex-direction: column;
+        height: 100vh;
+    }
+    .hongos-grid.row-3.parasitos {
+        height: 248px;
+    }
+    .hongos-grid.row-3.parasitos p {
+        font-size: 18px;
+        text-align: center;
+    }
+    .buttons a{
+        border: 1px solid white;
+            border-radius: 21px;
+        }
 
 }
 
