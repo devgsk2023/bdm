@@ -1635,6 +1635,7 @@ sup {
 }
 
 .sup-medium {
+
     font-size: 15px
 }
 
@@ -2617,13 +2618,15 @@ header.meningitis-hongos-banner {
 
 .sup-medium {
     font-family: 'Inter';
-    font-size: 20px;
+    font-size: 14px;
+}
+.hongos-banner .sup-medium {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .texto-hongos,
 .imagen-hongos {
     flex: 1;
-
 
 }
 
