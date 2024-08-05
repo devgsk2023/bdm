@@ -115,7 +115,7 @@ ul.submenu {
     display: none;
     z-index: 5;
     border-radius: 20px;
-    right: 19%;
+    right: 4%;
 
 }
 
@@ -3157,17 +3157,16 @@ img#responsive-img{
 
 @media only screen and (max-width:1300px) {
     .image-container img {
-        width: 250px;
+        width:250px;
+        height: auto;
+        border-radius: 20px;
     }
 
     .image-container {
-        position: absolute;
-        width: 400px;
+        
+        width: 250px;
         height: 400px;
-        display: none;
-        z-index: 5;
-        border-radius: 20px;
-        right: -8%;
+        right: 49px;
     }
 
     .menu-activo {
@@ -5125,24 +5124,22 @@ img#responsive-img{
     .container--map--search__content {
         padding: 2%;
     }
-}
-#meningitis-virus__banner{
-    height: 60vh;
-}
-
-
-@media (min-width: 1450px){
-    .image-container {
-        width: 250px;
-        position: absolute;
-        width: 250px;
-        height: 400px;
-        display: none;
-        z-index: 5;
-        border-radius: 20px;
-        right: 12%;
+    #meningitis-virus__banner{
+        height: 60vh;
     }
-}
+    .image-container img {
+        width: 300px;
+        height: auto;
+        border-radius: 20px;
+    }
+    .menu-activo{
+        gap: 50px;
+        }
+    }
+
+
+
+
 /* @media (min-width: 768px) {
     .container--map-main {
         display: flex;
