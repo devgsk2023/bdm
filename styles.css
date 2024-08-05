@@ -419,6 +419,12 @@ nav {
     }
 
     .buttons {}
+    #texto__banner {
+        margin-top: 50px;
+    }
+    #meningitis-virus__banner {
+        height: 45vh !important;
+    }
 }
 
 
@@ -4054,6 +4060,9 @@ img#responsive-img{
     .contenedor-hongos-grid {
         grid-template-columns: repeat(1, 1fr);
     }
+    .hongos-grid.row-3 {
+        grid-column: span 3;
+    }
 
     .banner-content.medium.virus h1 {
         font-size: 32px;
@@ -4072,7 +4081,9 @@ img#responsive-img{
     img#menu-image {
         display: none;
     }
-
+    .imagen-hongos.virus img {
+        object-fit: cover;
+    }
 }
 
 /* SLIDER TAMBS VACUNAS */
@@ -4737,6 +4748,7 @@ img#responsive-img{
         height: 45vh;
     }
 
+
     .texto-hongos,
     .imagen-hongos {
         flex: auto;
@@ -5103,6 +5115,9 @@ img#responsive-img{
     .container--map--search__content {
         padding: 2%;
     }
+}
+#meningitis-virus__banner{
+    height: 60vh;
 }
 
 /* @media (min-width: 768px) {
