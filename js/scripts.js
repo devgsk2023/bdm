@@ -76,6 +76,14 @@ document.addEventListener("DOMContentLoaded", function () {
             imageContainer.style.display = "none";
         });
     });
+    let descargarPDF = document.getElementById("descargar");
+    descargarPDF.addEventListener("click", function () {
+        const link = document.createElement('a');
+        link.href = '../wp-content/uploads/2024/02/CNdV2024_H32x24lunN.pdf';
+        link.download = 'CNdV2024_H32x24lunN.pdf';
+        link.click();
+        document.body.removeChild(link);
+    });
 });
 
 
