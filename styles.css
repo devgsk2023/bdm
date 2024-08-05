@@ -5130,6 +5130,19 @@ img#responsive-img{
     height: 60vh;
 }
 
+
+@media (min-width: 1450px){
+    .image-container {
+        width: 250px;
+        position: absolute;
+        width: 250px;
+        height: 400px;
+        display: none;
+        z-index: 5;
+        border-radius: 20px;
+        right: 12%;
+    }
+}
 /* @media (min-width: 768px) {
     .container--map-main {
         display: flex;
@@ -5160,3 +5173,4 @@ img#responsive-img{
         transform: rotate(187.9deg);
     }
 }
+
