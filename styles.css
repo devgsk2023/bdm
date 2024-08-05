@@ -2142,7 +2142,7 @@ sup {
 
 @media (min-width: 1200px) {
     #vacunacion__header {
-        padding-left: 100px;
+        /* padding-left: 100px; */
     }
 }
 
@@ -4049,6 +4049,9 @@ section.contenedor-menu.meningitis-menu {
         align-items: baseline;
         margin: 44px 32px 0px 32px;
     }
+    #menu__padding_diff {
+        
+    }
 
 
     .banner-content.botones {
@@ -4189,6 +4192,7 @@ section.contenedor-menu.meningitis-menu {
 
     .logo {
         width: 80%;
+        margin-top: 10px;
     }
 
     /* .buttons {
@@ -4571,7 +4575,20 @@ section.contenedor-menu.meningitis-menu {
         border: 1px solid white;
             border-radius: 21px;
         }
-
+    #descargar{
+        display: flex !important;
+        margin: auto;
+    }
+    .descargar {
+        width: 100%;
+        margin: 0 auto;
+    }
+    #vacunacion__header {
+        margin: 0;
+    }
+    #vacunacion__div__title {
+        padding: 70px 0 0 0;
+    }
 }
 
 
