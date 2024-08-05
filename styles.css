@@ -4151,7 +4151,7 @@ img#responsive-img{
         display: flex;
         width: 100%;
         justify-content: space-between;
-        align-items: baseline;
+        align-items: center;
         margin: 44px 32px 0px 32px;
     }
 
@@ -4804,7 +4804,7 @@ img#responsive-img{
     } */
 
     section.contenedor-menu.logo-menu {
-        margin: 44px 0px 0px 0px;
+        margin: 5% 0px 5% 0px;
     }
 
     section.contenedor-menu.logo-menu {
@@ -4819,6 +4819,13 @@ img#responsive-img{
     /* header#tipos-de-meningitis{
         height: 45vh;
     } */
+
+    section.contenedor-menu.meningitis-banner-logo {
+    width: auto;
+    margin: 0px;
+    margin-top: 42px;
+    align-items: center;
+}
 }
 
 
