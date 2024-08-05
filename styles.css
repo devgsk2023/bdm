@@ -3958,6 +3958,7 @@ img#responsive-img{
 
     .banner-content.large h1 {
         font-size: 32px;
+        margin: 0px;
     }
 
     .banner-content.xl.botones h1 {
@@ -4793,9 +4794,9 @@ img#responsive-img{
     .banner-content.medium.virus h1{
         margin: 54px 142px 0px 0px;
     }
-    header#tipos-de-meningitis{
+    /* header#tipos-de-meningitis{
         height: 45vh;
-    }
+    } */
 }
 
 
