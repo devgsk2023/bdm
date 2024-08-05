@@ -2641,6 +2641,10 @@ header.meningitis-hongos-banner {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
+}
+header#mid {
+    height: 65vh;
 }
 
 .container-hongos {
@@ -3124,6 +3128,16 @@ section.contenedor-menu.meningitis-menu {
     margin: 0px;
 }
 
+.imagen.bacteriana-par{
+    background-size: cover;
+    background-image: url(/imagenes/bacterias.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+img#responsive-img{
+    display: none;
+}
+
 /* <!-- ---------- fin Footer  -----------> */
 
 
@@ -3558,12 +3572,12 @@ section.contenedor-menu.meningitis-menu {
 
     .contenedor-sintomas.izquierda p {
         font-size: 16px;
-        margin: 0px 30px 30px 30px;
+        margin: 0px 23px 23px 23px;
 
     }
 
     .contenedor-sintomas.izquierda h2 {
-        margin: 30px 30px 0px 30px;
+        margin: 23px 23px 23px 23px ;
         color: #1E1E1E;
 
         font-size: 28px;
@@ -3781,6 +3795,9 @@ section.contenedor-menu.meningitis-menu {
         padding: 0px;
         align-items: center;
         padding: 80px 32px;
+    }
+    img#responsive-img{
+        display:block;
     }
 
     .texto-prevencion {
@@ -4102,6 +4119,9 @@ section.contenedor-menu.meningitis-menu {
 
 @media only screen and (max-width:800px) {
 
+    header#mid{
+        height: 45vh;
+    }
     /* <!-- ------------------------------ menu ------------------------------> */
     .menu-content {
         height: 77vh;
@@ -4752,9 +4772,9 @@ section.contenedor-menu.meningitis-menu {
         margin: 0;
     }
 
-    #vacunacion__div__title {
+    /* #vacunacion__div__title {
         padding: 70px 0 0 0;
-    }
+    } */
 
     section.contenedor-menu.logo-menu {
         margin: 44px 0px 0px 0px;
@@ -4767,7 +4787,7 @@ section.contenedor-menu.meningitis-menu {
         margin: 54px 32px 0px 0px;
     }
     .banner-content.medium.virus h1{
-        margin: 54px 32px 0px 0px;
+        margin: 54px 142px 0px 0px;
     }
 }
 
