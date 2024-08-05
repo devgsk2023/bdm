@@ -4924,7 +4924,10 @@ img#responsive-img{
 
 @media only screen and (max-width : 1274px) {
     .image-container img {
-        width: 200px;
+        width: 300px;
+    }
+    .image-container{
+        width: 300px;
     }
 
     .meningitis-meningococo p {
@@ -5115,7 +5118,7 @@ img#responsive-img{
     }
 }
 
-@media (min-width: 1440px) {
+@media only screen and (max-width: 1440px) {
     .container--map-main iframe {
         width: 900px;
         height: 100%;
@@ -5128,7 +5131,7 @@ img#responsive-img{
         height: 60vh;
     }
     .image-container img {
-        width: 300px;
+        width: 300px ;
         height: auto;
         border-radius: 20px;
     }
