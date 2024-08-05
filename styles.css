@@ -20,9 +20,12 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
-    animation: slideIn 0.5s forwards;
+    transform: translateY(-100%);
+    animation: slideIn 0.5s forwards, negroBlock 0.5s forwards;
+}
+.menu-popup.hidden {
+    animation: slideOut 0.5s forwards;
 }
 
 .Contenedor-popup {
@@ -180,8 +183,32 @@ ul.submenu {
         transform: translateY(0);
     }
 }
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+    }
 
-
+    to {
+        transform: translateY(-100%);
+    }
+}
+@keyframes negroBlock {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    25% {
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+    50% {
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+    75% {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
 
 
 
@@ -311,15 +338,12 @@ nav {
     /* gap: 10px; */
     justify-content: space-evenly;
     gap: 30px;
-    /* border: 2px solid white; */
+    border: 2px solid white;
     padding: 10px 10px;
     border-radius: 31px;
     width: 644px;
 }
-.buttons a{
-    border: 1px solid white;
-        border-radius: 21px;
-    }
+
 
 
 .buttons button {
@@ -1018,6 +1042,12 @@ footer a {
     margin-top: 80px;
     border-radius: 30px;
     margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+
+}
+.columna-sintomas.top {
+    align-items: center;
 }
 
 .columna-sintomas {
@@ -1604,7 +1634,7 @@ sup {
 }
 
 .sup-medium {
-    font-size: 20px
+    font-size: 15px
 }
 
 .sintomas-meningistis {
@@ -2615,7 +2645,31 @@ header.meningitis-hongos-banner {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin: 0px;
 }
+@media (min-width: 1200px) {
+    .texto-hongos p {
+        padding: 0 10%;
+        color: #FFF;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin: 0px;
+    }
+    /* .container-hongos {
+        height: 535px;
+        
+    }
+    .texto-hongos {
+        width: 725px;
+    }
+    .imagen-hongos{
+        width: 932px;
+        object-fit: cover;
+    } */
+}
+
 
 .texto-hongos {
     display: flex;
@@ -2634,6 +2688,9 @@ header.meningitis-hongos-banner {
 
 .hongos-titulo h2 {
     font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .hongos-titulo p {
@@ -2645,7 +2702,7 @@ header.meningitis-hongos-banner {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     /* Tres columnas iguales */
-    gap: 20px;
+    gap: 24px;
     width: 100%;
     justify-content: space-between;
 }
@@ -2740,7 +2797,7 @@ header.meningitis-hongos-banner {
 
 .contenedor-ruleta-izquierda {
     width: 49%;
-    height: 342px;
+    height: 300px;
     flex-shrink: 0;
     border-radius: 30px;
     background: #7666EA;
@@ -3045,7 +3102,7 @@ section.contenedor-menu.meningitis-menu {
         /* margin: 0 auto; */
         justify-content: space-between;
         align-items: center;
-        padding: 0px;
+        /* padding: 0px; */
         float: right;
         gap: 24px;
     }
@@ -3105,7 +3162,7 @@ section.contenedor-menu.meningitis-menu {
         /* justify-items: center; */
         /* align-items: center; */
         justify-content: space-between;
-        padding: 0px;
+        
     }
 
     .serogrupos-letras {
@@ -4482,7 +4539,7 @@ section.contenedor-menu.meningitis-menu {
         font-size: 32px;
     }
     header.meningitis-hongos-banner {
-        height: 35vh;
+        height: 45vh;
     }
     .texto-hongos, .imagen-hongos{
         flex: auto;
@@ -4506,6 +4563,10 @@ section.contenedor-menu.meningitis-menu {
         font-size: 18px;
         text-align: center;
     }
+    .buttons a{
+        border: 1px solid white;
+            border-radius: 21px;
+        }
 
 }
 

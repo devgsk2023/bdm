@@ -10,16 +10,27 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeButton = document.querySelector(".close-button");
 
     menuToggle.addEventListener("click", function () {
+        if (menuPopup.classList.contains("hidden")) {
+            menuPopup.classList.remove("hidden");
+            menuPopup.style.display = "block";
+        }
         menuPopup.style.display = "block";
     });
 
     closeButton.addEventListener("click", function () {
-        menuPopup.style.display = "none";
+        menuPopup.classList.add("hidden");
+        setTimeout(function () {
+            menuPopup.style.display = "none";
+        }, 500);
+        
     });
 
     window.addEventListener("click", function (event) {
         if (event.target === menuPopup) {
-            menuPopup.style.display = "none";
+            menuPopup.classList.add("hidden");
+            setTimeout(function () {
+                menuPopup.style.display = "none";
+            }, 500);
         }
     });
 
