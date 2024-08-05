@@ -171,6 +171,7 @@ ul.submenu {
     background: none;
     font-size: 3.5em;
     cursor: pointer;
+    color: black;
 }
 
 /* Animación del pop-up */
