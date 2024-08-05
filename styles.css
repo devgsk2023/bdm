@@ -4362,11 +4362,18 @@ img#responsive-img{
         align-items: center;
         padding: 44px 32px;
 
-        height: 80vh;
+        height: 87vh;
     }
 
     .banner-content.meningitis-header h1 {
         font-size: 32px;
+        margin-bottom: 10px;
+    }
+    .banner-content.meningitis-header{
+        margin: 14px 0px 10px 0px
+    }
+    .banner-content.meningitis-header p{
+        font-size: 14px;
     }
 
     .strong {
