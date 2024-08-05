@@ -2185,11 +2185,9 @@ header#tipos-de-meningitis{
 
 }
 
-@media (min-width: 1200px) {
-    #vacunacion__header {
-        /* padding-left: 100px; */
-    }
-}
+@media (min-width: 300px) and (max-width: 1400px) {
+
+} 
 
 
 /* <!-- -----------------------------------------------------------  fin  TIPOS DE MENINGITIS -------------------------------------------> */
@@ -5112,6 +5110,19 @@ img#responsive-img{
 #meningitis-virus__banner{
     height: 60vh;
 }
+
+@media (max-width: 768px) {
+    .container--map-main iframe {
+        width: 100%;
+    }
+}
+@media (min-width: 300px) and (max-width: 1400px) {
+    #vacunacion__header {
+        height: auto !important;
+    }
+   
+}   
+    
 
 /* @media (min-width: 768px) {
     .container--map-main {
