@@ -2149,6 +2149,10 @@ sup {
 /* <!-- ----------------------------------------------------------- COMIENZO TIPOS DE MENINGITIS -------------------------------------------> */
 
 /* <!-- ---------- BANNER PRINCIPAL MENINGITIS BACTERIANA -----------> */
+header#tipos-de-meningitis{
+    height: 60vh;
+}
+
 .banner.tipos {
     background: none;
     margin-top: 40px;
@@ -4788,6 +4792,9 @@ img#responsive-img{
     }
     .banner-content.medium.virus h1{
         margin: 54px 142px 0px 0px;
+    }
+    header#tipos-de-meningitis{
+        height: 45vh;
     }
 }
 
