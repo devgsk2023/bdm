@@ -41,7 +41,7 @@ html {
     max-width: 100%;
     background-color: white;
     padding: 50px;
-    height: 50vh;
+    height: 60vh;
 
 }
 
@@ -115,7 +115,7 @@ ul.submenu {
     display: none;
     z-index: 5;
     border-radius: 20px;
-    right: 19%;
+    right: 4%;
 
 }
 
@@ -419,9 +419,9 @@ nav {
     }
 
     .buttons {}
-    #texto__banner {
+    /* #texto__banner {
         margin-top: 50px;
-    }
+    } */
     #meningitis-virus__banner {
         height: 45vh !important;
     }
@@ -3155,17 +3155,16 @@ img#responsive-img{
 
 @media only screen and (max-width:1300px) {
     .image-container img {
-        width: 250px;
+        width:250px;
+        height: auto;
+        border-radius: 20px;
     }
 
     .image-container {
-        position: absolute;
-        width: 400px;
+        
+        width: 250px;
         height: 400px;
-        display: none;
-        z-index: 5;
-        border-radius: 20px;
-        right: -8%;
+        right: 49px;
     }
 
     .menu-activo {
@@ -4149,7 +4148,7 @@ img#responsive-img{
         display: flex;
         width: 100%;
         justify-content: space-between;
-        align-items: baseline;
+        align-items: center;
         margin: 44px 32px 0px 32px;
     }
 
@@ -4371,11 +4370,21 @@ img#responsive-img{
         align-items: center;
         padding: 44px 32px;
 
-        height: 80vh;
+        height: 87vh;
     }
 
     .banner-content.meningitis-header h1 {
         font-size: 32px;
+        margin-bottom: 10px;
+    }
+    .banner-content.meningitis-header{
+        margin: 14px 0px 10px 0px
+    }
+    section.banner.meningitis-banner {
+        margin-top: 5%;
+    }
+    .banner-content.meningitis-header p{
+        font-size: 1rem;
     }
 
     .strong {
@@ -4792,7 +4801,7 @@ img#responsive-img{
     } */
 
     section.contenedor-menu.logo-menu {
-        margin: 44px 0px 0px 0px;
+        margin: 5% 0px 5% 0px;
     }
 
     section.contenedor-menu.logo-menu {
@@ -4807,6 +4816,13 @@ img#responsive-img{
     /* header#tipos-de-meningitis{
         height: 45vh;
     } */
+
+    section.contenedor-menu.meningitis-banner-logo {
+    width: auto;
+    margin: 0px;
+    margin-top: 44px;
+    align-items: center;
+}
 }
 
 
@@ -4906,7 +4922,10 @@ img#responsive-img{
 
 @media only screen and (max-width : 1274px) {
     .image-container img {
-        width: 200px;
+        width: 300px;
+    }
+    .image-container{
+        width: 300px;
     }
 
     .meningitis-meningococo p {
@@ -5097,7 +5116,7 @@ img#responsive-img{
     }
 }
 
-@media (min-width: 1440px) {
+@media only screen and (max-width: 1440px) {
     .container--map-main iframe {
         width: 900px;
         height: 100%;
@@ -5106,10 +5125,21 @@ img#responsive-img{
     .container--map--search__content {
         padding: 2%;
     }
-}
-#meningitis-virus__banner{
-    height: 60vh;
-}
+    #meningitis-virus__banner{
+        height: 60vh;
+    }
+    .image-container img {
+        width: 300px ;
+        height: auto;
+        border-radius: 20px;
+    }
+    .menu-activo{
+        gap: 50px;
+        }
+    }
+
+
+
 
 @media (max-width: 768px) {
     .container--map-main iframe {
@@ -5154,3 +5184,4 @@ img#responsive-img{
         transform: rotate(187.9deg);
     }
 }
+
