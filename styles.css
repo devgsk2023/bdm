@@ -4383,8 +4383,11 @@ img#responsive-img{
     .banner-content.meningitis-header{
         margin: 14px 0px 10px 0px
     }
+    section.banner.meningitis-banner {
+        margin-top: 5%;
+    }
     .banner-content.meningitis-header p{
-        font-size: 14px;
+        font-size: 1rem;
     }
 
     .strong {
