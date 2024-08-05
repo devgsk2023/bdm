@@ -171,6 +171,7 @@ ul.submenu {
     background: none;
     font-size: 3.5em;
     cursor: pointer;
+    color: black;
 }
 
 /* Animación del pop-up */
@@ -4045,7 +4046,7 @@ section.contenedor-menu.meningitis-menu {
         display: flex;
         width: auto;
         justify-content: space-between;
-        align-items: center;
+        align-items: baseline;
         margin: 44px 32px 0px 32px;
     }
 
@@ -4187,7 +4188,7 @@ section.contenedor-menu.meningitis-menu {
     }
 
     .logo {
-        width: 48%;
+        width: 80%;
     }
 
     /* .buttons {
