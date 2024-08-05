@@ -4828,7 +4828,7 @@ img#responsive-img{
 
 
 
-@media (max-width:1200px) {
+@media (max-width:1283px) {
     .contenedor-ruleta {
         display: flex;
         flex-wrap: wrap;
@@ -5155,7 +5155,9 @@ img#responsive-img{
     }
    
 }   
-    
+.container--map-main {
+    display: none;
+}
 
 /* @media (min-width: 768px) {
     .container--map-main {
