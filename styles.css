@@ -5117,10 +5117,7 @@ img#responsive-img{
 }
 
 @media only screen and (max-width: 1440px) {
-    .container--map-main iframe {
-        width: 900px;
-        height: 100%;
-    }
+   
 
     .container--map--search__content {
         padding: 2%;
@@ -5138,7 +5135,13 @@ img#responsive-img{
         }
     }
 
-
+@media (min-width: 1440px) {
+    .container--map-main iframe {
+        width: 50vw;
+        max-width: 900px;
+        height: 100%;
+    }
+}
 
 
 @media (max-width: 768px) {
