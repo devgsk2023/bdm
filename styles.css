@@ -4080,7 +4080,9 @@ section.contenedor-menu.meningitis-menu {
         margin: 44px 32px 0px 32px;
     }
 
-
+    section.contenedor-menu.home-menu-logo {
+        width: auto;
+    }
     .banner-content.botones {
         justify-content: center;
         align-items: start;
