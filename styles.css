@@ -88,6 +88,14 @@ html {
     text-decoration: none;
     color: #000;
 }
+.menu-activo li.color-b a {
+    color: #4A4A4A;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
 
 ul.submenu {
     flex-direction: column;
@@ -131,6 +139,12 @@ ul.submenu {
 .menu-activo>li a {
     color: #939393;
     text-decoration: none;
+    color: #939393;
+    font-family: Inter;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .menu-activo>li a:hover {
@@ -143,7 +157,7 @@ ul.submenu {
 }
 
 .progress-bar {
-    margin: 30px 0px 30px 0px;
+    margin: 30px 0px 33px 0px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -355,7 +369,7 @@ nav {
     cursor: pointer;
     background-color: transparent;
     color: white;
-    transition: background-color 0.3s;
+    
 }
 
 
@@ -389,7 +403,7 @@ nav {
     }
 
     .banner-content {
-        padding: 0 10px;
+        padding: 0px;
     }
 
     h1 {
@@ -2164,6 +2178,7 @@ sup {
 
 .banner-content.xl.botones {
     width: 880px;
+    margin-top: 71px;
 }
 
 .banner-content.xl.botones h1 {
@@ -3091,7 +3106,19 @@ section.contenedor-menu.meningitis-menu {
     .image-container img{
         width: 250px;
     }
-    
+    .image-container {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        display: none;
+        z-index: 5;
+        border-radius: 20px;
+        right: -8%;
+    }
+    .menu-activo{
+        gap: 50px;
+    }
+
     .svg-ocultar {
 
         display: none;
@@ -3647,7 +3674,7 @@ section.contenedor-menu.meningitis-menu {
         cursor: pointer;
         background-color: transparent;
         color: white;
-        transition: background-color 0.3s;
+        
     }
 
     .buttons button {
@@ -4039,12 +4066,15 @@ section.contenedor-menu.meningitis-menu {
 
 @media only screen and (max-width:800px) {
     /* <!-- ------------------------------ menu ------------------------------> */
+    .menu-content{
+        height: 77vh;
+    }
     .contenedor-menu.hongos-menu{
         margin: 44px 0px 0px 0px;
     }
     .contenedor-menu {
         display: flex;
-        width: auto;
+        width: 100%;
         justify-content: space-between;
         align-items: baseline;
         margin: 44px 32px 0px 32px;
@@ -4106,16 +4136,28 @@ section.contenedor-menu.meningitis-menu {
     }
 
     .menu-activo li {
-        padding: 10px 20px;
+        padding: 15px 0px;
         border-bottom: 1px solid #ccc;
         gap: 20px;
     }
 
     .menu-activo li a {
-        color: black;
-        text-decoration: none;
-        display: block;
+        color: #939393;
+        font-family: Inter;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
     }
+    .menu-activo li.color-b a{
+        color: #4A4A4A;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
 
     .menu-activo li a:hover {
         background-color: #f0f0f0;
@@ -4145,11 +4187,11 @@ section.contenedor-menu.meningitis-menu {
         width: 100%;
     }
 
-    .menu-activo li:active {
+    /* .menu-activo li:active {
         padding: 10px 20px;
         border-bottom: 1px solid #7666EA;
         gap: 20px;
-    }
+    } */
 
     /* <!-- ------------------------------ FIN menu ------------------------------> */
 
@@ -4571,7 +4613,12 @@ section.contenedor-menu.meningitis-menu {
         border: 1px solid white;
             border-radius: 21px;
         }
-
+    section.contenedor-menu.logo-menu {
+    margin: 44px 0px 0px 0px;
+    }
+    section.contenedor-menu.logo-menu {
+        width: 100%;
+    }
 }
 
 
