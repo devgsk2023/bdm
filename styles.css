@@ -4481,6 +4481,31 @@ section.contenedor-menu.meningitis-menu {
     .banner-content.medium.parasitos h1 {
         font-size: 32px;
     }
+    header.meningitis-hongos-banner {
+        height: 35vh;
+    }
+    .texto-hongos, .imagen-hongos{
+        flex: auto;
+    }
+    .grupo-riesgo.parasitos-titulo h2{
+        color: #FFF;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .container-hongos {
+        flex-direction: column;
+        height: 100vh;
+    }
+    .hongos-grid.row-3.parasitos {
+        height: 248px;
+    }
+    .hongos-grid.row-3.parasitos p {
+        font-size: 18px;
+        text-align: center;
+    }
 
 }
 
