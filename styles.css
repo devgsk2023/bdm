@@ -40,7 +40,7 @@ html {
     max-width: 100%;
     background-color: white;
     padding: 50px;
-    height: 70vh;
+    height: 50vh;
 
 }
 
@@ -338,7 +338,7 @@ nav {
     /* gap: 10px; */
     justify-content: space-evenly;
     gap: 30px;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     padding: 10px 10px;
     border-radius: 31px;
     width: 644px;
@@ -1281,7 +1281,7 @@ footer a {
 
 .container-yelLow {
     background-color: #FFF59B;
-    padding: 5%;
+    padding: 8%;
     font-size: 32px;
     text-align: center;
     margin-top: 55px;
@@ -1490,6 +1490,10 @@ footer a {
 
 
 /* <!-- ---------- banner meningitis bacteriana -----------> */
+
+.banner-content.medium.hongos-banner h1{
+    margin:54px 0px 0px 0px ;
+}
 
 .banner-content.meningitis-header {
     width: 605px;
@@ -1736,7 +1740,7 @@ sup {
 .grupo-riesgo {
     background-color: #9794EB;
     color: white;
-    padding: 6% 5%;
+    padding:100px 80px;
 
 }
 
@@ -1792,7 +1796,7 @@ sup {
 
 .transmision {
     display: flex;
-    padding: 90px 100px;
+    padding: 100px 80px;
     gap: 45px;
 }
 
@@ -2608,8 +2612,8 @@ header.meningitis-hongos-banner {
 }
 
 .sup-medium {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 13px;
+    font-family: 'Inter';
+    font-size: 20px;
 }
 
 .texto-hongos,
@@ -2772,9 +2776,7 @@ header.meningitis-hongos-banner {
     margin-bottom: 40px;
 }
 
-.banner-content.medium.parasitos h1 {
-    font-size: 80px;
-}
+
 
 
 /* <!-- -----------------------------------------------------------  Comienzo css pagina meningitis por sintomas  -------------------------------------------> */
@@ -3011,6 +3013,9 @@ header.meningitis-hongos-banner {
     flex-direction: column;
     gap: 16px;
 }
+.banner-content.medium.parasitos h1 {
+    font-size: 80px;
+}
 
 @media only screen and (max-width:1275px) {
     /* .container-ruleta div{
@@ -3076,7 +3081,12 @@ section.contenedor-menu.meningitis-menu {
 /* <!-- ------------------------------ RESPONSIVE QUE ES LA MENINGITIS CSS ------------------------------> */
 
 @media only screen and (max-width:1300px) {
+    .image-container img{
+        width: 250px;
+    }
+    
     .svg-ocultar {
+
         display: none;
     }
 
@@ -3140,6 +3150,9 @@ section.contenedor-menu.meningitis-menu {
 
 
 @media (max-width:1255px) {
+    .image-container img{
+        width: 200px;
+    }
     .columna-sintomas.main {
         display: flex;
         grid-template-columns: repeat(7, 1fr);
@@ -3282,6 +3295,12 @@ section.contenedor-menu.meningitis-menu {
     .meningitis-meningococo h3 {
         font-size: 22px;
     }
+    .meningitis-meningococo h3 {
+        
+        border-bottom: 0px; 
+        
+    }
+
 
     .meningitis-meningococo p {
         font-size: 16px;
@@ -3536,7 +3555,7 @@ section.contenedor-menu.meningitis-menu {
 
     .color.box-celeste {
         height: 293px;
-        padding: 0% 5%;
+        padding: 8%;
         gap: 8px;
     }
 
@@ -3558,7 +3577,7 @@ section.contenedor-menu.meningitis-menu {
     }
 
     .footer-texto h2 {
-        font-size: 22px;
+        font-size: 21px;
     }
 
     .footer-texto p {
@@ -3571,8 +3590,8 @@ section.contenedor-menu.meningitis-menu {
     }
 
     .banner-content.medium h1 {
-        font-size: 32px;
-        margin: 100px 32px 0px 32px;
+        font-size: 30px;
+        margin: 54px 0px 0px 32px;
 
     }
     
@@ -3746,10 +3765,14 @@ section.contenedor-menu.meningitis-menu {
 
     .sintomas-meningistis h2 {
         font-size: 28px;
+        
     }
 
     .sintomas-meningistis p {
         font-size: 16px;
+    }
+    .sintomas-meningistis p {
+        margin: 16px 0px;
     }
 
     /* .banner-content.meningitis-header h1 {
@@ -3796,7 +3819,7 @@ section.contenedor-menu.meningitis-menu {
     }
 
     .icono-centrado {
-        grid-column: 100%;
+        grid-column: 1 / 4;
     }
 
     .columna-sintomas.footer.secuelas h3 {
@@ -4009,6 +4032,9 @@ section.contenedor-menu.meningitis-menu {
 
 @media only screen and (max-width:800px) {
     /* <!-- ------------------------------ menu ------------------------------> */
+    .contenedor-menu.hongos-menu{
+        margin: 44px 0px 0px 0px;
+    }
     .contenedor-menu {
         display: flex;
         width: auto;
@@ -4125,7 +4151,7 @@ section.contenedor-menu.meningitis-menu {
         background-size: cover;
         background-position: bottom;
         background-repeat: no-repeat;
-        height: 75vh;
+        height: 100vh;
         padding: 0px;
     }
 
@@ -4163,8 +4189,21 @@ section.contenedor-menu.meningitis-menu {
         gap: 30px;
     } */
     .columna-sintomas.main {
-        grid-template-columns: auto auto auto;
-
+        flex-direction: row;
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+        gap: 20px 10px;
+    }
+    .columna-sintomas h2{
+        margin-top: 35px 23px;
+    }
+    .columna-sintomas.footer h3{
+        font-size: 14px;
+    }
+    .texto-sintomas p {
+        padding: 10px;
     }
 
     .icono-centrado {
@@ -4418,6 +4457,10 @@ section.contenedor-menu.meningitis-menu {
     .sintomas.secuelas-main{
         gap: 0px;
     }
+     .sintomas{
+        display: flex;
+        flex-direction: column;
+    }
     .custom-button.prevencion-buttom{
         font-size: 20px;
     }
@@ -4478,6 +4521,20 @@ section.contenedor-menu.meningitis-menu {
         font-weight: 700;
         line-height: normal;
     }
+    .custom-button a {
+        color: white;
+        text-decoration: none;
+        font-family: inter;
+        font-size: 16px;
+    }
+    .custom-button.derecha {
+        margin: 0px;
+        margin-bottom: 40px;
+        font-family: 'Inter';
+    }
+    .banner-content.medium.parasitos h1 {
+        font-size: 32px;
+    }
 
 }
 
@@ -4510,6 +4567,7 @@ section.contenedor-menu.meningitis-menu {
     .contenedor-ruleta-izquierda {
         height: 100%;
         max-height: 500px;
+        width: 70%;
     }
 
     .one p {
@@ -4576,6 +4634,9 @@ section.contenedor-menu.meningitis-menu {
 
 
 @media only screen and (max-width : 1274px) {
+    .image-container img{
+        width: 200px;
+    }
     .meningitis-meningococo p {
         font-size: 18px;
 
