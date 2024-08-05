@@ -24,6 +24,7 @@ html {
     transform: translateY(-100%);
     animation: slideIn 0.5s forwards, negroBlock 0.5s forwards;
 }
+
 .menu-popup.hidden {
     animation: slideOut 0.5s forwards;
 }
@@ -89,6 +90,15 @@ html {
     color: #000;
 }
 
+.menu-activo li.color-b a {
+    color: #4A4A4A;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
 ul.submenu {
     flex-direction: column;
 }
@@ -131,6 +141,12 @@ ul.submenu {
 .menu-activo>li a {
     color: #939393;
     text-decoration: none;
+    color: #939393;
+    font-family: Inter;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .menu-activo>li a:hover {
@@ -143,7 +159,7 @@ ul.submenu {
 }
 
 .progress-bar {
-    margin: 30px 0px 30px 0px;
+    margin: 30px 0px 33px 0px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -184,6 +200,7 @@ ul.submenu {
         transform: translateY(0);
     }
 }
+
 @keyframes slideOut {
     from {
         transform: translateY(0);
@@ -193,19 +210,24 @@ ul.submenu {
         transform: translateY(-100%);
     }
 }
+
 @keyframes negroBlock {
     0% {
         background-color: rgba(0, 0, 0, 0);
     }
+
     25% {
         background-color: rgba(0, 0, 0, 0.0);
     }
+
     50% {
         background-color: rgba(0, 0, 0, 0.0);
     }
+
     75% {
         background-color: rgba(0, 0, 0, 0.6);
     }
+
     100% {
         background-color: rgba(0, 0, 0, 0.8);
     }
@@ -355,7 +377,7 @@ nav {
     cursor: pointer;
     background-color: transparent;
     color: white;
-    transition: background-color 0.3s;
+
 }
 
 
@@ -389,7 +411,7 @@ nav {
     }
 
     .banner-content {
-        padding: 0 10px;
+        padding: 0px;
     }
 
     h1 {
@@ -1047,6 +1069,7 @@ footer a {
     flex-direction: column;
 
 }
+
 .columna-sintomas.top {
     align-items: center;
 }
@@ -1058,6 +1081,7 @@ footer a {
     align-items: start;
     gap: 24px;
 }
+
 .columna-sintomas h2 {
     color: #F9F9F9;
     margin: 0px;
@@ -1495,8 +1519,8 @@ footer a {
 
 /* <!-- ---------- banner meningitis bacteriana -----------> */
 
-.banner-content.medium.hongos-banner h1{
-    margin:54px 0px 0px 0px ;
+.banner-content.medium.hongos-banner h1 {
+    margin: 54px 0px 0px 0px;
 }
 
 .banner-content.meningitis-header {
@@ -1561,7 +1585,7 @@ footer a {
 }
 
 .texto p {
-    
+
     font-size: 20px;
 }
 
@@ -1654,12 +1678,15 @@ sup {
     font-size: 68px;
     margin: 0px
 }
-.columna-1-sintomas.top{
+
+.columna-1-sintomas.top {
     margin-top: 40px;
 }
-.columna-1-sintomas.bot{
+
+.columna-1-sintomas.bot {
     margin-top: 24px;
 }
+
 .columna-1-sintomas {
     display: flex;
     background-color: #7666EA;
@@ -1682,14 +1709,16 @@ sup {
     list-style-type: none;
     padding-left: 0;
     margin: 0px;
-    row-gap: 32px; /* Espacio entre las filas */
-    column-gap: 10px; /* Espacio entre las columnas */
+    row-gap: 32px;
+    /* Espacio entre las filas */
+    column-gap: 10px;
+    /* Espacio entre las columnas */
 }
 
 
 .columna-1-sintomas li {
-    
-   
+
+
     font-size: 20px;
 }
 
@@ -1745,7 +1774,7 @@ sup {
 .grupo-riesgo {
     background-color: #9794EB;
     color: white;
-    padding:100px 80px;
+    padding: 100px 80px;
 
 }
 
@@ -1841,7 +1870,7 @@ sup {
 
 .transmision-hijo p {
     font-size: 20px;
-    
+
 }
 
 .transmision-texto p {
@@ -1902,7 +1931,7 @@ sup {
 
 .sintomas.secuelas-main {
     background-color: transparent;
-    
+
     border-radius: 30px;
     margin: 0px;
     gap: 2;
@@ -1910,6 +1939,7 @@ sup {
     flex-direction: column;
     gap: 0px;
 }
+
 .columna-sintomas.main.secuelas {
     margin-top: 40px;
     margin-bottom: 60px;
@@ -1953,7 +1983,8 @@ sup {
     background-size: cover;
     background-repeat: no-repeat;
     width: 50%;
-    box-sizing: border-box; /* Ajusta el tamaño para incluir el padding */
+    box-sizing: border-box;
+    /* Ajusta el tamaño para incluir el padding */
 }
 
 .imagenn.prevencion-meningococo img {
@@ -1985,8 +2016,9 @@ sup {
 
 .texto-prevencion {
     width: 50%;
-    box-sizing: border-box; /* Ajusta el tamaño para incluir el padding */
-    
+    box-sizing: border-box;
+    /* Ajusta el tamaño para incluir el padding */
+
 }
 
 /* ---------- fin prevencion - meningococo ---------- */
@@ -2038,26 +2070,29 @@ sup {
     font-size: 20px;
 
 }
-.vacunacion-container-col.main-izquierda h3,.main-derecha h3{
+
+.vacunacion-container-col.main-izquierda h3,
+.main-derecha h3 {
     margin: 0px;
     margin-bottom: 16px;
     color: #FFF;
-    
+
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
 
-.vacunacion-container-col.main-izquierda p,.main-derecha p{
+.vacunacion-container-col.main-izquierda p,
+.main-derecha p {
     margin: 0px;
     color: #FFF;
-    
+
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    
+
 }
 
 
@@ -2164,6 +2199,7 @@ sup {
 
 .banner-content.xl.botones {
     width: 880px;
+    margin-top: 71px;
 }
 
 .banner-content.xl.botones h1 {
@@ -2620,6 +2656,7 @@ header.meningitis-hongos-banner {
     font-family: 'Inter';
     font-size: 14px;
 }
+
 .hongos-banner .sup-medium {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -2651,6 +2688,7 @@ header.meningitis-hongos-banner {
     line-height: normal;
     margin: 0px;
 }
+
 @media (min-width: 1200px) {
     .texto-hongos p {
         padding: 0 10%;
@@ -2661,6 +2699,7 @@ header.meningitis-hongos-banner {
         line-height: normal;
         margin: 0px;
     }
+
     /* .container-hongos {
         height: 535px;
         
@@ -3015,11 +3054,13 @@ header.meningitis-hongos-banner {
     cursor: none;
 
 }
+
 .vacunacion-container-col.derecha {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
+
 .banner-content.medium.parasitos h1 {
     font-size: 80px;
 }
@@ -3076,6 +3117,7 @@ footer img {
 section.contenedor-menu.tipos-menu {
     margin: 0px;
 }
+
 section.contenedor-menu.meningitis-menu {
     margin: 0px;
 }
@@ -3088,10 +3130,24 @@ section.contenedor-menu.meningitis-menu {
 /* <!-- ------------------------------ RESPONSIVE QUE ES LA MENINGITIS CSS ------------------------------> */
 
 @media only screen and (max-width:1300px) {
-    .image-container img{
+    .image-container img {
         width: 250px;
     }
-    
+
+    .image-container {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        display: none;
+        z-index: 5;
+        border-radius: 20px;
+        right: -8%;
+    }
+
+    .menu-activo {
+        gap: 50px;
+    }
+
     .svg-ocultar {
 
         display: none;
@@ -3125,7 +3181,7 @@ section.contenedor-menu.meningitis-menu {
         justify-content: left;
         align-items: center;
         text-align: left;
-        color: white;     
+        color: white;
     }
 
     header {
@@ -3142,10 +3198,11 @@ section.contenedor-menu.meningitis-menu {
 
 }
 
-@media (max-width:1280px){
-    .serogrupos h4{
+@media (max-width:1280px) {
+    .serogrupos h4 {
         font-size: 33px;
     }
+
     .custom-button a {
         color: white;
         text-decoration: none;
@@ -3157,16 +3214,17 @@ section.contenedor-menu.meningitis-menu {
 
 
 @media (max-width:1255px) {
-    .image-container img{
+    .image-container img {
         width: 200px;
     }
+
     .columna-sintomas.main {
         display: flex;
         grid-template-columns: repeat(7, 1fr);
         /* justify-items: center; */
         /* align-items: center; */
         justify-content: space-between;
-        
+
     }
 
     .serogrupos-letras {
@@ -3178,12 +3236,12 @@ section.contenedor-menu.meningitis-menu {
         /* Centrar verticalmente */
     }
 
-    
+
 
 
 
     /* RESPONSIVE CSS MENINGITIS POR MENINGOCOCO */
-    
+
 
     /* br {
         display: none;
@@ -3302,10 +3360,11 @@ section.contenedor-menu.meningitis-menu {
     .meningitis-meningococo h3 {
         font-size: 22px;
     }
+
     .meningitis-meningococo h3 {
-        
-        border-bottom: 0px; 
-        
+
+        border-bottom: 0px;
+
     }
 
 
@@ -3601,7 +3660,7 @@ section.contenedor-menu.meningitis-menu {
         margin: 54px 0px 0px 32px;
 
     }
-    
+
 
     .buttons {
         display: flex;
@@ -3647,7 +3706,7 @@ section.contenedor-menu.meningitis-menu {
         cursor: pointer;
         background-color: transparent;
         color: white;
-        transition: background-color 0.3s;
+
     }
 
     .buttons button {
@@ -3660,7 +3719,8 @@ section.contenedor-menu.meningitis-menu {
         border-radius: 21px;
         color: #7666EA;
     }
-/* 
+
+    /* 
     .banner-content {
         display: flex;
         flex-direction: column;
@@ -3772,12 +3832,13 @@ section.contenedor-menu.meningitis-menu {
 
     .sintomas-meningistis h2 {
         font-size: 28px;
-        
+
     }
 
     .sintomas-meningistis p {
         font-size: 16px;
     }
+
     .sintomas-meningistis p {
         margin: 16px 0px;
     }
@@ -4005,7 +4066,7 @@ section.contenedor-menu.meningitis-menu {
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
         flex-direction: column;
-        
+
     }
 
     .vacunas-tabs.tab-ul {
@@ -4038,20 +4099,25 @@ section.contenedor-menu.meningitis-menu {
 
 
 @media only screen and (max-width:800px) {
+
     /* <!-- ------------------------------ menu ------------------------------> */
-    .contenedor-menu.hongos-menu{
+    .menu-content {
+        height: 77vh;
+    }
+
+    .contenedor-menu.hongos-menu {
         margin: 44px 0px 0px 0px;
     }
+
     .contenedor-menu {
         display: flex;
-        width: auto;
+        width: 100%;
         justify-content: space-between;
         align-items: baseline;
         margin: 44px 32px 0px 32px;
     }
-    #menu__padding_diff {
-        
-    }
+
+    #menu__padding_diff {}
 
 
     .banner-content.botones {
@@ -4109,16 +4175,29 @@ section.contenedor-menu.meningitis-menu {
     }
 
     .menu-activo li {
-        padding: 10px 20px;
+        padding: 15px 0px;
         border-bottom: 1px solid #ccc;
         gap: 20px;
     }
 
     .menu-activo li a {
-        color: black;
-        text-decoration: none;
-        display: block;
+        color: #939393;
+        font-family: Inter;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
     }
+
+    .menu-activo li.color-b a {
+        color: #4A4A4A;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
 
     .menu-activo li a:hover {
         background-color: #f0f0f0;
@@ -4148,11 +4227,11 @@ section.contenedor-menu.meningitis-menu {
         width: 100%;
     }
 
-    .menu-activo li:active {
+    /* .menu-activo li:active {
         padding: 10px 20px;
         border-bottom: 1px solid #7666EA;
         gap: 20px;
-    }
+    } */
 
     /* <!-- ------------------------------ FIN menu ------------------------------> */
 
@@ -4207,12 +4286,15 @@ section.contenedor-menu.meningitis-menu {
         align-items: start;
         gap: 20px 10px;
     }
-    .columna-sintomas h2{
+
+    .columna-sintomas h2 {
         margin-top: 35px 23px;
     }
-    .columna-sintomas.footer h3{
+
+    .columna-sintomas.footer h3 {
         font-size: 14px;
     }
+
     .texto-sintomas p {
         padding: 10px;
     }
@@ -4232,41 +4314,48 @@ section.contenedor-menu.meningitis-menu {
 
 
     /* Meningitis bacteriana  */
-    
+
     .banner-content.meningitis-header {
         text-align: left;
         padding: 0px;
         margin-top: 100px;
     }
-    .columna-sintomas.main{
+
+    .columna-sintomas.main {
         flex-direction: column;
     }
-    section.banner{
+
+    section.banner {
         margin: 0px;
     }
-    header.meningitis{
+
+    header.meningitis {
         display: flex;
-        
+
         align-items: center;
         padding: 44px 32px;
-        
+
         height: 80vh;
     }
-    .banner-content.meningitis-header h1{
+
+    .banner-content.meningitis-header h1 {
         font-size: 32px;
     }
-    .strong{
+
+    .strong {
         color: #FFF;
-    
+
         font-size: 16px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
     }
-    .texto{
+
+    .texto {
         align-items: start;
     }
-    .texto p{
+
+    .texto p {
         padding: 0px;
         color: #FFF;
         font-size: 16px;
@@ -4274,58 +4363,72 @@ section.contenedor-menu.meningitis-menu {
         font-weight: 400;
         line-height: normal;
     }
-    .texto-contenedor{
+
+    .texto-contenedor {
         width: auto;
     }
-    .texto-contenedor li{
+
+    .texto-contenedor li {
         color: #FFF;
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
     }
-    .texto-contenedor h3{
+
+    .texto-contenedor h3 {
         color: #FFF;
         font-size: 24px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
     }
+
     .que-es {
         flex-direction: column;
     }
+
     .imagen {
         width: 100%;
     }
-    .imagen img{
+
+    .imagen img {
         height: 500px;
     }
+
     .sintomas-meningistis {
         margin: 64px 32px;
     }
-    .columna-1-sintomas li{
+
+    .columna-1-sintomas li {
         font-size: 16px;
     }
+
     .columna-1-sintomas.top {
         margin-top: 32px;
     }
-    .columna-1-sintomas ul{
+
+    .columna-1-sintomas ul {
         row-gap: 16px;
     }
-    .columna-1-sintomas{
+
+    .columna-1-sintomas {
         padding: 32px;
         gap: 24px;
     }
-    .custom-bullets li{
+
+    .custom-bullets li {
         margin: 0px;
     }
+
     .grupo-riesgo {
         background-color: #9794EB;
         color: white;
         padding: 80px 32px;
         width: auto;
     }
-    .grupo-riesgo p{
+
+    .grupo-riesgo p {
         color: #FFF;
         text-align: left;
         font-size: 16px;
@@ -4333,92 +4436,114 @@ section.contenedor-menu.meningitis-menu {
         font-weight: 400;
         line-height: normal;
     }
-    .grupo-riesgo-hijo p{
+
+    .grupo-riesgo-hijo p {
         font-size: 16px;
         text-align: center;
     }
-    .contenedor-por-tres{
+
+    .contenedor-por-tres {
         width: auto;
         padding: 50px 32px;
         height: 188px;
 
     }
-    .transmision{
+
+    .transmision {
         padding: 80px 32px;
         gap: 40px;
     }
-    .transmision-icono img{
+
+    .transmision-icono img {
         width: 53px;
         height: 61px;
     }
-    .transmision-icono{
+
+    .transmision-icono {
         gap: 14px;
     }
+
     .meningitis-meningococo {
         padding: 80px 32px;
     }
-    .columna1.Prevención-es-vacunación{
+
+    .columna1.Prevención-es-vacunación {
         padding: 32px 26px;
     }
-    .columna1.Prevención-es-vacunación h4{
+
+    .columna1.Prevención-es-vacunación h4 {
         margin: 0px;
         padding: 0px;
         text-align: left;
         margin-bottom: 21px;
     }
-    .columna1.Prevención-es-vacunación p{
+
+    .columna1.Prevención-es-vacunación p {
         padding: 0px;
     }
-    .custom-button{
+
+    .custom-button {
         width: 100%;
         padding: 0px;
         margin: 0px;
     }
-    .legend{
+
+    .legend {
         gap: 0px;
         gap: 24px;
     }
-    .legend-container{
+
+    .legend-container {
         margin: 0px;
         gap: 24px;
     }
-    .custom-button.derecha{
+
+    .custom-button.derecha {
         margin: 0px;
         margin-bottom: 40px;
     }
-     .meningitis {
+
+    .meningitis {
         background-image: url(/imagenes/meningitis-mobile.png);
         background-size: cover;
         background-position: center;
     }
-    .meningitis-meningococo h3{
+
+    .meningitis-meningococo h3 {
         font-size: 23px;
         margin: 0px;
         margin-bottom: 32px;
     }
-    .meningitis-meningococo p{
+
+    .meningitis-meningococo p {
         padding: 58px 27px;
         margin: 0px;
     }
-    .no-background p{
+
+    .no-background p {
         padding: 0px;
         margin: 24px 0px 40px 0px;
     }
-    .serogrupos h4{
+
+    .serogrupos h4 {
         text-align: center;
         margin-bottom: 16px;
     }
-    .columna1 p{
+
+    .columna1 p {
         padding: 0px;
     }
+
     button.custom-button {
-        
-        margin-top:24px
+
+        margin-top: 24px
     }
-    .datos{
+
+    .datos {
         margin: 0px;
     }
-    .datos p{
+
+    .datos p {
         padding: 0px;
         color: #FFF;
         font-size: 14px;
@@ -4426,24 +4551,29 @@ section.contenedor-menu.meningitis-menu {
         font-weight: 400;
         line-height: normal;
     }
+
     p.legend-p {
         padding: 0px;
         margin-top: 10px;
     }
-    .container-secuelas{
+
+    .container-secuelas {
         padding: 80px 32px;
     }
+
     .columna-sintomas.main.secuelas {
         display: grid;
         grid-template-columns: auto auto;
         gap: 24px 70px;
     }
-    .columna-sintomas.footer.secuelas{
+
+    .columna-sintomas.footer.secuelas {
         height: auto;
         padding: 32px 24px;
         margin-top: 64px;
     }
-    .columna-sintomas.footer.secuelas h3{
+
+    .columna-sintomas.footer.secuelas h3 {
         color: #FFF;
         font-family: Inter;
         font-size: 28px;
@@ -4452,7 +4582,8 @@ section.contenedor-menu.meningitis-menu {
         line-height: normal;
         text-align: left;
     }
-    .icono.secuelas p{
+
+    .icono.secuelas p {
         color: #2F2F2F;
         text-align: center;
         font-family: Inter;
@@ -4461,28 +4592,35 @@ section.contenedor-menu.meningitis-menu {
         font-weight: 400;
         line-height: normal;
     }
-    .sintomas.secuelas-main{
+
+    .sintomas.secuelas-main {
         padding: 0px;
         margin: 0px;
     }
-    .sintomas.secuelas-main{
+
+    .sintomas.secuelas-main {
         gap: 0px;
     }
-     .sintomas{
+
+    .sintomas {
         display: flex;
         flex-direction: column;
     }
-    .custom-button.prevencion-buttom{
+
+    .custom-button.prevencion-buttom {
         font-size: 20px;
     }
-    .imagenn.prevencion-meningococo{
+
+    .imagenn.prevencion-meningococo {
         width: 100%;
         height: 342px;
     }
-    .vacunacion-container{
+
+    .vacunacion-container {
         padding: 100px 32px;
     }
-    .vacunacion-container-col.izquierda h2{
+
+    .vacunacion-container-col.izquierda h2 {
         color: #9794EB;
         font-size: 28px;
         font-style: normal;
@@ -4490,69 +4628,87 @@ section.contenedor-menu.meningitis-menu {
         line-height: normal;
         margin-bottom: 32px;
     }
-    .vacunacion-container-hijo.top{
+
+    .vacunacion-container-hijo.top {
         gap: 0px;
     }
-    .vacunacion-container-col.derecha{
+
+    .vacunacion-container-col.derecha {
         margin-bottom: 80px;
     }
-    .vacunacion-container-col.main-izquierda{
+
+    .vacunacion-container-col.main-izquierda {
         width: auto;
-        
+
     }
-    .vacunacion-container-col.main-derecha{
+
+    .vacunacion-container-col.main-derecha {
         width: auto;
-        
+
     }
-    .vacunacion-container-col.main-izquierda, .vacunacion-container-col.main-derecha{ 
+
+    .vacunacion-container-col.main-izquierda,
+    .vacunacion-container-col.main-derecha {
         display: flex;
         flex-direction: column;
         justify-content: start;
         padding: 32px 32px;
         height: 200px;
     }
+
     ul.custom-bullets.footer {
         display: flex;
         flex-direction: column;
         gap: 16px;
     }
-    .que-es.consulta{
+
+    .que-es.consulta {
         flex-direction: column-reverse;
     }
-    .imagen.consulta{
+
+    .imagen.consulta {
         height: 50vh;
     }
-    .texto.turquesa{
+
+    .texto.turquesa {
         height: 300px;
     }
-    .texto.turquesa h2{
+
+    .texto.turquesa h2 {
         color: #FFF;
         font-size: 28px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
     }
+
     .custom-button a {
         color: white;
         text-decoration: none;
         font-family: inter;
         font-size: 16px;
     }
+
     .custom-button.derecha {
         margin: 0px;
         margin-bottom: 40px;
         font-family: 'Inter';
     }
+
     .banner-content.medium.parasitos h1 {
         font-size: 32px;
     }
+
     header.meningitis-hongos-banner {
         height: 45vh;
     }
-    .texto-hongos, .imagen-hongos{
+
+    .texto-hongos,
+    .imagen-hongos {
         flex: auto;
     }
-    .grupo-riesgo.parasitos-titulo h2{
+
+    .grupo-riesgo.parasitos-titulo h2 {
         color: #FFF;
         font-family: Inter;
         font-size: 24px;
@@ -4560,34 +4716,50 @@ section.contenedor-menu.meningitis-menu {
         font-weight: 600;
         line-height: normal;
     }
+
     .container-hongos {
         flex-direction: column;
         height: 100vh;
     }
+
     .hongos-grid.row-3.parasitos {
         height: 248px;
     }
+
     .hongos-grid.row-3.parasitos p {
         font-size: 18px;
         text-align: center;
     }
-    .buttons a{
+
+    .buttons a {
         border: 1px solid white;
-            border-radius: 21px;
-        }
-    #descargar{
+        border-radius: 21px;
+    }
+
+    #descargar {
         display: flex !important;
         margin: auto;
     }
+
     .descargar {
         width: 100%;
         margin: 0 auto;
     }
+
     #vacunacion__header {
         margin: 0;
     }
+
     #vacunacion__div__title {
         padding: 70px 0 0 0;
+    }
+
+    section.contenedor-menu.logo-menu {
+        margin: 44px 0px 0px 0px;
+    }
+
+    section.contenedor-menu.logo-menu {
+        width: 100%;
     }
 }
 
@@ -4687,9 +4859,10 @@ section.contenedor-menu.meningitis-menu {
 
 
 @media only screen and (max-width : 1274px) {
-    .image-container img{
+    .image-container img {
         width: 200px;
     }
+
     .meningitis-meningococo p {
         font-size: 18px;
 
