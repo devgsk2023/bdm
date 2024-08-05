@@ -419,9 +419,9 @@ nav {
     }
 
     .buttons {}
-    #texto__banner {
+    /* #texto__banner {
         margin-top: 50px;
-    }
+    } */
     #meningitis-virus__banner {
         height: 45vh !important;
     }
@@ -4823,7 +4823,7 @@ img#responsive-img{
     section.contenedor-menu.meningitis-banner-logo {
     width: auto;
     margin: 0px;
-    margin-top: 42px;
+    margin-top: 44px;
     align-items: center;
 }
 }
