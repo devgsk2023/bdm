@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mostrar solo el primer bloque como predeterminado
     if (bloques.length > 0) {
         bloques[0].classList.add('activo');
+        items[4].classList.add('active');
     }
 
     items.forEach((item) => {
