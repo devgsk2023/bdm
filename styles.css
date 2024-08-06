@@ -509,6 +509,16 @@ nav {
     background-color: white;
     color: #7666EA;
 }
+.contenedor button.btn{
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+    border-radius: 100%;
+    padding: 5px 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    width: auto;
+}
 
 .container-causas {
 
