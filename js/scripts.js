@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     items.forEach((item) => {
-        item.addEventListener('click', () => {
+        item.addEventListener('mouseover', () => {
             items.forEach(i => i.classList.remove('active'));
 
             // Añadir la clase 'active' al elemento clickeado
