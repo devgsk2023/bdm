@@ -339,7 +339,7 @@ nav {
 
 .banner-content.medium h1 {
     color: #FFF;
-    font-size: 65px;
+    font-size: 4.063rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -478,8 +478,36 @@ nav {
 
 /* <!-- ---------- CAUSA -----------> */
 
+.meningitis-bacteriana-contenedor{
+    display: flex;
+    flex-direction: column;
+}
+
+.ocultar {
+    display: none;
+}
 
 
+.titulo {
+    display: flex;
+    justify-content: space-between;
+}
+.titulo .btn{
+
+}
+.btn {
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+    border-radius: 100%;
+    padding: 5px 10px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: white;
+    color: #7666EA;
+}
 
 .container-causas {
 
@@ -511,17 +539,68 @@ nav {
 .meningitis-bacteriana {
     padding-left: 4%;
     padding-right: 8%;
-    background-image: url(/imagenes/image\ 12.png);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/imagenes/desplegable-bacterias.png) lightgray 50% / cover no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    border-radius: 10px 10px 0px 0px;
-
+    border-radius: 24px;
     height: 330px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: start;
+    z-index: 99;
 }
+
+.meningitis-bacteriana-contenedor.mostrar-contenido .meningitis-bacteriana {
+    border-radius: 24px 24px 0 0;
+}
+.meningitis-bacteriana {
+    border-radius: 24px;
+    transition: border-radius 0.3s ease;
+}
+
+.meningitis-bacteriana-contenedor.mostrar-contenido .meningitis-bacteriana {
+    border-radius: 24px 24px 0 0;
+}
+
+.ocultar {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.mostrar-contenido .ocultar {
+    max-height: 2000px; /* Ajusta según el contenido */
+    opacity: 1;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+/* Efecto de deslizamiento */
+
+.mostrar-contenido#bacterias-contenido{
+    animation: bajar 2s forwards;
+}
+
+
+@keyframes bajar {
+    from {
+        transform: translateY(-13%);
+    }
+    to {
+        transform: translateY(100);
+    }
+    
+}
+
+
+.contenedor-titulo-boton {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
 
 .meningitis-bacteriana h2 {
     color: white;
@@ -543,7 +622,7 @@ nav {
 
 }
 
-section.meningitis-meningococo {
+.meningitis-meningococo {
     align-items: center;
     justify-content: center;
     display: flex;
