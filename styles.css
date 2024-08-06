@@ -568,14 +568,21 @@ nav {
 .ocultar {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
+    transition: max-height 0.5s ease, opacity 1s ease;
     opacity: 0;
 }
 
 .mostrar-contenido .ocultar {
     max-height: 2000px; /* Ajusta según el contenido */
     opacity: 1;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
+    transition: max-height 0.5s ease, opacity 4s ease;
+    
+}
+
+.section-virus-hongos-parasitos.showContenido {
+    transition:all 3s ease;
+    overflow: hidden;
+    animation: subirContenedores 3s forwards;
 }
 /* Efecto de deslizamiento */
 
@@ -583,15 +590,39 @@ nav {
     animation: bajar 2s forwards;
 }
 
+.subirDesplegable {
+    animation: subir 2s forwards;
+}
 
 @keyframes bajar {
     from {
-        transform: translateY(-13%);
+        opacity: 0;
+        transform: translateY(-10%);
     }
     to {
+        opacity: 1;
         transform: translateY(100);
     }
-    
+}
+@keyframes subir {
+    from {
+        opacity: 1;
+        transform: translateY(100);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+}
+@keyframes subirContenedores {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
