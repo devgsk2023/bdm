@@ -484,9 +484,9 @@ nav {
     flex-direction: column;
 }
 
-.ocultar {
+/* .ocultar {
     display: none;
-}
+} */
 
 
 .titulo {
@@ -574,20 +574,62 @@ nav {
 .meningitis-bacteriana-contenedor.mostrar-contenido .meningitis-bacteriana {
     border-radius: 24px 24px 0 0;
 }
+.accordion-body {
+    padding: 0px !important;
+}
 
-.ocultar {
+
+
+button.accordion-button{
+    padding: 60px 46px;
+    
+}
+.accordion-button:focus {
+    z-index: 3;
+    outline: 0;
+    box-shadow: none;
+}
+
+.accordion-button.bacterias{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/imagenes/desplegable-bacterias.png) lightgray 50% / cover no-repeat;
+}
+button.accordion-button h2{
+color: #FFF !important;
+
+font-size: 32px !important;
+font-style: normal !important;
+font-weight: 800 !important;
+line-height: normal !important;
+
+}
+button.accordion-button p{
+    color: #FFF;
+
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+/* .accordion-button::after{
+    color: white !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus-circle' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16'/%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4'/%3E%3C/svg%3E");
+    
+} */
+
+/* .ocultar {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease, opacity 1s ease;
     opacity: 0;
-}
-
+} */
+/* 
 .mostrar-contenido .ocultar {
-    max-height: 2000px; /* Ajusta según el contenido */
+    max-height: 2000px; 
     opacity: 1;
     transition: max-height 0.5s ease, opacity 4s ease;
     
-}
+} */
 
 .section-virus-hongos-parasitos.showContenido {
     transition:all 3s ease;
@@ -5349,6 +5391,14 @@ img#responsive-img {
     font-size: 32px;
 }
 
+
+
+.acordeon.header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
 /* @media (min-width: 768px) {
     .container--map-main {
         display: flex;
@@ -5379,3 +5429,5 @@ img#responsive-img {
         transform: rotate(187.9deg);
     }
 }
+
+
