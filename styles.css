@@ -42,7 +42,9 @@ html {
     background-color: white;
     padding: 50px;
     height: 65vh;
-
+}
+.menu-content.index {
+    height: 45.2rem;
 }
 
 .menu-activo {
@@ -68,13 +70,14 @@ html {
     position: relative;
 }
 
+
 .submenu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     gap: 10px;
-    padding: 50px 0px 0px 0px;
+    padding: 1.1rem 0px 0px 0px;
     z-index: 10;
     list-style: none;
 }
@@ -260,6 +263,7 @@ header {
     background-image: url(/imagenes/Banner-BDM\ 1.png);
     background-size: cover;
     background-position: center;
+    height: 60rem;
 }
 
 .logo {
@@ -309,6 +313,9 @@ nav {
     color: white;
 
     margin-top: 110px;
+}
+#index__banner {
+    margin-top: 11rem;
 }
 #vacunacion__banner__150 {
     margin-top: 3rem;
@@ -696,6 +703,15 @@ button.accordion-button p{
 }
 .accordion-item:last-of-type>.accordion-header .accordion-button.collapsed{
     padding: 6% 5%;
+    padding: 5%;
+    border-radius: 24px;
+}
+.accordion-item:last-of-type > .accordion-header .accordion-button.collapsing{
+    padding: 5%;
+    border-radius: 0px;
+}
+.accordion-item:first-of-type>.accordion-header .accordion-button {
+    border-radius: 24px 24px 0px 0px;
 }
 button.accordion-button.collapsed.virus-acordeon-fondo {
     padding: 6% 5% !important;
@@ -3358,7 +3374,7 @@ header#mid {
 
 }
 #sintomas__header {
-    height: 78.3vh;
+    height: 45.4rem;
 }
 
 @media (min-width: 1058px) and (max-width: 1110px) {
@@ -3671,11 +3687,6 @@ img#responsive-img {
         font-size: 22px;
     }
 
-    .meningitis-meningococo h3 {
-
-        border-bottom: 0px;
-
-    }
 
 
     .meningitis-meningococo p {
@@ -4429,6 +4440,7 @@ img#responsive-img {
     header#mid {
         height: 45vh;
     }
+    
 
     /* <!-- ------------------------------ menu ------------------------------> */
     .menu-content {
@@ -4574,7 +4586,9 @@ img#responsive-img {
         height: 100vh;
         padding: 0px;
     }
-
+    #index__banner {
+        margin-top: 3.3rem;
+    }
     /* <!-- ------------------------------ FIN RESPONSIVE QUE ES LA MENINGITIS CSS ------------------------------> */
 
     /* <!-- ------------------------------  RESPONSIVE meningococo  ------------------------------> */
@@ -4960,6 +4974,12 @@ img#responsive-img {
         height: 342px;
     }
 
+    button.accordion-button  p {
+        font-size: 12px;
+    }
+    button.accordion-button sup {
+        font-size: 10px;
+    }
     .vacunacion-container {
         padding: 100px 32px;
     }
