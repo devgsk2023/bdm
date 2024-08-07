@@ -601,7 +601,7 @@ button.accordion-button.virus-acordeon-fondo {
     border: 0px !important;
 }
 .accordion-body.virus-acordeon-no-padding {
-    padding: 0px 5%;
+    padding: 0px 3rem;
     color: white;
     color: #FFF;
    
@@ -714,7 +714,7 @@ button.accordion-button p{
     border-radius: 24px 24px 0px 0px;
 }
 button.accordion-button.collapsed.virus-acordeon-fondo {
-    padding: 6% 5% !important;
+    padding: 6rem 3rem !important;
 }
 
 
