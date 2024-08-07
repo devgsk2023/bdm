@@ -121,7 +121,8 @@ ul.submenu {
 
 .image-container img {
     width: 400px;
-    height: auto;
+    height: 400px;
+    object-fit: cover;
     border-radius: 20px;
 }
 
@@ -1661,7 +1662,7 @@ footer a {
 }
 
 .tab-content.open {
-    max-height: 1000px;
+    max-height: 66.5rem;
     /* Ajusta esto según la altura máxima de tu contenido */
     opacity: 1;
 }
@@ -3336,7 +3337,8 @@ img#responsive-img {
 @media only screen and (max-width:1300px) {
     .image-container img {
         width: 250px;
-        height: auto;
+        height: 250px;
+        object-fit: cover;
         border-radius: 20px;
     }
 
@@ -3419,6 +3421,8 @@ img#responsive-img {
 @media (max-width:1255px) {
     .image-container img {
         width: 200px;
+        height: 200px;
+        object-fit: cover;
     }
 
     .columna-sintomas.main {
@@ -5160,6 +5164,8 @@ img#responsive-img {
 @media only screen and (max-width : 1274px) {
     .image-container img {
         width: 300px;
+        width: 300px;
+        object-fit: cover;
     }
 
     .image-container {
@@ -5366,8 +5372,9 @@ img#responsive-img {
     }
 
     .image-container img {
-        width: 300px;
-        height: auto;
+        width: 210px;
+        height: 210px;
+        object-fit: cover;
         border-radius: 20px;
     }
 
