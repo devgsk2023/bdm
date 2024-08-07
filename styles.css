@@ -574,10 +574,34 @@ nav {
 .meningitis-bacteriana-contenedor.mostrar-contenido .meningitis-bacteriana {
     border-radius: 24px 24px 0 0;
 }
-.accordion-body {
+.accordion-body.bacterias-acordeon{
     padding: 0px !important;
 }
-
+button.accordion-button.virus-acordeon-fondo {
+    margin-top: 30px;
+    color: #FFF; 
+    font-size: 2rem;
+    font-weight: 800;
+    
+}
+button.accordion-button.virus-acordeon-fondo {
+    
+    border: 0px !important;
+}
+.accordion-body.virus-acordeon-no-padding {
+    padding: 0px 5%;
+    color: white;
+    color: #FFF;
+   
+    font-size: 20px;
+    
+    font-weight: 500;
+    
+}
+.accordion {
+    --bs-accordion-border-color: none;
+    --bs-accordion-border-radius: 1.5rem;
+}
 
 
 button.accordion-button{
@@ -591,8 +615,19 @@ button.accordion-button{
 }
 
 .accordion-button.bacterias{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/imagenes/desplegable-bacterias.png) lightgray 50% / cover no-repeat;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.60) 100%), url(/imagenes/desplegable-bacterias.png) lightgray 50% / cover no-repeat;
 }
+.accordion-item.virus-acordeon.hongos-acordeon{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.60) 100%), url(/imagenes/hongos-acordeon.png) lightgray 50% / cover no-repeat;
+
+}
+.accordion-item.virus-acordeon.parasito-acordeon{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.60) 100%), url(/imagenes/parasitos-acordeon.png) lightgray 50% / cover no-repeat;
+
+}
+
+
+
 button.accordion-button h2{
 color: #FFF !important;
 
@@ -604,12 +639,64 @@ line-height: normal !important;
 }
 button.accordion-button p{
     color: #FFF;
-
-font-size: 20px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+    margin-right: 1.1rem;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
+
+.accordion-button::after {
+    background-image: url(/svg/plus.svg) !important;
+    background-size: 20px;
+    background-position: center;
+    border: 2px solid white;
+   
+    padding: 20px;
+ 
+    border-radius: 50%;
+}
+.accordion-button:not(.collapsed)::after{
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFFFFF" class="bi bi-dash-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/></svg>') !important;
+    background-size: 35px;
+    background-position: center;
+    border: 2px solid white;
+   
+    padding: 20px;
+ 
+    border-radius: 50%;
+}
+.accordion-item.virus-acordeon{
+    border: none;
+}
+button.accordion-button.virus-acordeon-fondo {
+    background: none;
+}
+
+.accordion-item.virus-acordeon{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/imagenes/virus-acordeon.png) lightgray 50% / cover no-repeat;
+
+}
+button.accordion-button p{
+    color: #FFF;
+    margin-right: 1.1rem;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.accordion-body.virus-acordeon{
+    padding: 0px 10% 0px 4%;
+    color: white;
+}
+.accordion-item:last-of-type>.accordion-header .accordion-button.collapsed{
+    padding: 5%;
+}
+button.accordion-button.collapsed.virus-acordeon-fondo {
+    padding: 8% 5% !important;
+}
+
+
 
 /* .accordion-button::after{
     color: white !important;
@@ -1188,7 +1275,7 @@ footer a {
 
 .contenedor button {
     /* height: 107px; */
-    background: transparent;
+    background: transparent ;
     backdrop-filter: blur(10px);
     width: 100%;
     border: none;
@@ -1199,6 +1286,20 @@ footer a {
     position: relative;
     z-index: 2;
     padding: 40px;
+}
+.ver-mas button{
+    /* height: 107px; */
+    background: transparent ;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    border: none;
+    
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    padding: 3%;
 }
 
 .contenedor.hongos {
@@ -1226,7 +1327,7 @@ footer a {
 /* <!-- ---------- Síntomas de la meningitis  -----------> */
 
 .container {
-    padding: 0% 5%;
+    padding: 0% ;
 }
 
 .sintomas {
