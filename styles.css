@@ -582,7 +582,7 @@ nav {
 .section-virus-hongos-parasitos.showContenido {
     transition:all 3s ease;
     overflow: hidden;
-    animation: subirContenedores 3s forwards;
+    animation: subirContenedores 4s forwards;
 }
 /* Efecto de deslizamiento */
 
@@ -611,7 +611,7 @@ nav {
     }
     to {
         opacity: 0;
-        transform: translateY(-10%);
+        transform: translateY(-22%);
     }
 }
 @keyframes subirContenedores {
@@ -621,7 +621,7 @@ nav {
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0%);
     }
 }
 
@@ -3201,6 +3201,12 @@ header#mid {
 }
 #sintomas__header {
     height: 78.3vh;
+}
+
+@media (min-width: 1058px) and (max-width: 1110px) {
+    #sintomas__header {
+        height: 100.3vh;
+    }
 }
 /* <!-- -----------------------------------------------------------  fin css pagina meningitis por sintomas  -------------------------------------------> */
 
