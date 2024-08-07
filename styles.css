@@ -41,7 +41,7 @@ html {
     max-width: 100%;
     background-color: white;
     padding: 50px;
-    height: 60vh;
+    height: 65vh;
 
 }
 
@@ -306,7 +306,9 @@ nav {
     color: white;
 
     margin-top: 110px;
-
+}
+#vacunacion__banner__150 {
+    margin-top: 3rem;
 }
 
 .banner-content.large {
@@ -4976,11 +4978,11 @@ img#responsive-img {
 }
 
 
-
 @media (min-width:1220px) and (max-width:1229px) and (min-height:500px) and (max-height:592px) {
     #sintomas__banner__texto {
         height: 37vh;
     }
+
 }
 
 @media (max-width:1283px) {
