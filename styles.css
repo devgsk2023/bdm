@@ -695,10 +695,10 @@ button.accordion-button p{
     color: white;
 }
 .accordion-item:last-of-type>.accordion-header .accordion-button.collapsed{
-    padding: 5%;
+    padding: 6% 5%;
 }
 button.accordion-button.collapsed.virus-acordeon-fondo {
-    padding: 8% 5% !important;
+    padding: 6% 5% !important;
 }
 
 
@@ -4376,6 +4376,9 @@ img#responsive-img {
 
 /* SLIDER TAMBS VACUNAS */
 @media (max-width: 1000px) {
+    button.accordion-button.collapsed.virus-acordeon-fondo {
+        padding: 20% 5% !important;
+    }
     .vacunas-tabs {
         display: flex;
         flex-direction: column;
