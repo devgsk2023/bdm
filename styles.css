@@ -317,6 +317,9 @@ nav {
 #index__banner {
     margin-top: 11rem;
 }
+header#vacunacion__header{
+    min-height: 75vh;
+}
 #vacunacion__banner__150 {
     margin-top: 3rem;
 }
@@ -5415,6 +5418,7 @@ img#responsive-img {
     align-items: center;
 }
 
+
 @media (min-width: 768px) {}
 
 @media (min-width: 1024px) {
@@ -5503,7 +5507,7 @@ img#responsive-img {
     }
 
     .menu-activo {
-        gap: 50px;
+        gap: 30px;
     }
 }
 
@@ -5524,7 +5528,7 @@ img#responsive-img {
 
 @media (min-width: 300px) and (max-width: 1400px) {
     #vacunacion__header {
-        height: auto !important;
+        height: auto;
     }
 
 }
