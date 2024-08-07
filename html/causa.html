@@ -27,7 +27,7 @@
                     
                   <div class="acordeon header">
                     
-                    <h2>Bacterias<i class="bi bi-plus-circle"></i></h2>
+                    <h2>Bacterias</i></h2>
                   <p>La meningitis bacteriana es el <strong>tipo de infección más grave que afecta a las
                     meninges</strong>.
                 Los principales microorganismos responsables son Neumococo, Meningococo, <i>Haemophilus
@@ -39,7 +39,7 @@
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
+                <div class="accordion-body bacterias-acordeon">
                     <div id="bacterias-contenido" class="ocultar">
                         <section class="meningitis-meningococo">
                             <h3>Meningitis por Meningococo</h3>
@@ -144,78 +144,102 @@
               </div>
             </div>
             
-          </div>
+        </div>
 
         <!-- ---------- FIN CAUSA ----------->
 
         <!-- ---------- VIRUS - HONGOS - PARASITOS ----------->
         <section class="section-virus-hongos-parasitos" id="virus-hongos-parasitos">
-            <div class="contenedor virus">
+            <div class="accordion" id="accordionExample">
+
+   
+
+                <div class="accordion-item virus-acordeon">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed virus-acordeon-fondo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Virus
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse alto-medio" data-bs-parent="#accordionExample">
+                    <div class="accordion-body virus-acordeon-no-padding">
+                        Las meningitis virales son las más frecuentes y, por lo general, tienen mejor evolución que las
+                        meningitis bacterianas. Si bien puede ser contraída a cualquier edad, <strong>la mayoría de los
+                            casos es en niños menores de 5 años o personas que tienen el sistema inmunitario
+                            debilitado.</strong><sup>9</sup></p>
+                    </div>
+                    <div class="ver-mas">
+                        <button>
+                            <a href="/html/meningitis-por-virus.html">VER MÁS</a>
+                        </button>
+                    </div>
+                  </div>
+                </div>
                 
-                <div class="virus-textos">
-                    <div class="contenedor-titulo-boton">
+                
+            
+              </div>
 
-                        <h3>Virus</h3>
-                        <button class="btn" id="virus-btn"><i class="fa-solid fa-plus"></i></button>
-                    
-                    </div>
-                    <div id="virus-contenido" class="ocultar">
-                        <p>Las meningitis virales son las más frecuentes y, por lo general, tienen mejor evolución que las
-                            meningitis bacterianas. Si bien puede ser contraída a cualquier edad, <strong>la mayoría de los
-                                casos es en niños menores de 5 años o personas que tienen el sistema inmunitario
-                                debilitado.</strong><sup>9</sup></p>
-                    </div>
-                </div>
-                <div class="ver-mas">
-                    <button>
-                        <a href="/html/meningitis-por-virus.html">VER MÁS</a>
+            
+        </section>
+
+        <section class="section-virus-hongos-parasitos" id="virus-hongos-parasitos">
+            <div class="accordion" id="accordionExample">
+
+   
+
+                <div class="accordion-item virus-acordeon hongos-acordeon">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed virus-acordeon-fondo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Hongos
                     </button>
-                </div>
-            </div>
-
-            <div class="contenedor hongos">
-                <div class="virus-textos">
-                    <div class="contenedor-titulo-boton">
-
-                        <h3>Hongos</h3>
-                    <button class="btn" id="hongos-btn"><i class="fa-solid fa-plus"></i></button>
-                    
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse alto-medio" data-bs-parent="#accordionExample">
+                    <div class="accordion-body virus-acordeon-no-padding">
+                        Ciertos hongos que se encuentran en el ambiente pueden causar meningitis.  <strong>Las personas con sistemas inmunológicos debilitados</strong> son más propensas a enfermarse al inhalar esporas de hongos (células que producen ciertos hongos como una forma de defensa).<sup>10</sup></p>
                     </div>
-                    
-                    <div id="hongos-contenido" class="ocultar">
-                        <p>Ciertos hongos que se encuentran en el ambiente pueden causar meningitis.<strong> Las personas
-                                con sistemas inmunológicos debilitados</strong> son más propensas a enfermarse al inhalar
-                            esporas de hongos (células que producen ciertos hongos como una forma de defensa).<sup>10</sup>
-                        </p>
+                    <div class="ver-mas">
+                        <button>
+                            <a href="/html/meningitis-por-hongos.html">VER MÁS</a>
+                        </button>
                     </div>
+                  </div>
                 </div>
-                <div class="ver-mas">
-                    <button>
-                        <a href="/html/meningitis-por-hongos.html">VER MÁS</a>
+                
+                
+            
+              </div>
+
+            
+        </section>
+
+        <section class="section-virus-hongos-parasitos" id="virus-hongos-parasitos">
+            <div class="accordion" id="accordionExample">
+
+   
+
+                <div class="accordion-item virus-acordeon parasito-acordeon">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed virus-acordeon-fondo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Parásitos
                     </button>
-                </div>
-            </div>
-
-            <div class="contenedor parasito">
-                <div class="virus-textos">
-                    <div class="contenedor-titulo-boton">
-
-                        <h3>Parásitos</h3>
-                        <button class="btn" id="parasitos-btn"><i class="fa-solid fa-plus"></i></button>
-                    
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse alto-medio" data-bs-parent="#accordionExample">
+                    <div class="accordion-body virus-acordeon-no-padding">
+                        Las personas suelen contraer meningitis parasitaria al comer animales infectados o alimentos contaminados.<sup>11</sup></p>
                     </div>
-                    
-                    <div id="parasitos-contenido" class="ocultar">
-                        <p>Las personas suelen contraer meningitis parasitaria al comer <strong>animales infectados o
-                                alimentos contaminados.</strong><sup>11</sup></p>
+                    <div class="ver-mas">
+                        <button>
+                            <a href="/html/meningitis-por-parasitos.html">VER MÁS</a>
+                        </button>
                     </div>
+                  </div>
                 </div>
-                <div class="ver-mas">
-                    <button>
-                        <a href="/html/meningitis-por-parasitos.html">VER MÁS</a>
-                    </button>
-                </div>
-            </div>
+                
+                
+            
+              </div>
+
+            
         </section>
 
        
