@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const submenuItems = document.querySelectorAll(".submenu li");
     const imageContainer = document.querySelector(".image-container");
     const menuImage = document.getElementById("menu-image");
-
+    const arrowDown = document.querySelector(".fa-chevron-down")
     menuItems.forEach(item => {
         item.addEventListener("mouseenter", function () {
             const submenu = this.querySelector(".submenu");

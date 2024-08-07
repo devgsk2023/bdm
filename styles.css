@@ -41,7 +41,7 @@ html {
     max-width: 100%;
     background-color: white;
     padding: 50px;
-    height: 60vh;
+    height: 65vh;
 
 }
 
@@ -108,6 +108,8 @@ ul.submenu {
     height: 200px;
 }
 
+
+
 .image-container {
     position: absolute;
     width: 400px;
@@ -121,7 +123,8 @@ ul.submenu {
 
 .image-container img {
     width: 400px;
-    height: auto;
+    height: 400px;
+    object-fit: cover;
     border-radius: 20px;
 }
 
@@ -306,7 +309,9 @@ nav {
     color: white;
 
     margin-top: 110px;
-
+}
+#vacunacion__banner__150 {
+    margin-top: 3rem;
 }
 
 .banner-content.large {
@@ -1433,7 +1438,7 @@ footer a {
 }
 
 .custom-button1:hover {
-    background-color: #7666EA;
+    background-color: #6552f6;
 }
 
 .iconos {
@@ -1760,7 +1765,7 @@ footer a {
 }
 
 .tab-content.open {
-    max-height: 1000px;
+    max-height: 66.5rem;
     /* Ajusta esto según la altura máxima de tu contenido */
     opacity: 1;
 }
@@ -3435,7 +3440,8 @@ img#responsive-img {
 @media only screen and (max-width:1300px) {
     .image-container img {
         width: 250px;
-        height: auto;
+        height: 250px;
+        object-fit: cover;
         border-radius: 20px;
     }
 
@@ -3518,6 +3524,8 @@ img#responsive-img {
 @media (max-width:1255px) {
     .image-container img {
         width: 200px;
+        height: 200px;
+        object-fit: cover;
     }
 
     .columna-sintomas.main {
@@ -4350,8 +4358,6 @@ img#responsive-img {
     }
 
     .submenu {
-
-
         padding: 0px 0px 0px 0px;
         width: 100%;
         background-color: white;
@@ -5119,11 +5125,11 @@ img#responsive-img {
 }
 
 
-
 @media (min-width:1220px) and (max-width:1229px) and (min-height:500px) and (max-height:592px) {
     #sintomas__banner__texto {
         height: 37vh;
     }
+
 }
 
 @media (max-width:1283px) {
@@ -5259,6 +5265,8 @@ img#responsive-img {
 @media only screen and (max-width : 1274px) {
     .image-container img {
         width: 300px;
+        width: 300px;
+        object-fit: cover;
     }
 
     .image-container {
@@ -5465,8 +5473,9 @@ img#responsive-img {
     }
 
     .image-container img {
-        width: 300px;
-        height: auto;
+        width: 210px;
+        height: 210px;
+        object-fit: cover;
         border-radius: 20px;
     }
 
