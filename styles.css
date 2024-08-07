@@ -318,7 +318,8 @@ nav {
     margin-top: 11rem;
 }
 header#vacunacion__header{
-    min-height: 75vh;
+    height: auto;
+    padding-bottom: 6rem;
 }
 #vacunacion__banner__150 {
     margin-top: 3rem;
@@ -2497,14 +2498,14 @@ header#tipos-de-meningitis {
 }
 
 .banner-content.xl.botones h1 {
-    font-size: 80px;
+    font-size: 5rem;
     margin-top: 0px;
 
 }
 
 .banner-content.xl.botones p {
     color: #FFF;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
