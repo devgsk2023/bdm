@@ -108,6 +108,8 @@ ul.submenu {
     height: 200px;
 }
 
+
+
 .image-container {
     position: absolute;
     width: 400px;
@@ -1335,7 +1337,7 @@ footer a {
 }
 
 .custom-button1:hover {
-    background-color: #7666EA;
+    background-color: #6552f6;
 }
 
 .iconos {
@@ -4255,8 +4257,6 @@ img#responsive-img {
     }
 
     .submenu {
-
-
         padding: 0px 0px 0px 0px;
         width: 100%;
         background-color: white;
