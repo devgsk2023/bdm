@@ -256,7 +256,7 @@ header {
     align-items: center;
     padding: 5% 5% 5% 5%;
     background-color: #fff;
-    min-height: 95vh;
+    
 }
 
 .home {
@@ -1843,6 +1843,7 @@ footer a {
     background-image: url(/imagenes/banner-meningitis-bacteriana.png);
     background-size: cover;
     background-position: center;
+    min-height: 69vh;
 }
 
 /* <!-- ---------- fin banner meningitis bacteriana -----------> */
@@ -2913,7 +2914,9 @@ header#tipos-de-meningitis {
 .vacunas-tabs .li-7.activo {
     background-color: #F6AAC8;
 }
-
+.br-p{
+    display: none;
+}
 
 
 
@@ -5177,7 +5180,222 @@ img#responsive-img {
 
 }
 
-@media (max-width:1283px) {
+@media (max-width:1318px)   { 
+    .container-ruleta {
+        width: 40vw;
+        height: 40vw;
+        max-width: 400px;
+        max-height: 400px;
+       
+    }
+
+    .contenedor-ruleta {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        width: auto;
+        /* justify-content: center; */
+        padding: 40px 40px;
+    }
+
+    .contenedor-alerta {
+        display: flex;
+        justify-content: center;
+        color: #000;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        height: 10vh;
+        padding: 50px 32px;
+
+    }
+
+    .custom-button.amarillo {
+        height: auto;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .custom-button.amarillo svg {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        display: flex;
+        margin-bottom: 0%;
+        margin-right: 0%;
+    }
+
+    .custom-button.amarillo p {
+        color: #000;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        max-width: 100%;
+    }
+    .container-ruleta p{
+        font-size: 0.8rem;
+    }
+
+    #spin {
+       
+        width: 15vw;
+        height: 15vw;
+    
+        font-size: 1.1rem;
+        
+    }
+
+    .contenedor-ruleta-derecha {
+        width: 49%;
+
+    }
+
+    .contenedor-ruleta-izquierda {
+        height: 100%;
+        max-height: 500px;
+        width: 49%;
+    }
+
+    .one p {
+        transform: rotate(26deg) translate(-40%, -40%);
+    }
+
+    .two p {
+        transform: rotate(-47deg) translate(23%, -258%);
+    }
+
+    .three p {
+        transform: rotate(243deg) translate(50%, -20%);
+    }
+
+    .four p {
+        transform: rotate(170deg) translate(20%, 130%);
+    }
+
+    .five p {
+        transform: rotate(99deg) translate(-37%, 100%);
+    }
+    
+   
+}
+
+
+
+
+
+ @media (max-width:1283px)   { 
+    .container-ruleta {
+        width: 40vw;
+        height: 40vw;
+        max-width: 400px;
+        max-height: 400px;
+        
+        /* transition: 5s; */
+    }
+
+    .contenedor-ruleta {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        width: auto;
+        /* justify-content: center; */
+        padding: 40px 40px;
+    }
+
+    .contenedor-alerta {
+        display: flex;
+        justify-content: center;
+        color: #000;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        height: 10vh;
+        padding: 50px 32px;
+
+    }
+
+    .custom-button.amarillo {
+        height: auto;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .custom-button.amarillo svg {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        display: flex;
+        margin-bottom: 0%;
+        margin-right: 0%;
+    }
+
+    .custom-button.amarillo p {
+        color: #000;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        max-width: 100%;
+    }
+    .container-ruleta p{
+        font-size: 0.8rem;
+    }
+
+    #spin {
+      
+        width: 15vw;
+        height: 15vw;
+       
+      
+        font-size: 1.1rem;
+        
+    }
+
+    .contenedor-ruleta-derecha {
+        width: 49%;
+
+    }
+
+    .contenedor-ruleta-izquierda {
+        height: 100%;
+        max-height: 500px;
+        width: 49%;
+    }
+
+    .one p {
+        transform: rotate(26deg) translate(-40%, -40%);
+    }
+
+    .two p {
+        transform: rotate(-47deg) translate(23%, -258%);
+    }
+
+    .three p {
+        transform: rotate(243deg) translate(50%, -20%);
+    }
+
+    .four p {
+        transform: rotate(170deg) translate(20%, 130%);
+    }
+
+    .five p {
+        transform: rotate(99deg) translate(-37%, 100%);
+    }
+    
+   
+}
+@media (max-width:1100px)   { 
     
     .contenedor-ruleta {
         display: flex;
@@ -5264,13 +5482,99 @@ img#responsive-img {
         transform: rotate(99deg) translate(-37%, 100%);
     }
 
+   
 }
 
 @media (max-width: 500px) {
+    .contenedor-ruleta {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        width: 100%;
+        justify-content: center;
+        padding: 40px 0;
+    }
+
+    .contenedor-alerta {
+        display: flex;
+        justify-content: center;
+        color: #000;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        height: 10vh;
+        padding: 50px 32px;
+
+    }
+
+    .custom-button.amarillo {
+        height: auto;
+        width: 300px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .custom-button.amarillo svg {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        display: flex;
+        margin-bottom: 10%;
+        margin-right: 3%;
+    }
+
+    .custom-button.amarillo p {
+        color: #000;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        max-width: 286px;
+    }
+
+
+    .contenedor-ruleta-derecha {
+        width: 100%;
+
+    }
+
+    .contenedor-ruleta-izquierda {
+        height: 100%;
+        max-height: 500px;
+        width: 70%;
+    }
+
+    .one p {
+        transform: rotate(26deg) translate(-40%, -40%);
+    }
+
+    .two p {
+        transform: rotate(-47deg) translate(27%, -97%);
+    }
+
+    .three p {
+        transform: rotate(243deg) translate(50%, -20%);
+    }
+
+    .four p {
+        transform: rotate(170deg) translate(20%, 100%);
+    }
+
+    .five p {
+        transform: rotate(99deg) translate(-37%, 100%);
+    }
+
+   
+
+
     #spin {
-        height: 133px;
-        width: 133px;
-        font-size: 14px;
+        height: 120px;
+        width: 120px;
+        font-size: 0.7rem;
     }
 
     .container-ruleta {
@@ -5287,19 +5591,33 @@ img#responsive-img {
     }
 
     .two p {
-        transform: rotate(-45deg) translate(19%, -93%);
+        transform: rotate(-45deg) translate(12%, -232%);
     }
 
     .three p {
-        transform: rotate(243deg) translate(37%, -20%);
+        transform: rotate(243deg) translate(33%, -20%);
+    }
+    .br-p{
+        display: block;
     }
 
     .four p {
-        transform: rotate(170deg) translate(15%, 100%);
+        transform: rotate(170deg) translate(15%, 124%);
     }
 
     .five p {
         transform: rotate(99deg) translate(-25%, 75%);
+    }
+
+    .container-ruleta {
+        width: 70vw;
+        height: 70vw;
+        max-width: 400px;
+        max-height: 400px;
+        /* transition: 5s; */
+    }
+    .container-ruleta div p {
+        font-size: 0.6rem;
     }
 }
 
