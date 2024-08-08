@@ -455,7 +455,7 @@ header#vacunacion__header{
     justify-content: space-between;
     align-items: center;
     padding: 0% 5%;
-    background-color: #f9f9f9;
+    background-color: #F2F8F8;
     height: 556px;
     ;
 }
@@ -538,14 +538,15 @@ header#vacunacion__header{
 .container-causas {
 
     margin: 0 auto;
-    padding: 4% 5%;
+    padding: 0% 5% 5% 5%;
     background-color: #F2F8F8;
 
 }
 
 .header-causa {
     justify-content: center;
-    padding: 20px;
+    text-align: center;
+    padding: 0% 0% 5% 0%;
     background: none;
     height: auto;
     color: #1E1E1E;
@@ -2654,7 +2655,7 @@ header#tipos-de-meningitis {
 }
 
 .bloque.activo p {
-    margin: 8px 0px 0px 0px;
+    margin: 14px 0px 0px 0px;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
