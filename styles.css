@@ -41,7 +41,7 @@ html {
     max-width: 100%;
     background-color: white;
     padding: 50px;
-    height: 65vh;
+    height: 42.5rem;
 }
 .menu-content.index {
     height: 45.2rem;
@@ -125,8 +125,8 @@ ul.submenu {
 }
 
 .image-container img {
-    width: 300px;
-    height: 300px;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
     border-radius: 20px;
 }
@@ -3396,7 +3396,7 @@ header#mid {
 
 }
 #sintomas__header {
-    height: 45.4rem;
+    min-height: 35.4rem;
 }
 
 @media (min-width: 1058px) and (max-width: 1110px) {
@@ -3406,7 +3406,7 @@ header#mid {
 }
 @media (min-width: 1060px) and (max-width: 1224px) and (min-height: 530px) and (max-height: 589px) {
     #sintomas__header {
-        height: 101.7vh;
+        min-height: 35.4rem;
     }
 }
 /* <!-- -----------------------------------------------------------  fin css pagina meningitis por sintomas  -------------------------------------------> */
@@ -5854,8 +5854,8 @@ img#responsive-img {
     }
 
     .image-container img {
-        width: 210px;
-        height: 210px;
+        width: 100%;
+        height: auto;
         object-fit: cover;
         border-radius: 20px;
     }
