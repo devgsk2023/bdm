@@ -3622,6 +3622,12 @@ img#responsive-img {
 
 
 @media only screen and (max-width:1058px) {
+    .tab-content.open{
+        max-height: 80.5rem;
+    }
+
+
+
     h2 {
         font-size: 28px;
 
