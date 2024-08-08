@@ -173,8 +173,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
-//los 4 botones del home en el banner 
+// Mostrar/ocultar el texto en el acordeón
+document.addEventListener("DOMContentLoaded", function () {
+    // Mostrar/ocultar el texto en el acordeón
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const parent = button.closest('.accordion-item');
+            const hiddenText = parent.querySelector('.hidden-text');
+            
+            if (button.classList.contains('collapsed')) {
+                hiddenText.style.display = 'none';
+            } else {
+                hiddenText.style.display = 'block';
+            }
+        });
+    });
+});
 
 
 
