@@ -2614,6 +2614,10 @@ header#tipos-de-meningitis {
 .subcontenedor {
     padding-bottom: 50px;
 }
+.subcontenedor h3{
+    color: #262261;
+}
+
 
 /* Estilos base para los bloques */
 .bloque {
