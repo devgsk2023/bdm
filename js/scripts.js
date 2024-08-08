@@ -88,8 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let descargarPDF = document.getElementById("descargar");
     descargarPDF.addEventListener("click", function () {
         const link = document.createElement('a');
-        link.href = '../wp-content/uploads/2024/02/CNdV2024_H32x24lunN.pdf';
-        link.download = 'CNdV2024_H32x24lunN.pdf';
+        link.href = '../wp-content/uploads/2024/02/Calendario_Vacunacion.pdf';
+        link.download = 'Calendario_Vacunacion.pdf';
         link.click();
         document.body.removeChild(link);
     });
