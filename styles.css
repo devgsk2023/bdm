@@ -4414,7 +4414,7 @@ img#responsive-img {
         padding: 0px 0px 0px 0px;
         width: 100%;
         background-color: white;
-        border-top: 1px solid;
+        border-top: 1px solid #ccc;
 
     }
 
