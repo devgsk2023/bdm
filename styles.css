@@ -1758,7 +1758,7 @@ footer a {
 /* <!-- ---------- referencias  -----------> */
 
 .tab-container {
-    padding: 4% 4%;
+    padding: 4% 5%;
 
 }
 
@@ -4431,6 +4431,9 @@ img#responsive-img {
 @media (max-width: 1000px) {
     button.accordion-button.collapsed.virus-acordeon-fondo {
         padding: 20% 5% !important;
+    }
+    .accordion-item:last-of-type>.accordion-header .accordion-button.collapsed{
+        padding: 20% 5%
     }
     .vacunas-tabs {
         display: flex;
