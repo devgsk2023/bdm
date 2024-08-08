@@ -720,7 +720,9 @@ button.accordion-button p{
 button.accordion-button.collapsed.virus-acordeon-fondo {
     padding: 6rem 3rem !important;
 }
-
+.hidden-text {
+    display: none; /* Oculta el texto por defecto */
+}
 
 
 /* .accordion-button::after{
