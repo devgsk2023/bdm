@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(function () {
             menuPopup.style.display = "none";
         }, 500);
+        
     });
 
     window.addEventListener("click", function (event) {
@@ -42,6 +43,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const arrowDown = document.querySelector(".fa-chevron-down");
 
     menuItems.forEach(item => {
+        item.addEventListener("mouseenter", function () {
+            const submenu = this.querySelector(".submenu");
+            if (submenu) {
+                submenu.style.display = "flex";
+            }
+
+            const itemRect = item.getBoundingClientRect();
+            const containerRect = item.parentElement.getBoundingClientRect();
+            progressBar.style.width = `${itemRect.width}px`;
+            progressBar.style.left = `${itemRect.left - containerRect.left}px`;
+        });
+
+        item.addEventListener("mouseleave", function () {
+            const submenu = this.querySelector(".submenu");
+            if (submenu) {
+                submenu.style.display = "none";
+            }
+            progressBar.style.width = '0';
+        });
+
         item.addEventListener("click", function () {
             const submenu = this.querySelector(".submenu");
             if (submenu) {
@@ -49,8 +70,30 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-});
 
+    submenuItems.forEach(item => {
+        item.addEventListener("mouseenter", function () {
+            const imageUrl = this.getAttribute("data-image");
+            if (imageUrl) {
+                menuImage.src = imageUrl;
+                imageContainer.style.display = "block";
+            }
+        });
+
+        item.addEventListener("mouseleave", function () {
+            imageContainer.style.display = "none";
+        });
+    });
+
+    let descargarPDF = document.getElementById("descargar");
+    descargarPDF.addEventListener("click", function () {
+        const link = document.createElement('a');
+        link.href = '../wp-content/uploads/2024/02/CNdV2024_H32x24lunN.pdf';
+        link.download = 'CNdV2024_H32x24lunN.pdf';
+        link.click();
+        document.body.removeChild(link);
+    });
+});
 
 
 // ruleta javascript
