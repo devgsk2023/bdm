@@ -1818,7 +1818,10 @@ footer a {
 /* <!-- ---------- banner meningitis bacteriana -----------> */
 
 .banner-content.medium.hongos-banner h1 {
-    margin: 54px 0px 0px 0px;
+    margin: 0px;
+}
+.banner-content.medium.hongos-banner p {
+    font-size: 1.25rem;
 }
 
 .banner-content.meningitis-header {
@@ -1942,6 +1945,7 @@ footer a {
 .texto-contenedor h3 {
     font-size: 24px;
     margin: 0px;
+    font-weight: 600;
 }
 
 .texto-contenedor p {
@@ -2347,7 +2351,7 @@ sup {
 
 .vacunacion-container-col.izquierda h2 {
     color: #9794EB;
-    font-size: 48px;
+    font-size: 2.8rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -2425,7 +2429,7 @@ sup {
     background-image: url(/imagenes/consulta.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 80vh;
+    height: 100vh;
     background-position: center;
 
 
@@ -2940,6 +2944,10 @@ header#tipos-de-meningitis {
     line-height: normal;
     margin: 0px;
 }
+header.meningitis-hongos-banner {
+    min-height: 70vh;
+}
+
 
 header.meningitis-hongos-banner {
     background-image: url(/imagenes/banner-tipo.png);
@@ -5833,7 +5841,7 @@ img#responsive-img {
     }
 
     #meningitis-virus__banner {
-        height: 60vh;
+        min-height: 60vh;
     }
 
     .image-container img {
