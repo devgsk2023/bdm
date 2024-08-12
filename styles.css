@@ -842,6 +842,7 @@ button.accordion-button.collapsed.virus-acordeon-fondo {
     font-size: 32px;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 4%;
 }
 
 
@@ -1049,12 +1050,16 @@ button.accordion-button.collapsed.virus-acordeon-fondo {
 .custom-button:hover {
     background-color: #5C33D4;
 }
+.custom-button.no-hover:hover {
+    background-color: #7666EA;
+    cursor:auto;
+}
 
 .texto-prevencion {
     background: #9794EB;
     color: white;
     font-size: 1rem;
-    padding: 100px;
+    padding: 80px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1065,7 +1070,7 @@ button.accordion-button.collapsed.virus-acordeon-fondo {
 .texto-prevencion h2 {
     margin: 0px;
     color: #FFF;
-    width: 501px;
+    
     font-size: 68px;
     font-style: normal;
     font-weight: 700;
@@ -1073,7 +1078,7 @@ button.accordion-button.collapsed.virus-acordeon-fondo {
 }
 
 .texto-prevencion p {
-    width: 501px;
+    
     color: #FFF;
     font-family: Inter;
     font-size: 20px;
@@ -1342,7 +1347,9 @@ footer a {
     background-size: cover;
     max-height: 330px;
 }
-
+#hongos__banner{
+    min-height: 75vh;
+}
 .contenedor.parasito {
     background: url('/imagenes/parasitos.png');
     background-repeat: no-repeat;
@@ -1417,6 +1424,7 @@ footer a {
 }
 .columna-sintomas.footer h3{
     font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .sintomas p {
@@ -1844,6 +1852,7 @@ section.banner.hongos-banner-contenedor {
 }
 .banner-content.medium.hongos-banner p {
     font-size: 1.25rem;
+    margin-top: 0px;
 }
 
 .banner-content.meningitis-header {
@@ -1994,9 +2003,15 @@ sup {
     flex-direction: column;
 }
 
+
 .sintomas-meningistis p {
     font-size: 20px;
     margin: 0px;
+    
+}
+.sintomas-meningistis .margen{
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 .sintomas-meningistis h2 {
@@ -2107,10 +2122,12 @@ sup {
     font-size: 68px;
     margin: 0px 16px 0px 0px;
 }
-
+.hongos-no-margen{
+   margin-top: 20px;
+}
 .grupo-riesgo p {
-    font-size: 20px;
-    margin-bottom: 45px;
+    font-size: 1rem;
+    margin: 2px;
 }
 
 .grupo-riesgo-hijo {
@@ -2216,8 +2233,13 @@ sup {
 /* Media queries para adaptar la disposición según el tamaño de la pantalla */
 @media (max-width: 1200px) {
     .transmision-icono {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 30px;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 15px;
+    }
+    .transmision-icono img {
+        width: 28px;
+        height: 41px;
+        /* flex-shrink: 0; */
     }
 }
 
@@ -3103,7 +3125,7 @@ header#mid {
     align-items: center;
     justify-content: center;
     padding: 7%;
-
+    flex-direction: column;
     height: 272px;
 }
 
@@ -3581,7 +3603,7 @@ img#responsive-img {
         color: white;
         text-decoration: none;
         font-family: inter;
-        font-size: 19px;
+        font-size: 17px;
     }
 }
 
@@ -4897,7 +4919,7 @@ img#responsive-img {
     }
 
     .meningitis-meningococo {
-        padding: 80px 32px;
+        padding: 40px 32px;
     }
 
     .columna1.Prevención-es-vacunación {
