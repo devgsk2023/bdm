@@ -260,7 +260,7 @@ header {
 }
 
 .home {
-    background-image: url(/imagenes/Banner-BDM\ 1.png);
+    background-image: url(/imagenes/banner-home-2.jpg);
     background-size: cover;
     background-position: center;
     min-height: 95vh;
@@ -1356,6 +1356,10 @@ footer a {
 .container-main {
     padding: 5% ;
 }
+.sintomas-banner-space{
+    margin: 0px;
+    margin-top: 2rem;
+}
 
 .sintomas {
     background-color: #9794EB;
@@ -1402,6 +1406,10 @@ footer a {
     border-radius: 0px 0px 30px 30px;
     text-align: center;
     padding: 2.5rem 0rem;
+    
+}
+.columna-sintomas.footer h3{
+    font-weight: 700;
 }
 
 .sintomas p {
@@ -1616,7 +1624,7 @@ footer a {
 .container-yelLow p {
     margin-bottom: 8px;
     color: #1E1E1E;
-    font-size: 32px;
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -1806,6 +1814,7 @@ footer a {
 
 .tab-content sup {
     font-size: 12px;
+    vertical-align: super;
 }
 
 /* <!-- ---------- fin referencias  -----------> */
@@ -1816,8 +1825,14 @@ footer a {
 
 
 /* <!-- ---------- banner meningitis bacteriana -----------> */
-
-.banner-content.medium.hongos-banner h1 {
+.strong{
+    font-weight: 600;
+}
+section.banner.hongos-banner-contenedor {
+    margin: 0px;
+    margin-top: 1rem;
+}
+.banner-content.medium.hongos-banner {
     margin: 0px;
 }
 .banner-content.medium.hongos-banner p {
@@ -1962,7 +1977,7 @@ sup {
 }
 
 .sup-medium {
-
+    vertical-align: super;
     font-size: 15px
 }
 
@@ -2351,7 +2366,7 @@ sup {
 
 .vacunacion-container-col.izquierda h2 {
     color: #9794EB;
-    font-size: 2.8rem;
+    font-size: 2.7rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -3487,6 +3502,7 @@ img#responsive-img {
         object-fit: cover;
         border-radius: 20px;
     }
+    
 
     .image-container {
 
@@ -3570,6 +3586,7 @@ img#responsive-img {
         height: 200px;
         object-fit: cover;
     }
+    
 
     .columna-sintomas.main {
         display: flex;
@@ -3608,7 +3625,7 @@ img#responsive-img {
         font-size: 0.9rem;
     }
     .columna-1-sintomas li {
-        width: 100%;
+        width: 95%;
     }
     .columna-1-sintomas ul{
         column-gap: 1rem;
@@ -3650,7 +3667,7 @@ img#responsive-img {
 
 @media only screen and (max-width:1058px) {
     .tab-content.open{
-        max-height: 90.5rem;
+        max-height: 100rem;
     }
 
 
@@ -4710,6 +4727,7 @@ img#responsive-img {
         padding: 0px;
         margin-top: 100px;
     }
+    
 
     .columna-sintomas.main {
         flex-direction: column;
@@ -4745,7 +4763,7 @@ img#responsive-img {
         font-size: 1rem;
     }
 
-    .strong {
+    p.strong {
         color: #FFF;
 
         font-size: 16px;
