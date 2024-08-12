@@ -543,6 +543,12 @@ header#vacunacion__header{
     background-color: #F2F8F8;
 
 }
+h2.headeri-tipos-causa{
+    padding-top: 30px;
+}
+.tipos-de-meningitis-header{
+    margin-top: 80px;
+}
 
 .header-causa {
     justify-content: center;
