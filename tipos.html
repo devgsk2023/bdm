@@ -16,6 +16,8 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-NNSKLXPR');</script>
     <!-- End Google Tag Manager -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,203 +115,263 @@
                 <h2>Causas</h2>
             </header>
 
-            <section class="meningitis-bacteriana">
-                <h2>Bacterias</h2>
-                <p>La meningitis bacteriana es el <strong>tipo de infección más grave que afecta a las meninges</strong>
-                    . Los principales microorganismos responsables son Neumococo, Meningococo, <i>Haemophilus
-                        influenzae</i> tipo b y <i>Streptococcus agalactiae</i> (estreptococo del grupo
-                    B).<sup>1,3</sup> </p>
-            </section>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button bacterias collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <div class="acordeon header">
+                                <h2>Bacterias</h2>
+                                <p class="hidden-text">La meningitis bacteriana es el tipo de infección más grave que
+                                    afecta a las meninges. Los principales microorganismos responsables son Neumococo,
+                                    Meningococo, Haemophilus influenzae tipo b y Streptococcus agalactiae (estreptococo
+                                    del grupo B). <sup>1,3</sup> </p> <!-- Texto oculto -->
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+                        <div class="accordion-body bacterias-acordeon">
+                            <div id="bacterias-contenido" class="ocultar">
+                                <section class="meningitis-meningococo">
+                                    <h3>Meningitis por Meningococo</h3>
+                                    <p class="texto-amarillo">La evolución de la meningitis por meningococo suele ser
+                                        rápida e incluso
+                                        con un tratamiento adecuado, algunos pacientes pueden fallecer entre las
+                                        primeras 24 a 48 horas
+                                        de la aparición de los síntomas.<sup>4</sup></p>
 
-            <section class="meningitis-meningococo">
-                <h3>Meningitis por Meningococo</h3>
-                <p class="texto-amarillo">La evolución de la meningitis por meningococo suele ser rápida e incluso con
-                    un tratamiento adecuado, algunos pacientes pueden fallecer entre las primeras 24 a 48 horas de la
-                    aparición de los síntomas.<sup>4</sup></p>
+                                    <div class="no-background">
+                                        <p><strong><i>La Neisseria meningitidis</i> o meningococo</strong> es una de las
+                                            principales
+                                            causas de meningitis en todo el mundo. Esta bacteria es la responsable de la
+                                            <strong>Enfermedad Meningocócica Invasiva (EMI)</strong>, que se caracteriza
+                                            por la invasión
+                                            del meningococo en el torrente sanguíneo (sepsis meningocócica) y la
+                                            meningitis es la forma
+                                            de presentación más frecuente.<sup>4</sup>
+                                        </p>
+                                    </div>
 
-                <div class="no-background">
-                    <p> <strong><i>La Neisseria meningitidis</i> o meningococo</strong> es una de las principales causas
-                        de meningitis en todo el mundo. Esta bacteria es la responsable de la <strong>Enfermedad
-                            Meningocócica Invasiva (EMI)</strong> , que se caracteriza por la invasión del meningococo
-                        en el torrente sanguíneo (sepsis meningocócica) y la meningitis es la forma de presentación más
-                        frecuente.<sup>4</sup></p>
+                                    <div class="serogrupos">
+                                        <div class="columna1">
+                                            <h4>Serogrupos</h4>
+                                            <p>El meningococo se clasifica en 12 serogrupos de los cuales 6 son los
+                                                causantes de la
+                                                meningitis por meningococo.<sup>6</sup></p>
+                                            <p>En Argentina contamos con vacunas para prevenir los 5 serogrupos más
+                                                frecuentes:<sup>6,7</sup></p>
+                                            <ul class="serogrupos-letras">
+                                                <li class="letra" data-letra="A"></li>
+                                                <li class="letra b" data-letra="B"></li>
+                                                <li class="letra" data-letra="C"></li>
+                                            </ul>
+                                            <ul class="serogrupos-letras">
+                                                <li class="letra" data-letra="W"></li>
+                                                <li class="letra" data-letra="Y"></li>
+                                                <li class="letra" data-letra="X"></li>
+                                                <svg class="svg-ocultar" xmlns="http://www.w3.org/2000/svg" width="112"
+                                                    height="116" viewBox="0 0 112 116" fill="none">
+                                                    <path
+                                                        d="M77.721 104.204C77.7104 101.775 77.8553 99.383 77.7398 96.986C77.71 96.3441 77.5804 95.7781 76.8846 95.6351C76.1352 95.4824 75.5882 95.815 75.2455 96.5162C75.1206 96.7739 75.0783 97.0877 75.0439 97.3819C74.8694 98.8354 74.6697 100.285 74.5545 101.742C74.3919 103.802 74.2827 105.865 74.1764 107.928C74.0987 109.454 74.7923 110.22 76.1857 110.059C78.9209 109.74 81.6602 109.566 84.4104 109.526C85.1475 109.515 85.8591 109.346 86.5312 109.004C87.0288 108.751 87.4269 108.398 87.4411 107.751C87.4561 107.058 87.0623 106.651 86.5159 106.389C85.5671 105.936 84.5644 105.895 83.5467 105.94C82.7502 105.975 81.9545 105.996 81.1252 106.023C80.9506 105.778 81.1895 105.585 81.2946 105.375C87.5891 92.7275 88.4706 79.4101 85.2483 65.6862C82.4703 53.86 76.7565 43.9348 67.8875 36.2917C60.8268 30.2079 52.7522 26.3961 43.9029 24.549C31.2353 21.9088 18.9884 23.4067 7.1881 29.0589C7.06103 29.1203 6.9355 29.1832 6.80688 29.2432C6.14636 29.5502 5.5771 29.9702 5.97051 30.8536C6.33878 31.6761 6.95151 31.4501 7.57696 31.1514C16.4572 26.9058 25.7607 25.1565 35.4434 25.8149C44.6158 26.4381 53.2179 29.1248 61.0697 34.3976C69.3204 39.9402 75.3729 47.5978 79.3172 57.1242C84.4062 69.421 85.3498 82.096 81.6672 95.0486C80.7489 98.2814 79.424 101.331 77.721 104.204Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </ul>
+                                            <div class="arrow"></div>
+                                            <div class="serogrupos Prevención-es-vacunación">
+                                                <div class="columna1 Prevención-es-vacunación">
+                                                    <h4>Prevención es vacunación</h4>
+                                                    <p>En el Calendario Nacional de Vacunación obligatorio y gratuito
+                                                        encontramos la
+                                                        vacuna contra los tipos de <strong>meningococo A, C, Y y
+                                                            W</strong> para
+                                                        lactantes y adolescentes.<sup>6</sup></p>
+                                                    <p>Existe además otra vacuna para el <strong>serogrupo B</strong>,
+                                                        que está incluída
+                                                        en Calendario para los grupos que tienen mayor
+                                                        riesgo.<sup>7</sup></p>
+                                                    <button class="custom-button">
+                                                        <a href="vacunas.html">Calendario de vacunación</a>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38"
+                                                            viewBox="0 0 68 68" fill="none">
+                                                            <path
+                                                                d="M43.0208 41.0122L43.0208 26.87C43.0151 26.6068 42.9574 26.3473 42.8511 26.1064C42.6482 25.6206 42.262 25.2344 41.7763 25.0316C41.5354 24.9253 41.2759 24.8676 41.0126 24.8618L26.8705 24.8618C26.6068 24.8618 26.3456 24.9138 26.102 25.0147C25.8583 25.1156 25.637 25.2636 25.4505 25.45C25.0739 25.8266 24.8623 26.3374 24.8623 26.87C24.8623 27.4026 25.0739 27.9134 25.4505 28.29C25.8271 28.6666 26.3379 28.8782 26.8705 28.8782L36.1901 28.8641L25.4563 39.598C25.0812 39.973 24.8705 40.4817 24.8705 41.0122C24.8705 41.5426 25.0812 42.0513 25.4563 42.4264C25.8313 42.8015 26.34 43.0122 26.8705 43.0122C27.4009 43.0122 27.9096 42.8015 28.2847 42.4264L39.0186 31.6925L39.0044 41.0122C39.0034 41.2762 39.0546 41.5378 39.1551 41.7819C39.2556 42.0261 39.4035 42.2479 39.5902 42.4346C39.7769 42.6213 39.9987 42.7692 40.2428 42.8697C40.487 42.9702 40.7486 43.0214 41.0126 43.0203C41.2766 43.0214 41.5383 42.9702 41.7824 42.8697C42.0265 42.7692 42.2483 42.6213 42.435 42.4346C42.6217 42.2479 42.7696 42.0261 42.8701 41.7819C42.9707 41.5378 43.0219 41.2762 43.0208 41.0122Z"
+                                                                fill="white" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="vacio"></div>
+                                        </div>
+                                        <div class="columna2">
+                                            <div class="grafico">
+                                                <div class="ondas"></div>
+                                                <img class="adelante" src="/imagenes/grafico_dona.png"
+                                                    alt="Casos en Argentina 2023">
+                                            </div>
+                                            <div class="buttom">
+                                                <button class="custom-button derecha">¿Qué serogrupos
+                                                    predominaron?</button>
+                                            </div>
+                                            <div class="legend-container">
+                                                <div class="legend">
+                                                    <div class="legend-item">
+                                                        <div class="color-box serogrupo-b"></div>
+                                                        <span>SEROGRUPO B</span>
+                                                    </div>
+                                                    <div class="legend-item">
+                                                        <div class="color-box serogrupo-c"></div>
+                                                        <span>SEROGRUPO C</span>
+                                                    </div>
+                                                </div>
+                                                <div class="legend">
+                                                    <div class="legend-item">
+                                                        <div class="color-box serogrupo-y"></div>
+                                                        <span>SEROGRUPO Y</span>
+                                                    </div>
+                                                    <div class="legend-item">
+                                                        <p class="legend-p">N=34</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="datos">
+                                                <p>Según los datos publicados por el Instituto Malbrán, en Argentina en
+                                                    el 2023, el 100%
+                                                    de los casos de meningococo en menores de 2 años fue por el
+                                                    serogrupo B.<sup>5</sup>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <div class="footer-bacteriana">
+                                    <a href="meningitis-bacteriana.html">Conocé más acerca de la meningitis
+                                        bacteriana</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="serogrupos">
-                    <div class="columna1">
 
-                        <h4>Serogrupos</h4>
-                        <p>El meningococo se clasifica en 12 serogrupos de los cuales 6 son los causantes de la
-                            meningitis por meningococo.<sup>6</sup></p>
-                        <p>En Argentina contamos con vacunas para prevenir los 5 serogrupos más frecuentes:
-                            <sup>6,7</sup>
-                        </p>
-                        <ul class="serogrupos-letras">
-                            <li class="letra" data-letra="A"></li>
-                            <li class="letra b" data-letra="B"></li>
-                            <li class="letra" data-letra="C"></li>
+                <!-- ---------- FIN CAUSA ----------->
 
-                        </ul>
-                        <ul class="serogrupos-letras">
-                            <li class="letra" data-letra="W"></li>
-                            <li class="letra" data-letra="Y"></li>
-                            <li class="letra" data-letra="X"></li>
-                            <svg class="svg-ocultar" xmlns="http://www.w3.org/2000/svg" width="112" height="116"
-                                viewBox="0 0 112 116" fill="none">
-                                <path
-                                    d="M77.721 104.204C77.7104 101.775 77.8553 99.383 77.7398 96.986C77.71 96.3441 77.5804 95.7781 76.8846 95.6351C76.1352 95.4824 75.5882 95.815 75.2455 96.5162C75.1206 96.7739 75.0783 97.0877 75.0439 97.3819C74.8694 98.8354 74.6697 100.285 74.5545 101.742C74.3919 103.802 74.2827 105.865 74.1764 107.928C74.0987 109.454 74.7923 110.22 76.1857 110.059C78.9209 109.74 81.6602 109.566 84.4104 109.526C85.1475 109.515 85.8591 109.346 86.5312 109.004C87.0288 108.751 87.4269 108.398 87.4411 107.751C87.4561 107.058 87.0623 106.651 86.5159 106.389C85.5671 105.936 84.5644 105.895 83.5467 105.94C82.7502 105.975 81.9545 105.996 81.1252 106.023C80.9506 105.778 81.1895 105.585 81.2946 105.375C87.5891 92.7275 88.4706 79.4101 85.2483 65.6862C82.4703 53.86 76.7565 43.9348 67.8875 36.2917C60.8268 30.2079 52.7522 26.3961 43.9029 24.549C31.2353 21.9088 18.9884 23.4067 7.1881 29.0589C7.06103 29.1203 6.9355 29.1832 6.80688 29.2432C6.14636 29.5502 5.5771 29.9702 5.97051 30.8536C6.33878 31.6761 6.95151 31.4501 7.57696 31.1514C16.4572 26.9058 25.7607 25.1565 35.4434 25.8149C44.6158 26.4381 53.2179 29.1248 61.0697 34.3976C69.3204 39.9402 75.3729 47.5978 79.3172 57.1242C84.4062 69.421 85.3498 82.096 81.6672 95.0486C80.7489 98.2814 79.424 101.331 77.721 104.204Z"
-                                    fill="white" />
-                            </svg>
-                        </ul>
-                        <div class="arrow"></div>
-                        <div class="serogrupos Prevención-es-vacunación">
-                            <div class="columna1 Prevención-es-vacunación">
+                <!-- ---------- VIRUS - HONGOS - PARASITOS ----------->
+                <section class="section-virus-hongos-parasitos" id="virus-hongos-parasitos">
+                    <div class="accordion" id="accordionExample">
 
-                                <h4>Prevención es vacunación</h4>
-                                <p>En el Calendario Nacional de Vacunación obligatorio y gratuito encontramos la vacuna
-                                    contra los tipos de <strong>meningococo A, C, Y y W</strong> para lactantes y
-                                    adolescentes. <sup>6</sup></p>
-                                <p>Existe además otra vacuna para el <strong>serogrupo B</strong>, que está incluída en
-                                    Calendario para los grupos que tienen mayor riesgo.<sup>7</sup></p>
-                                <button class="custom-button">
-                                    <a href="vacunas.html">Calendario de vacunación</a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 68 68"
-                                        fill="none">
-                                        <path
-                                            d="M43.0208 41.0122L43.0208 26.87C43.0151 26.6068 42.9574 26.3473 42.8511 26.1064C42.6482 25.6206 42.262 25.2344 41.7763 25.0316C41.5354 24.9253 41.2759 24.8676 41.0126 24.8618L26.8705 24.8618C26.6068 24.8618 26.3456 24.9138 26.102 25.0147C25.8583 25.1156 25.637 25.2636 25.4505 25.45C25.0739 25.8266 24.8623 26.3374 24.8623 26.87C24.8623 27.4026 25.0739 27.9134 25.4505 28.29C25.8271 28.6666 26.3379 28.8782 26.8705 28.8782L36.1901 28.8641L25.4563 39.598C25.0812 39.973 24.8705 40.4817 24.8705 41.0122C24.8705 41.5426 25.0812 42.0513 25.4563 42.4264C25.8313 42.8015 26.34 43.0122 26.8705 43.0122C27.4009 43.0122 27.9096 42.8015 28.2847 42.4264L39.0186 31.6925L39.0044 41.0122C39.0034 41.2762 39.0546 41.5378 39.1551 41.7819C39.2556 42.0261 39.4035 42.2479 39.5902 42.4346C39.7769 42.6213 39.9987 42.7692 40.2428 42.8697C40.487 42.9702 40.7486 43.0214 41.0126 43.0203C41.2766 43.0214 41.5383 42.9702 41.7824 42.8697C42.0265 42.7692 42.2483 42.6213 42.435 42.4346C42.6217 42.2479 42.7696 42.0261 42.8701 41.7819C42.9707 41.5378 43.0219 41.2762 43.0208 41.0122Z"
-                                            fill="white" />
-                                    </svg>
-                                    </svg>
+
+
+                        <div class="accordion-item virus-acordeon">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed virus-acordeon-fondo" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Virus
                                 </button>
-
-                            </div>
-
-
-                        </div>
-                        <div class="vacio"></div>
-                    </div>
-                    <div class="columna2">
-
-                        <div class="grafico">
-                            <div class="ondas"></div>
-
-                            <img class="adelante" src="/imagenes/grafico_dona.png" alt="Casos en Argentina 2023">
-                        </div>
-
-
-                        <div class="buttom">
-
-                            <button class="custom-button derecha">¿Qué serogrupos predominaron?</button>
-
-                        </div>
-
-
-                        <div class="legend-container">
-                            <div class="legend">
-                                <div class="legend-item">
-                                    <div class="color-box serogrupo-b"></div>
-                                    <span>SEROGRUPO B</span>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse alto-medio"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body virus-acordeon-no-padding">
+                                    Las meningitis virales son las más frecuentes y, por lo general, tienen mejor
+                                    evolución que las
+                                    meningitis bacterianas. Si bien puede ser contraída a cualquier edad, <strong>la
+                                        mayoría de los
+                                        casos es en niños menores de 5 años o personas que tienen el sistema inmunitario
+                                        debilitado.</strong><sup>9</sup></p>
                                 </div>
-                                <div class="legend-item">
-                                    <div class="color-box serogrupo-c"></div>
-                                    <span>SEROGRUPO C</span>
+                                <div class="ver-mas">
+                                    <button>
+                                        <a href="meningitis-por-virus.html">VER MÁS</a>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="legend">
-                                <div class="legend-item">
-                                    <div class="color-box serogrupo-y"></div>
-                                    <span>SEROGRUPO Y</span>
-                                </div>
-                                <div class="legend-item">
-                                    <p class="legend-p">N=34</p>
-                                </div>
-                            </div>
-
                         </div>
-                        <div class="datos">
 
-
-                            <p>Según los datos publicados por el Instituto Malbrán, en Argentina en el 2023, el 100% de
-                                los casos de meningococo en menores de 2 años fue por el serogrupo B.<sup>5</sup></p>
-
-
-                        </div>
 
 
                     </div>
 
 
-                </div>
+                </section>
+
+                <section class="section-virus-hongos-parasitos" id="virus-hongos-parasitos">
+                    <div class="accordion" id="accordionExample">
 
 
 
-            </section>
+                        <div class="accordion-item virus-acordeon hongos-acordeon">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed virus-acordeon-fondo" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    Hongos
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse alto-medio"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body virus-acordeon-no-padding">
+                                    Ciertos hongos que se encuentran en el ambiente pueden causar meningitis.
+                                    <strong>Las personas con sistemas inmunológicos debilitados</strong> son más
+                                    propensas a enfermarse al inhalar esporas de hongos (células que producen ciertos
+                                    hongos como una forma de defensa).<sup>10</sup></p>
+                                </div>
+                                <div class="ver-mas">
+                                    <button>
+                                        <a href="meningitis-por-hongos.html">VER MÁS</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="footer-bacteriana">
-                <a href="meningitis-bacteriana.html">Conocé más acerca de la meningitis bacteriana</a>
+
+
+                    </div>
+
+
+                </section>
+
+                <section class="section-virus-hongos-parasitos" id="virus-hongos-parasitos">
+                    <div class="accordion" id="accordionExample">
+
+
+
+                        <div class="accordion-item virus-acordeon parasito-acordeon">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed virus-acordeon-fondo" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    Parásitos
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse alto-medio"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body virus-acordeon-no-padding">
+                                    Las personas suelen contraer meningitis parasitaria al comer animales infectados o
+                                    alimentos contaminados.<sup>11</sup></p>
+                                </div>
+                                <div class="ver-mas">
+                                    <button>
+                                        <a href="meningitis-por-parasitos.html">VER MÁS</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- ----------FIN VIRUS - HONGOS - PARASITOS ----------->
+
+                <!-- ----------Síntomas de la meningitis----------->
+
             </div>
-            <!-- ---------- FIN CAUSA ----------->
-
-            <!-- ---------- VIRUS - HONGOS - PARASITOS ----------->
-            <div class="contenedor virus">
-                <div class="virus-textos">
-                    <h3>Virus</h3>
-                    <p>Las meningitis virales son las más frecuentes y, por lo general, tienen mejor evolución que las
-                        meningitis bacterianas. Si bien puede ser contraída a cualquier edad, <strong>la mayoría de los
-                            casos es en niños menores de 5 años o personas que tienen el sistema inmunitario
-                            debilitado.</strong><sup>9</sup></p>
-
-
-                </div>
-                <div class="ver-mas ">
-                    <button>
-                        <a href="meningitis-por-virus.html">VER MÁS</a>
-                    </button>
-                </div>
-
-            </div>
-
-            <div class="contenedor hongos">
-                <div class="virus-textos">
-                    <h3>Hongos</h3>
-                    <p>Ciertos hongos que se encuentran en el ambiente pueden causar meningitis.<strong> Las personas
-                            con sistemas inmunológicos debilitados</strong> son más propensas a enfermarse al inhalar
-                        esporas de hongos (células que producen ciertos hongos como una forma de defensa).<sup>10</sup>
-
-
-                </div>
-                <div class="ver-mas ">
-                    <button>
-                        <a href="meningitis-por-hongos.html">VER MÁS</a>
-                    </button>
-                </div>
-
-            </div>
-
-            <div class="contenedor parasito">
-                <div class="virus-textos">
-                    <h3>Parásitos</h3>
-                    <p>Las personas suelen contraer meningitis parasitaria al comer <strong>animales infectados o
-                            alimentos contaminados.</strong><sup>11</sup></p>
-
-
-                </div>
-                <div class="ver-mas ">
-                    <button>
-                        <a href="meningitis-por-parasitos.html">VER MÁS</a>
-                    </button>
-                </div>
-
-            </div>
-
-            <!-- ----------FIN  VIRUS - HONGOS - PARASITOS ----------->
-
-            <!-- ----------Síntomas de la meningitis----------->
-
-
-
-
-        </div>
 
 
 
@@ -455,12 +517,11 @@
     <!-- End Google Tag Manager (noscript) -->
     <script src="/js/scripts.js"></script>
     <script src="/js/tab-referencia.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
 
 
-<div class="video-top">
-    <video src=""></video>
-
-</div>

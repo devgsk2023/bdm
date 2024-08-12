@@ -108,7 +108,7 @@ ul.submenu {
 
 .menu-activo>li:hover .submenu {
     display: block;
-    height: 200px;
+    height: 20rem;
 }
 
 
@@ -330,6 +330,7 @@ header#vacunacion__header{
 
 .banner-content.large h1 {
     font-size: 80px;
+    font-weight: 700;
 }
 
 .banner-content.large p {
@@ -2468,7 +2469,7 @@ sup {
 
 /* <!-- ---------- BANNER PRINCIPAL MENINGITIS BACTERIANA -----------> */
 header#tipos-de-meningitis {
-    height: 60vh;
+    min-height: 70vh;
 }
 
 .banner.tipos {
