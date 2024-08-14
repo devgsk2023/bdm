@@ -1809,6 +1809,12 @@ footer a {
     overflow: hidden;
     transition: max-height 0.5s ease, opacity 0.5s ease;
 }
+.tab-content.home-tab{
+    margin-top: 5px;
+}
+.tab-content.home-tab sup{
+    vertical-align: middle;
+}
 
 .tab-content.open {
     max-height: 66.5rem;
@@ -2500,7 +2506,7 @@ sup {
 
 /* <!-- ---------- BANNER PRINCIPAL MENINGITIS BACTERIANA -----------> */
 header#tipos-de-meningitis {
-    min-height: 70vh;
+    min-height: 80vh;
 }
 
 .banner.tipos {
