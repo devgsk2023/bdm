@@ -193,7 +193,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+//boton volver arriba
+
+$(document).ready(function(){
+
+	$('.ir-arriba').click(function(){
+		$('body, html').animate({
+			scrollTop: '0px'
+		}, 300);
+	});
+
+	$(window).scroll(function(){
+		if( $(this).scrollTop() > 0 ){
+			$('.ir-arriba').slideDown(300);
+		} else {
+			$('.ir-arriba').slideUp(300);
+		}
+	});
+
+});
 
 
 
+//menu sticky
 
+window.addEventListener('scroll', function() {
+    var header = document.getElementById('header-sticky');
+    var sticky = header.offsetTop;
+
+    if (window.pageYOffset > sticky) {
+        header.classList.add('sticky');
+    } else {
+        header.classList.remove('sticky');
+    }
+});

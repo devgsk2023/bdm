@@ -12,6 +12,32 @@ html {
 
 /* <!-- ---------- Menu pop-up --------- --> */
 /* Estilos del pop-up */
+.ir-arriba {
+    display: none;
+    padding: 12px 20px;
+    background: #7666EA;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 100%;
+}
+
+/* header.home {
+    overflow: visible;
+}
+
+.contenedor-menu.home-menu-logo {
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    background-color: white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+} */
+
 .menu-popup {
     display: none;
     /* Oculto por defecto */
@@ -1776,6 +1802,24 @@ footer a {
 }
 
 /* <!-- ---------- fin footer top  -----------> */
+
+/* <!-- ---------- botones avanzar volver  -----------> */
+
+.volver-avanzar{
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.icon-arrow-custom{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+    color: #9794EB;
+}
+
+/* <!-- ---------- fin botones avanzar volver   -----------> */
+
 
 
 /* <!-- ---------- referencias  -----------> */
@@ -5967,6 +6011,12 @@ img#responsive-img {
     flex-direction: column;
     align-items: start;
 }
+
+
+
+
+
+
 
 /* @media (min-width: 768px) {
     .container--map-main {
