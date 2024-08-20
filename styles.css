@@ -1818,6 +1818,16 @@ footer a {
     color: #9794EB;
 }
 
+a.icon-arrow-custom {
+    font-size: 20px;
+}
+i.fa-solid.fa-arrow-right {
+    font-size: 26px;
+}
+i.fa-solid.fa-arrow-left{
+    font-size: 26px;
+}
+
 /* <!-- ---------- fin botones avanzar volver   -----------> */
 
 
@@ -4619,7 +4629,7 @@ img#responsive-img {
         padding: 0px;
         margin: 0px;
     }
-
+    
     .buttons button {
         width: 137px;
         border: none;
