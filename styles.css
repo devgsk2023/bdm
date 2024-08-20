@@ -25,28 +25,7 @@ html {
     border-radius: 100%;
 }
 
-header, .home, .contenedor-menu, body {
-    overflow: visible;
-}
 
-
-
-
-
-
-header, .home, .contenedor-menu {
-    overflow: visible;
-}
-header.home {
-    overflow: visible;
-}
-
-.contenedor-menu.home-menu-logo {
-    position: -webkit-sticky; 
-    position: sticky;
-    top: 0;
-    z-index: 1000; 
-}
 
 .menu-popup {
     display: none;
@@ -294,6 +273,7 @@ header {
     background-color: #fff;
     
 }
+
 
 .home {
     background-image: url(/imagenes/banner-home-2.jpg);
@@ -3574,6 +3554,7 @@ section.contenedor-menu.tipos-menu {
 section.contenedor-menu.meningitis-menu {
     margin: 0px;
 }
+
 
 .imagen.bacteriana-par {
     background-size: cover;

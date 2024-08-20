@@ -27,15 +27,17 @@
 <body>
     <span class="ir-arriba"><i class="fa-solid fa-caret-up"></i></span>
     <!-- ----------HEADER--------- -->
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-sticky').outerHTML = data;
+            });
+    </script>
+
     <header class="tipos" id="vacunacion__header">
-        <section class="contenedor-menu">
-            <a href="index.html">
-                <img src="/imagenes/logo.png" alt="Logo" class="logo">
-            </a>
-            <nav>
-                <button class="menu-toggle">☰</button>
-            </nav>
-        </section>
+        
+        <div id="header-sticky"></div>
 
         <!-- Pop-up del Menú -->
         <div id="menu-popup" class="menu-popup">

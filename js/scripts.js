@@ -218,7 +218,7 @@ $(document).ready(function(){
 //menu sticky
 
 window.addEventListener('scroll', function() {
-    var header = document.querySelector('.contenedor-menu.home-menu-logo');
+    var header = document.querySelector('.menu-sticky-trigger');
     var menuIcon = document.querySelector('button.menu-toggle'); // Selecciona el ícono del menú
     
     if (window.scrollY > 1) { // Cambiado a 1 píxel
@@ -227,11 +227,16 @@ window.addEventListener('scroll', function() {
         header.style.width = '100%';
         header.style.padding = '2% 5%';
         header.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+        header.style.boxSizing = 'border-box'; // Añade box-sizing: border-box
+        header.style.zIndex = '999'; // Añade z-index: 999
         menuIcon.style.color = '#9794EB'; // Cambia el color del ícono del menú
     } else {
         header.style.position = 'sticky';
         header.style.padding = '0'; // Restablece padding cuando vuelve a ser sticky
         header.style.backgroundColor = 'transparent'; // Restablece fondo
+        header.style.boxSizing = ''; // Restablece box-sizing a su valor original
+        header.style.zIndex = ''; // Restablece z-index a su valor original
         menuIcon.style.color = ''; // Restablece el color original del ícono del menú
     }
 });
+
