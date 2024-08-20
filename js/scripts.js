@@ -218,12 +218,20 @@ $(document).ready(function(){
 //menu sticky
 
 window.addEventListener('scroll', function() {
-    var header = document.getElementById('header-sticky');
-    var sticky = header.offsetTop;
-
-    if (window.pageYOffset > sticky) {
-        header.classList.add('sticky');
+    var header = document.querySelector('.contenedor-menu.home-menu-logo');
+    var menuIcon = document.querySelector('button.menu-toggle'); // Selecciona el ícono del menú
+    
+    if (window.scrollY > header.offsetTop) {
+        header.style.position = 'fixed';
+        header.style.top = '0';
+        header.style.width = '100%';
+        header.style.padding = '2% 5%';
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+        menuIcon.style.color = '#9794EB'; // Cambia el color del ícono del menú
     } else {
-        header.classList.remove('sticky');
+        header.style.position = 'sticky';
+        header.style.padding = '0'; // Restablece padding cuando vuelve a ser sticky
+        header.style.backgroundColor = 'transparent'; // Restablece fondo
+        menuIcon.style.color = ''; // Restablece el color original del ícono del menú
     }
 });

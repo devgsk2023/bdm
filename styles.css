@@ -25,7 +25,19 @@ html {
     border-radius: 100%;
 }
 
-/* header.home {
+header, .home, .contenedor-menu, body {
+    overflow: visible;
+}
+
+
+
+
+
+
+header, .home, .contenedor-menu {
+    overflow: visible;
+}
+header.home {
     overflow: visible;
 }
 
@@ -34,9 +46,7 @@ html {
     position: sticky;
     top: 0;
     z-index: 1000; 
-    background-color: white; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-} */
+}
 
 .menu-popup {
     display: none;
@@ -1820,6 +1830,7 @@ footer a {
 
 a.icon-arrow-custom {
     font-size: 20px;
+    font-weight: 600;
 }
 i.fa-solid.fa-arrow-right {
     font-size: 26px;
@@ -4132,9 +4143,10 @@ img#responsive-img {
 
     .banner-content.medium h1 {
         font-size: 30px;
-        margin: 54px 32px 0px 32px;
+        margin: 54px 35px 0px 32px;
 
     }
+    
 
 
     .buttons {
@@ -4591,6 +4603,10 @@ img#responsive-img {
 
 @media only screen and (max-width:800px) {
 
+    .menu-content{
+        padding: 20px;
+    }
+
     section.banner.hongos-banner-contenedor h1 {
         margin: 0px;
     }
@@ -4615,7 +4631,7 @@ img#responsive-img {
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        margin: 44px 32px 0px 32px;
+        margin: 0px 32px 0px 32px;
     }
 
     section.contenedor-menu.home-menu-logo {
@@ -4743,7 +4759,7 @@ img#responsive-img {
         background-position: bottom;
         background-repeat: no-repeat;
         height: 100vh;
-        padding: 0px;
+        padding-top: 30px;
     }
     #index__banner {
         margin-top: 3.3rem;
@@ -5304,6 +5320,10 @@ img#responsive-img {
         margin: 0px;
         margin-top: 44px;
         align-items: center;
+    }
+
+    .menu-activo {
+        gap: 15px;
     }
 }
 
@@ -5979,7 +5999,7 @@ img#responsive-img {
     }
 
     .menu-activo {
-        gap: 30px;
+        gap: 15px;
     }
 }
 
