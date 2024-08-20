@@ -221,12 +221,12 @@ window.addEventListener('scroll', function() {
     var header = document.querySelector('.contenedor-menu.home-menu-logo');
     var menuIcon = document.querySelector('button.menu-toggle'); // Selecciona el ícono del menú
     
-    if (window.scrollY > header.offsetTop) {
+    if (window.scrollY > 1) { // Cambiado a 1 píxel
         header.style.position = 'fixed';
         header.style.top = '0';
         header.style.width = '100%';
         header.style.padding = '2% 5%';
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
         menuIcon.style.color = '#9794EB'; // Cambia el color del ícono del menú
     } else {
         header.style.position = 'sticky';
