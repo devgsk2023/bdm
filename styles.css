@@ -4122,7 +4122,7 @@ img#responsive-img {
 
     .banner-content.medium h1 {
         font-size: 30px;
-        margin: 54px 0px 0px 32px;
+        margin: 54px 32px 0px 32px;
 
     }
 
@@ -4615,7 +4615,7 @@ img#responsive-img {
     .banner-content.botones {
         justify-content: center;
         align-items: start;
-        width: 90%;
+        width: 100%;
         padding: 0px;
         margin: 0px;
     }
