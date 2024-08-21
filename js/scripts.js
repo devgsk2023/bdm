@@ -226,9 +226,10 @@ window.addEventListener('scroll', function() {
         header.style.top = '0';
         header.style.width = '100%';
         header.style.padding = '2% 5%';
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
         header.style.boxSizing = 'border-box'; // Añade box-sizing: border-box
         header.style.zIndex = '999'; // Añade z-index: 999
+        header.style.boxShadow = '0px 4px 10px rgba(0, 0, 0, 0.05)'; // Añade sombra
         menuIcon.style.color = '#9794EB'; // Cambia el color del ícono del menú
     } else {
         header.style.position = 'sticky';
@@ -236,9 +237,11 @@ window.addEventListener('scroll', function() {
         header.style.backgroundColor = 'transparent'; // Restablece fondo
         header.style.boxSizing = ''; // Restablece box-sizing a su valor original
         header.style.zIndex = ''; // Restablece z-index a su valor original
+        header.style.boxShadow = ''; // Elimina la sombra
         menuIcon.style.color = ''; // Restablece el color original del ícono del menú
     }
 });
+
 
 
 
