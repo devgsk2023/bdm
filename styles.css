@@ -4647,6 +4647,12 @@ img#responsive-img {
 
 @media only screen and (max-width:800px) {
 
+    a.icon-arrow-custom{
+        width: 60px;
+        height: 60px;
+        font-size: 10px;
+    }
+
     .menu-content{
         padding: 20px;
     }
