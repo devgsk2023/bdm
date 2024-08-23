@@ -1795,10 +1795,45 @@ footer a {
 
 /* <!-- ---------- botones avanzar volver  -----------> */
 
-.volver-avanzar{
-    padding: 5%;
+.volver-avanzar {
+    
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    bottom: 40%; /* Ajusta según necesites */
+    left: 20px;   /* Posiciona el primer botón hacia la izquierda */
+    right: 20px;  /* Posiciona el segundo botón hacia la derecha */
+    width: calc(100% - 40px); /* Asegura que los botones estén en los bordes */
+    z-index: 999;
+    justify-content: space-between; /* Distribuye los botones a cada lado */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.volver-avanzar.visible {
     display: flex;
-    justify-content: space-between;
+    opacity: 1;
+}
+
+.icon-arrow-custom {
+    
+    padding: 12px 20px;
+    background-color: rgba(151, 148, 235, 0.5);
+    backdrop-filter: blur(2px);
+    border-radius: 100%;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+}
+
+.icon-arrow-custom.left {
+    margin-right: auto; /* Mantén el botón izquierdo a la izquierda */
+}
+
+.icon-arrow-custom.right {
+    margin-left: auto; /* Mantén el botón derecho a la derecha */
 }
 .icon-arrow-custom{
     display: flex;
@@ -1818,6 +1853,26 @@ i.fa-solid.fa-arrow-right {
 i.fa-solid.fa-arrow-left{
     font-size: 26px;
 }
+
+a.icon-arrow-custom {
+    /* padding: 60px 20px; */
+    border-radius: 50%;
+    background-color: rgba(151, 148, 235, 0.2);
+    backdrop-filter: blur(2px);
+    border: none;
+    cursor: pointer;
+    color: black;
+    width: 120px;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    gap: 5px;
+    font-size: 16px;
+    align-items: center;
+}
+
 
 /* <!-- ---------- fin botones avanzar volver   -----------> */
 

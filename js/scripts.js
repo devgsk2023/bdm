@@ -204,7 +204,8 @@ $(document).ready(function(){
 	});
 
 	$(window).scroll(function(){
-		if( $(this).scrollTop() > 0 ){
+		// Cambia el valor 500 para que el botón aparezca después de scrollear 500 píxeles
+		if( $(this).scrollTop() > 1500 ){
 			$('.ir-arriba').slideDown(300);
 		} else {
 			$('.ir-arriba').slideUp(300);
@@ -212,6 +213,7 @@ $(document).ready(function(){
 	});
 
 });
+
 
 
 
@@ -239,6 +241,18 @@ window.addEventListener('scroll', function() {
         header.style.zIndex = ''; // Restablece z-index a su valor original
         header.style.boxShadow = ''; // Elimina la sombra
         menuIcon.style.color = ''; // Restablece el color original del ícono del menú
+    }
+});
+
+//arrows para cambiar de pagina
+
+window.addEventListener('scroll', function() {
+    const volverAvanzar = document.querySelector('.volver-avanzar');
+
+    if (window.scrollY > (window.innerHeight / 2)) {
+        volverAvanzar.classList.add('visible');
+    } else {
+        volverAvanzar.classList.remove('visible');
     }
 });
 
