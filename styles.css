@@ -1857,7 +1857,9 @@ i.fa-solid.fa-arrow-left{
 a.icon-arrow-custom {
     /* padding: 60px 20px; */
     border-radius: 50%;
-    background-color: rgba(151, 148, 235, 0.2);
+    background-color: rgba(151, 148, 235, 0.5);
+    transition: background-color 0.5s ease-out; /* Define la transición en el estado normal */
+    transition:color 0.5s ease-out;
     backdrop-filter: blur(2px);
     border: none;
     cursor: pointer;
@@ -1871,6 +1873,12 @@ a.icon-arrow-custom {
     gap: 5px;
     font-size: 16px;
     align-items: center;
+}
+a.icon-arrow-custom:hover{
+    background-color: rgba(151, 148, 235, 1);
+    transition: 0.5s;
+    color: white;
+    
 }
 
 
