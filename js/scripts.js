@@ -193,7 +193,70 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+//boton volver arriba
+
+$(document).ready(function(){
+
+	$('.ir-arriba').click(function(){
+		$('body, html').animate({
+			scrollTop: '0px'
+		}, 300);
+	});
+
+	$(window).scroll(function(){
+		// Cambia el valor 500 para que el botón aparezca después de scrollear 500 píxeles
+		if( $(this).scrollTop() > 1500 ){
+			$('.ir-arriba').slideDown(300);
+		} else {
+			$('.ir-arriba').slideUp(300);
+		}
+	});
+
+});
 
 
 
 
+//menu sticky
+
+window.addEventListener('scroll', function() {
+    var header = document.querySelector('.menu-sticky-trigger');
+    var menuIcon = document.querySelector('button.menu-toggle'); // Selecciona el ícono del menú
+    
+    if (window.scrollY > 1) { // Cambiado a 1 píxel
+        header.style.position = 'fixed';
+        header.style.top = '0';
+        header.style.width = '100%';
+        header.style.padding = '2% 5%';
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        header.style.boxSizing = 'border-box'; // Añade box-sizing: border-box
+        header.style.zIndex = '999'; // Añade z-index: 999
+        header.style.boxShadow = '0px 4px 10px rgba(0, 0, 0, 0.05)'; // Añade sombra
+        menuIcon.style.color = '#9794EB'; // Cambia el color del ícono del menú
+    } else {
+        header.style.position = 'sticky';
+        header.style.padding = '0'; // Restablece padding cuando vuelve a ser sticky
+        header.style.backgroundColor = 'transparent'; // Restablece fondo
+        header.style.boxSizing = ''; // Restablece box-sizing a su valor original
+        header.style.zIndex = ''; // Restablece z-index a su valor original
+        header.style.boxShadow = ''; // Elimina la sombra
+        menuIcon.style.color = ''; // Restablece el color original del ícono del menú
+    }
+});
+
+//arrows para cambiar de pagina
+
+window.addEventListener('scroll', function() {
+    const volverAvanzar = document.querySelector('.volver-avanzar');
+
+    if (window.scrollY > (window.innerHeight / 2)) {
+        volverAvanzar.classList.add('visible');
+    } else {
+        volverAvanzar.classList.remove('visible');
+    }
+});
+
+
+
+
+ 

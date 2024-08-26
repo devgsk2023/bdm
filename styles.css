@@ -12,6 +12,21 @@ html {
 
 /* <!-- ---------- Menu pop-up --------- --> */
 /* Estilos del pop-up */
+.ir-arriba {
+    display: none;
+    padding: 12px 20px;
+    background: #7666EA;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 100%;
+}
+
+
+
 .menu-popup {
     display: none;
     /* Oculto por defecto */
@@ -259,6 +274,7 @@ header {
     
 }
 
+
 .home {
     background-image: url(/imagenes/banner-home-2.jpg);
     background-size: cover;
@@ -314,7 +330,7 @@ nav {
     margin-top: 110px;
 }
 #index__banner {
-    margin-top: 5%;
+    margin-top: 10%;
 }
 header#vacunacion__header{
     height: auto;
@@ -1776,6 +1792,98 @@ footer a {
 }
 
 /* <!-- ---------- fin footer top  -----------> */
+
+/* <!-- ---------- botones avanzar volver  -----------> */
+
+.volver-avanzar {
+    
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    bottom: 40%; /* Ajusta según necesites */
+    left: 20px;   /* Posiciona el primer botón hacia la izquierda */
+    right: 20px;  /* Posiciona el segundo botón hacia la derecha */
+    width: calc(100% - 40px); /* Asegura que los botones estén en los bordes */
+    z-index: 999;
+    justify-content: space-between; /* Distribuye los botones a cada lado */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.volver-avanzar.visible {
+    display: flex;
+    opacity: 1;
+}
+
+.icon-arrow-custom {
+    
+    padding: 12px 20px;
+    background-color: rgba(151, 148, 235, 0.5);
+    backdrop-filter: blur(2px);
+    border-radius: 100%;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+}
+
+.icon-arrow-custom.left {
+    margin-right: auto; /* Mantén el botón izquierdo a la izquierda */
+}
+
+.icon-arrow-custom.right {
+    margin-left: auto; /* Mantén el botón derecho a la derecha */
+}
+.icon-arrow-custom{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+    color: #9794EB;
+}
+
+a.icon-arrow-custom {
+    font-size: 20px;
+    font-weight: 600;
+}
+i.fa-solid.fa-arrow-right {
+    font-size: 26px;
+}
+i.fa-solid.fa-arrow-left{
+    font-size: 26px;
+}
+
+a.icon-arrow-custom {
+    /* padding: 60px 20px; */
+    border-radius: 50%;
+    background-color: rgba(151, 148, 235, 0.5);
+    transition: background-color 0.5s ease-out; /* Define la transición en el estado normal */
+    transition:color 0.5s ease-out;
+    backdrop-filter: blur(2px);
+    border: none;
+    cursor: pointer;
+    color: black;
+    width: 120px;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    gap: 5px;
+    font-size: 16px;
+    align-items: center;
+}
+a.icon-arrow-custom:hover{
+    background-color: rgba(151, 148, 235, 1);
+    transition: 0.5s;
+    color: white;
+    
+}
+
+
+/* <!-- ---------- fin botones avanzar volver   -----------> */
+
 
 
 /* <!-- ---------- referencias  -----------> */
@@ -3510,6 +3618,7 @@ section.contenedor-menu.meningitis-menu {
     margin: 0px;
 }
 
+
 .imagen.bacteriana-par {
     background-size: cover;
     background-image: url(/imagenes/bacterias.png);
@@ -4078,9 +4187,10 @@ img#responsive-img {
 
     .banner-content.medium h1 {
         font-size: 30px;
-        margin: 54px 0px 0px 32px;
+        
 
     }
+    
 
 
     .buttons {
@@ -4537,6 +4647,16 @@ img#responsive-img {
 
 @media only screen and (max-width:800px) {
 
+    a.icon-arrow-custom{
+        width: 5rem;
+        height: 5rem;
+        font-size: 10px;
+    }
+
+    .menu-content{
+        padding: 20px;
+    }
+
     section.banner.hongos-banner-contenedor h1 {
         margin: 0px;
     }
@@ -4561,21 +4681,19 @@ img#responsive-img {
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        margin: 44px 32px 0px 32px;
+        margin: 0px 32px 0px 32px;
     }
 
-    section.contenedor-menu.home-menu-logo {
-        width: auto;
-    }
+    
 
     .banner-content.botones {
         justify-content: center;
         align-items: start;
-        width: 90%;
+        width: 100%;
         padding: 0px;
         margin: 0px;
     }
-
+    
     .buttons button {
         width: 137px;
         border: none;
@@ -4689,7 +4807,7 @@ img#responsive-img {
         background-position: bottom;
         background-repeat: no-repeat;
         height: 100vh;
-        padding: 0px;
+        padding-top: 30px;
     }
     #index__banner {
         margin-top: 3.3rem;
@@ -4777,7 +4895,7 @@ img#responsive-img {
     }
 
     section.banner {
-        margin: 0px;
+        margin: 50px;
     }
 
     header.meningitis {
@@ -5250,6 +5368,10 @@ img#responsive-img {
         margin: 0px;
         margin-top: 44px;
         align-items: center;
+    }
+
+    .menu-activo {
+        gap: 15px;
     }
 }
 
@@ -5925,7 +6047,7 @@ img#responsive-img {
     }
 
     .menu-activo {
-        gap: 30px;
+        gap: 15px;
     }
 }
 
@@ -5967,6 +6089,12 @@ img#responsive-img {
     flex-direction: column;
     align-items: start;
 }
+
+
+
+
+
+
 
 /* @media (min-width: 768px) {
     .container--map-main {
