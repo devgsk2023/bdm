@@ -2,6 +2,13 @@
 <html lang="es">
 
 <head>
+    <script>
+        // Verifica si la URL contiene los UTM esperados
+        if (window.location.href.includes('utm_source=folleto') && window.location.href.includes('utm_medium=canales')) {
+          // Redirige a la URL correcta
+          window.location.href = "https://www.bastademeningitis.com.ar/meningitis-bacteriana.html?utm_source=folleto-meningitis&utm_medium=canales-meningitis";
+        }
+      </script>      
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
