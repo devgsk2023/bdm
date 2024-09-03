@@ -1797,44 +1797,36 @@ footer a {
 
 .volver-avanzar {
     
-    display: none; /* Oculto por defecto */
-    position: fixed;
+    
+    padding: 2rem 4rem;
     bottom: 40%; /* Ajusta según necesites */
-    left: 20px;   /* Posiciona el primer botón hacia la izquierda */
-    right: 20px;  /* Posiciona el segundo botón hacia la derecha */
-    width: calc(100% - 40px); /* Asegura que los botones estén en los bordes */
-    z-index: 999;
-    justify-content: space-between; /* Distribuye los botones a cada lado */
-    opacity: 0;
+    left: 0;   /* Posiciona el primer botón hacia la izquierda */
+    
+   
     transition: opacity 0.5s ease-in-out;
 }
 
 .volver-avanzar.visible {
     display: flex;
     opacity: 1;
+    
 }
 
 .icon-arrow-custom {
     
-    padding: 12px 20px;
-    background-color: rgba(151, 148, 235, 0.5);
-    backdrop-filter: blur(2px);
+    
+   
+    
     border-radius: 100%;
     color: #fff;
     font-size: 20px;
     cursor: pointer;
     text-decoration: none;
-    align-items: center;
+    align-items: left;
     display: flex;
 }
 
-.icon-arrow-custom.left {
-    margin-right: auto; /* Mantén el botón izquierdo a la izquierda */
-}
 
-.icon-arrow-custom.right {
-    margin-left: auto; /* Mantén el botón derecho a la derecha */
-}
 .icon-arrow-custom{
     display: flex;
     gap: 10px;
@@ -1855,31 +1847,20 @@ i.fa-solid.fa-arrow-left{
 }
 
 a.icon-arrow-custom {
-    /* padding: 60px 20px; */
-    border-radius: 50%;
-    background-color: rgba(151, 148, 235, 0.5);
-    transition: background-color 0.5s ease-out; /* Define la transición en el estado normal */
-    transition:color 0.5s ease-out;
-    backdrop-filter: blur(2px);
+  
     border: none;
     cursor: pointer;
     color: black;
-    width: 120px;
-    height: 120px;
+    
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     padding: 10px;
     text-align: center;
     gap: 5px;
     font-size: 16px;
     align-items: center;
 }
-a.icon-arrow-custom:hover{
-    background-color: rgba(151, 148, 235, 1);
-    transition: 0.5s;
-    color: white;
-    
-}
+
 
 
 /* <!-- ---------- fin botones avanzar volver   -----------> */
@@ -4647,10 +4628,13 @@ img#responsive-img {
 
 @media only screen and (max-width:800px) {
 
+    .volver-avanzar{
+        padding: 10px;
+    }
+
     a.icon-arrow-custom{
-        width: 5rem;
-        height: 5rem;
-        font-size: 10px;
+    
+        font-size: 16px;
     }
 
     .menu-content{

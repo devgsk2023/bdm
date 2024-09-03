@@ -246,15 +246,15 @@ window.addEventListener('scroll', function() {
 
 //arrows para cambiar de pagina
 
-window.addEventListener('scroll', function() {
-    const volverAvanzar = document.querySelector('.volver-avanzar');
+// window.addEventListener('scroll', function() {
+//     const volverAvanzar = document.querySelector('.volver-avanzar');
 
-    if (window.scrollY > (window.innerHeight / 2)) {
-        volverAvanzar.classList.add('visible');
-    } else {
-        volverAvanzar.classList.remove('visible');
-    }
-});
+//     if (window.scrollY > (window.innerHeight / 2)) {
+//         volverAvanzar.classList.add('visible');
+//     } else {
+//         volverAvanzar.classList.remove('visible');
+//     }
+// });
 
 
 
