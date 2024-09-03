@@ -205,7 +205,7 @@ $(document).ready(function(){
 
 	$(window).scroll(function(){
 		// Cambia el valor 500 para que el botón aparezca después de scrollear 500 píxeles
-		if( $(this).scrollTop() > 1500 ){
+		if( $(this).scrollTop() > 200 ){
 			$('.ir-arriba').slideDown(300);
 		} else {
 			$('.ir-arriba').slideUp(300);

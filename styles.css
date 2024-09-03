@@ -1797,13 +1797,11 @@ footer a {
 
 .volver-avanzar {
     
-    
+    display: flex;
     padding: 2rem 4rem;
-    bottom: 40%; /* Ajusta según necesites */
-    left: 0;   /* Posiciona el primer botón hacia la izquierda */
+    
     
    
-    transition: opacity 0.5s ease-in-out;
 }
 
 .volver-avanzar.visible {
@@ -1811,17 +1809,15 @@ footer a {
     opacity: 1;
     
 }
+.volver-avanzar a{
+    text-decoration: underline;
+}
 
 .icon-arrow-custom {
-    
-    
-   
-    
-    border-radius: 100%;
-    color: #fff;
+    text-decoration: none;
     font-size: 20px;
     cursor: pointer;
-    text-decoration: none;
+    
     align-items: left;
     display: flex;
 }
@@ -1829,37 +1825,31 @@ footer a {
 
 .icon-arrow-custom{
     display: flex;
-    gap: 10px;
+   
     align-items: center;
-    text-decoration: none;
+    
     color: #9794EB;
 }
 
 a.icon-arrow-custom {
     font-size: 20px;
     font-weight: 600;
+    
 }
 i.fa-solid.fa-arrow-right {
-    font-size: 26px;
+    font-size: 20px;
 }
-i.fa-solid.fa-arrow-left{
-    font-size: 26px;
+.fa-solid.fa-chevron-left{
+    font-size: 16px;
+    
+    
+    padding: 0.8rem 1rem;
+    
+    color:#7666EA;
 }
 
-a.icon-arrow-custom {
-  
-    border: none;
-    cursor: pointer;
-    color: black;
-    
-    align-items: center;
-    justify-content: left;
-    padding: 10px;
-    text-align: center;
-    gap: 5px;
-    font-size: 16px;
-    align-items: center;
-}
+
+
 
 
 
