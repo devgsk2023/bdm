@@ -1,15 +1,12 @@
 <IfModule mod_rewrite.c>
-RewriteEngine on
+    RewriteEngine On
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.*)$ $1.php
-#RewriteRule ^([a-z]+)/?$ $1.php [NC]
+    # Si la solicitud no es para un directorio
+    RewriteCond %{REQUEST_FILENAME} !-d
 
+    # Si existe un archivo con la extensión .html
+    RewriteCond %{REQUEST_FILENAME}.html -f
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html
-#RewriteRule ^([a-z]+)/?$ $1.html [NC]
-
+    # Reescribe la URL eliminando la extensión .html
+    RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
