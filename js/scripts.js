@@ -227,7 +227,7 @@ window.addEventListener('scroll', function() {
         header.style.position = 'fixed';
         header.style.top = '0';
         header.style.width = '100%';
-        header.style.padding = '2% 5%';
+        header.style.padding = '1% 5%';
         header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
         header.style.boxSizing = 'border-box'; // Añade box-sizing: border-box
         header.style.zIndex = '999'; // Añade z-index: 999
