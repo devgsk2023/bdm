@@ -256,25 +256,52 @@ window.addEventListener('scroll', function() {
 //     }
 // });
 
+localStorage.setItem('clave', 'valor');
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const popupDisplayTime = 1; // Días que deben pasar para mostrar el pop-up de nuevo (1 día)
+    
+    // Función para calcular la diferencia en días entre dos fechas
+    function daysBetween(date1, date2) {
+        const oneDay = 24 * 60 * 60 * 1000; // Milisegundos en un día
+        const diffInTime = date2 - date1;
+        return Math.ceil(diffInTime / oneDay);
+    }
+
+    // Obtener la última fecha en que se mostró el pop-up
+    const lastPopupShown = localStorage.getItem('popupShownDate');
+    const currentDate = new Date();
+
+    // Si no hay fecha guardada o ya ha pasado más de 1 día, permitir mostrar el pop-up
+    if (!lastPopupShown || daysBetween(new Date(lastPopupShown), currentDate) >= popupDisplayTime) {
+        const triggerElement = document.getElementById('prevencion'); // ID del elemento donde activamos el pop-up
+        const modalElement = document.getElementById('exampleModalToggle'); // ID del modal
+
+        if (triggerElement && modalElement) {  // Verificamos que ambos elementos existan
+            const modal = new bootstrap.Modal(modalElement);
+
+            // Función para verificar si el elemento con ID 'prevencion' es visible
+            function checkVisibility() {
+                const rect = triggerElement.getBoundingClientRect();
+                const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+
+                if (isVisible) {
+                    modal.show(); // Mostrar el modal cuando el elemento 'prevencion' es visible
+                    localStorage.setItem('popupShownDate', currentDate.toISOString()); // Guardar la fecha actual en localStorage
+                    window.removeEventListener('scroll', checkVisibility); // Remover el evento de scroll después de mostrar el modal
+                }
+            }
+
+            // Solo revisar el scroll si no se ha mostrado el pop-up hoy
+            window.addEventListener('scroll', checkVisibility);
+        }
+    } else {
+        console.log('El pop-up ya se mostró recientemente, no se mostrará de nuevo.');
+    }
+});
+
 
 
 
  
-// pop-up
-document.addEventListener('DOMContentLoaded', function() {
-    const triggerElement = document.getElementById('prevencion'); 
-    const modal = new bootstrap.Modal(document.getElementById('exampleModalToggle'));
-
-    function checkVisibility() {
-        const rect = triggerElement.getBoundingClientRect();
-        const isFullyVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
-
-        // Mostrar modal solo si la sección es visible en la pantalla
-        if (isFullyVisible) {
-            modal.show();
-            window.removeEventListener('scroll', checkVisibility); // Evita que se vuelva a mostrar el modal
-        }
-    }
-
-    window.addEventListener('scroll', checkVisibility);
-});

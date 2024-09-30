@@ -380,8 +380,91 @@
     
 
         </div>    
+
+
+
+        <!-- Pop-up -->
+        
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                
+                <div class="modal-header">
+                   
+                  <p class="modal-title fs-5" id="exampleModalToggleLabel"></p>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body">
+                    <img class="centrado" src="/imagenes/icono-popup.png" alt="">
+                    <p class="texto-perso">Después de leer esta información,</p>
+                    <p class="texto-perso"><strong>¿vas a consultarle a tu pediatra acerca de la vacunación contra los distintos tipos de meningitis?</strong></p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary custom-popup" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">No</button>
+                  <button class="btn btn-primary custom-popup" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Si</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                    
+                        <div class="modal-header">
+                        
+                        <p class="modal-title fs-5" id="exampleModalToggleLabel"></p>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        
+                        <div class="modal-body">
+                            <img class="centrado" src="/imagenes/icono-popup-check.png" alt="">
+                            <p class="texto-perso"><strong>¡Gracias por tu respuesta!</strong></p>
+                            <p class="texto-perso">Haber llegado hasta acá es el primer paso. Siempre podés consultar con el pediatra cuando estés listo/a.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary custom-popup full" data-bs-dismiss="modal">Volver</button>
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                    
+                        <div class="modal-header">
+                        
+                        <p class="modal-title fs-5" id="exampleModalToggleLabel3"></p>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        
+                        <div class="modal-body">
+                            <img class="centrado" src="/imagenes/icono-popup-check.png" alt="">
+                            <p class="texto-perso"><strong>¡Gracias por tu respuesta!</strong></p>
+                            <p class="texto-perso">Hablar con el pediatra es un gran paso para proteger la salud de quienes más importan.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary custom-popup full" data-bs-dismiss="modal">Volver</button>
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+        </div>  
+          
+
+        <!-- fin Pop-up -->
+
+
         <!-- ---------- footer top----------->
-        <div class="footer-top">
+        <div id="prevencion" class="footer-top">
             <div class="footer-texto">
 
                 <h2>Consultá con tu médico o médica <br>sobre las vacunas para prevenir la Meningitis</h2>

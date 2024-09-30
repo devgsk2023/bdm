@@ -6192,6 +6192,15 @@ button.btn-close{
     border-radius: 30px;
     
 }
+.sintomas-texto{
+        margin-top: 1rem;
+
+}
+.contenedor-alerta{
+    width: auto;
+    height: auto;
+}
+
 
 @media only screen and (max-width:800px){
     .texto-perso{
