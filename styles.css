@@ -6198,4 +6198,8 @@ button.btn-close{
         font-size: 16px;
     
     }
+    .custom-popup{
+        width: 100%;
+        font-size: 16px;
+    }
 }
