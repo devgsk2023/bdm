@@ -260,3 +260,21 @@ window.addEventListener('scroll', function() {
 
 
  
+// pop-up
+document.addEventListener('DOMContentLoaded', function() {
+    const triggerElement = document.getElementById('prevencion'); 
+    const modal = new bootstrap.Modal(document.getElementById('exampleModalToggle'));
+
+    function checkVisibility() {
+        const rect = triggerElement.getBoundingClientRect();
+        const isFullyVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+
+        // Mostrar modal solo si la sección es visible en la pantalla
+        if (isFullyVisible) {
+            modal.show();
+            window.removeEventListener('scroll', checkVisibility); // Evita que se vuelva a mostrar el modal
+        }
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+});
