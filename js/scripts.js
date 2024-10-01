@@ -257,6 +257,8 @@ window.addEventListener('scroll', function() {
 // });
 
 localStorage.setItem('clave', 'valor');
+var nombre = localStorage.getItem('popupShownDate');
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -274,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentDate = new Date();
 
     // Si no hay fecha guardada o ya ha pasado más de 1 día, permitir mostrar el pop-up
-    if (!lastPopupShown || daysBetween(new Date(lastPopupShown), currentDate) >= popupDisplayTime) {
+    if (!lastPopupShown && daysBetween(new Date(lastPopupShown), currentDate) >= popupDisplayTime) {
         const triggerElement = document.getElementById('prevencion'); // ID del elemento donde activamos el pop-up
         const modalElement = document.getElementById('exampleModalToggle'); // ID del modal
 
@@ -301,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-
+console.log(nombre);
 
 
  
