@@ -2334,6 +2334,50 @@ sup {
     margin: 0px;
 }
 
+.contenedor-terminos{
+    
+    
+    padding: 5%;
+    align-items: center;
+    
+    
+}
+
+.margin-top {
+    margin-top: 10%;
+}
+.textos-terminos{
+    font-size: 18px;
+    
+    
+    
+}
+.bold{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    
+}
+
+.header-terminos{
+    padding: 2% 5% 0% 5%;
+}
+
+.boton-footer{
+    border-radius: 20px;
+    border: 1px solid #7666EA;
+    padding: 10px 20px;
+    background-color: #7666EA;
+    
+}
+.boton-footer a{
+    color: white !important;
+    
+}
+
+
+
+
 /* Media queries para adaptar la disposición según el tamaño de la pantalla */
 @media (max-width: 1200px) {
     .transmision-icono {
