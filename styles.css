@@ -6352,6 +6352,9 @@ button.btn-close {
     background-color: #9794EB;
     padding: 1rem 0;
 }
+.videos-title {
+    margin-bottom: 18px;
+}
 
 .videos-title h2 {
     margin: 0.5rem 0.7rem;
@@ -6359,6 +6362,8 @@ button.btn-close {
     font-size: 1.5rem;
     text-align: center;
     white-space: nowrap;
+    font-weight: 700;
+    font-family: Inter;
 }
 
 .tabs-videos {
@@ -6372,20 +6377,24 @@ button.btn-close {
     background-color: #C0BFEC;
     padding: 1px 25px;
     width: 45%;
+    margin: 0 3px;
 }
-.tabs-item.tabactivo{
+
+.tabs-item.tabactivo {
     background-color: #7666EA;
 }
+
 .tabs-item p {
     font-size: 14px;
-    text-align: center; 
+    text-align: center;
     margin: auto 0;
     font-weight: 400;
     font-family: inter;
     color: #fff;
 }
+
 .tabs-item.left {
-    border-top-left-radius:20px;
+    border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
 
@@ -6393,6 +6402,7 @@ button.btn-close {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+
 .container-box-videos {
     display: flex;
     flex-direction: column;
@@ -6400,21 +6410,78 @@ button.btn-close {
     align-items: center;
     margin: 10px 0;
 }
+
 .container-video-items {
     display: flex;
     flex-direction: row;
     gap: 5px;
 }
-.video-item iframe{
-    width:97px;
+
+.video-item iframe {
+    width: 97px;
     height: 100px;
+    border-radius: 13px;
+}
+.video-principal iframe {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
 }
 
+@media (min-width: 768px) {
+    .videos-title h2 {
+        font-size: 2rem;
+    }
 
-@media (min-width: 768px) {}
+    .tabs-item {
+        background-color: #C0BFEC;
+        padding: 8px 20px;
+        width: 28%;
+        max-width: 230px;
+    }
+
+    .tabs-item p {
+        text-wrap: nowrap;
+    }
+
+    .container-box-videos {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .container-video-items {
+        flex-direction: column;
+    }
+
+    .video-item iframe {
+        width: 130px;
+        height: 80px;
+    }
+
+    .video-principal iframe {
+        width: 462.5px; 
+        height: 262.5px;
+    }
+}
 
 /* Pantallas grandes (desktops y pantallas grandes) */
-@media (min-width: 1024px) {}
+@media (min-width: 1024px) {
+    .container-videos-pr {
+        padding: 3rem;
+    }
+    .videos-title h2 {
+        font-size: 2.5rem;
+    }
+    .video-item iframe {
+        width: 170px;
+        height: 120px;
+    }
+
+    .video-principal iframe {
+        width: 720px; 
+        height: 382px;
+    }
+}
 
 
 /* Pantallas extra grandes (desktops de alta resolución) */
