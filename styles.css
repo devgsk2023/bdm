@@ -6378,6 +6378,10 @@ button.btn-close {
     padding: 1px 25px;
     width: 45%;
     margin: 0 3px;
+    cursor: pointer;
+}
+.tabs-item:hover {
+    background-color: #c0bfecc4;
 }
 
 .tabs-item.tabactivo {
@@ -6416,17 +6420,38 @@ button.btn-close {
     flex-direction: row;
     gap: 5px;
 }
-
-.video-item iframe {
-    width: 97px;
+.video-item {
+    position: relative;
+    border-radius: 13px; 
+    overflow: hidden;  
+}
+.video-item img {
+    object-fit: contain;
+    width: 100px;
     height: 100px;
     border-radius: 13px;
+    cursor: pointer;
 }
 .video-principal iframe {
     width: 100%;
     height: auto;
     border-radius: 16px;
 }
+.div-fondo-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    border-radius: 13px; 
+    mix-blend-mode: multiply;
+    transition: background-color 0.2s ease-out;
+  }
+  
+  .video-item:hover .div-fondo-item {
+    background-color: rgba(244, 143, 35, 0.7); 
+  }
 
 @media (min-width: 768px) {
     .videos-title h2 {
@@ -6453,11 +6478,15 @@ button.btn-close {
         flex-direction: column;
     }
 
-    .video-item iframe {
-        width: 130px;
+    .video-item img {
+        width: 150px;
+        height: 80px;
+        
+    }
+    .div-fondo-item {
+        width: 150px;
         height: 80px;
     }
-
     .video-principal iframe {
         width: 462.5px; 
         height: 262.5px;
@@ -6472,11 +6501,15 @@ button.btn-close {
     .videos-title h2 {
         font-size: 2.5rem;
     }
-    .video-item iframe {
-        width: 170px;
+    .video-item img {
+        width: 286px;
         height: 120px;
     }
-
+    .div-fondo-item {
+        width: 227px;
+        height: 120px;
+        left: 28px;
+    }
     .video-principal iframe {
         width: 720px; 
         height: 382px;
@@ -6485,4 +6518,21 @@ button.btn-close {
 
 
 /* Pantallas extra grandes (desktops de alta resolución) */
-@media (min-width: 1440px) {}
+@media (min-width: 1440px) {
+    .videos-title h2 {
+        font-size: 68px;
+    }
+    .video-item img {
+        width: 286px;
+        height: 154px;
+    }
+    .div-fondo-item {
+        width: 100%;
+        left: 0;
+        height: 100%;
+    }
+    .video-principal iframe {
+        width: 815px; 
+        height: 475px;
+    }
+}

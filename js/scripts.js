@@ -301,6 +301,20 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.log('El pop-up ya se mostró recientemente, no se mostrará de nuevo.');
     }
+    const medicosTab = document.getElementById('entrevistaMedicos');
+    const pacientesTab = document.getElementById('entrevistaPacientes');
+    const videoPrincipal = document.getElementById('videoPrincipal');
+    medicosTab.addEventListener('click', () => {
+        pacientesTab.classList.remove('tabactivo');
+        medicosTab.classList.add('tabactivo');
+        videoPrincipal.src = 'https://www.youtube.com/embed/wgvqiH7iCRo?si=kaXehyW-rc4Nx9mu';
+    });
+
+    pacientesTab.addEventListener('click', () => {
+        medicosTab.classList.remove('tabactivo');
+        pacientesTab.classList.add('tabactivo');
+        videoPrincipal.src = 'https://www.youtube.com/embed/9kqnsoY94L8?si=n3xdl0C5H4q22kA6';
+    });
 });
 
 console.log(nombre);
