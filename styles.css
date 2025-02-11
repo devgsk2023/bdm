@@ -1079,9 +1079,10 @@ button.accordion-button.collapsed.virus-acordeon-fondo {
     align-content: center;
     gap: 20px;
 }
-.columna1.Prevención-es-vacunación > *:not(:first-child):not(:last-child) {
+
+.columna1.Prevención-es-vacunación>*:not(:first-child):not(:last-child) {
     margin-top: 16px;
-  }
+}
 
 .columna1.Prevención-es-vacunación p {
     font-size: 20px;
@@ -6359,6 +6360,7 @@ button.btn-close {
     background-color: #9794EB;
     padding: 1rem 0;
 }
+
 .videos-title {
     margin-bottom: 18px;
 }
@@ -6387,6 +6389,7 @@ button.btn-close {
     margin: 0px;
     cursor: pointer;
 }
+
 .tabs-item:hover {
     background-color: #c0bfecc4;
 }
@@ -6432,9 +6435,10 @@ button.btn-close {
 
 .video-item {
     position: relative;
-    border-radius: 13px; 
-    overflow: hidden;  
+    border-radius: 13px;
+    overflow: hidden;
 }
+
 .video-item img {
     object-fit: contain;
     width: 100%;
@@ -6442,11 +6446,13 @@ button.btn-close {
     border-radius: 13px;
     cursor: pointer;
 }
+
 .video-principal iframe {
     width: 100%;
     height: auto;
     border-radius: 16px;
 }
+
 .div-fondo-item {
     position: absolute;
     top: 0;
@@ -6454,20 +6460,21 @@ button.btn-close {
     width: 100px;
     height: 100px;
     z-index: 10;
-    border-radius: 13px; 
+    border-radius: 13px;
     mix-blend-mode: multiply;
     transition: background-color 0.2s ease-out;
-  }
-  
-  .video-item:hover .div-fondo-item {
-    background-color: rgba(244, 143, 35, 0.7); 
-  }
-  .video-item {
+}
+
+.video-item:hover .div-fondo-item {
+    background-color: rgba(244, 143, 35, 0.7);
+}
+
+.video-item {
     position: relative;
     border-radius: 13px;
     overflow: hidden;
-    width: 150px; /* Ajusta según tu diseño */
-    height: 120px; /* Ajusta según tu diseño */
+    width: 200px;
+    height: auto;
 }
 
 .video-item img {
@@ -6488,15 +6495,18 @@ button.btn-close {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
-    opacity: 0; /* Oculta el overlay por defecto */
+    background: rgba(0, 0, 0, 0.7);
+    /* Fondo oscuro semitransparente */
+    opacity: 0;
+    /* Oculta el overlay por defecto */
     transition: opacity 0.3s ease-in-out;
     z-index: 15;
     cursor: pointer;
 }
 
 .video-item:hover .video-overlay {
-    opacity: 1; /* Muestra el overlay al pasar el mouse */
+    opacity: 1;
+    /* Muestra el overlay al pasar el mouse */
 }
 
 .video-title {
@@ -6513,18 +6523,20 @@ button.btn-close {
     font-weight: bold;
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-    margin-bottom: 4px; /* Espaciado entre el título y el subtítulo */
-  }
-  
-  .video-subtitle {
+    margin-bottom: 4px;
+    /* Espaciado entre el título y el subtítulo */
+}
+
+.video-subtitle {
     font-size: 12px;
-    color: #ddd; /* Un color más claro para diferenciar del título */
+    color: #ddd;
+    /* Un color más claro para diferenciar del título */
     font-weight: normal;
     text-align: center;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
     margin: 0;
-  }
-  
+}
+
 
 @media (min-width: 768px) {
     .videos-title h2 {
@@ -6554,14 +6566,16 @@ button.btn-close {
     .video-item img {
         width: 150px;
         height: 80px;
-        
+
     }
+
     .div-fondo-item {
         width: 150px;
         height: 80px;
     }
+
     .video-principal iframe {
-        width: 462.5px; 
+        width: 462.5px;
         height: 262.5px;
     }
 }
@@ -6571,20 +6585,24 @@ button.btn-close {
     .container-videos-pr {
         padding: 3rem;
     }
+
     .videos-title h2 {
         font-size: 2.5rem;
     }
+
     .video-item img {
         width: 100%;
         height: 120px;
     }
+
     .div-fondo-item {
         width: 100%;
         height: 120px;
         left: 0px;
     }
+
     .video-principal iframe {
-        width: 720px; 
+        width: 720px;
         height: 382px;
     }
 }
@@ -6595,17 +6613,20 @@ button.btn-close {
     .videos-title h2 {
         font-size: 68px;
     }
+
     .video-item img {
         width: 286px;
         height: 154px;
     }
+
     .div-fondo-item {
         width: 100%;
         left: 0;
         height: 100%;
     }
+
     .video-principal iframe {
-        width: 815px; 
+        width: 815px;
         height: 475px;
     }
 }
