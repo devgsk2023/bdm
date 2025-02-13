@@ -124,9 +124,31 @@
                 </div>
             </div>
             <div class="imagen bacteriana-par">
-                <img src="/imagenes/image 11.png" alt="Descripción de la imagen" id="responsive-img">
+                <button type="button" class="btn-play" data-bs-toggle="modal" data-bs-target="#videoModal">
+                    <img class="imgpopup" src="imagenes/Group 5.svg" alt="Play">
+                </button>
             </div>
         </div>
+        
+        <!-- Modal de Bootstrap -->
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    
+                    <div class="modal-body">
+                        <iframe id="youtube-video" width="100%" height="400"
+                            src=""
+                            title="Todo lo que tenés que saber | Meningitis"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!-- ---------- FIN ¿que es? ----------->
 
         <!-- ---------- Sintomas ----------->
@@ -515,35 +537,51 @@
 
         <div class="container-videos-pr">
             <div class="container-videos-pr-title">
-                <div class="videos-title">
-                    <h2>Meningitis en primera persona</h2>
+              <div class="videos-title">
+                <h2>Meningitis en primera persona</h2>
+              </div>
+              <div class="tabs-videos">
+                <div class="tabs-item left tabactivo" id="entrevistaMedicos">
+                  <p>Entrevistas a Médicos</p>
                 </div>
-                <div class="tabs-videos">
-                    <div class="tabs-item left tabactivo" id="entrevistaMedicos"><p>Entrevistas a Médicos</p></div>
-                    <div class="tabs-item right" id="entrevistaPacientes"><p>Testimoniales de pacientes</p></div>
+                <div class="tabs-item right" id="entrevistaPacientes">
+                  <p>Testimoniales de pacientes</p>
                 </div>
+              </div>
             </div>
             <div class="container-box-videos">
-                <div class="video-principal">
-                    <iframe  src="https://www.youtube.com/embed/wgvqiH7iCRo?si=kaXehyW-rc4Nx9mu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  id="videoPrincipal"></iframe>
+              <div class="video-principal">
+                <iframe
+                  src="https://www.youtube.com/embed/wRPCDOFebHQ"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  id="videoPrincipal"
+                ></iframe>
+              </div>
+              <div class="container-video-items">
+                <div class="video-item" data-video="https://www.youtube.com/embed/wRPCDOFebHQ">
+                  <img src="./imagenes/medico1.png" alt="Dr. Juan Pérez">
+                  <div class="video-overlay">
+                    <p class="video-title">Dr. Juan Pérez</p>
+                  </div>
                 </div>
-                <div class="container-video-items">
-                    <div class="video-item">
-                        <div class="div-fondo-item"></div>
-                        <img src="./imagenes/Captura de pantalla 2024-11-07 a la(s) 5.37.33 p. m. 1.png" alt="">
-                    </div>
-                    <div class="video-item">
-
-                        <div class="div-fondo-item"></div>
-                        <img src="./imagenes/Captura de pantalla 2024-11-07 a la(s) 5.37.33 p. m. 1.png" alt="">
-                    </div>
-                    <div class="video-item">
-                        <div class="div-fondo-item"></div>
-                        <img src="./imagenes/Captura de pantalla 2024-11-07 a la(s) 5.37.33 p. m. 1.png" alt="">
-                    </div>
+                <div class="video-item" data-video="https://www.youtube.com/embed/example2">
+                  <img src="./imagenes/medico2.png" alt="Dra. María López">
+                  <div class="video-overlay">
+                    <p class="video-title">Dra. María López</p>
+                  </div>
                 </div>
+                <div class="video-item" data-video="https://www.youtube.com/embed/example3">
+                  <img src="./imagenes/medico3.png" alt="Dr. Carlos González">
+                  <div class="video-overlay">
+                    <p class="video-title">Dr. Carlos González</p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
+          
         <!-- ---------- fin seccion "Consultá con su pediatra sobre su vacunación" ----------->
         <div class="volver-avanzar">
              
@@ -685,7 +723,9 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNSKLXPR" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+     <script src="/js/pop-up.js"></script>
     <script src="/js/scripts.js"></script>
+    <script src="/js/videos.js"></script>
     <script src="/js/tab-referencia.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
