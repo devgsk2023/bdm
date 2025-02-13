@@ -468,6 +468,35 @@ header#vacunacion__header {
 
 /* <!-- ---------- FIN BANNER PRINCIPAL--------- --> */
 
+/* <!-- ---------- video explicativo --------- --> */
+
+.video-explicativo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.video-explicativo {
+    position: relative;
+    width: 100%; /* Se adapta al ancho del contenedor */
+    max-width: 1280px; /* Limita el ancho máximo */
+    aspect-ratio: 16 / 9; /* Mantiene la proporción 16:9 */
+    margin: 100px auto 100px auto; /* Centra el video */
+}
+
+.video-explicativo iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+/* <!-- ---------- fin video explicativo --------- --> */
+
+
 /* <!-- ---------- SECCION ¿Qué es la meningitis? --------- --> */
 
 .two-column-section {
@@ -2097,11 +2126,7 @@ section.banner.hongos-banner-contenedor {
 }
 
 /* Estilo para pantallas grandes */
-.imagen img {
-    content: url('/imagenes/image\ 11.png');
-    width: 100%;
-    height: 100%;
-}
+
 
 /* Cambiar la imagen para pantallas pequeñas */
 
@@ -2455,6 +2480,13 @@ sup {
         width: 28px;
         height: 41px;
         /* flex-shrink: 0; */
+    }
+    .video-explicativo {
+        
+        margin: 50px auto 50px auto; /* Centra el video */
+    }
+    .video-explicativo{
+        width: 95%;
     }
 }
 
@@ -3730,6 +3762,38 @@ section.contenedor-menu.meningitis-menu {
     background-repeat: no-repeat;
 }
 
+.imagen.bacteriana-par {
+    background-size: cover;
+    background-image: url(/imagenes/bacterias.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-play {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-play img {
+    width: 100%;
+    height: auto;
+}
+
+pop-up-imagen{
+    background: none;
+}
+
 img#responsive-img {
     display: none;
 }
@@ -3925,7 +3989,11 @@ img#responsive-img {
         max-height: 100rem;
     }
 
-
+    .imagen.bacteriana-par {
+        height: 500px;
+    }
+    
+    
 
     h2 {
         font-size: 28px;
@@ -6265,16 +6333,18 @@ img#responsive-img {
 
 .modal-content {
     background: white;
-    padding: 30px;
-    border-radius: 40px;
+    padding: 0px;
+    border-radius: 0px;
+    border: 0px;
 }
 
 .modal-header {
     padding: 0px;
+    border: none;
+}
 
-
-
-    border: 0px;
+.modal-header .btn-close{
+    padding: 0px;
 }
 
 .custom-popup.full {
@@ -6301,10 +6371,11 @@ img#responsive-img {
 .modal-body {
     justify-content: center;
     text-align: center;
-    gap: 20px;
+    gap: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0px;
 }
 
 .texto-perso {
