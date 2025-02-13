@@ -474,15 +474,15 @@ header#vacunacion__header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 .video-explicativo {
     position: relative;
     width: 100%; /* Se adapta al ancho del contenedor */
     max-width: 1280px; /* Limita el ancho máximo */
     aspect-ratio: 16 / 9; /* Mantiene la proporción 16:9 */
-    margin: 100px auto 100px auto; /* Centra el video */
+    margin: 50px auto 50px auto; /* Centra el video */
 }
 
 .video-explicativo iframe {
@@ -494,6 +494,34 @@ header#vacunacion__header {
 }
 
 
+
+.video-thumbnail {
+    width: 100%;
+    cursor: pointer;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.play-button::before {
+    content: "▶";
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 5px;
+}
 /* <!-- ---------- fin video explicativo --------- --> */
 
 
@@ -3771,13 +3799,22 @@ section.contenedor-menu.meningitis-menu {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+
+.imagen.bacteriana-par h2{
+    color: white;
+    font-size: 48px;
+    text-align: center;
 }
 
 .btn-play {
     background: none;
     border: none;
     cursor: pointer;
-    position: absolute;
+    
     width: 80px;
     height: 80px;
     display: flex;
@@ -6412,6 +6449,11 @@ button.btn-close {
 
 
 @media only screen and (max-width:800px) {
+    .imagen.bacteriana-par h2{
+        font-size: 24px;
+    }
+
+
     .texto-perso {
         font-size: 16px;
 
