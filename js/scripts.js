@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     // Manejo del menú toggle
     document.querySelector('.menu-toggle').addEventListener('click', () => {
         document.querySelector('.menu').classList.toggle('show');
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuPopup = document.getElementById("menu-popup");
     const closeButton = document.querySelector(".close-button");
 
-    menuToggle.addEventListener("click", function () {
+    menuToggle.addEventListener("click", function() {
         if (menuPopup.classList.contains("hidden")) {
             menuPopup.classList.remove("hidden");
             menuPopup.style.display = "block";
@@ -17,18 +17,18 @@ document.addEventListener("DOMContentLoaded", function () {
         menuPopup.style.display = "block";
     });
 
-    closeButton.addEventListener("click", function () {
+    closeButton.addEventListener("click", function() {
         menuPopup.classList.add("hidden");
-        setTimeout(function () {
+        setTimeout(function() {
             menuPopup.style.display = "none";
         }, 500);
-        
+
     });
 
-    window.addEventListener("click", function (event) {
+    window.addEventListener("click", function(event) {
         if (event.target === menuPopup) {
             menuPopup.classList.add("hidden");
-            setTimeout(function () {
+            setTimeout(function() {
                 menuPopup.style.display = "none";
             }, 500);
         }
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const arrowDown = document.querySelector(".fa-chevron-down");
 
     menuItems.forEach(item => {
-        item.addEventListener("mouseenter", function () {
+        item.addEventListener("mouseenter", function() {
             const submenu = this.querySelector(".submenu");
             if (submenu) {
                 submenu.style.display = "flex";
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             progressBar.style.left = `${itemRect.left - containerRect.left}px`;
         });
 
-        item.addEventListener("mouseleave", function () {
+        item.addEventListener("mouseleave", function() {
             const submenu = this.querySelector(".submenu");
             if (submenu) {
                 submenu.style.display = "none";
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             progressBar.style.width = '0';
         });
 
-        item.addEventListener("click", function () {
+        item.addEventListener("click", function() {
             const submenu = this.querySelector(".submenu");
             if (submenu) {
                 submenu.style.display = (submenu.style.display === "flex") ? "none" : "flex";
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     submenuItems.forEach(item => {
-        item.addEventListener("mouseenter", function () {
+        item.addEventListener("mouseenter", function() {
             const imageUrl = this.getAttribute("data-image");
             if (imageUrl) {
                 menuImage.src = imageUrl;
@@ -80,16 +80,30 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        item.addEventListener("mouseleave", function () {
+        item.addEventListener("mouseleave", function() {
             imageContainer.style.display = "none";
         });
     });
 
+    // Función para detectar si es un dispositivo móvil
+    function isMobileDevice() {
+        return (window.innerWidth <= 768) ||
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
     let descargarPDF = document.getElementById("descargar");
-    descargarPDF.addEventListener("click", function () {
+    descargarPDF.addEventListener("click", function() {
         const link = document.createElement('a');
-        link.href = '../wp-content/uploads/2024/02/Calendario_Vacunacion.pdf';
-        link.download = 'Calendario_Vacunacion.pdf';
+
+        if (isMobileDevice()) {
+            link.href = '../wp-content/uploads/2024/02/Calendario_Vacunacion_mobile.pdf';
+            link.download = 'Calendario_Vacunacion_mobile.pdf';
+        } else {
+            link.href = '../wp-content/uploads/2024/02/Calendario_Vacunacion.pdf';
+            link.download = 'Calendario_Vacunacion.pdf';
+        }
+
+        document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
     });
@@ -98,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ruleta javascript
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const items = document.querySelectorAll('.container-ruleta div');
     const bloques = document.querySelectorAll('.bloque');
     const subcontenedor = document.querySelector('.subcontenedor');
@@ -149,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     // Toggle menu on mobile
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
@@ -164,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Close the menu when clicking outside of it
-    window.addEventListener('click', function (event) {
+    window.addEventListener('click', function(event) {
         if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
             menu.classList.remove('open');
         }
@@ -174,14 +188,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Mostrar/ocultar el texto en el acordeón
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     // Mostrar/ocultar el texto en el acordeón
     const accordionButtons = document.querySelectorAll('.accordion-button');
     accordionButtons.forEach(button => {
-        button.addEventListener('click', function () {
+        button.addEventListener('click', function() {
             const parent = button.closest('.accordion-item');
             const hiddenText = parent.querySelector('.hidden-text');
-            
+
             if (button.classList.contains('collapsed')) {
                 hiddenText.style.display = 'none';
             } else {
@@ -195,22 +209,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //boton volver arriba
 
-$(document).ready(function(){
+$(document).ready(function() {
 
-	$('.ir-arriba').click(function(){
-		$('body, html').animate({
-			scrollTop: '0px'
-		}, 300);
-	});
+    $('.ir-arriba').click(function() {
+        $('body, html').animate({
+            scrollTop: '0px'
+        }, 300);
+    });
 
-	$(window).scroll(function(){
-		// Cambia el valor 500 para que el botón aparezca después de scrollear 500 píxeles
-		if( $(this).scrollTop() > 200 ){
-			$('.ir-arriba').slideDown(300);
-		} else {
-			$('.ir-arriba').slideUp(300);
-		}
-	});
+    $(window).scroll(function() {
+        // Cambia el valor 500 para que el botón aparezca después de scrollear 500 píxeles
+        if ($(this).scrollTop() > 200) {
+            $('.ir-arriba').slideDown(300);
+        } else {
+            $('.ir-arriba').slideUp(300);
+        }
+    });
 
 });
 
@@ -222,7 +236,7 @@ $(document).ready(function(){
 window.addEventListener('scroll', function() {
     var header = document.querySelector('.menu-sticky-trigger');
     var menuIcon = document.querySelector('button.menu-toggle'); // Selecciona el ícono del menú
-    
+
     if (window.scrollY > 1) { // Cambiado a 1 píxel
         header.style.position = 'fixed';
         header.style.top = '0';
@@ -261,9 +275,9 @@ var nombre = localStorage.getItem('popupShownDate');
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const popupDisplayTime = 1; // Días que deben pasar para mostrar el pop-up de nuevo (1 día)
-    
+
     // Función para calcular la diferencia en días entre dos fechas
     function daysBetween(date1, date2) {
         const oneDay = 24 * 60 * 60 * 1000; // Milisegundos en un día
@@ -320,4 +334,4 @@ document.addEventListener('DOMContentLoaded', function () {
 console.log(nombre);
 
 
- 
+
