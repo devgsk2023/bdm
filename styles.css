@@ -6875,4 +6875,12 @@ button.btn-close {
         padding: 0 20px 20px 20px;
     }
 }
+
+.faq-question-text {
+    flex: 1;
+}
+
+.faq-question sup {
+    margin-left: 0;
+}
 /* ---------- END FAQ STYLES ---------- */
