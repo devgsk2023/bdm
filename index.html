@@ -6,10 +6,10 @@
     <script>
         // Verifica si la URL contiene los UTM esperados
         if (window.location.href.includes('utm_source=folleto') && window.location.href.includes('utm_medium=canales')) {
-          // Redirige a la URL correcta
-          window.location.href = "https://www.bastademeningitis.com.ar/meningitis-bacteriana.html?utm_source=folleto-meningitis&utm_medium=canales-meningitis";
+            // Redirige a la URL correcta
+            window.location.href = "https://www.bastademeningitis.com.ar/meningitis-bacteriana.html?utm_source=folleto-meningitis&utm_medium=canales-meningitis";
         }
-      </script>      
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
@@ -34,18 +34,18 @@
     <script src="https://kit.fontawesome.com/b0e3ce937d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    
-    
+
+
 </head>
 
 <body>
     <span class="ir-arriba"><img src="/imagenes/flecha-arriba.png" alt=""></i></span>
     <!-- ----------HEADER--------- -->
 
-    
-    
-    
-    <header class="home " >
+
+
+
+    <header class="home ">
 
         <section class="contenedor-menu home-menu-logo menu-sticky-trigger" id="header-sticky">
             <a href="index.html">
@@ -56,9 +56,9 @@
             </nav>
         </section>
         <div id="menu-popup" class="menu-popup">
-        
+
             <div class="menu-content index">
-        
+
                 <div class="Contenedor-popup">
                     <a href="home"><img src="/imagenes/logo.png" alt="Logo" class="logo"></a>
                     <button class="close-button">&times;</button>
@@ -68,12 +68,12 @@
                     <div class="progress-bar"></div>
                     <li>
                         <a href="index.html">Home</a>
-        
+
                     </li>
-        
+
                     <li>
                         <a href="sintomas.html">Síntomas</a>
-        
+
                     </li>
                     <li>
                         <a href="#">Causas <i class="fa-solid fa-chevron-down"></i></a>
@@ -86,24 +86,24 @@
                                     href="meningitis-por-hongos.html">Hongos</a></li>
                             <li class="color-b" data-image="/imagenes/meningitis-por-parasito.png"><a
                                     href="meningitis-por-parasitos.html">Parásitos</a></li>
-                            <li class="color-b" ><a href="tipos.html">Todas las causas</a></li>        
+                            <li class="color-b"><a href="tipos.html">Todas las causas</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="vacunas.html">Vacunación</a>
-        
+
                     </li>
                 </ul>
-        
+
                 <div class="image-container">
                     <img src="" alt="Descripción de la imagen" id="menu-image">
                 </div>
-        
+
             </div>
-        
+
         </div>
         <!-- Pop-up del Menú -->
-        
+
 
         <section class="banner" id="index__banner">
             <div class="banner-content medium width-medium botones">
@@ -134,28 +134,25 @@
 
 
         <div class="video-explicativo" style="position: relative; width: 100%; max-width: 1280px;">
-            <img src="imagenes/videoframe_2135.png" 
-                alt="Video Preview" 
-                onclick="loadVideo()" 
-                class="video-thumbnail">
+            <img src="imagenes/videoframe_2135.png" alt="Video Preview" onclick="loadVideo()" class="video-thumbnail">
             <div class="play-button" onclick="loadVideo()"></div>
         </div>
-        
+
         <script>
             function loadVideo() {
                 document.querySelector('.video-explicativo').innerHTML = `
-                    <iframe width="1280" height="720" 
-                        src="https://www.youtube.com/embed/23eP8YVRXyc?list=PLvDyxtKlIcng7KjH451XcRAVGXiCnEvd6&autoplay=1&hd=1&vq=hd1080" 
-                        title="Todo lo que tenés que saber | Meningitis" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
+                    <iframe width="1280" height="720"
+                        src="https://www.youtube.com/embed/23eP8YVRXyc?list=PLvDyxtKlIcng7KjH451XcRAVGXiCnEvd6&autoplay=1&hd=1&vq=hd1080"
+                        title="Todo lo que tenés que saber | Meningitis"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
                         allowfullscreen>
                     </iframe>`;
             }
         </script>
-        
-        
+
+
 
         <!-- ---------- QUE ES LA MENINGISTIS ----------->
         <div id="que-es" class="two-column-section">
@@ -181,7 +178,7 @@
             <div class="header-causa">
                 <h2>Causas</h2>
             </div>
-            
+
             <!-- ---------- comienzo causa ----------->
 
             <div class="accordion" id="accordionExample">
@@ -191,9 +188,12 @@
                             data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                             <div class="acordeon header">
                                 <h2>Bacterias</h2>
-                                <p class="hidden-text">La meningitis bacteriana es el <strong>tipo de infección más grave que
-                                    afecta a las meninges</strong>. Los principales microorganismos responsables son Neumococo,
-                                    Meningococo, <i>Haemophilus influenzae</i> tipo b y <i>Streptococcus agalactiae</i> (estreptococo
+                                <p class="hidden-text">La meningitis bacteriana es el <strong>tipo de infección más
+                                        grave que
+                                        afecta a las meninges</strong>. Los principales microorganismos responsables son
+                                    Neumococo,
+                                    Meningococo, <i>Haemophilus influenzae</i> tipo b y <i>Streptococcus agalactiae</i>
+                                    (estreptococo
                                     del grupo B). <sup>1,3</sup> </p> <!-- Texto oculto -->
                             </div>
                         </button>
@@ -244,13 +244,15 @@
                                                         d="M77.721 104.204C77.7104 101.775 77.8553 99.383 77.7398 96.986C77.71 96.3441 77.5804 95.7781 76.8846 95.6351C76.1352 95.4824 75.5882 95.815 75.2455 96.5162C75.1206 96.7739 75.0783 97.0877 75.0439 97.3819C74.8694 98.8354 74.6697 100.285 74.5545 101.742C74.3919 103.802 74.2827 105.865 74.1764 107.928C74.0987 109.454 74.7923 110.22 76.1857 110.059C78.9209 109.74 81.6602 109.566 84.4104 109.526C85.1475 109.515 85.8591 109.346 86.5312 109.004C87.0288 108.751 87.4269 108.398 87.4411 107.751C87.4561 107.058 87.0623 106.651 86.5159 106.389C85.5671 105.936 84.5644 105.895 83.5467 105.94C82.7502 105.975 81.9545 105.996 81.1252 106.023C80.9506 105.778 81.1895 105.585 81.2946 105.375C87.5891 92.7275 88.4706 79.4101 85.2483 65.6862C82.4703 53.86 76.7565 43.9348 67.8875 36.2917C60.8268 30.2079 52.7522 26.3961 43.9029 24.549C31.2353 21.9088 18.9884 23.4067 7.1881 29.0589C7.06103 29.1203 6.9355 29.1832 6.80688 29.2432C6.14636 29.5502 5.5771 29.9702 5.97051 30.8536C6.33878 31.6761 6.95151 31.4501 7.57696 31.1514C16.4572 26.9058 25.7607 25.1565 35.4434 25.8149C44.6158 26.4381 53.2179 29.1248 61.0697 34.3976C69.3204 39.9402 75.3729 47.5978 79.3172 57.1242C84.4062 69.421 85.3498 82.096 81.6672 95.0486C80.7489 98.2814 79.424 101.331 77.721 104.204Z"
                                                         fill="white" />
                                                 </svg>
-                                                
+
                                             </ul>
                                             <div class="arrow"></div>
                                             <div class="serogrupos Prevención-es-vacunación">
                                                 <div class="columna1 Prevención-es-vacunación">
                                                     <h4>Prevención es vacunación</h4>
-                                                    <p>Existen distintas vacunas para prevenir la meningitis por meningococo. Consultá con el pediatra para más información.<sup>7</sup></p>
+                                                    <p>Existen distintas vacunas para prevenir la meningitis por
+                                                        meningococo. Consultá con el pediatra para más
+                                                        información.<sup>7</sup></p>
                                                     <button class="custom-button ">
                                                         <a href="vacunas.html">Calendario de vacunación</a>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38"
@@ -267,7 +269,7 @@
                                         <div class="columna2">
                                             <div class="grafico">
                                                 <div class="ondas"></div>
-                                                <img class="adelante" src="/imagenes/grafico_dona.png"
+                                                <img class="adelante" src="/imagenes/grafico_dona2.png"
                                                     alt="Casos en Argentina 2023">
                                             </div>
                                             <div class="buttom">
@@ -288,18 +290,17 @@
                                                 <div class="legend">
                                                     <div class="legend-item">
                                                         <div class="color-box serogrupo-y"></div>
-                                                        <span>SEROGRUPO Y</span>
+                                                        <span>SEROGRUPO W</span>
                                                     </div>
                                                     <div class="legend-item">
-                                                        <p class="legend-p">N=34</p>
+                                                        <p class="legend-p">N=53</p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="datos">
-                                                <p>Según los datos publicados por el Instituto Malbrán, en Argentina en
-                                                    el 2023, el 100%
-                                                    de los casos de meningococo en menores de 2 años fue por el
-                                                    serogrupo B.<sup>5</sup>
+                                                <p>Según los datos publicados por el instituto Malbrán, en Argentina en
+                                                    el período 2022-2024, el 95% de los casos de meningococo en menores
+                                                    de 1 año fue por el serogrupo B<sup>5</sup> <sup>8</sup>
                                                 </p>
                                             </div>
                                         </div>
@@ -386,8 +387,6 @@
                             </div>
                         </div>
 
-
-
                     </div>
 
 
@@ -409,7 +408,8 @@
                             <div id="collapseFour" class="accordion-collapse collapse alto-medio"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body virus-acordeon-no-padding">
-                                    Las personas suelen contraer meningitis parasitaria al comer <strong>animales infectados o
+                                    Las personas suelen contraer meningitis parasitaria al comer <strong>animales
+                                        infectados o
                                         alimentos contaminados.</strong><sup>11</sup></p>
                                 </div>
                                 <div class="ver-mas">
@@ -443,50 +443,46 @@
 
         <div class="container-videos-pr">
             <div class="container-videos-pr-title">
-              <div class="videos-title">
-                <h2>Meningitis en primera persona</h2>
-              </div>
-              <div class="tabs-videos">
-                <div class="tabs-item left tabactivo" id="entrevistaMedicos">
-                  <p>Entrevistas a Médicos</p>
+                <div class="videos-title">
+                    <h2>Meningitis en primera persona</h2>
                 </div>
-                <div class="tabs-item right" id="entrevistaPacientes">
-                  <p>Testimoniales de pacientes</p>
+                <div class="tabs-videos">
+                    <div class="tabs-item left tabactivo" id="entrevistaMedicos">
+                        <p>Entrevistas a Médicos</p>
+                    </div>
+                    <div class="tabs-item right" id="entrevistaPacientes">
+                        <p>Testimoniales de pacientes</p>
+                    </div>
                 </div>
-              </div>
             </div>
             <div class="container-box-videos">
-              <div class="video-principal">
-                <iframe
-                  src="https://www.youtube.com/embed/wRPCDOFebHQ"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  id="videoPrincipal"
-                ></iframe>
-              </div>
-              <div class="container-video-items">
-                <div class="video-item" data-video="https://www.youtube.com/embed/wRPCDOFebHQ">
-                  <img src="./imagenes/medico1.png" alt="Dr. Juan Pérez">
-                  <div class="video-overlay">
-                    <p class="video-title">Dr. Juan Pérez</p>
-                  </div>
+                <div class="video-principal">
+                    <iframe src="https://www.youtube.com/embed/wRPCDOFebHQ" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        id="videoPrincipal"></iframe>
                 </div>
-                <div class="video-item" data-video="https://www.youtube.com/embed/example2">
-                  <img src="./imagenes/medico2.png" alt="Dra. María López">
-                  <div class="video-overlay">
-                    <p class="video-title">Dra. María López</p>
-                  </div>
+                <div class="container-video-items">
+                    <div class="video-item" data-video="https://www.youtube.com/embed/wRPCDOFebHQ">
+                        <img src="./imagenes/medico1.png" alt="Dr. Juan Pérez">
+                        <div class="video-overlay">
+                            <p class="video-title">Dr. Juan Pérez</p>
+                        </div>
+                    </div>
+                    <div class="video-item" data-video="https://www.youtube.com/embed/example2">
+                        <img src="./imagenes/medico2.png" alt="Dra. María López">
+                        <div class="video-overlay">
+                            <p class="video-title">Dra. María López</p>
+                        </div>
+                    </div>
+                    <div class="video-item" data-video="https://www.youtube.com/embed/example3">
+                        <img src="./imagenes/medico3.png" alt="Dr. Carlos González">
+                        <div class="video-overlay">
+                            <p class="video-title">Dr. Carlos González</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="video-item" data-video="https://www.youtube.com/embed/example3">
-                  <img src="./imagenes/medico3.png" alt="Dr. Carlos González">
-                  <div class="video-overlay">
-                    <p class="video-title">Dr. Carlos González</p>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
 
         <div class="container-main">
             <div id="sintomas" class="sintomas">
@@ -619,81 +615,89 @@
 
 
         <!-- Pop-up -->
-        
-        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+            tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                
-                <div class="modal-header">
-                   
-                  <p class="modal-title fs-5" id="exampleModalToggleLabel"></p>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                
-                <div class="modal-body">
-                    <img class="centrado" src="/imagenes/icono-popup.png" alt="">
-                    <p class="texto-perso">Después de leer esta información,</p>
-                    <p class="texto-perso"><strong>¿vas a consultarle a tu pediatra acerca de la vacunación contra los distintos tipos de meningitis?</strong></p>
-                </div>
-                <div class="modal-footer">
-                  <button id="boton-si-pop-up" class="btn btn-primary custom-popup" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">No</button>
-                  <button id="boton-no-pop-up" class="btn btn-primary custom-popup" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Si</button>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-          <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                    
-                        <div class="modal-header">
-                        
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
                         <p class="modal-title fs-5" id="exampleModalToggleLabel"></p>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        
-                        <div class="modal-body">
-                            <img class="centrado" src="/imagenes/icono-popup-check.png" alt="">
-                            <p class="texto-perso"><strong>¡Gracias por tu respuesta!</strong></p>
-                            <p class="texto-perso">Haber llegado hasta acá es el primer paso. Siempre podés consultar con el pediatra cuando estés listo/a.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary custom-popup full" data-bs-dismiss="modal">Volver</button>
-                        
-                        </div>
-                        
                     </div>
+
+                    <div class="modal-body">
+                        <img class="centrado" src="/imagenes/icono-popup.png" alt="">
+                        <p class="texto-perso">Después de leer esta información,</p>
+                        <p class="texto-perso"><strong>¿vas a consultarle a tu pediatra acerca de la vacunación contra
+                                los distintos tipos de meningitis?</strong></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="boton-si-pop-up" class="btn btn-primary custom-popup"
+                            data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">No</button>
+                        <button id="boton-no-pop-up" class="btn btn-primary custom-popup"
+                            data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Si</button>
+                    </div>
+
                 </div>
             </div>
+        </div>
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
 
-            <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                    
-                        <div class="modal-header">
-                        
+                    <div class="modal-header">
+
+                        <p class="modal-title fs-5" id="exampleModalToggleLabel"></p>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <img class="centrado" src="/imagenes/icono-popup-check.png" alt="">
+                        <p class="texto-perso"><strong>¡Gracias por tu respuesta!</strong></p>
+                        <p class="texto-perso">Haber llegado hasta acá es el primer paso. Siempre podés consultar con el
+                            pediatra cuando estés listo/a.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary custom-popup full" data-bs-dismiss="modal">Volver</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
                         <p class="modal-title fs-5" id="exampleModalToggleLabel3"></p>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        
-                        <div class="modal-body">
-                            <img class="centrado" src="/imagenes/icono-popup-check.png" alt="">
-                            <p class="texto-perso"><strong>¡Gracias por tu respuesta!</strong></p>
-                            <p class="texto-perso">Hablar con el pediatra es un gran paso para proteger la salud de quienes más importan.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary custom-popup full" data-bs-dismiss="modal">Volver</button>
-                        
-                        </div>
-                        
                     </div>
+
+                    <div class="modal-body">
+                        <img class="centrado" src="/imagenes/icono-popup-check.png" alt="">
+                        <p class="texto-perso"><strong>¡Gracias por tu respuesta!</strong></p>
+                        <p class="texto-perso">Hablar con el pediatra es un gran paso para proteger la salud de quienes
+                            más importan.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary custom-popup full" data-bs-dismiss="modal">Volver</button>
+
+                    </div>
+
                 </div>
             </div>
+        </div>
 
 
-        </div>  
-          
+        </div>
+
 
         <!-- fin Pop-up -->
 
@@ -749,7 +753,7 @@
 
         </div>
 
-        
+
 
 
 
@@ -765,15 +769,15 @@
             </div>
             <div id="tab-content" class="tab-content home-tab">
                 <p><sup>1</sup> Organización Mundial de la Salud (OMS): Meningitis, en
-                    https://www.who.int/news-room/fact-sheets/detail/meningitis (último acceso junio 2024)</p>
+                    https://www.who.int/news-room/fact-sheets/detail/meningitis (último acceso mayo 2025)</p>
                 <p><sup>2</sup> Adaptado de Encyclopaedia Britannica: “Meninges en
-                    https://www.britannica.com/science/meninges (último acceso junio 2024)</p>
+                    https://www.britannica.com/science/meninges (último acceso mayo 2025)</p>
                 <p><sup>3</sup> Centers for Disease Control and Prevention (CDC). Meningitis en
-                    https://www.cdc.gov/meningitis/index.html (último acceso junio 2024).</p>
+                    https://www.cdc.gov/meningitis/index.html (último acceso mayo 2025).</p>
                 <p><sup>4</sup> Organización Panamericana de la Salud (OPS): Meningococo, en
-                    https://www.paho.org/es/temas/meningococo (último acceso junio 2024).</p>
+                    https://www.paho.org/es/temas/meningococo (último acceso mayo 2025).</p>
                 <p><sup>5</sup> Organización Mundial de la Salud (OMS): Health-topics. “Meningitis”, en
-                    https://www.who.int/health-topics/meningitis#tab=tab_1 (último acceso junio 2024).</p>
+                    https://www.who.int/health-topics/meningitis#tab=tab_1 (último acceso mayo 2025).</p>
                 <p><sup>6</sup>Ministerio de Salud de la Nación Argentina: “Fundamentos de la introducción de la vacuna
                     tetravalente (ACYW) conjugada contra meningococo al calendario nacional de inmunizaciones”
                     https://bancos.salud.gob.ar/recurso/lineamientos-tecnicos-vacuna-meningococo (último acceso junio
@@ -781,37 +785,37 @@
                 <p><sup>7</sup> Ministerio de Salud de la Nación Argentina: “Huespedes especiales: Estrategia de
                     vacunación contra el meningococo en Argentina” en
                     https://bancos.salud.gob.ar/recurso/huespedes-especiales-estrategia-de-vacunacion-contra-meningococo-de-argentina
-                    (último acceso junio 2024).</p>
+                    (último acceso mayo 2025).</p>
                 <p><sup>8</sup> SIREVA-Argentina. Informe Argentina 2023. SIREVA II. Servicio Antimicrobianos. Dpto.
                     Bacteriología, Instituto Nacional de Enfermedades Infecciosas (INEI) - ANLIS “Dr. Carlos G. Malbrán
                     SIREVA (Sistema de Redes de Vigilancia de los Agentes Bacterianos Responsables de Neumonía y
                     Meningitis) - Página web de Bacteriología Clínica INEI-ANLIS (jimdofree.com) (último acceso junio
                     2024).</p>
                 <p><sup>9</sup> Centers for Disease Control and Prevention (CDC). About Viral Meningitis, en
-                    https://www.cdc.gov/meningitis/about/viral-meningitis.html (último acceso junio 2024).</p>
+                    https://www.cdc.gov/meningitis/about/viral-meningitis.html (último acceso mayo 2025).</p>
                 <p><sup>10</sup> Centers for Disease Control and Prevention (CDC). About Fungal Meningitis, en
-                    https://www.cdc.gov/meningitis/about/fungal-meningitis.html (último acceso junio 2024).</p>
+                    https://www.cdc.gov/meningitis/about/fungal-meningitis.html (último acceso mayo 2025).</p>
                 <p><sup>11</sup> Centers for Disease Control and Prevention (CDC). About Parasitic Meningitis, en
-                    https://www.cdc.gov/meningitis/about/parasitic-meningitis.html (último acceso junio 2024).</p>
+                    https://www.cdc.gov/meningitis/about/parasitic-meningitis.html (último acceso mayo 2025).</p>
                 <p><sup>12</sup> Organización Mundial de la Salud (OMS): Defeating Meningitis by 2030, en
-                    https://www.who.int/initiatives/defeating-meningitis-by-2030 (último acceso junio 2024).</p>
+                    https://www.who.int/initiatives/defeating-meningitis-by-2030 (último acceso mayo 2025).</p>
                 <p><sup>13</sup> Ministerio de Salud de la Nación Argentina. Calendario Nacional de Vacunación, en
-                    https://www.argentina.gob.ar/salud/vacunas (último acceso junio 2024).</p>
+                    https://www.argentina.gob.ar/salud/vacunas (último acceso mayo 2025).</p>
                 <p><sup>14</sup> Organización Panamericana de la Salud (OPS): “Vigilancia de las neumonías y meningitis
                     bacterianas en menores de cinco años” https://iris.paho.org/handle/10665.2/51883 (último acceso
-                    junio 2024).</p>
+                    mayo 2025).</p>
                 <p><sup>15</sup> Ministerio de Sanidad, Servicios Sociales e Igualdad de España: “Guía de práctica
                     clínica sobre el manejo de la enfermedad meningocócica invasiva"
                     https://portal.guiasalud.es/wp-content/uploads/2018/12/GPC_525_EMI_ICS_resum.pdf (último acceso
-                    junio 2024).</p>
+                    mayo 2025).</p>
                 <p><sup>16</sup> Centers for Disease Control and Prevention (CDC). About Meningococcal Disease.
-                    https://www.cdc.gov/meningococcal/about/index.html (último acceso junio 2024).</p>
+                    https://www.cdc.gov/meningococcal/about/index.html (último acceso mayo 2025).</p>
                 <p><sup>17</sup>Mayo Clinic: Meningitis, descripción general en
                     https://www.mayoclinic.org/es-es/diseases-conditions/meningitis/symptoms-causes/syc-20350508 (último
-                    acceso junio 2024).Organización Panamericana de la Salud (OPS): Inmunización.
+                    acceso mayo 2025).Organización Panamericana de la Salud (OPS): Inmunización.
                     https://www.paho.org/es/temas/in</p>
                 <p><sup>18</sup> Inmunización - OPS/OMS | Organización Panamericana de la Salud (paho.org) (último
-                    acceso junio 2024).</p>
+                    acceso mayo 2025).</p>
             </div>
         </div>
         <!-- ---------- fin Referencias ----------->
@@ -830,7 +834,7 @@
             <a href="terminos-y-condiciones.html">TÉRMINOS Y CONDICIONES</a>
             <a href="https://privacy.gsk.com/es-ar/privacy-notice/general/general-full-text/">POLÍTICA DE PRIVACIDAD</a>
             <a href="https://privacy.gsk.com/es-ar/privacy-notice/">POLÍTICA DE COOKIES</a>
-            
+
         </div>
 
     </footer>
