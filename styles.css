@@ -6796,6 +6796,20 @@ button.btn-close {
     font-family: 'Inter', sans-serif;
 }
 
+.faq-question-text {
+   flex: 1;
+}
+
+.faq-question sup {
+   margin-left: 4px;
+   font-weight: 600;
+   font-size: 0.8em;
+}
+
+.faq-question.active sup {
+   color: white;
+}
+
 .faq-question:hover {
     background-color: #f8f9fa;
     color: #9794EB;

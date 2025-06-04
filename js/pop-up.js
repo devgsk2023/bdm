@@ -8,6 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     videoModal.addEventListener("hide.bs.modal", function () {
-        iframe.src = ""; // Detener el video cuando se cierre el modal
+        iframe.src = "";
     });
 });
