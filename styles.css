@@ -3364,7 +3364,7 @@ header#mid {
     height: 100%;
 }
 
-/* <!-- ------------------- seccion ¿Quiénes tienen riesgo de adquirir este tipo de meningitis?    ---> */
+/* <!-- ------------------- seccion ¿Quiénes tienen riesgo de adquirir este tipo de meningitis?   ---> */
 .hongos-titulo {
     padding: 5% 5%;
 }
@@ -3422,7 +3422,7 @@ header#mid {
 
 
 
-/* <!-- - fin ¿Quiénes tienen riesgo de adquirir este tipo de meningitis?   ---> */
+/* <!-- - fin ¿Quiénes tienen riesgo de adquirir este tipo de meningitis?   ---> */
 
 /* <!-- ----------------------------------------------------------- FIn  css pagina meningitis por hongos  -------------------------------------------> */
 
@@ -6800,11 +6800,6 @@ button.btn-close {
    flex: 1;
 }
 
-.faq-question sup {
-   margin-left: 4px;
-   font-weight: 600;
-   font-size: 0.8em;
-}
 
 .faq-question.active sup {
    color: white;
@@ -6866,8 +6861,7 @@ button.btn-close {
 }
 
 .faq-answer-content sup {
-    color: #9794EB;
-    font-weight: 600;
+    font-size: 0.7em;
 }
 
 @media (max-width: 768px) {
@@ -6898,3 +6892,188 @@ button.btn-close {
     margin-left: 0;
 }
 /* ---------- END FAQ STYLES ---------- */
+
+/* Estilos para el contenedor principal del mapa */
+.container--map-main {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 20px;
+    padding: 20px;
+    height: 800px;
+    background-color: #f5f5f5;
+}
+
+/* Estilos para el panel de búsqueda y resultados */
+.container--map--search__content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Estilos para el contenedor de entrada de búsqueda */
+.container-input__search-map {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.container-input__search-map h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.container-input__search-map input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.container-input__search-map input::placeholder {
+    color: #999;
+}
+
+/* Estilos para los filtros */
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filters select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 1em;
+}
+
+.checkbox-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.checkbox-filters label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    font-size: 0.9em;
+}
+
+/* Estilos para la lista de resultados */
+.container--cards__results {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.card--result {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.card--result:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card--result h4 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.card--result p {
+    color: #666;
+    margin-bottom: 12px;
+    font-size: 0.9em;
+}
+
+.card__num__ubicacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ubi__target,
+.phone__target {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ubi__target img,
+.phone__target img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Estilos para el contenedor del mapa */
+.container--map--map__content {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para la ventana de información */
+.info-window {
+    padding: 10px;
+    max-width: 300px;
+}
+
+.info-window h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.info-window p {
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+    .container--map-main {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .container--map--map__content {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container--map-main {
+        padding: 10px;
+    }
+
+    .container-input__search-map {
+        padding: 15px;
+    }
+
+    .container--cards__results {
+        padding: 15px;
+    }
+}

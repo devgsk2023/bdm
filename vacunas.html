@@ -346,54 +346,45 @@
                 </div>
             </div>
         </div>
-        <div class="container--map-main">
-            <div class="container--map--map__content">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.27456458574!2d-58.51569880788202!3d-34.61579604888042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1722706331086!5m2!1ses-419!2sar"
-                    style="border:0;"></iframe>
-            </div>
+        <section class="container--map-main">
             <div class="container--map--search__content">
                 <div class="container-input__search-map">
-                    <h2>Vacunatorios cercanos
-                        a tu ubicación:</h2>
-                    <input type="text" placeholder="Busca por Zona" />
-                </div>
-                <div class="container--cards__results">
-                    <div class="card--result">
-                        <h4>Vacunatorio N°1</h4>
-                        <p>Dolorem ipsum 1584</p>
-                        <div class="card__num__ubicacion">
-                            <div class="ubi__target">
-                                <img src="../svg/mdi_location.svg" alt="ubicación">
-                                <p>lorem ipsum</p>
-                            </div>
-                            <div class="phone__target">
-                                <img src="../svg/ph_phone-fill.svg" alt="Phone">
-                                <p>0800-6677-5544</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card--result">
-                        <h4>Vacunatorio N°1</h4>
-                        <p>Dolorem ipsum 1584</p>
-                        <div class="card__num__ubicacion">
-                            <div class="ubi__target">
-                                <img src="../svg/mdi_location.svg" alt="ubicación">
-                                <p>lorem ipsum</p>
-                            </div>
-                            <div class="phone__target">
-                                <img src="../svg/ph_phone-fill.svg" alt="Phone">
-                                <p>0800-6677-5544</p>
-                            </div>
+                    <h2>Buscar vacunatorios</h2>
+                    <input type="text" id="searchInput" placeholder="Buscar por nombre o dirección">
+                    
+                    <div class="filters">
+                        <select id="provinciaFilter">
+                            <option value="">Todas las provincias</option>
+                        </select>
+                        
+                        <select id="localidadFilter">
+                            <option value="">Todas las localidades</option>
+                        </select>
+                        
+                        <div class="checkbox-filters">
+                            <label>
+                                <input type="checkbox" id="apVacunaFilter">
+                                Aplica vacunas
+                            </label>
+                            <label>
+                                <input type="checkbox" id="apVacunaMenorFilter">
+                                Aplica vacunas a menores
+                            </label>
                         </div>
                     </div>
                 </div>
-
+                
+                <div class="container--cards__results" id="resultsList">
+                    <!-- Los resultados se cargarán dinámicamente aquí -->
+                </div>
             </div>
-        </div>
+            
+            <div class="container--map--map__content">
+                <div id="map"></div>
+            </div>
+        </section>
         <!-- ---------- fin calendario de vacunacion ----------->
 
-        <!-- ---------- SECCIÓN FAQ - PREGUNTAS FRECUENTES ----------->
         <!-- ---------- SECCIÓN FAQ - PREGUNTAS FRECUENTES ----------->
         <section class="faq-section">
             <div class="faq-container">
@@ -401,7 +392,7 @@
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Por qué son tan importantes las vacunas?<sup>19</sup></span>
+                        <span class="faq-question-text">¿Por qué son tan importantes las vacunas?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -417,14 +408,15 @@
                                 endémicos de Sarampión desde el año 2000, de Rubéola congénita desde 2009. El último
                                 caso de poliomielitis fue en 1984, difteria 2006, tétanos neonatal 2007 y se redujo en
                                 más del 96% los casos de trasplante hepático por el virus de la hepatitis A. Son estos
-                                mismos logros los que hacen fundamental a la vacunación como política de Estado.</p>
+                                mismos logros los que hacen fundamental a la vacunación como política de
+                                Estado.<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Qué puede pasar si no nos vacunamos?<sup>19</sup></span>
+                        <span class="faq-question-text">¿Qué puede pasar si no nos vacunamos?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -433,7 +425,8 @@
                                 padecer la enfermedad y, por supuesto, sus formas graves o fatales.</p>
                             <p>Además, es fundamental tomar conciencia de que no solo podemos enfermarnos nosotros, sino
                                 también contagiar a personas más vulnerables que no pueden recibir las vacunas por tener
-                                contraindicaciones para su aplicación o no tienen la edad para recibir la vacuna.</p>
+                                contraindicaciones para su aplicación o no tienen la edad para recibir la
+                                vacuna.<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
@@ -441,7 +434,7 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         <span class="faq-question-text">¿Por qué los niños necesitan vacunarse aunque estén
-                            sanos?<sup>19</sup></span>
+                            sanos?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -451,7 +444,7 @@
                                 mortales.</p>
                             <p>Si bien la mayoría de las enfermedades prevenibles causan cuadros benignos, un niño sano
                                 puede tener complicaciones graves o fallecer por enfermedades que se previenen de forma
-                                muy eficaz y segura a través de la vacunación.</p>
+                                muy eficaz y segura a través de la vacunación.<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
@@ -459,7 +452,7 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         <span class="faq-question-text">¿Las vacunas del Calendario Nacional de Vacunación son solo para
-                            los niños?<sup>19</sup></span>
+                            los niños?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -471,14 +464,14 @@
                             <p>Como algunas vacunas aplicadas durante la infancia pierden su eficacia con el tiempo,
                                 durante la adolescencia y adultez deben aplicarse dosis de refuerzo, así como también
                                 existen vacunas que tienen indicación precisa durante esta etapa o alguna condición en
-                                particular.</p>
+                                particular.<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Una embarazada puede recibir vacunas?<sup>19</sup></span>
+                        <span class="faq-question-text">¿Una embarazada puede recibir vacunas?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -489,29 +482,29 @@
                                 y luego a través de la lactancia a la persona recién nacida protegiéndola durante los
                                 primeros meses de vida (contra la tos convulsa y la bronquiolitis).</p>
                             <p>Hay algunas vacunas que están contraindicadas en el embarazo, pero, si la persona lo
-                                necesita, se le pueden aplicar en el puerperio inmediato o previo al embarazo.</p>
+                                necesita, se le pueden aplicar en el puerperio inmediato o previo al
+                                embarazo.<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Dónde están disponibles las vacunas?<sup>19</sup></span>
+                        <span class="faq-question-text">¿Dónde están disponibles las vacunas?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
                             <p>Todas las vacunas contempladas en el Calendario Nacional están disponibles de forma
                                 gratuita en los vacunatorios, centros de salud y hospitales públicos del país. No
-                                requieren orden médica.</p>
+                                requieren orden médica.<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Se puede recibir más de una vacuna el mismo
-                            día?<sup>19</sup></span>
+                        <span class="faq-question-text">¿Se puede recibir más de una vacuna el mismo día?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -521,15 +514,14 @@
                                 Calendario en la menor cantidad de visitas posibles al centro de salud, hospital o
                                 vacunatorio y así evitar oportunidades perdidas. Las vacunas contra la COVID-19 también
                                 pueden administrarse en el mismo momento, con cualquiera de las vacunas del Calendario
-                                Nacional.</p>
+                                Nacional.<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Qué síntomas puedo tener después de
-                            vacunarme?<sup>19</sup></span>
+                        <span class="faq-question-text">¿Qué síntomas puedo tener después de vacunarme?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -537,14 +529,14 @@
                             <p>Una vacuna inyectable puede causarnos dolor, enrojecimiento e inflamación en el lugar de
                                 la aplicación. En general, estos efectos son leves y desaparecen espontáneamente.</p>
                             <p>En un grupo pequeño de personas puede aparecer fiebre y decaimiento durante un par de
-                                días. Si surge alguna duda, debemos consultar al equipo de salud.</p>
+                                días. Si surge alguna duda, debemos consultar al equipo de salud.<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Quién inventó las vacunas?<sup>19</sup></span>
+                        <span class="faq-question-text">¿Quién inventó las vacunas?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -558,14 +550,14 @@
                             <p>Si las vacunas son administradas en forma oportuna, menos personas van a contraer
                                 enfermedades. Los avances en las vacunas y el acceso cada vez más amplio a ellas se
                                 traducen en una mejor calidad y esperanza de vida para las comunidades de todo el
-                                mundo.</p>
+                                mundo.<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Cómo se fabrican las vacunas?<sup>19</sup></span>
+                        <span class="faq-question-text">¿Cómo se fabrican las vacunas?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -577,15 +569,14 @@
                                 microorganismos: como proteínas, fragmentos de la superficie exterior, que posibilitan
                                 la producción de defensas igualmente adecuadas.</p>
                             <p>Una vez vacunada, si la persona tiene contacto con el microorganismo, su cuerpo estará
-                                preparado para protegerse y no enfermar o hacerlo de manera leve.</p>
+                                preparado para protegerse y no enfermar o hacerlo de manera leve.<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Por qué la vacunación es una responsabilidad
-                            social?<sup>19</sup></span>
+                        <span class="faq-question-text">¿Por qué la vacunación es una responsabilidad social?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -595,15 +586,14 @@
                                 misma, sino también a toda la comunidad, especialmente a aquellas personas que son más
                                 vulnerables, como los menores de 1 año que aún no han completado sus esquemas de
                                 vacunación, embarazadas e inmunodeprimidas (aquellas que por distintas enfermedades o
-                                tratamientos tienen bajas sus defensas).</p>
+                                tratamientos tienen bajas sus defensas).<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Qué se entiende en vacunación por protección
-                            rebaño?<sup>19</sup></span>
+                        <span class="faq-question-text">¿Qué se entiende en vacunación por protección rebaño?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -615,7 +605,8 @@
                                 alcanzará a personas susceptibles que no hayan podido vacunarse por contraindicación
                                 médica (ej. con cáncer); a este efecto de protección indirecta se lo denomina "efecto
                                 rebaño". Este fenómeno, también denominado inmunidad "colectiva", es especialmente
-                                eficaz con las enfermedades extremadamente contagiosas, como el sarampión.</p>
+                                eficaz con las enfermedades extremadamente contagiosas, como el sarampión.<sup>19</sup>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -623,7 +614,7 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         <span class="faq-question-text">¿Por qué se dice que hay vacunas para todas las etapas de la
-                            vida?<sup>19</sup></span>
+                            vida?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -636,14 +627,14 @@
                                 (ej. cáncer de cuello uterino mediante la vacuna contra el VPH). También en situaciones
                                 especiales como en embarazadas, por viajes internacionales, factores de riesgo o para
                                 determinadas profesiones. Por este motivo es importante que consultes con un profesional
-                                de la salud qué vacunas te faltan.</p>
+                                de la salud qué vacunas te faltan.<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Las vacunas son seguras?<sup>19</sup></span>
+                        <span class="faq-question-text">¿Las vacunas son seguras?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -653,7 +644,7 @@
                             <p>La seguridad de las vacunas es controlada en forma estricta por las autoridades
                                 sanitarias que chequean los procesos de fabricación, distribución, y la calidad de cada
                                 lote. En nuestro país es la Administración nacional de medicamentos, alimentos y
-                                tecnología médica (ANMAT).</p>
+                                tecnología médica (ANMAT).<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
@@ -661,7 +652,7 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         <span class="faq-question-text">¿Cuáles son las diferencias entre erradicación, eliminación y
-                            control de enfermedades prevenibles por vacunas?<sup>19</sup></span>
+                            control de enfermedades prevenibles por vacunas?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -679,14 +670,14 @@
                                 conseguir la reducción de la incidencia de la enfermedad a niveles en que deje de
                                 constituir un problema de salud pública. Las medidas de control se dirigen
                                 principalmente a reducir la mortalidad y la morbilidad de la enfermedad. (Ej. difteria,
-                                tétanos neonatal, transmisión materno infantil de la hepatitis).</p>
+                                tétanos neonatal, transmisión materno infantil de la hepatitis).<sup>19</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Cuáles son los síntomas de la meningitis?<sup>1</sup></span>
+                        <span class="faq-question-text">¿Cuáles son los síntomas de la meningitis?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -705,14 +696,14 @@
                                 y articular, respiración más rápida de lo habitual, diarrea y erupciones de la piel de
                                 color rojo o púrpura oscuro (petequias).</p>
                             <p><strong>Ante la presencia de estos síntomas, es fundamental acudir inmediatamente al
-                                    médico.</strong></p>
+                                    médico.</strong><sup>1</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Cómo se transmite la meningitis?<sup>5</sup></span>
+                        <span class="faq-question-text">¿Cómo se transmite la meningitis?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -727,14 +718,15 @@
                                 <li>Compartir utensilios</li>
                             </ul>
                             <p>Además, el contacto cercano y prolongado con una persona infectada, como en hogares,
-                                jardines maternales, escuelas o universidades, aumenta el riesgo de transmisión.</p>
+                                jardines maternales, escuelas o universidades, aumenta el riesgo de
+                                transmisión.<sup>5</sup></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span class="faq-question-text">¿Qué tipos de meningitis existen?<sup>1,3,9,10,11</sup></span>
+                        <span class="faq-question-text">¿Qué tipos de meningitis existen?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -753,7 +745,7 @@
                                 causar meningitis, especialmente en personas con sistemas inmunológicos debilitados. La
                                 infección suele ocurrir al inhalar esporas de hongos.</p>
                             <p><strong>Meningitis parasitaria:</strong> Se contrae al consumir animales infectados o
-                                alimentos contaminados.</p>
+                                alimentos contaminados.<sup>1 y 3</sup></p>
                         </div>
                     </div>
                 </div>
@@ -761,7 +753,7 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         <span class="faq-question-text">¿Por qué es importante seguir el Calendario Nacional de
-                            Vacunación?<sup>18</sup></span>
+                            Vacunación?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -779,7 +771,7 @@
                             <p>Vacunarse según lo establecido en el calendario nacional y las recomendaciones de tu
                                 médico es una forma concreta de cuidar no solo de uno mismo, sino también de los demás.
                                 Es un compromiso con el bienestar colectivo y una herramienta clave para evitar brotes,
-                                hospitalizaciones y muertes evitables.</p>
+                                hospitalizaciones y muertes evitables.<sup>18</sup></p>
                         </div>
                     </div>
                 </div>
@@ -787,7 +779,7 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         <span class="faq-question-text">¿Estoy protegido/a si una vacuna necesita varias dosis, pero
-                            solo me pongo una?<sup>20</sup></span>
+                            solo me pongo una?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -804,7 +796,7 @@
                                 protegerte. Las siguientes dosis completan esa defensa. Además, con el tiempo esa
                                 protección puede disminuir, por lo que en algunas vacunas se recomiendan refuerzos.</p>
                             <p>Por eso, completar el esquema de vacunación es fundamental para estar realmente
-                                protegido/a y evitar enfermedades que pueden ser graves.</p>
+                                protegido/a y evitar enfermedades que pueden ser graves.<sup>20</sup></p>
                         </div>
                     </div>
                 </div>
@@ -812,7 +804,7 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         <span class="faq-question-text">Me atrasé en aplicar una dosis de la vacuna, ¿vuelvo a
-                            empezar?<sup>21</sup></span>
+                            empezar?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -823,15 +815,13 @@
                                 recomendado entre una dosis y otra. Lo importante es ponerse al día lo antes posible
                                 para asegurarte una protección completa frente a la enfermedad.</p>
                             <p>Si tenés dudas, siempre podés consultar con un profesional de salud para que te indique
-                                cómo completar el calendario según tu situación particular.</p>
+                                cómo completar el calendario según tu situación particular.<sup>21</sup></p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- ---------- FIN SECCIÓN FAQ ----------->
-
 
 
         <div class="volver-avanzar">
@@ -1067,6 +1057,9 @@
     <script src="/js/tab-tipos.js"></script>
     <script src="/js/tab-referencia.js"></script>
     <script src="/js/faq.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="js/vacunatorios.js"></script>
 
 
 </body>
