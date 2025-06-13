@@ -1,38 +1,42 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Manejo del menú toggle
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-        document.querySelector('.menu').classList.toggle('show');
-    });
-
-    // Manejo del menú pop-up
-    const menuToggle = document.querySelector(".menu-toggle");
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
     const menuPopup = document.getElementById("menu-popup");
     const closeButton = document.querySelector(".close-button");
 
-    menuToggle.addEventListener("click", function() {
-        if (menuPopup.classList.contains("hidden")) {
-            menuPopup.classList.remove("hidden");
+    if (menuToggle && menu) {
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+    }
+
+    // Manejo del menú pop-up
+    if (menuToggle && menuPopup && closeButton) {
+        menuToggle.addEventListener("click", function() {
+            if (menuPopup.classList.contains("hidden")) {
+                menuPopup.classList.remove("hidden");
+                menuPopup.style.display = "block";
+            }
             menuPopup.style.display = "block";
-        }
-        menuPopup.style.display = "block";
-    });
+        });
 
-    closeButton.addEventListener("click", function() {
-        menuPopup.classList.add("hidden");
-        setTimeout(function() {
-            menuPopup.style.display = "none";
-        }, 500);
-
-    });
-
-    window.addEventListener("click", function(event) {
-        if (event.target === menuPopup) {
+        closeButton.addEventListener("click", function() {
             menuPopup.classList.add("hidden");
             setTimeout(function() {
                 menuPopup.style.display = "none";
             }, 500);
-        }
-    });
+        });
+
+        window.addEventListener("click", function(event) {
+            if (event.target === menuPopup) {
+                menuPopup.classList.add("hidden");
+                setTimeout(function() {
+                    menuPopup.style.display = "none";
+                }, 500);
+            }
+        });
+    }
 
     // Manejo de submenús y barra de progreso
     const menuItems = document.querySelectorAll(".menu-activo > li");
@@ -42,48 +46,52 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuImage = document.getElementById("menu-image");
     const arrowDown = document.querySelector(".fa-chevron-down");
 
-    menuItems.forEach(item => {
-        item.addEventListener("mouseenter", function() {
-            const submenu = this.querySelector(".submenu");
-            if (submenu) {
-                submenu.style.display = "flex";
-            }
+    if (menuItems.length > 0 && progressBar) {
+        menuItems.forEach(item => {
+            item.addEventListener("mouseenter", function() {
+                const submenu = this.querySelector(".submenu");
+                if (submenu) {
+                    submenu.style.display = "flex";
+                }
 
-            const itemRect = item.getBoundingClientRect();
-            const containerRect = item.parentElement.getBoundingClientRect();
-            progressBar.style.width = `${itemRect.width}px`;
-            progressBar.style.left = `${itemRect.left - containerRect.left}px`;
-        });
+                const itemRect = item.getBoundingClientRect();
+                const containerRect = item.parentElement.getBoundingClientRect();
+                progressBar.style.width = `${itemRect.width}px`;
+                progressBar.style.left = `${itemRect.left - containerRect.left}px`;
+            });
 
-        item.addEventListener("mouseleave", function() {
-            const submenu = this.querySelector(".submenu");
-            if (submenu) {
-                submenu.style.display = "none";
-            }
-            progressBar.style.width = '0';
-        });
+            item.addEventListener("mouseleave", function() {
+                const submenu = this.querySelector(".submenu");
+                if (submenu) {
+                    submenu.style.display = "none";
+                }
+                progressBar.style.width = '0';
+            });
 
-        item.addEventListener("click", function() {
-            const submenu = this.querySelector(".submenu");
-            if (submenu) {
-                submenu.style.display = (submenu.style.display === "flex") ? "none" : "flex";
-            }
+            item.addEventListener("click", function() {
+                const submenu = this.querySelector(".submenu");
+                if (submenu) {
+                    submenu.style.display = (submenu.style.display === "flex") ? "none" : "flex";
+                }
+            });
         });
-    });
+    }
 
-    submenuItems.forEach(item => {
-        item.addEventListener("mouseenter", function() {
-            const imageUrl = this.getAttribute("data-image");
-            if (imageUrl) {
-                menuImage.src = imageUrl;
-                imageContainer.style.display = "block";
-            }
-        });
+    if (submenuItems.length > 0 && imageContainer && menuImage) {
+        submenuItems.forEach(item => {
+            item.addEventListener("mouseenter", function() {
+                const imageUrl = this.getAttribute("data-image");
+                if (imageUrl) {
+                    menuImage.src = imageUrl;
+                    imageContainer.style.display = "block";
+                }
+            });
 
-        item.addEventListener("mouseleave", function() {
-            imageContainer.style.display = "none";
+            item.addEventListener("mouseleave", function() {
+                imageContainer.style.display = "none";
+            });
         });
-    });
+    }
 
     // Función para detectar si es un dispositivo móvil
     function isMobileDevice() {
@@ -91,24 +99,25 @@ document.addEventListener("DOMContentLoaded", function() {
             /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
 
-    let descargarPDF = document.getElementById("descargar");
-    descargarPDF.addEventListener("click", function() {
-        const link = document.createElement('a');
+    const descargarPDF = document.getElementById("descargar");
+    if (descargarPDF) {
+        descargarPDF.addEventListener("click", function() {
+            const link = document.createElement('a');
 
-        if (isMobileDevice()) {
-            link.href = '../wp-content/uploads/2024/02/Calendario_Vacunacion_mobile.pdf';
-            link.download = 'Calendario_Vacunacion_mobile.pdf';
-        } else {
-            link.href = '../wp-content/uploads/2024/02/Calendario_Vacunacion.pdf';
-            link.download = 'Calendario_Vacunacion.pdf';
-        }
+            if (isMobileDevice()) {
+                link.href = '../wp-content/uploads/2024/02/Calendario_Vacunacion_mobile.pdf';
+                link.download = 'Calendario_Vacunacion_mobile.pdf';
+            } else {
+                link.href = '../wp-content/uploads/2024/02/Calendario_Vacunacion.pdf';
+                link.download = 'Calendario_Vacunacion.pdf';
+            }
 
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    });
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }
 });
-
 
 // ruleta javascript
 
@@ -161,10 +170,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-
+// Toggle menu on mobile
 document.addEventListener("DOMContentLoaded", function() {
-    // Toggle menu on mobile
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
     const closeButton = document.querySelector('.menu-close');
@@ -183,8 +190,6 @@ document.addEventListener("DOMContentLoaded", function() {
             menu.classList.remove('open');
         }
     });
-
-
 });
 
 // Mostrar/ocultar el texto en el acordeón
@@ -205,12 +210,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-
 //boton volver arriba
 
 $(document).ready(function() {
-
     $('.ir-arriba').click(function() {
         $('body, html').animate({
             scrollTop: '0px'
@@ -225,11 +227,7 @@ $(document).ready(function() {
             $('.ir-arriba').slideUp(300);
         }
     });
-
 });
-
-
-
 
 //menu sticky
 
@@ -273,8 +271,7 @@ window.addEventListener('scroll', function() {
 localStorage.setItem('clave', 'valor');
 var nombre = localStorage.getItem('popupShownDate');
 
-
-
+// Manejo del popup
 document.addEventListener('DOMContentLoaded', function() {
     const popupDisplayTime = 1; // Días que deben pasar para mostrar el pop-up de nuevo (1 día)
 
@@ -290,45 +287,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentDate = new Date();
 
     // Si no hay fecha guardada o ya ha pasado más de 1 día, permitir mostrar el pop-up
-    if (!lastPopupShown && daysBetween(new Date(lastPopupShown), currentDate) >= popupDisplayTime) {
-        const triggerElement = document.getElementById('prevencion'); // ID del elemento donde activamos el pop-up
-        const modalElement = document.getElementById('exampleModalToggle'); // ID del modal
+    if (!lastPopupShown || daysBetween(new Date(lastPopupShown), currentDate) >= popupDisplayTime) {
+        const triggerElement = document.getElementById('prevencion');
+        const modalElement = document.getElementById('exampleModalToggle');
 
-        if (triggerElement && modalElement) {  // Verificamos que ambos elementos existan
+        if (triggerElement && modalElement) {
             const modal = new bootstrap.Modal(modalElement);
 
-            // Función para verificar si el elemento con ID 'prevencion' es visible
             function checkVisibility() {
                 const rect = triggerElement.getBoundingClientRect();
                 const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
 
                 if (isVisible) {
-                    modal.show(); // Mostrar el modal cuando el elemento 'prevencion' es visible
-                    localStorage.setItem('popupShownDate', currentDate.toISOString()); // Guardar la fecha actual en localStorage
-                    window.removeEventListener('scroll', checkVisibility); // Remover el evento de scroll después de mostrar el modal
+                    modal.show();
+                    localStorage.setItem('popupShownDate', currentDate.toISOString());
+                    window.removeEventListener('scroll', checkVisibility);
                 }
             }
 
-            // Solo revisar el scroll si no se ha mostrado el pop-up hoy
             window.addEventListener('scroll', checkVisibility);
         }
     } else {
         console.log('El pop-up ya se mostró recientemente, no se mostrará de nuevo.');
     }
+
+    // Manejo de tabs de entrevistas
     const medicosTab = document.getElementById('entrevistaMedicos');
     const pacientesTab = document.getElementById('entrevistaPacientes');
     const videoPrincipal = document.getElementById('videoPrincipal');
-    medicosTab.addEventListener('click', () => {
-        pacientesTab.classList.remove('tabactivo');
-        medicosTab.classList.add('tabactivo');
-        videoPrincipal.src = 'https://www.youtube.com/embed/wgvqiH7iCRo?si=kaXehyW-rc4Nx9mu';
-    });
 
-    pacientesTab.addEventListener('click', () => {
-        medicosTab.classList.remove('tabactivo');
-        pacientesTab.classList.add('tabactivo');
-        videoPrincipal.src = 'https://www.youtube.com/embed/9kqnsoY94L8?si=n3xdl0C5H4q22kA6';
-    });
+    if (medicosTab && pacientesTab && videoPrincipal) {
+        medicosTab.addEventListener('click', () => {
+            pacientesTab.classList.remove('tabactivo');
+            medicosTab.classList.add('tabactivo');
+            videoPrincipal.src = 'https://www.youtube.com/embed/wgvqiH7iCRo?si=kaXehyW-rc4Nx9mu';
+        });
+
+        pacientesTab.addEventListener('click', () => {
+            medicosTab.classList.remove('tabactivo');
+            pacientesTab.classList.add('tabactivo');
+            videoPrincipal.src = 'https://www.youtube.com/embed/9kqnsoY94L8?si=n3xdl0C5H4q22kA6';
+        });
+    }
 });
 
 console.log(nombre);
