@@ -1,3 +1,20 @@
+/* VARIABLES PARA MAPA DE VACUNATORIOS */
+:root {
+    --primary-color: #7666EA;
+    --primary-hover: #6552f6;
+    --secondary-color: #9794EB;
+    --accent-color: #89D7F0;
+    --text-dark: #1E1E1E;
+    --text-light: #FFFFFF;
+    --text-gray: #666666;
+    --bg-light: #F8F9FA;
+    --bg-white: #FFFFFF;
+    --border-color: #E0E4E7;
+    --border-radius: 12px;
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -470,19 +487,24 @@ header#vacunacion__header {
 
 /* <!-- ---------- video explicativo --------- --> */
 
-.video-explicativo{
+.video-explicativo {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
 .video-explicativo {
     position: relative;
-    width: 100%; /* Se adapta al ancho del contenedor */
-    max-width: 1280px; /* Limita el ancho máximo */
-    aspect-ratio: 16 / 9; /* Mantiene la proporción 16:9 */
-    margin: 50px auto 50px auto; /* Centra el video */
+    width: 100%;
+    /* Se adapta al ancho del contenedor */
+    max-width: 1280px;
+    /* Limita el ancho máximo */
+    aspect-ratio: 16 / 9;
+    /* Mantiene la proporción 16:9 */
+    margin: 50px auto 50px auto;
+    /* Centra el video */
 }
 
 .video-explicativo iframe {
@@ -522,6 +544,7 @@ header#vacunacion__header {
     font-weight: bold;
     margin-left: 5px;
 }
+
 /* <!-- ---------- fin video explicativo --------- --> */
 
 
@@ -2509,11 +2532,14 @@ sup {
         height: 41px;
         /* flex-shrink: 0; */
     }
+
     .video-explicativo {
 
-        margin: 50px auto 50px auto; /* Centra el video */
+        margin: 50px auto 50px auto;
+        /* Centra el video */
     }
-    .video-explicativo{
+
+    .video-explicativo {
         width: 95%;
     }
 }
@@ -3804,7 +3830,7 @@ section.contenedor-menu.meningitis-menu {
 }
 
 
-.imagen.bacteriana-par h2{
+.imagen.bacteriana-par h2 {
     color: white;
     font-size: 48px;
     text-align: center;
@@ -3827,7 +3853,7 @@ section.contenedor-menu.meningitis-menu {
     height: auto;
 }
 
-pop-up-imagen{
+pop-up-imagen {
     background: none;
 }
 
@@ -6090,7 +6116,6 @@ img#responsive-img {
     display: flex;
     flex-direction: column;
     background-color: #9491EB;
-    ;
 }
 
 .container--map-main iframe {
@@ -6380,7 +6405,7 @@ img#responsive-img {
     border: none;
 }
 
-.modal-header .btn-close{
+.modal-header .btn-close {
     padding: 0px;
 }
 
@@ -6449,7 +6474,7 @@ button.btn-close {
 
 
 @media only screen and (max-width:800px) {
-    .imagen.bacteriana-par h2{
+    .imagen.bacteriana-par h2 {
         font-size: 24px;
     }
 
@@ -6771,12 +6796,12 @@ button.btn-close {
     border-radius: 12px;
     margin-bottom: 16px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
 .faq-item:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .faq-question {
@@ -6797,12 +6822,12 @@ button.btn-close {
 }
 
 .faq-question-text {
-   flex: 1;
+    flex: 1;
 }
 
 
 .faq-question.active sup {
-   color: white;
+    color: white;
 }
 
 .faq-question:hover {
@@ -6891,189 +6916,372 @@ button.btn-close {
 .faq-question sup {
     margin-left: 0;
 }
+
 /* ---------- END FAQ STYLES ---------- */
 
 /* Estilos para el contenedor principal del mapa */
-.container--map-main {
+/* CONTENEDOR PRINCIPAL DEL MAPA */
+.vacunatorios-container {
     display: grid;
     grid-template-columns: 400px 1fr;
-    gap: 20px;
-    padding: 20px;
-    height: 800px;
-    background-color: #f5f5f5;
-}
-
-/* Estilos para el panel de búsqueda y resultados */
-.container--map--search__content {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
+    height: 90vh;
+    max-width: 1400px;
+    margin: 2rem auto;
+    background: var(--bg-white);
+    border-radius: var(--border-radius);
     overflow: hidden;
+    box-shadow: var(--box-shadow);
 }
 
-/* Estilos para el contenedor de entrada de búsqueda */
-.container-input__search-map {
-    padding: 20px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.container-input__search-map h2 {
-    color: #333;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-}
-
-.container-input__search-map input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    font-size: 1em;
-}
-
-.container-input__search-map input::placeholder {
-    color: #999;
-}
-
-/* Estilos para los filtros */
-.filters {
+/* PANEL IZQUIERDO - FILTROS Y RESULTADOS */
+.panel-izquierdo {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    border-right: 1px solid var(--border-color);
+    background: var(--bg-white);
 }
 
-.filters select {
+/* HEADER DE BÚSQUEDA */
+.header-busqueda {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.header-busqueda h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.header-busqueda p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* SECCIÓN DE FILTROS */
+.seccion-filtros {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-light);
+}
+
+/* INPUT DE BÚSQUEDA */
+.busqueda-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.busqueda-input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-    font-size: 1em;
-}
-
-.checkbox-filters {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.checkbox-filters label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #333;
-    font-size: 0.9em;
-}
-
-/* Estilos para la lista de resultados */
-.container--cards__results {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-}
-
-.card--result {
-    background-color: white;
-    border: 1px solid #e0e0e0;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 15px;
+    font-size: 0.9rem;
+    background: var(--bg-white);
+    transition: var(--transition);
+}
+
+.busqueda-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(118, 102, 234, 0.1);
+}
+
+.icono-busqueda {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-gray);
+    font-size: 1rem;
+}
+
+/* GRID DE FILTROS */
+.filtros-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.grupo-filtro label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.select-filtro {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-white);
+    font-size: 0.85rem;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: var(--transition);
 }
 
-.card--result:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.select-filtro:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
 
-.card--result h4 {
-    color: #333;
-    margin-bottom: 8px;
-    font-size: 1.1em;
-}
-
-.card--result p {
-    color: #666;
-    margin-bottom: 12px;
-    font-size: 0.9em;
-}
-
-.card__num__ubicacion {
+/* CHECKBOXES */
+.filtros-checkbox {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
-.ubi__target,
-.phone__target {
+.checkbox-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--bg-white);
 }
 
-.ubi__target img,
-.phone__target img {
+.checkbox-item:hover {
+    border-color: var(--primary-color);
+    background: rgba(118, 102, 234, 0.02);
+}
+
+.checkbox-item input[type="checkbox"] {
     width: 16px;
     height: 16px;
+    cursor: pointer;
 }
 
-/* Estilos para el contenedor del mapa */
-.container--map--map__content {
-    border-radius: 8px;
+.checkbox-content {
+    flex: 1;
+}
+
+.checkbox-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.checkbox-desc {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    margin-top: 0.25rem;
+}
+
+.checkbox-icon {
+    font-size: 1.5rem;
+}
+
+/* SECCIÓN DE RESULTADOS */
+.seccion-resultados {
+    flex: 1;
+    padding: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
 }
 
-#map {
-    width: 100%;
+.resultados-header {
+    margin-bottom: 1rem;
+}
+
+.resultados-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* LISTA DE RESULTADOS */
+.lista-resultados {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: calc(100vh - 400px);
+    min-height: 300px;
+    padding-right: 8px;
+}
+
+/* SCROLLBAR PERSONALIZADO - MÁS VISIBLE */
+.lista-resultados::-webkit-scrollbar {
+    width: 12px;
+}
+
+.lista-resultados::-webkit-scrollbar-track {
+    background: var(--bg-light);
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.lista-resultados::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 6px;
+    border: 2px solid var(--bg-light);
+    min-height: 30px;
+}
+
+.lista-resultados::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--primary-hover), var(--primary-color));
+    transform: scale(1.1);
+}
+
+.lista-resultados::-webkit-scrollbar-thumb:active {
+    background: var(--primary-hover);
+}
+
+/* SCROLLBAR PARA FIREFOX */
+.lista-resultados {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--bg-light);
+}
+
+/* CARD DE VACUNATORIO */
+.card-vacunatorio {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.card-vacunatorio:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.card-titulo {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem 0;
+}
+
+.card-direccion {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin: 0 0 0.75rem 0;
+    line-height: 1.4;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+.info-icon {
+    font-size: 0.9rem;
+}
+
+/* PANEL DERECHO - MAPA */
+.panel-mapa {
+    position: relative;
+    background: var(--bg-light);
+    display: flex;
+    flex-direction: column;
     height: 100%;
 }
 
-/* Estilos para la ventana de información */
-.info-window {
-    padding: 10px;
-    max-width: 300px;
+.mapa-header {
+    background: var(--accent-color);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-.info-window h3 {
-    color: #333;
-    margin-bottom: 10px;
-    font-size: 1.2em;
+.mapa-titulo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
 }
 
-.info-window p {
-    color: #666;
-    margin-bottom: 5px;
-    font-size: 0.9em;
+.mapa-leyenda {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
 }
 
-/* Estilos responsivos */
+.leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#mapa {
+    flex: 1;
+    min-height: 500px;
+    width: 100%;
+}
+
+/* ESTADOS */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: var(--text-gray);
+}
+
+.sin-resultados {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-gray);
+}
+
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-    .container--map-main {
+    .vacunatorios-container {
         grid-template-columns: 1fr;
         height: auto;
+        margin: 1rem;
     }
 
-    .container--map--map__content {
+    .panel-mapa {
+        order: -1;
         height: 500px;
+    }
+
+    #mapa {
+        height: 100%;
+        min-height: unset;
+    }
+
+    .mapa-header {
+        display: none;
     }
 }
 
 @media (max-width: 768px) {
-    .container--map-main {
-        padding: 10px;
+    .vacunatorios-container {
+        margin: 0.5rem;
     }
 
-    .container-input__search-map {
-        padding: 15px;
-    }
-
-    .container--cards__results {
-        padding: 15px;
+    .panel-mapa {
+        height: 400px;
     }
 }

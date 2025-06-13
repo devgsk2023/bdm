@@ -23,6 +23,8 @@
     <link rel="icon" href="imagenes/favicon1.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://kit.fontawesome.com/b0e3ce937d.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
 
@@ -346,690 +348,898 @@
                 </div>
             </div>
         </div>
-        <section class="container--map-main">
-            <div class="container--map--search__content">
-                <div class="container-input__search-map">
-                    <h2>Buscar vacunatorios</h2>
-                    <input type="text" id="searchInput" placeholder="Buscar por nombre o dirección">
-                    
-                    <div class="filters">
-                        <select id="provinciaFilter">
-                            <option value="">Todas las provincias</option>
-                        </select>
-                        
-                        <select id="localidadFilter">
-                            <option value="">Todas las localidades</option>
-                        </select>
-                        
-                        <div class="checkbox-filters">
-                            <label>
-                                <input type="checkbox" id="apVacunaFilter">
-                                Aplica vacunas
-                            </label>
-                            <label>
-                                <input type="checkbox" id="apVacunaMenorFilter">
-                                Aplica vacunas a menores
-                            </label>
+        <!-- <div class="vacunatorios-container">
+            <div class="panel-izquierdo">
+                <div class="header-busqueda">
+                    <h2>🗺️ Buscar Vacunatorios</h2>
+                    <p>Encuentra el centro de vacunación más cercano</p>
+                </div>
+
+                <div class="seccion-filtros">
+                    <div class="busqueda-wrapper">
+                        <span class="icono-busqueda">🔍</span>
+                        <input type="text" class="busqueda-input" id="inputBusqueda"
+                            placeholder="Buscar por nombre, dirección o localidad...">
+                    </div>
+
+                    <div class="filtros-grid">
+                        <div class="grupo-filtro">
+                            <label for="filtroProvincia">📍 Provincia</label>
+                            <select id="filtroProvincia" class="select-filtro">
+                                <option value="">Todas las provincias</option>
+                                <option value="buenos-aires">Buenos Aires</option>
+                                <option value="cordoba">Córdoba</option>
+                                <option value="santa-fe">Santa Fe</option>
+                                <option value="mendoza">Mendoza</option>
+                            </select>
+                        </div>
+
+                        <div class="grupo-filtro">
+                            <label for="filtroLocalidad">🏙️ Localidad</label>
+                            <select id="filtroLocalidad" class="select-filtro">
+                                <option value="">Todas las localidades</option>
+                                <option value="caba">CABA</option>
+                                <option value="la-plata">La Plata</option>
+                                <option value="rosario">Rosario</option>
+                                <option value="cordoba-capital">Córdoba Capital</option>
+                            </select>
                         </div>
                     </div>
-                </div>
-                
-                <div class="container--cards__results" id="resultsList">
-                    <!-- Los resultados se cargarán dinámicamente aquí -->
-                </div>
-            </div>
-            
-            <div class="container--map--map__content">
-                <div id="map"></div>
-            </div>
-        </section>
-        <!-- ---------- fin calendario de vacunacion ----------->
 
-        <!-- ---------- SECCIÓN FAQ - PREGUNTAS FRECUENTES ----------->
-        <section class="faq-section">
-            <div class="faq-container">
-                <h2 class="faq-title">Vacunas: preguntas frecuentes</h2>
+                    <div class="filtros-checkbox">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="filtroVacunas">
+                            <div class="checkbox-icon">💉</div>
+                            <div class="checkbox-content">
+                                <div class="checkbox-title">Aplica vacunas</div>
+                                <div class="checkbox-desc">Centros que administran vacunas generales</div>
+                            </div>
+                        </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Por qué son tan importantes las vacunas?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Según la Organización Mundial de la Salud (OMS), las vacunas y el agua potable son las
-                                dos herramientas más importantes para prevenir enfermedades.</p>
-                            <p>Hace muchos años, cuando aún no existían las vacunas, había epidemias que causaban
-                                secuelas irreversibles o miles de muertes por año.</p>
-                            <p>Un hito en la salud pública mundial fue la erradicación de la viruela en 1980 mediante la
-                                vacunación. Actualmente se trabaja para erradicar la poliomielitis, enfermedad que ya
-                                está eliminada en la gran mayoría de los países del mundo gracias a las vacunas.</p>
-                            <p>En la Argentina, gracias a una alta cobertura de vacunación, ya no se registran casos
-                                endémicos de Sarampión desde el año 2000, de Rubéola congénita desde 2009. El último
-                                caso de poliomielitis fue en 1984, difteria 2006, tétanos neonatal 2007 y se redujo en
-                                más del 96% los casos de trasplante hepático por el virus de la hepatitis A. Son estos
-                                mismos logros los que hacen fundamental a la vacunación como política de
-                                Estado.<sup>19</sup></p>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="filtroMenores">
+                            <div class="checkbox-icon">👶</div>
+                            <div class="checkbox-content">
+                                <div class="checkbox-title">Aplica vacunas a menores</div>
+                                <div class="checkbox-desc">Centros especializados en pediatría</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Qué puede pasar si no nos vacunamos?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Si tenemos contacto con el microorganismo causante de la infección, corremos el riesgo de
-                                padecer la enfermedad y, por supuesto, sus formas graves o fatales.</p>
-                            <p>Además, es fundamental tomar conciencia de que no solo podemos enfermarnos nosotros, sino
-                                también contagiar a personas más vulnerables que no pueden recibir las vacunas por tener
-                                contraindicaciones para su aplicación o no tienen la edad para recibir la
-                                vacuna.<sup>19</sup></p>
-                        </div>
+                <div class="seccion-resultados">
+                    <div class="resultados-header">
+                        <h3>📋 Resultados de búsqueda</h3>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Por qué los niños necesitan vacunarse aunque estén
-                            sanos?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>La vacunación es una herramienta de "prevención primaria", esto quiere decir que evita
-                                que personas sanas enfermen, o si lo hacen, que evolucionen a cuadros graves o
-                                mortales.</p>
-                            <p>Si bien la mayoría de las enfermedades prevenibles causan cuadros benignos, un niño sano
-                                puede tener complicaciones graves o fallecer por enfermedades que se previenen de forma
-                                muy eficaz y segura a través de la vacunación.<sup>19</sup></p>
+                    <div class="lista-resultados" id="listaResultados">
+                        <div class="card-vacunatorio" onclick="seleccionarVacunatorio(1)">
+                            <h4 class="card-titulo">Hospital Nacional Posadas</h4>
+                            <p class="card-direccion">Av. Presidente Illia s/n, El Palomar, Buenos Aires</p>
+                            <div class="card-info">
+                                <div class="info-item">
+                                    <span class="info-icon">📍</span>
+                                    <span>El Palomar, Buenos Aires</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">📞</span>
+                                    <span>(011) 4469-9300</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">💉</span>
+                                    <span>Aplica todas las vacunas</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Las vacunas del Calendario Nacional de Vacunación son solo para
-                            los niños?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>No: para cada etapa de la vida corresponde la aplicación de diversas vacunas.</p>
-                            <p>Por ejemplo, la primera vacuna, contra la hepatitis B, se aplica durante las primeras 12
-                                horas de vida. Además, antes del egreso de la maternidad se aplica también la BCG. Toda
-                                persona adulta debe recibir refuerzo contra difteria y tétanos cada 10 años.</p>
-                            <p>Como algunas vacunas aplicadas durante la infancia pierden su eficacia con el tiempo,
-                                durante la adolescencia y adultez deben aplicarse dosis de refuerzo, así como también
-                                existen vacunas que tienen indicación precisa durante esta etapa o alguna condición en
-                                particular.<sup>19</sup></p>
+                        <div class="card-vacunatorio" onclick="seleccionarVacunatorio(2)">
+                            <h4 class="card-titulo">Centro de Salud Norte</h4>
+                            <p class="card-direccion">Av. Corrientes 1234, CABA</p>
+                            <div class="card-info">
+                                <div class="info-item">
+                                    <span class="info-icon">📍</span>
+                                    <span>CABA</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">📞</span>
+                                    <span>(011) 4123-4567</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">👶</span>
+                                    <span>Especializado en pediatría</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Una embarazada puede recibir vacunas?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Todas las embarazadas deben vacunarse para protegerse contra enfermedades que pueden
-                                causar graves complicaciones durante ese período de la vida (la gripe, por ejemplo).</p>
-                            <p>Las vacunas, además, durante el embarazo transfieren anticuerpos a través de la placenta
-                                y luego a través de la lactancia a la persona recién nacida protegiéndola durante los
-                                primeros meses de vida (contra la tos convulsa y la bronquiolitis).</p>
-                            <p>Hay algunas vacunas que están contraindicadas en el embarazo, pero, si la persona lo
-                                necesita, se le pueden aplicar en el puerperio inmediato o previo al
-                                embarazo.<sup>19</sup></p>
+                        <div class="card-vacunatorio" onclick="seleccionarVacunatorio(3)">
+                            <h4 class="card-titulo">Farmacia San Martín</h4>
+                            <p class="card-direccion">San Martín 567, Rosario, Santa Fe</p>
+                            <div class="card-info">
+                                <div class="info-item">
+                                    <span class="info-icon">📍</span>
+                                    <span>Rosario, Santa Fe</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">📞</span>
+                                    <span>(0341) 456-7890</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">💊</span>
+                                    <span>Farmacia</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Dónde están disponibles las vacunas?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Todas las vacunas contempladas en el Calendario Nacional están disponibles de forma
-                                gratuita en los vacunatorios, centros de salud y hospitales públicos del país. No
-                                requieren orden médica.<sup>19</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Se puede recibir más de una vacuna el mismo día?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Las vacunas del Calendario Nacional que corresponden a cada etapa de la vida pueden
-                                recibirse el mismo día o en forma diferida. Sin embargo, es esencial poner al día el
-                                Calendario en la menor cantidad de visitas posibles al centro de salud, hospital o
-                                vacunatorio y así evitar oportunidades perdidas. Las vacunas contra la COVID-19 también
-                                pueden administrarse en el mismo momento, con cualquiera de las vacunas del Calendario
-                                Nacional.<sup>19</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Qué síntomas puedo tener después de vacunarme?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Una vacuna inyectable puede causarnos dolor, enrojecimiento e inflamación en el lugar de
-                                la aplicación. En general, estos efectos son leves y desaparecen espontáneamente.</p>
-                            <p>En un grupo pequeño de personas puede aparecer fiebre y decaimiento durante un par de
-                                días. Si surge alguna duda, debemos consultar al equipo de salud.<sup>19</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Quién inventó las vacunas?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>A. Edward Jenner (1749-1823), médico investigador inglés; se lo llama "padre de las
-                                vacunas" porque fue quien descubrió la vacuna contra la viruela, enfermedad que
-                                provocaba grandes epidemias en varios continentes.</p>
-                            <p>Posteriormente, científicos como el propio Jenner, Pasteur, Salk y Sabin, entre muchos
-                                otros, desarrollaron vacunas que han sido una herramienta fundamental para la salud de
-                                las poblaciones.</p>
-                            <p>Si las vacunas son administradas en forma oportuna, menos personas van a contraer
-                                enfermedades. Los avances en las vacunas y el acceso cada vez más amplio a ellas se
-                                traducen en una mejor calidad y esperanza de vida para las comunidades de todo el
-                                mundo.<sup>19</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Cómo se fabrican las vacunas?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Se formulan de varias maneras. Algunas incluyen a los microorganismos que causan la
-                                enfermedad pero "atenuados" (vivos, pero "debilitados" para generar una infección
-                                controlable fácilmente por el sistema inmune) o inactivados ("muertos").</p>
-                            <p>En otras situaciones, se trata de una composición con algunas partes de los
-                                microorganismos: como proteínas, fragmentos de la superficie exterior, que posibilitan
-                                la producción de defensas igualmente adecuadas.</p>
-                            <p>Una vez vacunada, si la persona tiene contacto con el microorganismo, su cuerpo estará
-                                preparado para protegerse y no enfermar o hacerlo de manera leve.<sup>19</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Por qué la vacunación es una responsabilidad social?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>La vacunación es un acto responsable y solidario. La persona que no se vacuna, puede
-                                contraer y contagiar estas enfermedades. Por lo tanto, no solo se pone en riesgo a sí
-                                misma, sino también a toda la comunidad, especialmente a aquellas personas que son más
-                                vulnerables, como los menores de 1 año que aún no han completado sus esquemas de
-                                vacunación, embarazadas e inmunodeprimidas (aquellas que por distintas enfermedades o
-                                tratamientos tienen bajas sus defensas).<sup>19</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Qué se entiende en vacunación por protección rebaño?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Cuando la mayoría de las personas en una comunidad están correctamente inmunizadas, si
-                                alguien adquiere una enfermedad prevenible por vacunas, la enfermedad probablemente no
-                                se propague ya que en su entorno entra en contacto con otras personas que están
-                                protegidas. De esta forma, la diseminación de la enfermedad quedará limitada y no
-                                alcanzará a personas susceptibles que no hayan podido vacunarse por contraindicación
-                                médica (ej. con cáncer); a este efecto de protección indirecta se lo denomina "efecto
-                                rebaño". Este fenómeno, también denominado inmunidad "colectiva", es especialmente
-                                eficaz con las enfermedades extremadamente contagiosas, como el sarampión.<sup>19</sup>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Por qué se dice que hay vacunas para todas las etapas de la
-                            vida?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>En el momento en que un niño nace se recomienda que reciba las primeras vacunas y a lo
-                                largo de sus primeros años de vida se administran muchas de ellas. Pero es necesario
-                                destacar que en todas las etapas de la vida hay indicación de vacunas (adolescentes,
-                                personas adultas, adultas mayores), ya sea por necesidad de reforzar las defensas que
-                                generaron las vacunas que se dieron en la infancia o para proteger de otras enfermedades
-                                (ej. cáncer de cuello uterino mediante la vacuna contra el VPH). También en situaciones
-                                especiales como en embarazadas, por viajes internacionales, factores de riesgo o para
-                                determinadas profesiones. Por este motivo es importante que consultes con un profesional
-                                de la salud qué vacunas te faltan.<sup>19</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Las vacunas son seguras?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Las vacunas utilizadas en los programas de inmunizaciones son seguras y eficaces. Las
-                                reacciones que pueden provocar son leves y poco frecuentes.</p>
-                            <p>La seguridad de las vacunas es controlada en forma estricta por las autoridades
-                                sanitarias que chequean los procesos de fabricación, distribución, y la calidad de cada
-                                lote. En nuestro país es la Administración nacional de medicamentos, alimentos y
-                                tecnología médica (ANMAT).<sup>19</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Cuáles son las diferencias entre erradicación, eliminación y
-                            control de enfermedades prevenibles por vacunas?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p><strong>Erradicación</strong> se refiere a la situación en la cual no solamente ya no
-                                existen casos en ningún grupo poblacional sino que también se eliminaron las causas de
-                                la enfermedad, en particular el agente que la produce. (Ej: la viruela: la viruela y su
-                                agente productor fueron eliminados a escala mundial).</p>
-                            <p><strong>Eliminación</strong> se refiere a la situación en la cual ya no existen casos de
-                                enfermedad en una determinada población, aunque persisten las causas que pueden
-                                potencialmente producir la aparición de casos. (Ej: sarampión está eliminado de
-                                Argentina, pero sigue habiendo casos en otros países del mundo que potencialmente pueden
-                                volver a generar casos en nuestro país).</p>
-                            <p><strong>Control:</strong> Se refiere a la aplicación de medidas poblacionales dirigidas a
-                                conseguir la reducción de la incidencia de la enfermedad a niveles en que deje de
-                                constituir un problema de salud pública. Las medidas de control se dirigen
-                                principalmente a reducir la mortalidad y la morbilidad de la enfermedad. (Ej. difteria,
-                                tétanos neonatal, transmisión materno infantil de la hepatitis).<sup>19</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Cuáles son los síntomas de la meningitis?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Los síntomas más habituales de la Meningitis son fiebre, cuello rígido, irritabilidad,
-                                somnolencia, rechazo a la luz, náuseas o vómitos y dolor de cabeza.</p>
-                            <p>En lactantes, los más característicos son fiebre, llanto constante, somnolencia o
-                                irritabilidad excesivas, dificultad para despertar del sueño, lentitud o inactividad, no
-                                despertarse para comer, no comer bien, vómitos y tener la fontanela (parte superior de
-                                la cabeza del bebé) abultada.</p>
-                            <p>En los casos de Meningitis Bacteriana, las bacterias causantes de Meningitis pueden
-                                provocar otros síntomas si infectan la sangre del torrente circulatorio, que pueden
-                                desembocar rápidamente en septicemia (también conocida como sepsis, que es una infección
-                                grave de la sangre que puede provocar el mal funcionamiento de órganos y, si no se trata
-                                rápidamente, la muerte). Estos síntomas pueden ser: frío en manos y pies, dolor muscular
-                                y articular, respiración más rápida de lo habitual, diarrea y erupciones de la piel de
-                                color rojo o púrpura oscuro (petequias).</p>
-                            <p><strong>Ante la presencia de estos síntomas, es fundamental acudir inmediatamente al
-                                    médico.</strong><sup>1</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Cómo se transmite la meningitis?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>La meningitis se transmite, en la mayoría de los casos, por vía respiratoria desde una
-                                persona enferma o desde portadores asintomáticos. Las formas de transmisión incluyen:
-                            </p>
-                            <ul>
-                                <li>Tos</li>
-                                <li>Estornudos</li>
-                                <li>Besos</li>
-                                <li>Compartir utensilios</li>
-                            </ul>
-                            <p>Además, el contacto cercano y prolongado con una persona infectada, como en hogares,
-                                jardines maternales, escuelas o universidades, aumenta el riesgo de
-                                transmisión.<sup>5</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Qué tipos de meningitis existen?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Existen varios tipos de meningitis, clasificados según su causa:</p>
-                            <p><strong>Meningitis bacteriana:</strong> Es la forma más grave y puede ser causada por
-                                bacterias como Neumococo, Meningococo, Haemophilus influenzae tipo b y Streptococcus
-                                agalactiae. La meningitis por Meningococo puede evolucionar rápidamente y, incluso con
-                                tratamiento adecuado, algunos pacientes pueden fallecer entre las primeras 24 a 48 horas
-                                de la aparición de los síntomas.</p>
-                            <p><strong>Meningitis viral:</strong> Es la forma más frecuente y, por lo general, tiene
-                                mejor evolución que las bacterianas. Puede ser contraída a cualquier edad, pero la
-                                mayoría de los casos ocurre en niños menores de 5 años o personas con el sistema
-                                inmunitario debilitado.</p>
-                            <p><strong>Meningitis por hongos:</strong> Ciertos hongos presentes en el ambiente pueden
-                                causar meningitis, especialmente en personas con sistemas inmunológicos debilitados. La
-                                infección suele ocurrir al inhalar esporas de hongos.</p>
-                            <p><strong>Meningitis parasitaria:</strong> Se contrae al consumir animales infectados o
-                                alimentos contaminados.<sup>1 y 3</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Por qué es importante seguir el Calendario Nacional de
-                            Vacunación?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Cumplir con el Calendario Nacional de Vacunación no solo protege a cada persona de
-                                enfermedades prevenibles, sino que es también un acto de responsabilidad social. Las
-                                vacunas incluidas en el calendario —gratuitas y obligatorias— permiten controlar y
-                                reducir enfermedades graves que pueden afectar especialmente a los más vulnerables:
-                                bebés, adultos mayores y personas con defensas bajas.</p>
-                            <p>Mantener altas tasas de vacunación es esencial para lograr la inmunidad colectiva, lo que
-                                impide la circulación de los virus y bacterias en la comunidad. Cuando la vacunación
-                                disminuye, como ha ocurrido en los últimos años en distintos grupos etarios, se
-                                incrementa el riesgo de que reaparezcan enfermedades que ya estaban controladas,
-                                poniendo en peligro la salud pública.</p>
-                            <p>Vacunarse según lo establecido en el calendario nacional y las recomendaciones de tu
-                                médico es una forma concreta de cuidar no solo de uno mismo, sino también de los demás.
-                                Es un compromiso con el bienestar colectivo y una herramienta clave para evitar brotes,
-                                hospitalizaciones y muertes evitables.<sup>18</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">¿Estoy protegido/a si una vacuna necesita varias dosis, pero
-                            solo me pongo una?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Esto dependerá del esquema de cada vacuna. En aquellas que su esquema conste de más de
-                                una dosis, aplicar una sola puede no garantizar una protección completa.</p>
-                            <p>Algunas vacunas, como la del sarampión (que es una vacuna "viva"), ofrecen buena
-                                protección con la primera dosis, pero una segunda dosis es importante para asegurarse de
-                                que casi todas las personas queden inmunes. Esto se debe a que una parte de la población
-                                no responde bien a la primera aplicación.</p>
-                            <p>Por otro lado, la mayoría de las vacunas "inactivadas" (como la del tétanos, hepatitis B
-                                o tos convulsa) necesitan varias dosis para generar una protección efectiva. En estos
-                                casos, la primera dosis prepara al sistema inmunológico, pero no alcanza para
-                                protegerte. Las siguientes dosis completan esa defensa. Además, con el tiempo esa
-                                protección puede disminuir, por lo que en algunas vacunas se recomiendan refuerzos.</p>
-                            <p>Por eso, completar el esquema de vacunación es fundamental para estar realmente
-                                protegido/a y evitar enfermedades que pueden ser graves.<sup>20</sup></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-question-text">Me atrasé en aplicar una dosis de la vacuna, ¿vuelvo a
-                            empezar?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>No, no hace falta empezar de nuevo. Si te atrasaste con alguna dosis, simplemente se debe
-                                retomar el esquema de vacunación desde donde se dejó.</p>
-                            <p>Las vacunas que ya te aplicaste siguen siendo válidas, incluso si pasó más tiempo del
-                                recomendado entre una dosis y otra. Lo importante es ponerse al día lo antes posible
-                                para asegurarte una protección completa frente a la enfermedad.</p>
-                            <p>Si tenés dudas, siempre podés consultar con un profesional de salud para que te indique
-                                cómo completar el calendario según tu situación particular.<sup>21</sup></p>
+                        <div class="card-vacunatorio" onclick="seleccionarVacunatorio(4)">
+                            <h4 class="card-titulo">Hospital Municipal</h4>
+                            <p class="card-direccion">Belgrano 890, La Plata, Buenos Aires</p>
+                            <div class="card-info">
+                                <div class="info-item">
+                                    <span class="info-icon">📍</span>
+                                    <span>La Plata, Buenos Aires</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">📞</span>
+                                    <span>(0221) 234-5678</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">🏥</span>
+                                    <span>Hospital público</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- ---------- FIN SECCIÓN FAQ ----------->
 
-
-        <div class="volver-avanzar">
-
-            <img src="/imagenes/flecha-izquierda-2.png" alt="">
-            <a class="icon-arrow-custom" href="index.html">Volver a la Home</a>
-
-        </div>
-
-
-        <!-- Pop-up -->
-
-        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1"
-            tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <p class="modal-title fs-5" id="exampleModalToggleLabel1">Consulta sobre vacunación</p>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="panel-mapa">
+                <div class="mapa-header">
+                    <div class="mapa-titulo">🗺️ Mapa de Vacunatorios</div>
+                    <div class="mapa-leyenda">
+                        <div class="leyenda-item">
+                            <span>💊</span>
+                            <span>Farmacias</span>
+                        </div>
+                        <div class="leyenda-item">
+                            <span>🏥</span>
+                            <span>Hospitales</span>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <img class="centrado" src="/imagenes/icono-popup.png" alt="">
-                        <p class="texto-perso">Después de leer esta información,</p>
-                        <p class="texto-perso"><strong>¿vas a consultarle a tu pediatra acerca de la vacunación contra
-                                los distintos tipos de meningitis?</strong></p>
+                </div>
+                <div id="mapa" style="height: 500px; width: 100%;"></div>
+            </div>
+        </div> 
+        -->
+
+            <!-- ---------- fin calendario de vacunacion ----------->
+
+            <!-- ---------- SECCIÓN FAQ - PREGUNTAS FRECUENTES ----------->
+            <section class="faq-section">
+                <div class="faq-container">
+                    <h2 class="faq-title">Vacunas: preguntas frecuentes</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Por qué son tan importantes las vacunas?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Según la Organización Mundial de la Salud (OMS), las vacunas y el agua potable son
+                                    las
+                                    dos herramientas más importantes para prevenir enfermedades.</p>
+                                <p>Hace muchos años, cuando aún no existían las vacunas, había epidemias que causaban
+                                    secuelas irreversibles o miles de muertes por año.</p>
+                                <p>Un hito en la salud pública mundial fue la erradicación de la viruela en 1980
+                                    mediante la
+                                    vacunación. Actualmente se trabaja para erradicar la poliomielitis, enfermedad que
+                                    ya
+                                    está eliminada en la gran mayoría de los países del mundo gracias a las vacunas.</p>
+                                <p>En la Argentina, gracias a una alta cobertura de vacunación, ya no se registran casos
+                                    endémicos de Sarampión desde el año 2000, de Rubéola congénita desde 2009. El último
+                                    caso de poliomielitis fue en 1984, difteria 2006, tétanos neonatal 2007 y se redujo
+                                    en
+                                    más del 96% los casos de trasplante hepático por el virus de la hepatitis A. Son
+                                    estos
+                                    mismos logros los que hacen fundamental a la vacunación como política de
+                                    Estado.<sup>19</sup></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary custom-popup" data-bs-target="#exampleModalToggle2"
-                            data-bs-toggle="modal">No</button>
-                        <button class="btn btn-primary custom-popup" data-bs-target="#exampleModalToggle3"
-                            data-bs-toggle="modal">Sí</button>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Qué puede pasar si no nos vacunamos?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Si tenemos contacto con el microorganismo causante de la infección, corremos el
+                                    riesgo de
+                                    padecer la enfermedad y, por supuesto, sus formas graves o fatales.</p>
+                                <p>Además, es fundamental tomar conciencia de que no solo podemos enfermarnos nosotros,
+                                    sino
+                                    también contagiar a personas más vulnerables que no pueden recibir las vacunas por
+                                    tener
+                                    contraindicaciones para su aplicación o no tienen la edad para recibir la
+                                    vacuna.<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Por qué los niños necesitan vacunarse aunque estén
+                                sanos?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>La vacunación es una herramienta de "prevención primaria", esto quiere decir que
+                                    evita
+                                    que personas sanas enfermen, o si lo hacen, que evolucionen a cuadros graves o
+                                    mortales.</p>
+                                <p>Si bien la mayoría de las enfermedades prevenibles causan cuadros benignos, un niño
+                                    sano
+                                    puede tener complicaciones graves o fallecer por enfermedades que se previenen de
+                                    forma
+                                    muy eficaz y segura a través de la vacunación.<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Las vacunas del Calendario Nacional de Vacunación son solo
+                                para
+                                los niños?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>No: para cada etapa de la vida corresponde la aplicación de diversas vacunas.</p>
+                                <p>Por ejemplo, la primera vacuna, contra la hepatitis B, se aplica durante las primeras
+                                    12
+                                    horas de vida. Además, antes del egreso de la maternidad se aplica también la BCG.
+                                    Toda
+                                    persona adulta debe recibir refuerzo contra difteria y tétanos cada 10 años.</p>
+                                <p>Como algunas vacunas aplicadas durante la infancia pierden su eficacia con el tiempo,
+                                    durante la adolescencia y adultez deben aplicarse dosis de refuerzo, así como
+                                    también
+                                    existen vacunas que tienen indicación precisa durante esta etapa o alguna condición
+                                    en
+                                    particular.<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Una embarazada puede recibir vacunas?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Todas las embarazadas deben vacunarse para protegerse contra enfermedades que pueden
+                                    causar graves complicaciones durante ese período de la vida (la gripe, por ejemplo).
+                                </p>
+                                <p>Las vacunas, además, durante el embarazo transfieren anticuerpos a través de la
+                                    placenta
+                                    y luego a través de la lactancia a la persona recién nacida protegiéndola durante
+                                    los
+                                    primeros meses de vida (contra la tos convulsa y la bronquiolitis).</p>
+                                <p>Hay algunas vacunas que están contraindicadas en el embarazo, pero, si la persona lo
+                                    necesita, se le pueden aplicar en el puerperio inmediato o previo al
+                                    embarazo.<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Dónde están disponibles las vacunas?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Todas las vacunas contempladas en el Calendario Nacional están disponibles de forma
+                                    gratuita en los vacunatorios, centros de salud y hospitales públicos del país. No
+                                    requieren orden médica.<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Se puede recibir más de una vacuna el mismo día?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Las vacunas del Calendario Nacional que corresponden a cada etapa de la vida pueden
+                                    recibirse el mismo día o en forma diferida. Sin embargo, es esencial poner al día el
+                                    Calendario en la menor cantidad de visitas posibles al centro de salud, hospital o
+                                    vacunatorio y así evitar oportunidades perdidas. Las vacunas contra la COVID-19
+                                    también
+                                    pueden administrarse en el mismo momento, con cualquiera de las vacunas del
+                                    Calendario
+                                    Nacional.<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Qué síntomas puedo tener después de vacunarme?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Una vacuna inyectable puede causarnos dolor, enrojecimiento e inflamación en el lugar
+                                    de
+                                    la aplicación. En general, estos efectos son leves y desaparecen espontáneamente.
+                                </p>
+                                <p>En un grupo pequeño de personas puede aparecer fiebre y decaimiento durante un par de
+                                    días. Si surge alguna duda, debemos consultar al equipo de salud.<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Quién inventó las vacunas?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>A. Edward Jenner (1749-1823), médico investigador inglés; se lo llama "padre de las
+                                    vacunas" porque fue quien descubrió la vacuna contra la viruela, enfermedad que
+                                    provocaba grandes epidemias en varios continentes.</p>
+                                <p>Posteriormente, científicos como el propio Jenner, Pasteur, Salk y Sabin, entre
+                                    muchos
+                                    otros, desarrollaron vacunas que han sido una herramienta fundamental para la salud
+                                    de
+                                    las poblaciones.</p>
+                                <p>Si las vacunas son administradas en forma oportuna, menos personas van a contraer
+                                    enfermedades. Los avances en las vacunas y el acceso cada vez más amplio a ellas se
+                                    traducen en una mejor calidad y esperanza de vida para las comunidades de todo el
+                                    mundo.<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Cómo se fabrican las vacunas?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Se formulan de varias maneras. Algunas incluyen a los microorganismos que causan la
+                                    enfermedad pero "atenuados" (vivos, pero "debilitados" para generar una infección
+                                    controlable fácilmente por el sistema inmune) o inactivados ("muertos").</p>
+                                <p>En otras situaciones, se trata de una composición con algunas partes de los
+                                    microorganismos: como proteínas, fragmentos de la superficie exterior, que
+                                    posibilitan
+                                    la producción de defensas igualmente adecuadas.</p>
+                                <p>Una vez vacunada, si la persona tiene contacto con el microorganismo, su cuerpo
+                                    estará
+                                    preparado para protegerse y no enfermar o hacerlo de manera leve.<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Por qué la vacunación es una responsabilidad social?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>La vacunación es un acto responsable y solidario. La persona que no se vacuna, puede
+                                    contraer y contagiar estas enfermedades. Por lo tanto, no solo se pone en riesgo a
+                                    sí
+                                    misma, sino también a toda la comunidad, especialmente a aquellas personas que son
+                                    más
+                                    vulnerables, como los menores de 1 año que aún no han completado sus esquemas de
+                                    vacunación, embarazadas e inmunodeprimidas (aquellas que por distintas enfermedades
+                                    o
+                                    tratamientos tienen bajas sus defensas).<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Qué se entiende en vacunación por protección rebaño?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Cuando la mayoría de las personas en una comunidad están correctamente inmunizadas,
+                                    si
+                                    alguien adquiere una enfermedad prevenible por vacunas, la enfermedad probablemente
+                                    no
+                                    se propague ya que en su entorno entra en contacto con otras personas que están
+                                    protegidas. De esta forma, la diseminación de la enfermedad quedará limitada y no
+                                    alcanzará a personas susceptibles que no hayan podido vacunarse por contraindicación
+                                    médica (ej. con cáncer); a este efecto de protección indirecta se lo denomina
+                                    "efecto
+                                    rebaño". Este fenómeno, también denominado inmunidad "colectiva", es especialmente
+                                    eficaz con las enfermedades extremadamente contagiosas, como el
+                                    sarampión.<sup>19</sup>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Por qué se dice que hay vacunas para todas las etapas de la
+                                vida?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>En el momento en que un niño nace se recomienda que reciba las primeras vacunas y a
+                                    lo
+                                    largo de sus primeros años de vida se administran muchas de ellas. Pero es necesario
+                                    destacar que en todas las etapas de la vida hay indicación de vacunas (adolescentes,
+                                    personas adultas, adultas mayores), ya sea por necesidad de reforzar las defensas
+                                    que
+                                    generaron las vacunas que se dieron en la infancia o para proteger de otras
+                                    enfermedades
+                                    (ej. cáncer de cuello uterino mediante la vacuna contra el VPH). También en
+                                    situaciones
+                                    especiales como en embarazadas, por viajes internacionales, factores de riesgo o
+                                    para
+                                    determinadas profesiones. Por este motivo es importante que consultes con un
+                                    profesional
+                                    de la salud qué vacunas te faltan.<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Las vacunas son seguras?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Las vacunas utilizadas en los programas de inmunizaciones son seguras y eficaces. Las
+                                    reacciones que pueden provocar son leves y poco frecuentes.</p>
+                                <p>La seguridad de las vacunas es controlada en forma estricta por las autoridades
+                                    sanitarias que chequean los procesos de fabricación, distribución, y la calidad de
+                                    cada
+                                    lote. En nuestro país es la Administración nacional de medicamentos, alimentos y
+                                    tecnología médica (ANMAT).<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Cuáles son las diferencias entre erradicación, eliminación
+                                y
+                                control de enfermedades prevenibles por vacunas?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Erradicación</strong> se refiere a la situación en la cual no solamente ya no
+                                    existen casos en ningún grupo poblacional sino que también se eliminaron las causas
+                                    de
+                                    la enfermedad, en particular el agente que la produce. (Ej: la viruela: la viruela y
+                                    su
+                                    agente productor fueron eliminados a escala mundial).</p>
+                                <p><strong>Eliminación</strong> se refiere a la situación en la cual ya no existen casos
+                                    de
+                                    enfermedad en una determinada población, aunque persisten las causas que pueden
+                                    potencialmente producir la aparición de casos. (Ej: sarampión está eliminado de
+                                    Argentina, pero sigue habiendo casos en otros países del mundo que potencialmente
+                                    pueden
+                                    volver a generar casos en nuestro país).</p>
+                                <p><strong>Control:</strong> Se refiere a la aplicación de medidas poblacionales
+                                    dirigidas a
+                                    conseguir la reducción de la incidencia de la enfermedad a niveles en que deje de
+                                    constituir un problema de salud pública. Las medidas de control se dirigen
+                                    principalmente a reducir la mortalidad y la morbilidad de la enfermedad. (Ej.
+                                    difteria,
+                                    tétanos neonatal, transmisión materno infantil de la hepatitis).<sup>19</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Cuáles son los síntomas de la meningitis?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Los síntomas más habituales de la Meningitis son fiebre, cuello rígido,
+                                    irritabilidad,
+                                    somnolencia, rechazo a la luz, náuseas o vómitos y dolor de cabeza.</p>
+                                <p>En lactantes, los más característicos son fiebre, llanto constante, somnolencia o
+                                    irritabilidad excesivas, dificultad para despertar del sueño, lentitud o
+                                    inactividad, no
+                                    despertarse para comer, no comer bien, vómitos y tener la fontanela (parte superior
+                                    de
+                                    la cabeza del bebé) abultada.</p>
+                                <p>En los casos de Meningitis Bacteriana, las bacterias causantes de Meningitis pueden
+                                    provocar otros síntomas si infectan la sangre del torrente circulatorio, que pueden
+                                    desembocar rápidamente en septicemia (también conocida como sepsis, que es una
+                                    infección
+                                    grave de la sangre que puede provocar el mal funcionamiento de órganos y, si no se
+                                    trata
+                                    rápidamente, la muerte). Estos síntomas pueden ser: frío en manos y pies, dolor
+                                    muscular
+                                    y articular, respiración más rápida de lo habitual, diarrea y erupciones de la piel
+                                    de
+                                    color rojo o púrpura oscuro (petequias).</p>
+                                <p><strong>Ante la presencia de estos síntomas, es fundamental acudir inmediatamente al
+                                        médico.</strong><sup>1</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Cómo se transmite la meningitis?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>La meningitis se transmite, en la mayoría de los casos, por vía respiratoria desde
+                                    una
+                                    persona enferma o desde portadores asintomáticos. Las formas de transmisión
+                                    incluyen:
+                                </p>
+                                <ul>
+                                    <li>Tos</li>
+                                    <li>Estornudos</li>
+                                    <li>Besos</li>
+                                    <li>Compartir utensilios</li>
+                                </ul>
+                                <p>Además, el contacto cercano y prolongado con una persona infectada, como en hogares,
+                                    jardines maternales, escuelas o universidades, aumenta el riesgo de
+                                    transmisión.<sup>5</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Qué tipos de meningitis existen?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Existen varios tipos de meningitis, clasificados según su causa:</p>
+                                <p><strong>Meningitis bacteriana:</strong> Es la forma más grave y puede ser causada por
+                                    bacterias como Neumococo, Meningococo, Haemophilus influenzae tipo b y Streptococcus
+                                    agalactiae. La meningitis por Meningococo puede evolucionar rápidamente y, incluso
+                                    con
+                                    tratamiento adecuado, algunos pacientes pueden fallecer entre las primeras 24 a 48
+                                    horas
+                                    de la aparición de los síntomas.</p>
+                                <p><strong>Meningitis viral:</strong> Es la forma más frecuente y, por lo general, tiene
+                                    mejor evolución que las bacterianas. Puede ser contraída a cualquier edad, pero la
+                                    mayoría de los casos ocurre en niños menores de 5 años o personas con el sistema
+                                    inmunitario debilitado.</p>
+                                <p><strong>Meningitis por hongos:</strong> Ciertos hongos presentes en el ambiente
+                                    pueden
+                                    causar meningitis, especialmente en personas con sistemas inmunológicos debilitados.
+                                    La
+                                    infección suele ocurrir al inhalar esporas de hongos.</p>
+                                <p><strong>Meningitis parasitaria:</strong> Se contrae al consumir animales infectados o
+                                    alimentos contaminados.<sup>1 y 3</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Por qué es importante seguir el Calendario Nacional de
+                                Vacunación?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Cumplir con el Calendario Nacional de Vacunación no solo protege a cada persona de
+                                    enfermedades prevenibles, sino que es también un acto de responsabilidad social. Las
+                                    vacunas incluidas en el calendario —gratuitas y obligatorias— permiten controlar y
+                                    reducir enfermedades graves que pueden afectar especialmente a los más vulnerables:
+                                    bebés, adultos mayores y personas con defensas bajas.</p>
+                                <p>Mantener altas tasas de vacunación es esencial para lograr la inmunidad colectiva, lo
+                                    que
+                                    impide la circulación de los virus y bacterias en la comunidad. Cuando la vacunación
+                                    disminuye, como ha ocurrido en los últimos años en distintos grupos etarios, se
+                                    incrementa el riesgo de que reaparezcan enfermedades que ya estaban controladas,
+                                    poniendo en peligro la salud pública.</p>
+                                <p>Vacunarse según lo establecido en el calendario nacional y las recomendaciones de tu
+                                    médico es una forma concreta de cuidar no solo de uno mismo, sino también de los
+                                    demás.
+                                    Es un compromiso con el bienestar colectivo y una herramienta clave para evitar
+                                    brotes,
+                                    hospitalizaciones y muertes evitables.<sup>18</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">¿Estoy protegido/a si una vacuna necesita varias dosis, pero
+                                solo me pongo una?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Esto dependerá del esquema de cada vacuna. En aquellas que su esquema conste de más
+                                    de
+                                    una dosis, aplicar una sola puede no garantizar una protección completa.</p>
+                                <p>Algunas vacunas, como la del sarampión (que es una vacuna "viva"), ofrecen buena
+                                    protección con la primera dosis, pero una segunda dosis es importante para
+                                    asegurarse de
+                                    que casi todas las personas queden inmunes. Esto se debe a que una parte de la
+                                    población
+                                    no responde bien a la primera aplicación.</p>
+                                <p>Por otro lado, la mayoría de las vacunas "inactivadas" (como la del tétanos,
+                                    hepatitis B
+                                    o tos convulsa) necesitan varias dosis para generar una protección efectiva. En
+                                    estos
+                                    casos, la primera dosis prepara al sistema inmunológico, pero no alcanza para
+                                    protegerte. Las siguientes dosis completan esa defensa. Además, con el tiempo esa
+                                    protección puede disminuir, por lo que en algunas vacunas se recomiendan refuerzos.
+                                </p>
+                                <p>Por eso, completar el esquema de vacunación es fundamental para estar realmente
+                                    protegido/a y evitar enfermedades que pueden ser graves.<sup>20</sup></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-question-text">Me atrasé en aplicar una dosis de la vacuna, ¿vuelvo a
+                                empezar?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>No, no hace falta empezar de nuevo. Si te atrasaste con alguna dosis, simplemente se
+                                    debe
+                                    retomar el esquema de vacunación desde donde se dejó.</p>
+                                <p>Las vacunas que ya te aplicaste siguen siendo válidas, incluso si pasó más tiempo del
+                                    recomendado entre una dosis y otra. Lo importante es ponerse al día lo antes posible
+                                    para asegurarte una protección completa frente a la enfermedad.</p>
+                                <p>Si tenés dudas, siempre podés consultar con un profesional de salud para que te
+                                    indique
+                                    cómo completar el calendario según tu situación particular.<sup>21</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ---------- FIN SECCIÓN FAQ ----------->
+
+
+            <div class="volver-avanzar">
+
+                <img src="/imagenes/flecha-izquierda-2.png" alt="">
+                <a class="icon-arrow-custom" href="index.html">Volver a la Home</a>
+
+            </div>
+
+
+            <!-- Pop-up -->
+
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true"
+                aria-labelledby="exampleModalToggleLabel1" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <p class="modal-title fs-5" id="exampleModalToggleLabel1">Consulta sobre vacunación</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="centrado" src="/imagenes/icono-popup.png" alt="">
+                            <p class="texto-perso">Después de leer esta información,</p>
+                            <p class="texto-perso"><strong>¿vas a consultarle a tu pediatra acerca de la vacunación
+                                    contra
+                                    los distintos tipos de meningitis?</strong></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary custom-popup" data-bs-target="#exampleModalToggle2"
+                                data-bs-toggle="modal">No</button>
+                            <button class="btn btn-primary custom-popup" data-bs-target="#exampleModalToggle3"
+                                data-bs-toggle="modal">Sí</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
-            tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <p class="modal-title fs-5" id="exampleModalToggleLabel2">¡Gracias por tu respuesta!</p>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img class="centrado" src="/imagenes/icono-popup-check.png" alt="">
-                        <p class="texto-perso"><strong>¡Gracias por tu respuesta!</strong></p>
-                        <p class="texto-perso">Haber llegado hasta acá es el primer paso. Siempre podés consultar con el
-                            pediatra cuando estés listo/a.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary custom-popup full" data-bs-dismiss="modal">Volver</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3"
-            tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <p class="modal-title fs-5" id="exampleModalToggleLabel3">¡Gracias por tu respuesta!</p>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img class="centrado" src="/imagenes/icono-popup-check.png" alt="">
-                        <p class="texto-perso"><strong>¡Gracias por tu respuesta!</strong></p>
-                        <p class="texto-perso">Hablar con el pediatra es un gran paso para proteger la salud de quienes
-                            más importan.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary custom-popup full" data-bs-dismiss="modal">Volver</button>
+            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                aria-labelledby="exampleModalToggleLabel2" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <p class="modal-title fs-5" id="exampleModalToggleLabel2">¡Gracias por tu respuesta!</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="centrado" src="/imagenes/icono-popup-check.png" alt="">
+                            <p class="texto-perso"><strong>¡Gracias por tu respuesta!</strong></p>
+                            <p class="texto-perso">Haber llegado hasta acá es el primer paso. Siempre podés consultar
+                                con el
+                                pediatra cuando estés listo/a.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary custom-popup full" data-bs-dismiss="modal">Volver</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-
-
-        <!-- fin Pop-up -->
-
-
-        <!-- ---------- footer top----------->
-        <div id="prevencion" class="footer-top">
-            <div class="footer-texto">
-
-                <h2>Consultá con tu médico o médica <br>sobre las vacunas para prevenir la Meningitis</h2>
-                <p>Cuidá la salud de los que te rodean</p>
-
-
+            <div class="modal fade" id="exampleModalToggle3" aria-hidden="true"
+                aria-labelledby="exampleModalToggleLabel3" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <p class="modal-title fs-5" id="exampleModalToggleLabel3">¡Gracias por tu respuesta!</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="centrado" src="/imagenes/icono-popup-check.png" alt="">
+                            <p class="texto-perso"><strong>¡Gracias por tu respuesta!</strong></p>
+                            <p class="texto-perso">Hablar con el pediatra es un gran paso para proteger la salud de
+                                quienes
+                                más importan.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary custom-popup full" data-bs-dismiss="modal">Volver</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="footer-redes">
-                <p>Compartir:</p>
-                <div class="redes">
-
-                    <div class="redes-icon">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.bastademeningitis.com.ar"
-                            target="_blank" rel="noopener noreferrer">
 
 
-                            <img src="/svg/jam_facebook.svg" alt="Fiebre">
-                        </a>
-
-                    </div>
-
-                    <div class="redes-icon">
-                        <a href="https://api.whatsapp.com/send?text=Visita%20esta%20página:%20https://www.bastademeningitis.com.ar"
-                            target="_blank" rel="noopener noreferrer">
+            <!-- fin Pop-up -->
 
 
-                            <img src="/svg/ic_baseline-whatsapp.svg" alt="Cuello rígido">
+            <!-- ---------- footer top----------->
+            <div id="prevencion" class="footer-top">
+                <div class="footer-texto">
 
-                        </a>
-                    </div>
+                    <h2>Consultá con tu médico o médica <br>sobre las vacunas para prevenir la Meningitis</h2>
+                    <p>Cuidá la salud de los que te rodean</p>
 
-                    <div class="redes-icon">
-                        <a href="https://twitter.com/intent/tweet?url=https://www.bastademeningitis.com.ar&text=Echa%20un%20vistazo%20a%20esta%20página:"
-                            target="_blank" rel="noopener noreferrer">
-
-                            <img src="/svg/prime_twitter.svg" alt="Irritabilidad">
-
-                        </a>
-
-                    </div>
 
                 </div>
 
+                <div class="footer-redes">
+                    <p>Compartir:</p>
+                    <div class="redes">
+
+                        <div class="redes-icon">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.bastademeningitis.com.ar"
+                                target="_blank" rel="noopener noreferrer">
+
+
+                                <img src="/svg/jam_facebook.svg" alt="Fiebre">
+                            </a>
+
+                        </div>
+
+                        <div class="redes-icon">
+                            <a href="https://api.whatsapp.com/send?text=Visita%20esta%20página:%20https://www.bastademeningitis.com.ar"
+                                target="_blank" rel="noopener noreferrer">
+
+
+                                <img src="/svg/ic_baseline-whatsapp.svg" alt="Cuello rígido">
+
+                            </a>
+                        </div>
+
+                        <div class="redes-icon">
+                            <a href="https://twitter.com/intent/tweet?url=https://www.bastademeningitis.com.ar&text=Echa%20un%20vistazo%20a%20esta%20página:"
+                                target="_blank" rel="noopener noreferrer">
+
+                                <img src="/svg/prime_twitter.svg" alt="Irritabilidad">
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
 
             </div>
-
-        </div>
-        <!-- ---------- fin footer top----------->
+            <!-- ---------- fin footer top----------->
 
 
 
 
 
-        <!-- ---------- Referencias ----------->
-        <div class="tab-container">
-            <div class="tab" onclick="abrirTab()" style="cursor: pointer; display: flex; align-items: center;">
-                <span class="tab-button">
-                    Referencias
-                </span>
-                <i id="tab-icon" class="fas fa-plus" style="margin-left: 8px;"></i>
+            <!-- ---------- Referencias ----------->
+            <div class="tab-container">
+                <div class="tab" onclick="abrirTab()" style="cursor: pointer; display: flex; align-items: center;">
+                    <span class="tab-button">
+                        Referencias
+                    </span>
+                    <i id="tab-icon" class="fas fa-plus" style="margin-left: 8px;"></i>
+                </div>
+                <div id="tab-content" class="tab-content">
+                    <p><sup>1</sup> Organización Mundial de la Salud (OMS): Meningitis, en
+                        https://www.who.int/news-room/fact-sheets/detail/meningitis (último acceso junio 2024)</p>
+                    <p><sup>2</sup> Adaptado de Encyclopaedia Britannica: "Meninges en
+                        https://www.britannica.com/science/meninges (último acceso junio 2024)</p>
+                    <p><sup>3</sup> Centers for Disease Control and Prevention (CDC). Meningitis en
+                        https://www.cdc.gov/meningitis/index.html (último acceso junio 2024).</p>
+                    <p><sup>4</sup> Organización Panamericana de la Salud (OPS): Meningococo, en
+                        https://www.paho.org/es/temas/meningococo (último acceso junio 2024).</p>
+                    <p><sup>5</sup> Organización Mundial de la Salud (OMS): Health-topics. "Meningitis", en
+                        https://www.who.int/health-topics/meningitis#tab=tab_1 (último acceso junio 2024).</p>
+                    <p><sup>6</sup>Ministerio de Salud de la Nación Argentina: "Fundamentos de la introducción de la
+                        vacuna
+                        tetravalente (ACYW) conjugada contra meningococo al calendario nacional de inmunizaciones"
+                        https://bancos.salud.gob.ar/recurso/lineamientos-tecnicos-vacuna-meningococo (último acceso
+                        junio
+                        2024).</p>
+                    <p><sup>7</sup> Ministerio de Salud de la Nación Argentina: "Huespedes especiales: Estrategia de
+                        vacunación contra el meningococo en Argentina" en
+                        https://bancos.salud.gob.ar/recurso/huespedes-especiales-estrategia-de-vacunacion-contra-meningococo-de-argentina
+                        (último acceso junio 2024).</p>
+                    <p><sup>8</sup> SIREVA-Argentina. Informe Argentina 2023. SIREVA II. Servicio Antimicrobianos. Dpto.
+                        Bacteriología, Instituto Nacional de Enfermedades Infecciosas (INEI) - ANLIS "Dr. Carlos G.
+                        Malbrán
+                        SIREVA (Sistema de Redes de Vigilancia de los Agentes Bacterianos Responsables de Neumonía y
+                        Meningitis) - Página web de Bacteriología Clínica INEI-ANLIS (jimdofree.com) (último acceso
+                        junio
+                        2024).</p>
+                    <p><sup>9</sup> Centers for Disease Control and Prevention (CDC). About Viral Meningitis, en
+                        https://www.cdc.gov/meningitis/about/viral-meningitis.html (último acceso junio 2024).</p>
+                    <p><sup>10</sup> Centers for Disease Control and Prevention (CDC). About Fungal Meningitis, en
+                        https://www.cdc.gov/meningitis/about/fungal-meningitis.html (último acceso junio 2024).</p>
+                    <p><sup>11</sup> Centers for Disease Control and Prevention (CDC). About Parasitic Meningitis, en
+                        https://www.cdc.gov/meningitis/about/parasitic-meningitis.html (último acceso junio 2024).</p>
+                    <p><sup>12</sup> Organización Mundial de la Salud (OMS): Defeating Meningitis by 2030, en
+                        https://www.who.int/initiatives/defeating-meningitis-by-2030 (último acceso junio 2024).</p>
+                    <p><sup>13</sup> Ministerio de Salud de la Nación Argentina. Calendario Nacional de Vacunación, en
+                        https://www.argentina.gob.ar/salud/vacunas (último acceso junio 2024).</p>
+                    <p><sup>14</sup> Organización Panamericana de la Salud (OPS): "Vigilancia de las neumonías y
+                        meningitis
+                        bacterianas en menores de cinco años" https://iris.paho.org/handle/10665.2/51883 (último acceso
+                        junio 2024).</p>
+                    <p><sup>15</sup> Ministerio de Sanidad, Servicios Sociales e Igualdad de España: "Guía de práctica
+                        clínica sobre el manejo de la enfermedad meningocócica invasiva"
+                        https://portal.guiasalud.es/wp-content/uploads/2018/12/GPC_525_EMI_ICS_resum.pdf (último acceso
+                        junio 2024).</p>
+                    <p><sup>16</sup> Centers for Disease Control and Prevention (CDC). About Meningococcal Disease.
+                        https://www.cdc.gov/meningococcal/about/index.html (último acceso junio 2024).</p>
+                    <p><sup>17</sup>Mayo Clinic: Meningitis, descripción general en
+                        https://www.mayoclinic.org/es-es/diseases-conditions/meningitis/symptoms-causes/syc-20350508
+                        (último
+                        acceso junio 2024).Organización Panamericana de la Salud (OPS): Inmunización.
+                        https://www.paho.org/es/temas/in</p>
+                    <p><sup>18</sup> Inmunización - OPS/OMS | Organización Panamericana de la Salud (paho.org) (último
+                        acceso junio 2024).</p>
+                    <p><sup>19</sup> Ministerio de Salud de la Nación Argentina. Vacunas: preguntas frecuentes, en
+                        https://www.argentina.gob.ar/salud/vacunas/preguntas-frecuentes#enestapagina (último acceso
+                        junio
+                        2024).</p>
+                    <p><sup>20</sup> Centers for Disease Control and Prevention (CDC). Chapter 2: General Best Practice
+                        Guidance for Immunization | Pink Book, en
+                        https://www.cdc.gov/vaccines/pubs/pinkbook/genrec.html (último acceso junio 2024).</p>
+                    <p><sup>21</sup> Comité Asesor de Vacunas de la Asociación Española de Pediatría. Generalidades de
+                        las
+                        inmunizaciones, en
+                        https://vacunasaep.org/profesionales/manual-vacunas-online/cap-1 (último acceso junio 2024).</p>
+                </div>
             </div>
-            <div id="tab-content" class="tab-content">
-                <p><sup>1</sup> Organización Mundial de la Salud (OMS): Meningitis, en
-                    https://www.who.int/news-room/fact-sheets/detail/meningitis (último acceso junio 2024)</p>
-                <p><sup>2</sup> Adaptado de Encyclopaedia Britannica: "Meninges en
-                    https://www.britannica.com/science/meninges (último acceso junio 2024)</p>
-                <p><sup>3</sup> Centers for Disease Control and Prevention (CDC). Meningitis en
-                    https://www.cdc.gov/meningitis/index.html (último acceso junio 2024).</p>
-                <p><sup>4</sup> Organización Panamericana de la Salud (OPS): Meningococo, en
-                    https://www.paho.org/es/temas/meningococo (último acceso junio 2024).</p>
-                <p><sup>5</sup> Organización Mundial de la Salud (OMS): Health-topics. "Meningitis", en
-                    https://www.who.int/health-topics/meningitis#tab=tab_1 (último acceso junio 2024).</p>
-                <p><sup>6</sup>Ministerio de Salud de la Nación Argentina: "Fundamentos de la introducción de la vacuna
-                    tetravalente (ACYW) conjugada contra meningococo al calendario nacional de inmunizaciones"
-                    https://bancos.salud.gob.ar/recurso/lineamientos-tecnicos-vacuna-meningococo (último acceso junio
-                    2024).</p>
-                <p><sup>7</sup> Ministerio de Salud de la Nación Argentina: "Huespedes especiales: Estrategia de
-                    vacunación contra el meningococo en Argentina" en
-                    https://bancos.salud.gob.ar/recurso/huespedes-especiales-estrategia-de-vacunacion-contra-meningococo-de-argentina
-                    (último acceso junio 2024).</p>
-                <p><sup>8</sup> SIREVA-Argentina. Informe Argentina 2023. SIREVA II. Servicio Antimicrobianos. Dpto.
-                    Bacteriología, Instituto Nacional de Enfermedades Infecciosas (INEI) - ANLIS "Dr. Carlos G. Malbrán
-                    SIREVA (Sistema de Redes de Vigilancia de los Agentes Bacterianos Responsables de Neumonía y
-                    Meningitis) - Página web de Bacteriología Clínica INEI-ANLIS (jimdofree.com) (último acceso junio
-                    2024).</p>
-                <p><sup>9</sup> Centers for Disease Control and Prevention (CDC). About Viral Meningitis, en
-                    https://www.cdc.gov/meningitis/about/viral-meningitis.html (último acceso junio 2024).</p>
-                <p><sup>10</sup> Centers for Disease Control and Prevention (CDC). About Fungal Meningitis, en
-                    https://www.cdc.gov/meningitis/about/fungal-meningitis.html (último acceso junio 2024).</p>
-                <p><sup>11</sup> Centers for Disease Control and Prevention (CDC). About Parasitic Meningitis, en
-                    https://www.cdc.gov/meningitis/about/parasitic-meningitis.html (último acceso junio 2024).</p>
-                <p><sup>12</sup> Organización Mundial de la Salud (OMS): Defeating Meningitis by 2030, en
-                    https://www.who.int/initiatives/defeating-meningitis-by-2030 (último acceso junio 2024).</p>
-                <p><sup>13</sup> Ministerio de Salud de la Nación Argentina. Calendario Nacional de Vacunación, en
-                    https://www.argentina.gob.ar/salud/vacunas (último acceso junio 2024).</p>
-                <p><sup>14</sup> Organización Panamericana de la Salud (OPS): "Vigilancia de las neumonías y meningitis
-                    bacterianas en menores de cinco años" https://iris.paho.org/handle/10665.2/51883 (último acceso
-                    junio 2024).</p>
-                <p><sup>15</sup> Ministerio de Sanidad, Servicios Sociales e Igualdad de España: "Guía de práctica
-                    clínica sobre el manejo de la enfermedad meningocócica invasiva"
-                    https://portal.guiasalud.es/wp-content/uploads/2018/12/GPC_525_EMI_ICS_resum.pdf (último acceso
-                    junio 2024).</p>
-                <p><sup>16</sup> Centers for Disease Control and Prevention (CDC). About Meningococcal Disease.
-                    https://www.cdc.gov/meningococcal/about/index.html (último acceso junio 2024).</p>
-                <p><sup>17</sup>Mayo Clinic: Meningitis, descripción general en
-                    https://www.mayoclinic.org/es-es/diseases-conditions/meningitis/symptoms-causes/syc-20350508 (último
-                    acceso junio 2024).Organización Panamericana de la Salud (OPS): Inmunización.
-                    https://www.paho.org/es/temas/in</p>
-                <p><sup>18</sup> Inmunización - OPS/OMS | Organización Panamericana de la Salud (paho.org) (último
-                    acceso junio 2024).</p>
-                <p><sup>19</sup> Ministerio de Salud de la Nación Argentina. Vacunas: preguntas frecuentes, en
-                    https://www.argentina.gob.ar/salud/vacunas/preguntas-frecuentes#enestapagina (último acceso junio
-                    2024).</p>
-                <p><sup>20</sup> Centers for Disease Control and Prevention (CDC). Chapter 2: General Best Practice
-                    Guidance for Immunization | Pink Book, en
-                    https://www.cdc.gov/vaccines/pubs/pinkbook/genrec.html (último acceso junio 2024).</p>
-                <p><sup>21</sup> Comité Asesor de Vacunas de la Asociación Española de Pediatría. Generalidades de las
-                    inmunizaciones, en
-                    https://vacunasaep.org/profesionales/manual-vacunas-online/cap-1 (último acceso junio 2024).</p>
-            </div>
-        </div>
-        <!-- ---------- fin Referencias ----------->
+            <!-- ---------- fin Referencias ----------->
     </main>
 
 
@@ -1057,7 +1267,8 @@
     <script src="/js/tab-tipos.js"></script>
     <script src="/js/tab-referencia.js"></script>
     <script src="/js/faq.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
     <script src="js/vacunatorios.js"></script>
 
