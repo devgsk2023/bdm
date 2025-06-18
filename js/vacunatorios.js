@@ -5,12 +5,12 @@ class VacunatoriosMap {
         this.vacunatorios = [];
         this.bounds = null;
         this.currentTileLayer = null;
-        
+
         this.SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRMcbWuANTMtRJIPZ4_srNBSBrvXNxiBHyp2L37Gy1wZCFuXkmJmkeyPFzuEhnWj1OSiEODBqwQne2A/pub?output=csv';
         this.LOCAL_CSV_URL = '/vacunas.csv';
         this.CACHE_KEY = 'vacunatorios_cache';
-        this.CACHE_EXPIRY = 24 * 60 * 60 * 1000; // 24 horas en milisegundos
-        
+        this.CACHE_EXPIRY = 24 * 60 * 60 * 1000;
+
         this.tileProviders = [
             {
                 name: 'CartoDB Positron',
@@ -30,21 +30,20 @@ class VacunatoriosMap {
                 }
             }
         ];
-        
+
         this.filters = {
             provincia: '',
             localidad: '',
             apVacuna: false,
             apVacunaMenor: false
         };
-        
+
         this.currentTileProviderIndex = 0;
     }
 
     async init() {
         console.log('Iniciando mapa...');
         try {
-            // Actualizar el ID del mapa según el nuevo HTML
             const mapContainer = document.getElementById('mapa');
             if (!mapContainer) {
                 console.error('No se encontró el contenedor del mapa con ID "mapa"');
@@ -58,19 +57,18 @@ class VacunatoriosMap {
                 zoomControl: false
             });
             console.log('Mapa Leaflet inicializado');
-            
+
             this.loadTileLayer();
             L.control.zoom({ position: 'topright' }).addTo(this.map);
-            
+
             this.bounds = L.latLngBounds();
-            
+
             await this.loadVacunatorios();
             this.initFilters();
-            
-            // Actualizar el ID del input de búsqueda
+
             const searchInput = document.getElementById('inputBusqueda');
             if (searchInput) {
-                searchInput.addEventListener('input', 
+                searchInput.addEventListener('input',
                     this.debounce(() => this.filterVacunatorios(), 300)
                 );
             }
@@ -83,15 +81,15 @@ class VacunatoriosMap {
     loadTileLayer() {
         console.log('Cargando capa de mapa...');
         const provider = this.tileProviders[this.currentTileProviderIndex];
-        
+
         if (this.currentTileLayer) {
             this.map.removeLayer(this.currentTileLayer);
         }
-        
+
         this.currentTileLayer = L.tileLayer(provider.url, provider.options);
         this.currentTileLayer.addTo(this.map);
         console.log('Capa de mapa cargada:', provider.name);
-        
+
         this.currentTileLayer.on('tileerror', (error) => {
             console.error('Error cargando tiles:', error);
             this.switchTileProvider();
@@ -117,8 +115,7 @@ class VacunatoriosMap {
 
     async loadVacunatorios() {
         console.log('Iniciando carga de vacunatorios...');
-        
-        // Intentar cargar desde caché primero
+
         const cachedData = this.getFromCache();
         if (cachedData) {
             console.log('Usando datos en caché');
@@ -132,7 +129,6 @@ class VacunatoriosMap {
             console.log('Intentando cargar desde Google Sheets...');
             await this.loadFromGoogleSheets();
             console.log('Datos cargados exitosamente desde Google Sheets');
-            // Guardar en caché después de cargar exitosamente
             this.saveToCache(this.vacunatorios);
         } catch (error) {
             console.log('Error cargando desde Google Sheets:', error);
@@ -140,17 +136,15 @@ class VacunatoriosMap {
                 console.log('Intentando cargar desde CSV local...');
                 await this.loadFromLocalCSV();
                 console.log('Datos cargados exitosamente desde CSV local');
-                // Guardar en caché después de cargar exitosamente
                 this.saveToCache(this.vacunatorios);
             } catch (localError) {
                 console.log('Error cargando CSV local:', localError);
                 console.log('Usando datos de ejemplo...');
                 this.loadHardcodedData();
                 console.log('Datos de ejemplo cargados');
-                // No guardamos en caché los datos de ejemplo
             }
         }
-        
+
         this.initFilterOptions();
         this.filterVacunatorios();
     }
@@ -170,7 +164,6 @@ class VacunatoriosMap {
     }
 
     loadHardcodedData() {
-        // Datos de ejemplo extendidos para mejor demostración
         this.vacunatorios = [
             {
                 nombre: "Hospital Nacional Posadas",
@@ -228,7 +221,7 @@ class VacunatoriosMap {
     parseCSV(csvText) {
         const lines = csvText.trim().split('\n');
         if (lines.length < 2) return [];
-        
+
         const headers = this.parseCSVLine(lines[0]);
         const data = [];
 
@@ -239,11 +232,11 @@ class VacunatoriosMap {
                 headers.forEach((header, index) => {
                     obj[header] = values[index] || '';
                 });
-                
+
                 if (!obj.nombre && headers[0]) {
                     obj.nombre = obj[headers[0]];
                 }
-                
+
                 data.push(obj);
             }
         }
@@ -254,13 +247,13 @@ class VacunatoriosMap {
         const result = [];
         let current = '';
         let inQuotes = false;
-        
+
         for (let i = 0; i < line.length; i++) {
             const char = line[i];
-            
-            if (char === '"' && (i === 0 || line[i-1] === ',')) {
+
+            if (char === '"' && (i === 0 || line[i - 1] === ',')) {
                 inQuotes = true;
-            } else if (char === '"' && inQuotes && (i === line.length - 1 || line[i+1] === ',')) {
+            } else if (char === '"' && inQuotes && (i === line.length - 1 || line[i + 1] === ',')) {
                 inQuotes = false;
             } else if (char === ',' && !inQuotes) {
                 result.push(current.trim());
@@ -269,19 +262,18 @@ class VacunatoriosMap {
                 current += char;
             }
         }
-        
+
         result.push(current.trim());
         return result;
     }
 
     initFilterOptions() {
         const provincias = [...new Set(this.vacunatorios.map(v => v.Provincia).filter(p => p))].sort();
-        
-        // Actualizar el ID del select de provincia
+
         const provinciaSelect = document.getElementById('filtroProvincia');
         if (provinciaSelect) {
             provinciaSelect.innerHTML = '<option value="">Todas las provincias</option>';
-            
+
             provincias.forEach(provincia => {
                 const option = document.createElement('option');
                 option.value = provincia;
@@ -292,7 +284,6 @@ class VacunatoriosMap {
     }
 
     initFilters() {
-        // Actualizar todos los IDs según el nuevo HTML
         const provinciaFilter = document.getElementById('filtroProvincia');
         const localidadFilter = document.getElementById('filtroLocalidad');
         const vacunaFilter = document.getElementById('filtroVacunas');
@@ -329,12 +320,11 @@ class VacunatoriosMap {
     }
 
     updateLocalidadesFilter() {
-        // Actualizar el ID del select de localidad
         const localidadSelect = document.getElementById('filtroLocalidad');
         if (!localidadSelect) return;
-        
+
         localidadSelect.innerHTML = '<option value="">Todas las localidades</option>';
-        
+
         if (this.filters.provincia) {
             const localidades = [...new Set(
                 this.vacunatorios
@@ -356,30 +346,29 @@ class VacunatoriosMap {
         this.clearMarkers();
         this.bounds = L.latLngBounds();
 
-        // Actualizar el ID del input de búsqueda
         const searchInput = document.getElementById('inputBusqueda');
         const searchText = searchInput ? searchInput.value.toLowerCase() : '';
 
         const filteredVacunatorios = this.vacunatorios.filter(v => {
             const nombre = v.nombre || '';
-            const matchesSearch = !searchText || 
+            const matchesSearch = !searchText ||
                 nombre.toLowerCase().includes(searchText) ||
                 (v.Domicilio && v.Domicilio.toLowerCase().includes(searchText)) ||
                 (v.Localidad && v.Localidad.toLowerCase().includes(searchText));
-            
+
             const matchesProvince = !this.filters.provincia || v.Provincia === this.filters.provincia;
             const matchesLocalidad = !this.filters.localidad || v.Localidad === this.filters.localidad;
             const matchesApVacuna = !this.filters.apVacuna || v['Ap.Vacuna'] === 'Si';
             const matchesApVacunaMenor = !this.filters.apVacunaMenor || v['Ap.Vacuna Menor'] === 'Si';
 
-            return matchesSearch && matchesProvince && matchesLocalidad && 
-                   matchesApVacuna && matchesApVacunaMenor;
+            return matchesSearch && matchesProvince && matchesLocalidad &&
+                matchesApVacuna && matchesApVacunaMenor;
         });
 
         this.updateResultsList(filteredVacunatorios);
 
         const toGeocode = filteredVacunatorios.slice(0, 30);
-        
+
         for (const vacunatorio of toGeocode) {
             await this.geocodeAndAddMarker(vacunatorio);
             await new Promise(resolve => setTimeout(resolve, 500));
@@ -401,9 +390,9 @@ class VacunatoriosMap {
     async geocodeAndAddMarker(vacunatorio) {
         const nombre = vacunatorio.nombre || 'Sin nombre';
         if (!vacunatorio.Domicilio || !vacunatorio.Localidad) return;
-        
+
         const address = `${vacunatorio.Domicilio}, ${vacunatorio.Localidad}, ${vacunatorio.Provincia}, Argentina`;
-        
+
         try {
             const response = await fetch(
                 `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}&limit=1&countrycodes=ar`,
@@ -413,61 +402,36 @@ class VacunatoriosMap {
                     }
                 }
             );
-            
+
             const results = await response.json();
-            
+
             if (results.length > 0) {
                 const lat = parseFloat(results[0].lat);
                 const lon = parseFloat(results[0].lon);
-                
+
                 const customIcon = L.divIcon({
                     html: `
-                        <div style="
-                            width: 35px; 
-                            height: 35px; 
-                            background: linear-gradient(135deg, #7666EA, #9794EB);
-                            border: 3px solid white;
-                            border-radius: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: white;
-                            font-weight: bold;
-                            font-size: 16px;
-                            box-shadow: 0 3px 10px rgba(118, 102, 234, 0.4);
-                            cursor: pointer;
-                            transition: transform 0.2s ease;
-                        " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                            ${vacunatorio.Tipo === 'Farmacia' ? '💊' : '🏥'}
+                        <div class="custom-marker-container">
+                            <div class="marker-pulse"></div>
+                            <div class="marker-icon" data-tipo="${vacunatorio.Tipo}">
+                                ${this.getMarkerIcon(vacunatorio.Tipo)}
+                            </div>
                         </div>
                     `,
-                    iconSize: [35, 35],
-                    iconAnchor: [17, 17],
-                    className: 'custom-marker-icon'
+                    iconSize: [40, 40],
+                    iconAnchor: [20, 40],
+                    className: 'custom-marker-wrapper'
                 });
 
                 const marker = L.marker([lat, lon], { icon: customIcon }).addTo(this.map);
-                
-                const popupContent = `
-                    <div style="min-width: 250px; font-family: Inter, Arial, sans-serif; line-height: 1.4;">
-                        <h3 style="margin: 0 0 12px 0; color: #7666EA; font-size: 1.1rem;">${nombre}</h3>
-                        <div style="margin-bottom: 8px;"><strong>Tipo:</strong> ${vacunatorio.Tipo}</div>
-                        <div style="margin-bottom: 8px;"><strong>Dirección:</strong> ${vacunatorio.Domicilio}</div>
-                        <div style="margin-bottom: 8px;"><strong>Localidad:</strong> ${vacunatorio.Localidad}</div>
-                        <div style="margin-bottom: 8px;"><strong>Provincia:</strong> ${vacunatorio.Provincia}</div>
-                        ${vacunatorio.Telefono ? `<div style="margin-bottom: 8px;"><strong>Teléfono:</strong> ${vacunatorio.Telefono}</div>` : ''}
-                        <div style="margin-top: 12px; padding: 8px; background: #f8f9fa; border-radius: 6px;">
-                            <div style="margin-bottom: 4px;"><strong>Servicios:</strong></div>
-                            <div style="font-size: 0.9rem;">
-                                ${vacunatorio['Ap.Vacuna'] === 'Si' ? '✅' : '❌'} Vacunas generales<br>
-                                ${vacunatorio['Ap.Vacuna Menor'] === 'Si' ? '✅' : '❌'} Vacunas para menores
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                marker.bindPopup(popupContent);
-                
+
+                const popupContent = this.createPopupContent(vacunatorio);
+
+                marker.bindPopup(popupContent, {
+                    maxWidth: 350,
+                    className: 'custom-popup'
+                });
+
                 this.bounds.extend([lat, lon]);
                 this.markers.push(marker);
             }
@@ -477,15 +441,93 @@ class VacunatoriosMap {
         }
     }
 
+    getMarkerIcon(tipo) {
+        const icons = {
+            'Hospital': `<svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3V8zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/>
+            </svg>`,
+            'Farmacia': `<svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M3,3H21V5H19V19A2,2 0 0,1 17,21H7A2,2 0 0,1 5,19V5H3V3M9,8V10H7V12H9V14H11V12H13V10H11V8H9Z"/>
+            </svg>`,
+            'Centro de Salud': `<svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19.78,11 20.5,11.35 21,12C21.5,12.65 21.5,13.35 21,14C20.5,14.65 19.78,15 19,15H17V19H15V15H13V17H11V15H9V19H7V15H5C4.22,15 3.5,14.65 3,14C2.5,13.35 2.5,12.65 3,12C3.5,11.35 4.22,11 5,11H19Z"/>
+            </svg>`
+        };
+        return icons[tipo] || icons['Centro de Salud'];
+    }
+
+    createPopupContent(vacunatorio) {
+        const nombre = vacunatorio.nombre || 'Sin nombre';
+        return `
+            <div class="popup-content">
+                <div class="popup-header">
+                    <div class="popup-icon">${this.getMarkerIcon(vacunatorio.Tipo)}</div>
+                    <div class="popup-title">
+                        <h3>${nombre}</h3>
+                        <span class="popup-tipo">${vacunatorio.Tipo}</span>
+                    </div>
+                </div>
+
+                <div class="popup-body">
+                    <div class="popup-info-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#7666EA">
+                            <path d="M12,2C15.31,2 18,4.66 18,7.95C18,12.41 12,22 12,22S6,12.41 6,7.95C6,4.66 8.69,2 12,2M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6Z"/>
+                        </svg>
+                        <div>
+                            <div class="info-label">Dirección</div>
+                            <div class="info-value">${vacunatorio.Domicilio}</div>
+                            <div class="info-value">${vacunatorio.Localidad}, ${vacunatorio.Provincia}</div>
+                        </div>
+                    </div>
+
+                    ${vacunatorio.Telefono ? `
+                        <div class="popup-info-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#7666EA">
+                                <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                            </svg>
+                            <div>
+                                <div class="info-label">Teléfono</div>
+                                <div class="info-value">${vacunatorio.Telefono}</div>
+                            </div>
+                        </div>
+                    ` : ''}
+
+                    <div class="popup-services">
+                        <div class="services-title">Servicios disponibles</div>
+                        <div class="services-grid">
+                            <div class="service-item ${vacunatorio['Ap.Vacuna'] === 'Si' ? 'available' : 'unavailable'}">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="${vacunatorio['Ap.Vacuna'] === 'Si' ? '#27ae60' : '#e74c3c'}">
+                                    <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                                </svg>
+                                <span>Vacunas generales</span>
+                            </div>
+                            <div class="service-item ${vacunatorio['Ap.Vacuna Menor'] === 'Si' ? 'available' : 'unavailable'}">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="${vacunatorio['Ap.Vacuna Menor'] === 'Si' ? '#27ae60' : '#e74c3c'}">
+                                    <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                                </svg>
+                                <span>Vacunas para menores</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
     updateResultsList(vacunatorios) {
         const container = document.getElementById('listaResultados');
         if (!container) return;
-        
+
         if (vacunatorios.length === 0) {
             container.innerHTML = `
                 <div class="sin-resultados">
+                    <div class="sin-resultados-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="#9794EB">
+                            <path d="M15.5,14H20.5L22,15.5V20.5L20.5,22H15.5L14,20.5V15.5L15.5,14M16,16V20H20V16H16M10.91,19.91L9.5,18.5L8.09,19.91L7,18.83L8.41,17.41L7,16L8.09,14.91L9.5,16.31L10.91,14.91L12,16L10.59,17.41L12,18.83L10.91,19.91M22,9V7H20V9H22M20,5V3H22V5H20M18,5H16V3H18V5Z"/>
+                        </svg>
+                    </div>
                     <h4>No se encontraron resultados</h4>
-                    <p>Intenta modificar los filtros de búsqueda</p>
+                    <p>Prueba modificando los filtros de búsqueda o el término buscado</p>
                 </div>
             `;
             return;
@@ -494,52 +536,77 @@ class VacunatoriosMap {
         container.innerHTML = '';
 
         const counterDiv = document.createElement('div');
-        counterDiv.style.cssText = `
-            padding: 1rem 0;
-            text-align: center;
-            font-weight: 600;
-            color: var(--text-gray);
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 1rem;
+        counterDiv.className = 'resultados-counter';
+        counterDiv.innerHTML = `
+            <div class="counter-content">
+                <span class="counter-number">${vacunatorios.length}</span>
+                <span class="counter-text">resultado${vacunatorios.length !== 1 ? 's' : ''} encontrado${vacunatorios.length !== 1 ? 's' : ''}</span>
+            </div>
         `;
-        counterDiv.textContent = `${vacunatorios.length} resultado${vacunatorios.length !== 1 ? 's' : ''} encontrado${vacunatorios.length !== 1 ? 's' : ''}`;
         container.appendChild(counterDiv);
 
-        vacunatorios.slice(0, 50).forEach(vacunatorio => {
-            const nombre = vacunatorio.nombre || 'Sin nombre';
-            
+        vacunatorios.slice(0, 50).forEach((vacunatorio, index) => {
+            const nombre = vacunatorio.nombre || vacunatorio.Nombre || 'Sin nombre';
+            const tipo = vacunatorio.Tipo || 'Centro de Salud';
+            const domicilio = vacunatorio.Domicilio || 'Sin dirección';
+            const localidad = vacunatorio.Localidad || 'Sin localidad';
+            const provincia = vacunatorio.Provincia || 'Sin provincia';
+            const telefono = vacunatorio.Telefono || '';
+            const apVacuna = vacunatorio['Ap.Vacuna'] || 'No';
+            const apVacunaMenor = vacunatorio['Ap.Vacuna Menor'] || 'No';
+
             const card = document.createElement('div');
             card.className = 'card-vacunatorio';
             card.innerHTML = `
-                <h4 class="card-titulo">${nombre}</h4>
-                <p class="card-direccion">${vacunatorio.Domicilio}</p>
-                <div class="card-info">
-                    <div class="info-item">
-                        <span class="info-icon">🏢</span>
-                        <span>${vacunatorio.Tipo}</span>
+                <div class="card-header">
+                    <div class="card-icon">
+                        ${this.getMarkerIcon(tipo)}
                     </div>
-                    <div class="info-item">
-                        <span class="info-icon">📍</span>
-                        <span>${vacunatorio.Localidad}, ${vacunatorio.Provincia}</span>
+                    <div class="card-title-section">
+                        <h4 class="card-titulo">${nombre}</h4>
+                        <span class="card-tipo">${tipo}</span>
                     </div>
-                    ${vacunatorio.Telefono ? `
+                </div>
+
+                <div class="card-content">
+                    <div class="card-info">
                         <div class="info-item">
-                            <span class="info-icon">📞</span>
-                            <span>${vacunatorio.Telefono}</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#7666EA">
+                                <path d="M12,2C15.31,2 18,4.66 18,7.95C18,12.41 12,22 12,22S6,12.41 6,7.95C6,4.66 8.69,2 12,2M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6Z"/>
+                            </svg>
+                            <div>
+                                <div class="info-primary">${domicilio}</div>
+                                <div class="info-secondary">${localidad}, ${provincia}</div>
+                            </div>
                         </div>
-                    ` : ''}
-                    <div class="info-item">
-                        <span class="info-icon">💉</span>
-                        <span>
-                            ${vacunatorio['Ap.Vacuna'] === 'Si' ? '✅ Vacunas generales' : '❌ Sin vacunas generales'}
-                        </span>
+
+                        ${telefono ? `
+                            <div class="info-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7666EA">
+                                    <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                                </svg>
+                                <span>${telefono}</span>
+                            </div>
+                        ` : ''}
                     </div>
-                    <div class="info-item">
-                        <span class="info-icon">👶</span>
-                        <span>
-                            ${vacunatorio['Ap.Vacuna Menor'] === 'Si' ? '✅ Vacunas menores' : '❌ Sin vacunas menores'}
-                        </span>
+
+                    <div class="card-services">
+                        <div class="service-badge ${apVacuna === 'Si' ? 'available' : 'unavailable'}">
+                            ${apVacuna === 'Si' ? '✓' : '✗'} Vacunas generales
+                        </div>
+                        <div class="service-badge ${apVacunaMenor === 'Si' ? 'available' : 'unavailable'}">
+                            ${apVacunaMenor === 'Si' ? '✓' : '✗'} Vacunas menores
+                        </div>
                     </div>
+                </div>
+
+                <div class="card-action">
+                    <button class="btn-ver-mapa">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,2C15.31,2 18,4.66 18,7.95C18,12.41 12,22 12,22S6,12.41 6,7.95C6,4.66 8.69,2 12,2M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6Z"/>
+                        </svg>
+                        Ver en mapa
+                    </button>
                 </div>
             `;
 
@@ -548,21 +615,17 @@ class VacunatoriosMap {
                     const popup = marker.getPopup();
                     return popup && popup.getContent().includes(nombre);
                 });
-                
+
                 if (targetMarker) {
-                    const latlng = targetMarker.getLatLng();
-                    this.map.setView(latlng, 16);
-                    targetMarker.openPopup();
-                    
                     document.querySelectorAll('.card-vacunatorio').forEach(c => {
-                        c.style.borderColor = 'var(--border-color)';
+                        c.classList.remove('selected');
                     });
-                    card.style.borderColor = 'var(--primary-color)';
-                    card.style.boxShadow = '0 4px 12px rgba(118, 102, 234, 0.2)';
-                    
+                    card.classList.add('selected');
+
+                    targetMarker.openPopup();
+
                     setTimeout(() => {
-                        card.style.borderColor = 'var(--border-color)';
-                        card.style.boxShadow = '';
+                        card.classList.remove('selected');
                     }, 3000);
                 }
             });
@@ -571,7 +634,6 @@ class VacunatoriosMap {
         });
     }
 
-    // Método para guardar en caché
     saveToCache(data) {
         const cacheData = {
             timestamp: Date.now(),
@@ -585,7 +647,6 @@ class VacunatoriosMap {
         }
     }
 
-    // Método para obtener de caché
     getFromCache() {
         try {
             const cached = localStorage.getItem(this.CACHE_KEY);
@@ -608,7 +669,6 @@ class VacunatoriosMap {
         }
     }
 
-    // Método para forzar una actualización de los datos
     async forceRefresh() {
         console.log('Forzando actualización de datos...');
         localStorage.removeItem(this.CACHE_KEY);
@@ -618,32 +678,20 @@ class VacunatoriosMap {
 
 document.addEventListener('DOMContentLoaded', () => {
     const vacunatoriosMap = new VacunatoriosMap();
-    
-    // Agregar botón de actualización al header del mapa
+
     const mapaHeader = document.querySelector('.mapa-header');
     if (mapaHeader) {
         const refreshButton = document.createElement('button');
-        refreshButton.innerHTML = '🔄 Actualizar datos';
-        refreshButton.style.cssText = `
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 4px 8px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            transition: background-color 0.2s;
+        refreshButton.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.65,6.35C16.2,4.9 14.21,4 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C15.73,20 18.84,17.45 19.73,14H17.65C16.83,16.33 14.61,18 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6C13.66,6 15.14,6.69 16.22,7.78L13,11H20V4L17.65,6.35Z"/>
+            </svg>
+            Actualizar
         `;
-        refreshButton.onmouseover = () => refreshButton.style.backgroundColor = 'var(--primary-hover)';
-        refreshButton.onmouseout = () => refreshButton.style.backgroundColor = 'var(--primary-color)';
+        refreshButton.className = 'btn-refresh';
         refreshButton.onclick = () => vacunatoriosMap.forceRefresh();
-        
-        const buttonContainer = document.createElement('div');
-        buttonContainer.appendChild(refreshButton);
-        mapaHeader.appendChild(buttonContainer);
+
+        mapaHeader.appendChild(refreshButton);
     }
 
     vacunatoriosMap.init().catch(error => {
