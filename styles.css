@@ -2863,11 +2863,6 @@ header#tipos-de-meningitis {
 
 }
 
-.contenedor-vacunas {
-
-    padding: 0% 5%;
-    background: #F2F8F8;
-}
 
 .vacunas-texto {
     text-align: center;
@@ -2908,7 +2903,6 @@ header#tipos-de-meningitis {
 .contenedor-vacunas {
     padding: 0% 5%;
     background: #F2F8F8;
-    max-width: 120em;
 }
 
 .contenedor-vacunas .tab-ul {
@@ -3863,6 +3857,8 @@ img#responsive-img {
 
 /* ======================== MAPA INTERACTIVO DE VACUNATORIOS - UI MEJORADA ======================== */
 
+/* ======================== MAPA INTERACTIVO DE VACUNATORIOS - OPTIMIZADO ======================== */
+
 /* CONTENEDOR PRINCIPAL DEL MAPA */
 .vacunatorios-container {
     display: grid;
@@ -3874,14 +3870,10 @@ img#responsive-img {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-    transition: var(--transition);
+    will-change: auto; /* Optimización de renderizado */
 }
 
-.vacunatorios-container:hover {
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
-}
-
-/* MARCADORES MEJORADOS */
+/* MARCADORES SIMPLIFICADOS */
 .custom-marker-wrapper {
     position: relative;
 }
@@ -3895,101 +3887,69 @@ img#responsive-img {
     justify-content: center;
 }
 
-.marker-pulse {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    opacity: 0.3;
-    animation: pulse 2s infinite;
-    z-index: 1;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.3;
-    }
-    70% {
-        transform: scale(1.5);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0.3;
-    }
-}
-
 .marker-icon {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     border: 3px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(118, 102, 234, 0.4);
+    box-shadow: 0 2px 8px rgba(118, 102, 234, 0.3);
     cursor: pointer;
-    transition: var(--transition);
-    z-index: 2;
     position: relative;
-    transform: scale(1);
+    z-index: 2;
 }
 
 .marker-icon:hover {
-    transform: scale(1.15);
-    box-shadow: 0 6px 20px rgba(118, 102, 234, 0.6);
+    transform: scale(1.05);
 }
 
 .marker-icon[data-tipo="Hospital"] {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    background: #e74c3c;
 }
 
 .marker-icon[data-tipo="Farmacia"] {
-    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    background: #2ecc71;
 }
 
 .marker-icon[data-tipo="Centro de Salud"] {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
 }
 
-/* POPUPS MEJORADOS */
+/* POPUPS OPTIMIZADOS */
 .leaflet-popup-content-wrapper {
     border-radius: 12px !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
     border: none !important;
-    overflow: hidden;
 }
 
 .leaflet-popup-content {
     margin: 0 !important;
     line-height: 1.4 !important;
     font-family: 'Inter', sans-serif !important;
-}
-
-.custom-popup .leaflet-popup-content-wrapper {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa) !important;
+    width: auto !important;
 }
 
 .popup-content {
     padding: 0;
-    min-width: 300px;
+    min-width: 280px;
+    max-width: 350px;
 }
 
 .popup-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
-    padding: 1.25rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .popup-icon {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     display: flex;
@@ -4000,26 +3960,26 @@ img#responsive-img {
 
 .popup-title h3 {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 1.3;
 }
 
 .popup-tipo {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     opacity: 0.9;
     font-weight: 400;
 }
 
 .popup-body {
-    padding: 1.25rem;
+    padding: 1rem;
     background: white;
 }
 
 .popup-info-item {
     display: flex;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
     align-items: flex-start;
 }
 
@@ -4027,13 +3987,8 @@ img#responsive-img {
     margin-bottom: 0;
 }
 
-.popup-info-item svg {
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
 .info-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: var(--text-gray);
     text-transform: uppercase;
@@ -4042,68 +3997,58 @@ img#responsive-img {
 }
 
 .info-value {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-dark);
     line-height: 1.4;
 }
 
 .popup-services {
-    margin-top: 1rem;
-    padding-top: 1rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
     border-top: 1px solid var(--border-color);
 }
 
 .services-title {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-dark);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .services-grid {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.25rem;
 }
 
 .service-item {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
+    padding: 0.4rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
     font-weight: 500;
-    transition: var(--transition);
 }
 
 .service-item.available {
     background: #e8f5e8;
     color: #2d5a2d;
-    border: 1px solid #c3e6c3;
-}
-
-.service-item.available svg {
-    fill: #27ae60;
 }
 
 .service-item.unavailable {
     background: #fdf2f2;
     color: #7a2d2d;
-    border: 1px solid #f5c6c6;
 }
 
-.service-item.unavailable svg {
-    fill: #e74c3c;
-}
-
-/* PANEL IZQUIERDO - FILTROS Y RESULTADOS */
+/* PANEL IZQUIERDO */
 .panel-izquierdo {
     display: flex;
     flex-direction: column;
     border-right: 1px solid var(--border-color);
     background: var(--bg-white);
     overflow: hidden;
+    contain: layout style; /* Optimización de renderizado */
 }
 
 /* HEADER DE BÚSQUEDA */
@@ -4112,6 +4057,7 @@ img#responsive-img {
     color: var(--text-light);
     padding: 1.5rem;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .header-busqueda h2 {
@@ -4131,9 +4077,9 @@ img#responsive-img {
     padding: 1.5rem;
     border-bottom: 1px solid var(--border-color);
     background: var(--bg-light);
+    flex-shrink: 0;
 }
 
-/* INPUT DE BÚSQUEDA */
 .busqueda-wrapper {
     position: relative;
     margin-bottom: 1.5rem;
@@ -4146,13 +4092,13 @@ img#responsive-img {
     border-radius: 8px;
     font-size: 0.9rem;
     background: var(--bg-white);
-    transition: var(--transition);
+    box-sizing: border-box;
 }
 
 .busqueda-input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(118, 102, 234, 0.1);
+    box-shadow: 0 0 0 2px rgba(118, 102, 234, 0.1);
 }
 
 .icono-busqueda {
@@ -4162,9 +4108,9 @@ img#responsive-img {
     transform: translateY(-50%);
     color: var(--text-gray);
     font-size: 1rem;
+    pointer-events: none;
 }
 
-/* GRID DE FILTROS */
 .filtros-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -4188,7 +4134,7 @@ img#responsive-img {
     background: var(--bg-white);
     font-size: 0.85rem;
     cursor: pointer;
-    transition: var(--transition);
+    box-sizing: border-box;
 }
 
 .select-filtro:focus {
@@ -4196,7 +4142,6 @@ img#responsive-img {
     border-color: var(--primary-color);
 }
 
-/* CHECKBOXES */
 .filtros-checkbox {
     display: flex;
     flex-direction: column;
@@ -4211,13 +4156,11 @@ img#responsive-img {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     cursor: pointer;
-    transition: var(--transition);
     background: var(--bg-white);
 }
 
 .checkbox-item:hover {
     border-color: var(--primary-color);
-    background: rgba(118, 102, 234, 0.02);
 }
 
 .checkbox-item input[type="checkbox"] {
@@ -4253,10 +4196,12 @@ img#responsive-img {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    min-height: 0; /* Importante para flex-shrink */
 }
 
 .resultados-header {
     margin-bottom: 1rem;
+    flex-shrink: 0;
 }
 
 .resultados-header h3 {
@@ -4268,19 +4213,23 @@ img#responsive-img {
 
 /* CONTADOR DE RESULTADOS */
 .resultados-counter {
-    background: linear-gradient(135deg, var(--accent-color), #a8e6f0);
     padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    flex-shrink: 0;
 }
 
 .counter-content {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    background: linear-gradient(90deg, #f9f9ff, #ecebfc);
+    padding: 1rem 2rem;
+    border-radius: 12px;
     color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 1rem;
 }
 
 .counter-number {
@@ -4294,7 +4243,7 @@ img#responsive-img {
     font-weight: 500;
 }
 
-/* LISTA DE RESULTADOS */
+/* LISTA DE RESULTADOS OPTIMIZADA */
 .lista-resultados {
     flex: 1;
     overflow-y: auto;
@@ -4302,54 +4251,35 @@ img#responsive-img {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-height: calc(100vh - 400px);
-    min-height: 300px;
     padding-right: 8px;
+    min-height: 0;
+    contain: layout style; /* Optimización importante */
 }
 
-/* SCROLLBAR PERSONALIZADO - MÁS VISIBLE */
+/* SCROLLBAR */
 .lista-resultados::-webkit-scrollbar {
-    width: 12px;
+    width: 6px;
 }
 
 .lista-resultados::-webkit-scrollbar-track {
     background: var(--bg-light);
-    border-radius: 6px;
-    border: 1px solid var(--border-color);
+    border-radius: 3px;
 }
 
 .lista-resultados::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 6px;
-    border: 2px solid var(--bg-light);
-    min-height: 30px;
+    background: var(--primary-color);
+    border-radius: 3px;
 }
 
 .lista-resultados::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, var(--primary-hover), var(--primary-color));
-    transform: scale(1.1);
-}
-
-.lista-resultados::-webkit-scrollbar-thumb:active {
     background: var(--primary-hover);
 }
 
-/* SCROLLBAR PARA FIREFOX */
-.lista-resultados {
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-color) var(--bg-light);
-}
-
-/* SIN RESULTADOS MEJORADO */
+/* SIN RESULTADOS */
 .sin-resultados {
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 2rem 1rem;
     color: var(--text-gray);
-}
-
-.sin-resultados-icon {
-    margin-bottom: 1rem;
-    opacity: 0.7;
 }
 
 .sin-resultados h4 {
@@ -4365,67 +4295,46 @@ img#responsive-img {
     line-height: 1.5;
 }
 
-/* CARDS DE VACUNATORIO MEJORADAS */
+/* CARDS DE VACUNATORIO CORREGIDAS */
 .card-vacunatorio {
     background: var(--bg-white);
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 0;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
+    cursor: pointer;
+    display: block; /* Asegurar que se muestre */
     position: relative;
-}
-
-.card-vacunatorio::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+    flex-shrink: 0; /* Evitar que se compriman */
 }
 
 .card-vacunatorio:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 8px 32px rgba(118, 102, 234, 0.15);
-    transform: translateY(-2px);
-}
-
-.card-vacunatorio:hover::before {
-    transform: scaleX(1);
+    box-shadow: 0 2px 8px rgba(118, 102, 234, 0.15);
 }
 
 .card-vacunatorio.selected {
     border-color: var(--primary-color);
-    box-shadow: 0 8px 32px rgba(118, 102, 234, 0.25);
-    transform: translateY(-2px);
-}
-
-.card-vacunatorio.selected::before {
-    transform: scaleX(1);
+    box-shadow: 0 2px 8px rgba(118, 102, 234, 0.25);
 }
 
 .card-header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.25rem 1.25rem 0.75rem;
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .card-icon {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(118, 102, 234, 0.3);
+    color: white;
 }
 
 .card-title-section {
@@ -4434,7 +4343,7 @@ img#responsive-img {
 }
 
 .card-titulo {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text-dark);
     margin: 0 0 0.25rem 0;
@@ -4443,17 +4352,17 @@ img#responsive-img {
 }
 
 .card-tipo {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-gray);
     font-weight: 500;
-    padding: 0.25rem 0.75rem;
+    padding: 0.2rem 0.6rem;
     background: var(--bg-light);
-    border-radius: 20px;
+    border-radius: 12px;
     display: inline-block;
 }
 
 .card-content {
-    padding: 0 1.25rem 1rem;
+    padding: 1rem;
 }
 
 .card-info {
@@ -4466,13 +4375,15 @@ img#responsive-img {
 .info-item {
     display: flex;
     align-items: flex-start;
-    gap: 0.75rem;
-    font-size: 0.9rem;
+    gap: 0.5rem;
+    font-size: 0.85rem;
 }
 
 .info-item svg {
     flex-shrink: 0;
     margin-top: 2px;
+    width: 14px;
+    height: 14px;
 }
 
 .info-primary {
@@ -4482,7 +4393,7 @@ img#responsive-img {
 }
 
 .info-secondary {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-gray);
     line-height: 1.3;
 }
@@ -4490,47 +4401,45 @@ img#responsive-img {
 .card-services {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
 }
 
 .service-badge {
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
-    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
     font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    transition: var(--transition);
+    gap: 0.4rem;
 }
 
 .service-badge.available {
-    background: linear-gradient(135deg, #e8f5e8, #d4edda);
+    background: #e8f5e8;
     color: #155724;
-    border: 1px solid #c3e6cb;
 }
 
 .service-badge.unavailable {
-    background: linear-gradient(135deg, #fdf2f2, #f8d7da);
+    background: #fdf2f2;
     color: #721c24;
-    border: 1px solid #f5c6cb;
 }
 
 .card-action {
-    padding: 0 1.25rem 1.25rem;
+    border-top: 1px solid #f0f0f0;
+    padding: 0.75rem 1rem;
 }
 
 .btn-ver-mapa {
     width: 100%;
-    padding: 0.75rem 1rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 0.6rem;
+    background: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 0.9rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4538,9 +4447,7 @@ img#responsive-img {
 }
 
 .btn-ver-mapa:hover {
-    background: linear-gradient(135deg, var(--primary-hover), var(--primary-color));
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(118, 102, 234, 0.3);
+    background: var(--primary-hover);
 }
 
 /* PANEL DERECHO - MAPA */
@@ -4554,7 +4461,7 @@ img#responsive-img {
 }
 
 .mapa-header {
-    background: linear-gradient(135deg, var(--accent-color), #a8e6f0);
+    background: var(--accent-color);
     padding: 1rem 1.5rem;
     border-bottom: 1px solid var(--border-color);
     display: flex;
@@ -4592,28 +4499,26 @@ img#responsive-img {
 }
 
 .leyenda-item:nth-child(1)::before {
-    background: linear-gradient(135deg, #7666EA, #9794EB);
+    background: var(--primary-color);
 }
 
 .leyenda-item:nth-child(2)::before {
-    background: linear-gradient(135deg, #89D7F0, #7666EA);
+    background: #2ecc71;
 }
 
 .leyenda-item:nth-child(3)::before {
-    background: linear-gradient(135deg, #9794EB, #89D7F0);
+    background: #e74c3c;
 }
 
-/* BOTÓN DE ACTUALIZACIÓN */
 .btn-refresh {
     background: var(--bg-white);
     color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
     padding: 0.5rem 1rem;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: var(--transition);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -4622,43 +4527,31 @@ img#responsive-img {
 .btn-refresh:hover {
     background: var(--primary-color);
     color: white;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(118, 102, 234, 0.3);
-}
-
-.btn-refresh svg {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.3s ease;
-}
-
-.btn-refresh:hover svg {
-    transform: rotate(180deg);
 }
 
 #mapa {
     flex: 1;
-    min-height: 500px;
     width: 100%;
     position: relative;
+    background: #f8f9fa;
 }
 
-/* ANIMACIONES DE CARGA */
+/* LOADING OPTIMIZADO */
 .loading {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3rem;
+    padding: 2rem;
     color: var(--text-gray);
 }
 
 .loading::before {
     content: '';
-    width: 40px;
-    height: 40px;
-    border: 4px solid var(--border-color);
-    border-top: 4px solid var(--primary-color);
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-color);
+    border-top: 2px solid var(--primary-color);
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin-bottom: 1rem;
@@ -4669,27 +4562,7 @@ img#responsive-img {
     100% { transform: rotate(360deg); }
 }
 
-/* TOOLTIPS Y MEJORAS ADICIONALES */
-.leaflet-popup-tip {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa) !important;
-    border: none !important;
-}
-
-.leaflet-popup-close-button {
-    background: rgba(0, 0, 0, 0.1) !important;
-    color: var(--text-dark) !important;
-    font-size: 18px !important;
-    padding: 8px !important;
-    border-radius: 50% !important;
-    transition: var(--transition) !important;
-}
-
-.leaflet-popup-close-button:hover {
-    background: rgba(0, 0, 0, 0.2) !important;
-    transform: scale(1.1) !important;
-}
-
-/* RESPONSIVE DESIGN MEJORADO */
+/* RESPONSIVE */
 @media (max-width: 1200px) {
     .vacunatorios-container {
         grid-template-columns: 380px 1fr;
@@ -4705,16 +4578,7 @@ img#responsive-img {
 
     .panel-mapa {
         order: -1;
-        height: 500px;
-    }
-
-    #mapa {
-        height: 100%;
-        min-height: unset;
-    }
-
-    .mapa-header {
-        display: none;
+        height: 400px;
     }
 
     .panel-izquierdo {
@@ -4722,7 +4586,7 @@ img#responsive-img {
     }
 
     .lista-resultados {
-        max-height: 400px;
+        max-height: 300px;
     }
 }
 
@@ -4733,81 +4597,51 @@ img#responsive-img {
     }
 
     .panel-mapa {
-        height: 400px;
+        height: 350px;
     }
 
     .filtros-grid {
         grid-template-columns: 1fr;
     }
 
-    .card-header {
-        padding: 1rem 1rem 0.5rem;
-    }
-
-    .card-content {
-        padding: 0 1rem 0.75rem;
-    }
-
-    .card-action {
-        padding: 0 1rem 1rem;
-    }
-
-    .card-titulo {
-        font-size: 1rem;
-    }
-
-    .card-icon {
-        width: 40px;
-        height: 40px;
+    .header-busqueda {
+        padding: 1rem;
     }
 
     .seccion-filtros {
         padding: 1rem;
     }
 
-    .header-busqueda {
+    .seccion-resultados {
         padding: 1rem;
     }
+}
 
-    .header-busqueda h2 {
-        font-size: 1.1rem;
+/* OPTIMIZACIONES DE PERFORMANCE */
+.vacunatorios-container * {
+    box-sizing: border-box;
+}
+
+/* Prevenir reflow innecesario */
+.lista-resultados > * {
+    contain: layout style;
+}
+
+/* Optimizar animaciones para 60fps */
+@media (prefers-reduced-motion: no-preference) {
+    .card-vacunatorio,
+    .btn-ver-mapa,
+    .checkbox-item {
+        transition: all 0.1s ease;
     }
 }
 
-@media (max-width: 480px) {
-    .vacunatorios-container {
-        margin: 0.25rem;
-    }
-
-    .panel-mapa {
-        height: 350px;
-    }
-
-    .card-services {
-        gap: 0.25rem;
-    }
-
-    .service-badge {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.8rem;
-    }
-
-    .btn-ver-mapa {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.85rem;
-    }
-}
-
-/* MEJORAS DE ACCESIBILIDAD */
+/* Sin animaciones para usuarios que las prefieren deshabilitadas */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
-    }
-
-    .marker-pulse {
-        animation: none;
     }
 }
 
