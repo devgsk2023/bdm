@@ -322,7 +322,7 @@ class VacunatoriosMapOptimized {
             const apVacunaMenor = v.apVacunaMenor || v['Ap.Vacuna Menor'] || 'No';
 
             const matchesProvince = !this.filters.provincia || provincia === this.filters.provincia;
-            const matchesLocalidad = !this.filters.localidad || localidad === this.filters.localidad;
+            const matchesLocalidad = !this.filters.localidad || localidad === this.filters.localidad.toLowerCase();
             const matchesApVacuna = !this.filters.apVacuna || apVacuna === 'Si';
             const matchesApVacunaMenor = !this.filters.apVacunaMenor || apVacunaMenor === 'Si';
 
@@ -611,7 +611,6 @@ class VacunatoriosMapOptimized {
             localStorage.setItem(this.COORDINATES_CACHE_KEY, JSON.stringify(cacheData));
         } catch (error) {
             console.error('Error guardando en caché:', error);
-            // Limpiar caché si está lleno
             this.clearOldCache();
         }
     }
@@ -918,7 +917,6 @@ if ('serviceWorker' in navigator) {
 
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-        // Página oculta, buen momento para precarga
         const map = window.vacunatoriosMapInstance;
         if (map) {
             map.preloadInBackground();
