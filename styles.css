@@ -4561,7 +4561,7 @@ img#responsive-img {
     }
 
     .panel-izquierdo {
-        max-height: 600px;
+        max-height: 5000px;
     }
 
     .lista-resultados {
@@ -7727,12 +7727,12 @@ button.btn-close {
   width: 100%;
 }
 .legend-row:first-child {
-  justify-content: flex-start;
+  justify-content: center;
   gap: 18px;
   margin-bottom: 8px;
 }
 .legend-row:last-child {
-  justify-content: flex-start;
+  justify-content: center;
   gap: 18px;
 }
 .legend-item {
