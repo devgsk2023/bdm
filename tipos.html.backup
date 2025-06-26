@@ -1,19 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-    <meta name="google-site-verification" content="DT1QBgroqIadw-9ckc_a6KIi3O0N7EikOHENCfFQID8" />
-    <script>
-        // Verifica si la URL contiene los UTM esperados
-        if (window.location.href.includes('utm_source=folleto') && window.location.href.includes('utm_medium=canales')) {
-            // Redirige a la URL correcta
-            window.location.href = "https://www.bastademeningitis.com.ar/meningitis-bacteriana.html?utm_source=folleto-meningitis&utm_medium=canales-meningitis";
-        }
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <title>Basta de Meningitis</title>
+    <title>BDM - Tipos de meningitis</title>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -27,25 +19,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles.css">
-    <link rel="icon" href="imagenes/favicon1.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="imagenes/favicon1.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b0e3ce937d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-
-
 </head>
 
 <body>
     <span class="ir-arriba"><img src="/imagenes/flecha-arriba.png" alt=""></i></span>
+
     <!-- ----------HEADER--------- -->
 
 
 
-
-    <header class="home ">
+    <header id="tipos-de-meningitis" class="tipos">
 
         <section class="contenedor-menu home-menu-logo menu-sticky-trigger" id="header-sticky">
             <a href="index.html">
@@ -102,84 +91,30 @@
             </div>
 
         </div>
-        <!-- Pop-up del Menú -->
 
-
-        <section class="banner" id="index__banner">
-            <div class="banner-content medium width-medium botones">
-                <h1>¿Cuánto sabés sobre la Meningitis?</h1>
-                <div class="buttons">
-                    <a href="#que-es">
-                        <button>¿Qué es?</button>
-                    </a>
-                    <a href="#sintomas">
-                        <button>Síntomas</button>
-                    </a>
-                    <a href="vacunas.html">
-                        <button>Prevención</button>
-                    </a>
-                    <a href="meningitis-bacteriana.html#secuelas">
-                        <button>Secuelas</button>
-                    </a>
-                </div>
+        <section class="banner tipos">
+            <div class="banner-content large">
+                <h1 class="tipos-de-meningitis-header">Tipos de meningitis</h1>
+                <p>La meningitis puede ser clasificada por su causa: viral (la más común), bacteriana, por hongos o
+                    parásitos. Si bien hay tipos más frecuentes o más graves que otros, es imprescindible la visita a un
+                    médico para que pueda determinar la causa y el tratamiento correspondiente.³</p>
             </div>
         </section>
-
-
     </header>
 
     <!-- ---------- FIN HEADER----------->
 
-    <main class="background">
-
-
-        <div class="video-explicativo" style="position: relative; width: 100%; max-width: 1280px;">
-            <img src="imagenes/videoframe_2135.png" alt="Video Preview" onclick="loadVideo()" class="video-thumbnail">
-            <div class="play-button" onclick="loadVideo()"></div>
-        </div>
-
-        <script>
-            function loadVideo() {
-                document.querySelector('.video-explicativo').innerHTML = `
-                    <iframe width="1280" height="720"
-                        src="https://www.youtube.com/embed/23eP8YVRXyc?list=PLvDyxtKlIcng7KjH451XcRAVGXiCnEvd6&autoplay=1&hd=1&vq=hd1080"
-                        title="Todo lo que tenés que saber | Meningitis"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
-                    </iframe>`;
-            }
-        </script>
+    <main>
 
 
 
-        <!-- ---------- QUE ES LA MENINGISTIS ----------->
-        <div id="que-es" class="two-column-section">
-            <div class="text-column">
-                <h2>¿Qué es la meningitis?</h2>
-                <p>La meningitis es una enfermedad que afecta a las membranas que recubren el cerebro, el cerebelo y la
-                    médula espinal. Estas membranas se llaman meninges y desempeñan un papel importante en la protección
-                    y el funcionamiento adecuado del sistema nervioso central.<sup>1,2</sup></p>
-
-                <p>La inflamación de las meninges habitualmente sucede cuando una bacteria, virus, hongo o parásito
-                    infecta el líquido que rodea al cerebro, afectando a su vez a las meninges.<sup>1</sup></p>
-            </div>
-            <div class="image-column">
-                <img src="/imagenes/capas-meninges.png" alt="Descripción de la imagen">
-            </div>
-        </div>
-
-        <!-- ---------- FIN QUE ES LA MENINGISTIS ----------->
 
         <!-- ---------- CAUSA ----------->
 
         <div class="container-causas">
-            <div class="header-causa">
-                <h2>Causas</h2>
-            </div>
-
-            <!-- ---------- comienzo causa ----------->
+            <header class="header-causa">
+                <h2 class="headeri-tipos-causa">Causas</h2>
+            </header>
 
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
@@ -189,12 +124,11 @@
                             <div class="acordeon header">
                                 <h2>Bacterias</h2>
                                 <p class="hidden-text">La meningitis bacteriana es el <strong>tipo de infección más
-                                        grave que
-                                        afecta a las meninges</strong>. Los principales microorganismos responsables son
-                                    Neumococo,
-                                    Meningococo, <i>Haemophilus influenzae</i> tipo b y <i>Streptococcus agalactiae</i>
-                                    (estreptococo
-                                    del grupo B). <sup>1,3</sup> </p> <!-- Texto oculto -->
+                                        grave que afecta a las meninges</strong>. Los principales microorganismos
+                                    responsables son Neumococo, Meningococo, <strong><i>Haemophilus
+                                            influenzae</i></strong> tipo b y <strong><i>Streptococcus
+                                            agalactiae</i></strong> (estreptococo del grupo B).<sup>1,3</sup> </p>
+                                <!-- Texto oculto -->
                             </div>
                         </button>
                     </h2>
@@ -244,16 +178,15 @@
                                                         d="M77.721 104.204C77.7104 101.775 77.8553 99.383 77.7398 96.986C77.71 96.3441 77.5804 95.7781 76.8846 95.6351C76.1352 95.4824 75.5882 95.815 75.2455 96.5162C75.1206 96.7739 75.0783 97.0877 75.0439 97.3819C74.8694 98.8354 74.6697 100.285 74.5545 101.742C74.3919 103.802 74.2827 105.865 74.1764 107.928C74.0987 109.454 74.7923 110.22 76.1857 110.059C78.9209 109.74 81.6602 109.566 84.4104 109.526C85.1475 109.515 85.8591 109.346 86.5312 109.004C87.0288 108.751 87.4269 108.398 87.4411 107.751C87.4561 107.058 87.0623 106.651 86.5159 106.389C85.5671 105.936 84.5644 105.895 83.5467 105.94C82.7502 105.975 81.9545 105.996 81.1252 106.023C80.9506 105.778 81.1895 105.585 81.2946 105.375C87.5891 92.7275 88.4706 79.4101 85.2483 65.6862C82.4703 53.86 76.7565 43.9348 67.8875 36.2917C60.8268 30.2079 52.7522 26.3961 43.9029 24.549C31.2353 21.9088 18.9884 23.4067 7.1881 29.0589C7.06103 29.1203 6.9355 29.1832 6.80688 29.2432C6.14636 29.5502 5.5771 29.9702 5.97051 30.8536C6.33878 31.6761 6.95151 31.4501 7.57696 31.1514C16.4572 26.9058 25.7607 25.1565 35.4434 25.8149C44.6158 26.4381 53.2179 29.1248 61.0697 34.3976C69.3204 39.9402 75.3729 47.5978 79.3172 57.1242C84.4062 69.421 85.3498 82.096 81.6672 95.0486C80.7489 98.2814 79.424 101.331 77.721 104.204Z"
                                                         fill="white" />
                                                 </svg>
-
                                             </ul>
                                             <div class="arrow"></div>
                                             <div class="serogrupos Prevención-es-vacunación">
                                                 <div class="columna1 Prevención-es-vacunación">
                                                     <h4>Prevención es vacunación</h4>
-                                                    <p>Existen distintas vacunas para prevenir la meningitis por
-                                                        meningococo. Consultá con el pediatra para más
-                                                        información.<sup>7</sup></p>
-                                                    <button class="custom-button ">
+                                                    <p>Existe además otra vacuna para el serogrupo B, que está incluída
+                                                        en Calendario para los grupos que tienen mayor
+                                                        riesgo<sup>7</sup></p>
+                                                    <button class="custom-button">
                                                         <a href="vacunas.html">Calendario de vacunación</a>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38"
                                                             viewBox="0 0 68 68" fill="none">
@@ -273,48 +206,45 @@
                                                     alt="Casos en Argentina 2023">
                                             </div>
                                             <div class="buttom">
-                                                <button class="custom-button derecha no-hover">¿Qué serogrupos
+                                                <button class="custom-button derecha">¿Qué serogrupos
                                                     predominaron?</button>
                                             </div>
                                             <div class="legend-container">
                                                 <div class="legend-row">
                                                     <div class="legend-item">
-                                                        <div class="color-box serogrupo-b"></div>
-                                                        <span class="legend-text"><span class="percentage">74%</span>
+                                                        <div class="color-box serogrupo-b"></div><span
+                                                            class="legend-text"><span class="percentage">74%</span>
                                                             SEROGRUPO B</span>
                                                     </div>
                                                     <div class="legend-item">
-                                                        <div class="color-box serogrupo-w"></div>
-                                                        <span class="legend-text"><span class="percentage">11%</span>
+                                                        <div class="color-box serogrupo-w"></div><span
+                                                            class="legend-text"><span class="percentage">11%</span>
                                                             SEROGRUPO W</span>
                                                     </div>
                                                     <div class="legend-item">
-                                                        <div class="color-box serogrupo-c"></div>
-                                                        <span class="legend-text"><span class="percentage">7%</span>
+                                                        <div class="color-box serogrupo-c"></div><span
+                                                            class="legend-text"><span class="percentage">7%</span>
                                                             SEROGRUPO C</span>
                                                     </div>
                                                 </div>
-
                                                 <div class="legend-row">
                                                     <div class="legend-item">
-                                                        <div class="color-box serogrupo-y"></div>
-                                                        <span class="legend-text"><span class="percentage">6%</span>
+                                                        <div class="color-box serogrupo-y"></div><span
+                                                            class="legend-text"><span class="percentage">6%</span>
                                                             SEROGRUPO Y</span>
                                                     </div>
                                                     <div class="legend-item">
-                                                        <div class="color-box serogrupo-ng"></div>
-                                                        <span class="legend-text"><span class="percentage">2%</span>
+                                                        <div class="color-box serogrupo-ng"></div><span
+                                                            class="legend-text"><span class="percentage">2%</span>
                                                             NG</span>
                                                     </div>
-                                                    <div class="sample-size">
-                                                        N = 53
-                                                    </div>
+                                                    <div class="sample-size">N = 53</div>
                                                 </div>
                                             </div>
                                             <div class="datos">
                                                 <p>Según los datos publicados por el instituto Malbrán, en Argentina en
                                                     el período 2022-2024, el 95% de los casos de meningococo en menores
-                                                    de 1 año fue por el serogrupo B<sup>8</sup>
+                                                    de 1 año fue por el serogrupo B<sup>5</sup>.
                                                 </p>
                                             </div>
                                         </div>
@@ -401,6 +331,8 @@
                             </div>
                         </div>
 
+
+
                     </div>
 
 
@@ -424,7 +356,7 @@
                                 <div class="accordion-body virus-acordeon-no-padding">
                                     Las personas suelen contraer meningitis parasitaria al comer <strong>animales
                                         infectados o
-                                        alimentos contaminados.</strong><sup>11</sup></p>
+                                        alimentos contaminados</strong>.<sup>11</sup></p>
                                 </div>
                                 <div class="ver-mas">
                                     <button>
@@ -449,183 +381,16 @@
 
             </div>
 
-            <!-- ----------FIN  VIRUS - HONGOS - PARASITOS ----------->
+            <div class="volver-avanzar">
 
-            <!-- ----------Síntomas de la meningitis----------->
+                <img src="/imagenes/flecha-izquierda-2.png" alt="">
+                <a class="icon-arrow-custom" href="index.html">Volver a la Home</a>
+
+            </div>
+
 
         </div>
 
-        <div class="container-videos-pr">
-            <div class="container-videos-pr-title">
-                <div class="videos-title">
-                    <h2>Meningitis en primera persona</h2>
-                </div>
-                <div class="tabs-videos">
-                    <div class="tabs-item left tabactivo" id="entrevistaMedicos">
-                        <p>Entrevistas a Médicos</p>
-                    </div>
-                    <div class="tabs-item right" id="entrevistaPacientes">
-                        <p>Testimoniales de pacientes</p>
-                    </div>
-                </div>
-            </div>
-            <div class="container-box-videos">
-                <div class="video-principal">
-                    <iframe src="https://www.youtube.com/embed/wRPCDOFebHQ" title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        id="videoPrincipal"></iframe>
-                </div>
-                <div class="container-video-items">
-                    <div class="video-item" data-video="https://www.youtube.com/embed/wRPCDOFebHQ">
-                        <img src="./imagenes/medico1.png" alt="Dr. Juan Pérez">
-                        <div class="video-overlay">
-                            <p class="video-title">Dr. Juan Pérez</p>
-                        </div>
-                    </div>
-                    <div class="video-item" data-video="https://www.youtube.com/embed/example2">
-                        <img src="./imagenes/medico2.png" alt="Dra. María López">
-                        <div class="video-overlay">
-                            <p class="video-title">Dra. María López</p>
-                        </div>
-                    </div>
-                    <div class="video-item" data-video="https://www.youtube.com/embed/example3">
-                        <img src="./imagenes/medico3.png" alt="Dr. Carlos González">
-                        <div class="video-overlay">
-                            <p class="video-title">Dr. Carlos González</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-main">
-            <div id="sintomas" class="sintomas">
-                <div class="columna-sintomas top">
-
-                    <h2>Síntomas de la<br> meningitis<sup class="sup-medium">1</sup></h2>
-
-                    <button class="custom-button1">
-                        <a href="sintomas.html">Ver en detalle</a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 68 68" fill="none">
-                            <path
-                                d="M43.0208 41.0122L43.0208 26.87C43.0151 26.6068 42.9574 26.3473 42.8511 26.1064C42.6482 25.6206 42.262 25.2344 41.7763 25.0316C41.5354 24.9253 41.2759 24.8676 41.0126 24.8618L26.8705 24.8618C26.6068 24.8618 26.3456 24.9138 26.102 25.0147C25.8583 25.1156 25.637 25.2636 25.4505 25.45C25.0739 25.8266 24.8623 26.3374 24.8623 26.87C24.8623 27.4026 25.0739 27.9134 25.4505 28.29C25.8271 28.6666 26.3379 28.8782 26.8705 28.8782L36.1901 28.8641L25.4563 39.598C25.0812 39.973 24.8705 40.4817 24.8705 41.0122C24.8705 41.5426 25.0812 42.0513 25.4563 42.4264C25.8313 42.8015 26.34 43.0122 26.8705 43.0122C27.4009 43.0122 27.9096 42.8015 28.2847 42.4264L39.0186 31.6925L39.0044 41.0122C39.0034 41.2762 39.0546 41.5378 39.1551 41.7819C39.2556 42.0261 39.4035 42.2479 39.5902 42.4346C39.7769 42.6213 39.9987 42.7692 40.2428 42.8697C40.487 42.9702 40.7486 43.0214 41.0126 43.0203C41.2766 43.0214 41.5383 42.9702 41.7824 42.8697C42.0265 42.7692 42.2483 42.6213 42.435 42.4346C42.6217 42.2479 42.7696 42.0261 42.8701 41.7819C42.9707 41.5378 43.0219 41.2762 43.0208 41.0122Z"
-                                fill="white" />
-                        </svg>
-                        </svg>
-                    </button>
-
-                </div>
-
-
-                <div class="columna-sintomas main">
-
-                    <div class="icono">
-                        <img src="/svg/fiebre.svg" alt="Fiebre">
-                        <p>Fiebre</p>
-                    </div>
-                    <div class="icono">
-                        <img src="/svg/cuello 1.svg" alt="Cuello rígido">
-                        <p>Cuello rígido</p>
-                    </div>
-                    <div class="icono">
-                        <img src="/svg/irritabilidad.svg" alt="Irritabilidad">
-                        <p>Irritabilidad</p>
-                    </div>
-                    <div class="icono">
-                        <img src="/svg/somnolencia.svg" alt="Somnolencia">
-                        <p>Somnolencia</p>
-                    </div>
-                    <div class="icono">
-                        <img src="/svg/luz.svg" alt="Rechazo a la luz">
-                        <p>Rechazo a la luz</p>
-                    </div>
-                    <div class="icono">
-                        <img src="/svg/nauseas.svg" alt="Náuseas o vómitos">
-                        <p>Náuseas o vómitos</p>
-                    </div>
-                    <div class="icono icono-centrado">
-                        <img src="/svg/headache 1.svg" alt="Dolor de cabeza">
-                        <p>Dolor de cabeza</p>
-                    </div>
-
-                </div>
-                <div class="mobile-container">
-                    <button class="custom-button1 mobile">
-                        <a href="sintomas.html">Ver en detalle</a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 68 68" fill="none">
-                            <path
-                                d="M43.0208 41.0122L43.0208 26.87C43.0151 26.6068 42.9574 26.3473 42.8511 26.1064C42.6482 25.6206 42.262 25.2344 41.7763 25.0316C41.5354 24.9253 41.2759 24.8676 41.0126 24.8618L26.8705 24.8618C26.6068 24.8618 26.3456 24.9138 26.102 25.0147C25.8583 25.1156 25.637 25.2636 25.4505 25.45C25.0739 25.8266 24.8623 26.3374 24.8623 26.87C24.8623 27.4026 25.0739 27.9134 25.4505 28.29C25.8271 28.6666 26.3379 28.8782 26.8705 28.8782L36.1901 28.8641L25.4563 39.598C25.0812 39.973 24.8705 40.4817 24.8705 41.0122C24.8705 41.5426 25.0812 42.0513 25.4563 42.4264C25.8313 42.8015 26.34 43.0122 26.8705 43.0122C27.4009 43.0122 27.9096 42.8015 28.2847 42.4264L39.0186 31.6925L39.0044 41.0122C39.0034 41.2762 39.0546 41.5378 39.1551 41.7819C39.2556 42.0261 39.4035 42.2479 39.5902 42.4346C39.7769 42.6213 39.9987 42.7692 40.2428 42.8697C40.487 42.9702 40.7486 43.0214 41.0126 43.0203C41.2766 43.0214 41.5383 42.9702 41.7824 42.8697C42.0265 42.7692 42.2483 42.6213 42.435 42.4346C42.6217 42.2479 42.7696 42.0261 42.8701 41.7819C42.9707 41.5378 43.0219 41.2762 43.0208 41.0122Z"
-                                fill="white" />
-                        </svg>
-                        </svg>
-                    </button>
-
-                </div>
-                <div class="columna-sintomas footer">
-
-                    <h3>ANTE LA PRESENCIA DE ESTOS SÍNTOMAS ACUDA INMEDIATAMENTE AL MÉDICO</h3>
-
-                </div>
-
-            </div>
-
-            <div class="dos-columnas">
-                <div class="contenedor-sintomas izquierda">
-                    <h2>Transmisión <br> de la meningitis</h2>
-                    <p>La meningitis se transmite, en la mayoría de los casos, por vía respiratoria desde una persona
-                        enferma o desde portadores asintomáticos por medio de la tos, los estornudos, los besos y
-                        también al compartir utensilios.<sup>5</sup></p>
-
-                </div>
-                <div class="contenedor-sintomas derecha">
-
-                    <h2>Grupos de riesgo<sup class="sup-medium">1</sup></h2>
-                    <div class="texto-sintomas">
-
-                        <p>Aunque la meningitis afecta a todas las edades, <strong>los niños pequeños son los que más
-                                riesgo tienen.</strong> </p>
-                        <p>También pueden aumentar el riesgo de padecer distintos tipos de meningitis: las
-                            inmunodeficiencias, la inmunodepresión, el consumo de tabaco y la exposición al humo del
-                            tabaco.</p>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="diagnostico">
-                <h2>Diagnóstico<sup class="sup-medium">3</sup></h2>
-                <p>Acudir a un médico de forma inmediata para diferenciar el tipo de meningitis es de suma importancia
-                    para determinar el tratamiento.</p>
-
-            </div>
-
-        </div>
-        <!-- ----------container amarillo----------->
-        <div id="prevencion" class="container-yelLow">
-
-            <p>La meningitis es una urgencia médica y requiere de hospitalización inmediata.<sup>1</sup></p>
-            <h2 class="texto-bold">CONSULTÁ CON TU MÉDICO</h2>
-
-        </div>
-        <!-- ----------FIN Síntomas de la meningitis----------->
-
-
-
-        <div class="container-main mundo-meningitis">
-
-            <div class="color box-celeste">
-                <h2>Por un mundo sin meningitis</h2>
-                <p>Nos unimos al compromiso de la Organización Mundial de la Salud para poner fin a la meningitis para
-                    el 2030.<sup>12</sup></p>
-
-            </div>
-            <div class="box-imagen">
-
-
-
-            </div>
-        </div>
-        <!-- ----------fin container amarillo----------->
 
 
         <!-- Pop-up -->
@@ -769,9 +534,9 @@
 
 
 
-
-
         <!-- ---------- fin footer top----------->
+
+
 
         <!-- ---------- Referencias ----------->
         <div class="tab-container">
@@ -792,19 +557,16 @@
                     https://www.paho.org/es/temas/meningococo (último acceso junio 2024).</p>
                 <p><sup>5</sup> Organización Mundial de la Salud (OMS): Health-topics. "Meningitis", en
                     https://www.who.int/health-topics/meningitis#tab=tab_1 (último acceso junio 2024).</p>
-                <p><sup>6</sup>Ministerio de Salud de la Nación Argentina: "Fundamentos de la introducción de la
-                    vacuna
+                <p><sup>6</sup>Ministerio de Salud de la Nación Argentina: "Fundamentos de la introducción de la vacuna
                     tetravalente (ACYW) conjugada contra meningococo al calendario nacional de inmunizaciones"
-                    https://bancos.salud.gob.ar/recurso/lineamientos-tecnicos-vacuna-meningococo (último acceso
-                    junio
+                    https://bancos.salud.gob.ar/recurso/lineamientos-tecnicos-vacuna-meningococo (último acceso junio
                     2024).</p>
                 <p><sup>7</sup> Ministerio de Salud de la Nación Argentina: "Huespedes especiales: Estrategia de
                     vacunación contra el meningococo en Argentina" en
                     https://bancos.salud.gob.ar/recurso/huespedes-especiales-estrategia-de-vacunacion-contra-meningococo-de-argentina
                     (último acceso junio 2024).</p>
                 <p><sup>8</sup> SIREVA-Argentina. Informe Argentina. SIREVA II. Servicio Antimicrobianos. Dpto.
-                    Bacteriología, Instituto Nacional de Enfermedades Infecciosas (INEI) - ANLIS "Dr. Carlos G.
-                    Malbrán
+                    Bacteriología, Instituto Nacional de Enfermedades Infecciosas (INEI) - ANLIS "Dr. Carlos G. Malbrán
                     SIREVA (Sistema de Redes de Vigilancia de los Agentes Bacterianos Responsables de Neumonía y
                     Meningitis) - Página web de Bacteriología Clínica INEI-ANLIS (jimdofree.com) (último acceso mayo 2025).</p>
                 <p><sup>9</sup> Centers for Disease Control and Prevention (CDC). About Viral Meningitis, en
@@ -817,37 +579,13 @@
                     https://www.who.int/initiatives/defeating-meningitis-by-2030 (último acceso junio 2024).</p>
                 <p><sup>13</sup> Ministerio de Salud de la Nación Argentina. Calendario Nacional de Vacunación, en
                     https://www.argentina.gob.ar/salud/vacunas (último acceso junio 2024).</p>
-                <p><sup>14</sup> Organización Panamericana de la Salud (OPS): "Vigilancia de las neumonías y
-                    meningitis
-                    bacterianas en menores de cinco años" https://iris.paho.org/handle/10665.2/51883 (último acceso
-                    junio 2024).</p>
-                <p><sup>15</sup> Ministerio de Sanidad, Servicios Sociales e Igualdad de España: "Guía de práctica
-                    clínica sobre el manejo de la enfermedad meningocócica invasiva"
-                    https://portal.guiasalud.es/wp-content/uploads/2018/12/GPC_525_EMI_ICS_resum.pdf (último acceso
-                    junio 2024).</p>
-                <p><sup>16</sup> Centers for Disease Control and Prevention (CDC). About Meningococcal Disease.
-                    https://www.cdc.gov/meningococcal/about/index.html (último acceso junio 2024).</p>
-                <p><sup>17</sup>Mayo Clinic: Meningitis, descripción general en
-                    https://www.mayoclinic.org/es-es/diseases-conditions/meningitis/symptoms-causes/syc-20350508
-                    (último
-                    acceso junio 2024).Organización Panamericana de la Salud (OPS): Inmunización.
-                    https://www.paho.org/es/temas/in</p>
-                <p><sup>18</sup> Inmunización - OPS/OMS | Organización Panamericana de la Salud (paho.org) (último
-                    acceso junio 2024).</p>
-                <p><sup>19</sup> Ministerio de Salud de la Nación Argentina. Vacunas: preguntas frecuentes, en
-                    https://www.argentina.gob.ar/salud/vacunas/preguntas-frecuentes#enestapagina (último acceso
-                    junio
-                    2024).</p>
-                <p><sup>20</sup> Centers for Disease Control and Prevention (CDC). Chapter 2: General Best Practice
-                    Guidance for Immunization | Pink Book, en
-                    https://www.cdc.gov/vaccines/pubs/pinkbook/genrec.html (último acceso junio 2024).</p>
-                <p><sup>21</sup> Comité Asesor de Vacunas de la Asociación Española de Pediatría. Generalidades de
-                    las
-                    inmunizaciones, en
-                    https://vacunasaep.org/profesionales/manual-vacunas-online/cap-1 (último acceso junio 2024).</p>
             </div>
         </div>
         <!-- ---------- fin Referencias ----------->
+
+
+
+
 
     </main>
 
@@ -863,20 +601,16 @@
             <a href="terminos-y-condiciones.html">TÉRMINOS Y CONDICIONES</a>
             <a href="https://privacy.gsk.com/es-ar/privacy-notice/general/general-full-text/">POLÍTICA DE PRIVACIDAD</a>
             <a href="https://privacy.gsk.com/es-ar/privacy-notice/">POLÍTICA DE COOKIES</a>
-
         </div>
 
     </footer>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNSKLXPR" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="/js/scripts.js"></script>
-    <script src="/js/videos.js"></script>
-    <script src="/js/desplegable.js"></script>
+    <script src="js/scripts.js"></script>
     <script src="/js/tab-referencia.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

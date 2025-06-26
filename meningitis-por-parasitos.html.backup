@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <title>BDM - Meningitis por virus</title>
+    <title>BDM - Meningitis por parasito</title>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -25,15 +25,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b0e3ce937d.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
+
 </head>
 
 <body>
-
     <span class="ir-arriba"><img src="/imagenes/flecha-arriba.png" alt=""></i></span>
     <!-- ----------HEADER--------- -->
 
 
-    <header class="meningitis-hongos-banner" id="meningitis-virus__banner">
+    <header class="meningitis-hongos-banner" id="hongos__banner">
 
         <section class="contenedor-menu home-menu-logo menu-sticky-trigger" id="header-sticky">
             <a href="index.html">
@@ -91,10 +91,10 @@
 
         </div>
 
-
-        <section class="banner">
-            <div class="banner-content medium virus" id="texto__banner">
-                <h1>Meningitis <br> por virus</h1>
+        <section class="banner hongos-no-margen">
+            <div class="banner-content medium parasitos" id="texto__banner">
+                <h1>Meningitis <br>por
+                    parásitos</h1>
 
             </div>
         </section>
@@ -109,46 +109,25 @@
         <div class="container-hongos">
             <div class="texto-hongos">
 
-                <p>Las meningitis de tipo viral tienden a ser menos graves que otros tipos, pero los síntomas son muy
-                    parecidos (fiebre, dolor de cabeza, somnolencia, irritabilidad, dificultad para alimentarse, entre
-                    otros). Por eso, ante la presencia de cualquiera de estos síntomas es fundamental concurrir al
-                    médico para un correcto diagnóstico y para poder recibir el tratamiento que corresponda.
+                <p>Los parásitos pueden causar meningitis o afectar el cerebro y el sistema nervioso de otras maneras.
+                    Aunque la meningitis parasitaria es menos común que la meningitis viral y bacteriana, sigue siendo
+                    una amenaza seria para la salud.
+
                     <br>
                     <br>
-                    El diagnóstico se realiza mediante el análisis del líquido cefalorraquídeo obtenido por una punción
-                    lumbar.<sup>9</sup>
+
+                    Algunas personas pueden tener un mayor riesgo de infección debido al lugar donde viven o viajan,
+                    exponiéndose a ambientes donde estos parásitos son más prevalentes. El diagnóstico de la meningitis
+                    parasitaria puede ser difícil, y lamentablemente, no existen tratamientos específicos para
+                    combatirla, lo que complica aún más su manejo y tratamiento adecuado.¹¹
                 </p>
 
 
-            </div>
-            <div class="imagen-hongos virus">
-
-                <img src="/imagenes/meningitis-por-virus.png" alt="">
 
             </div>
+            <div class="imagen-hongos parasitos">
 
-
-        </div>
-        <div class="container-hongos dos ">
-
-            <div class="imagen-hongos dos virus">
-
-                <img src="/imagenes/meningitis-por-virus-2.png" alt="">
-
-            </div>
-
-            <div class="texto-hongos">
-
-                <p>Respecto al tratamiento, los antibióticos no pueden curar la meningitis viral y la mayoría de los
-                    casos mejoran por sí solos en varias semanas.
-
-                    <br>
-                    <br>
-
-                    Para algunos tipos de meningitis virales existe tratamiento con medicación antiviral.<sup>16</sup>
-                </p>
-
-
+                <img src="/imagenes/meningitis-por-parasito.png" alt="">
 
             </div>
 
@@ -156,6 +135,42 @@
         <!-- ---------- FIN Primera seccion de textox ----------->
 
 
+        <!-- ---------- seccion ¿Quiénes tienen riesgo de adquirir este tipo de meningitis?  ----------->
+        <div class="grupo-riesgo parasitos-titulo">
+            <h2>Los 3 principales parásitos que causan la Meningitis parasitaria son:<sup>11</sup></h2>
+
+
+            <div class="contenedor-hongos-grid ">
+
+                <div class="hongos-grid row-3 parasitos">
+
+                    <p><strong><i>Angiostrongylus Cantonensis</i></strong>
+                        </p>
+                        <p>(angiostrongiliasis neurológica)</p>
+                </div>
+                <div class="hongos-grid row-3 parasitos">
+
+                    <p><strong><i>Baylisascaris procyonis</i></strong>
+                        </p>
+                    <p>(baylisascariasis; larva neural migrans)</p>
+
+                </div>
+                <div class="hongos-grid row-3 parasitos">
+
+                    <p><strong><i>Gnathostoma spinigerum</i></strong>
+                        </p>
+                        <p>(neurognatostomiasis)</p>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+        <!-- ---------- FIN ¿Quiénes tienen riesgo de adquirir este tipo de meningitis?  ----------->
 
 
         <div class="volver-avanzar">
@@ -246,7 +261,6 @@
         <!-- fin Pop-up -->
 
 
-
         <!-- ---------- footer top----------->
         <div id="prevencion" class="footer-top">
             <div class="footer-texto">
@@ -315,27 +329,24 @@
             <div id="tab-content" class="tab-content">
                 <p><sup>1</sup> Organización Mundial de la Salud (OMS): Meningitis, en
                     https://www.who.int/news-room/fact-sheets/detail/meningitis (último acceso junio 2024)</p>
-                <p><sup>2</sup> Adaptado de Encyclopaedia Britannica: "Meninges en
+                <p><sup>2</sup> Adaptado de Encyclopaedia Britannica: “Meninges en
                     https://www.britannica.com/science/meninges (último acceso junio 2024)</p>
                 <p><sup>3</sup> Centers for Disease Control and Prevention (CDC). Meningitis en
                     https://www.cdc.gov/meningitis/index.html (último acceso junio 2024).</p>
                 <p><sup>4</sup> Organización Panamericana de la Salud (OPS): Meningococo, en
                     https://www.paho.org/es/temas/meningococo (último acceso junio 2024).</p>
-                <p><sup>5</sup> Organización Mundial de la Salud (OMS): Health-topics. "Meningitis", en
+                <p><sup>5</sup> Organización Mundial de la Salud (OMS): Health-topics. “Meningitis”, en
                     https://www.who.int/health-topics/meningitis#tab=tab_1 (último acceso junio 2024).</p>
-                <p><sup>6</sup>Ministerio de Salud de la Nación Argentina: "Fundamentos de la introducción de la
-                    vacuna
-                    tetravalente (ACYW) conjugada contra meningococo al calendario nacional de inmunizaciones"
-                    https://bancos.salud.gob.ar/recurso/lineamientos-tecnicos-vacuna-meningococo (último acceso
-                    junio
+                <p><sup>6</sup>Ministerio de Salud de la Nación Argentina: “Fundamentos de la introducción de la vacuna
+                    tetravalente (ACYW) conjugada contra meningococo al calendario nacional de inmunizaciones”
+                    https://bancos.salud.gob.ar/recurso/lineamientos-tecnicos-vacuna-meningococo (último acceso junio
                     2024).</p>
-                <p><sup>7</sup> Ministerio de Salud de la Nación Argentina: "Huespedes especiales: Estrategia de
-                    vacunación contra el meningococo en Argentina" en
+                <p><sup>7</sup> Ministerio de Salud de la Nación Argentina: “Huespedes especiales: Estrategia de
+                    vacunación contra el meningococo en Argentina” en
                     https://bancos.salud.gob.ar/recurso/huespedes-especiales-estrategia-de-vacunacion-contra-meningococo-de-argentina
                     (último acceso junio 2024).</p>
                 <p><sup>8</sup> SIREVA-Argentina. Informe Argentina. SIREVA II. Servicio Antimicrobianos. Dpto.
-                    Bacteriología, Instituto Nacional de Enfermedades Infecciosas (INEI) - ANLIS "Dr. Carlos G.
-                    Malbrán
+                    Bacteriología, Instituto Nacional de Enfermedades Infecciosas (INEI) - ANLIS “Dr. Carlos G. Malbrán
                     SIREVA (Sistema de Redes de Vigilancia de los Agentes Bacterianos Responsables de Neumonía y
                     Meningitis) - Página web de Bacteriología Clínica INEI-ANLIS (jimdofree.com) (último acceso mayo 2025).</p>
                 <p><sup>9</sup> Centers for Disease Control and Prevention (CDC). About Viral Meningitis, en
@@ -348,34 +359,21 @@
                     https://www.who.int/initiatives/defeating-meningitis-by-2030 (último acceso junio 2024).</p>
                 <p><sup>13</sup> Ministerio de Salud de la Nación Argentina. Calendario Nacional de Vacunación, en
                     https://www.argentina.gob.ar/salud/vacunas (último acceso junio 2024).</p>
-                <p><sup>14</sup> Organización Panamericana de la Salud (OPS): "Vigilancia de las neumonías y
-                    meningitis
-                    bacterianas en menores de cinco años" https://iris.paho.org/handle/10665.2/51883 (último acceso
+                <p><sup>14</sup> Organización Panamericana de la Salud (OPS): “Vigilancia de las neumonías y meningitis
+                    bacterianas en menores de cinco años” https://iris.paho.org/handle/10665.2/51883 (último acceso
                     junio 2024).</p>
-                <p><sup>15</sup> Ministerio de Sanidad, Servicios Sociales e Igualdad de España: "Guía de práctica
+                <p><sup>15</sup> Ministerio de Sanidad, Servicios Sociales e Igualdad de España: “Guía de práctica
                     clínica sobre el manejo de la enfermedad meningocócica invasiva"
                     https://portal.guiasalud.es/wp-content/uploads/2018/12/GPC_525_EMI_ICS_resum.pdf (último acceso
                     junio 2024).</p>
                 <p><sup>16</sup> Centers for Disease Control and Prevention (CDC). About Meningococcal Disease.
                     https://www.cdc.gov/meningococcal/about/index.html (último acceso junio 2024).</p>
                 <p><sup>17</sup>Mayo Clinic: Meningitis, descripción general en
-                    https://www.mayoclinic.org/es-es/diseases-conditions/meningitis/symptoms-causes/syc-20350508
-                    (último
+                    https://www.mayoclinic.org/es-es/diseases-conditions/meningitis/symptoms-causes/syc-20350508 (último
                     acceso junio 2024).Organización Panamericana de la Salud (OPS): Inmunización.
                     https://www.paho.org/es/temas/in</p>
                 <p><sup>18</sup> Inmunización - OPS/OMS | Organización Panamericana de la Salud (paho.org) (último
                     acceso junio 2024).</p>
-                <p><sup>19</sup> Ministerio de Salud de la Nación Argentina. Vacunas: preguntas frecuentes, en
-                    https://www.argentina.gob.ar/salud/vacunas/preguntas-frecuentes#enestapagina (último acceso
-                    junio
-                    2024).</p>
-                <p><sup>20</sup> Centers for Disease Control and Prevention (CDC). Chapter 2: General Best Practice
-                    Guidance for Immunization | Pink Book, en
-                    https://www.cdc.gov/vaccines/pubs/pinkbook/genrec.html (último acceso junio 2024).</p>
-                <p><sup>21</sup> Comité Asesor de Vacunas de la Asociación Española de Pediatría. Generalidades de
-                    las
-                    inmunizaciones, en
-                    https://vacunasaep.org/profesionales/manual-vacunas-online/cap-1 (último acceso junio 2024).</p>
             </div>
         </div>
         <!-- ---------- fin Referencias ----------->
@@ -400,6 +398,7 @@
                     </div>
 
     </footer>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNSKLXPR" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
