@@ -13,10 +13,10 @@ class VacunatoriosMapOptimized {
         this.SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRMcbWuANTMtRJIPZ4_srNBSBrvXNxiBHyp2L37Gy1wZCFuXkmJmkeyPFzuEhnWj1OSiEODBqwQne2A/pub?output=csv';
         this.LOCAL_CSV_URL = '/vacunas.csv';
 
-        this.CACHE_KEY = 'vacunatorios_cache_v4';
-        this.COORDINATES_CACHE_KEY = 'coordinates_cache_v4';
+        this.CACHE_KEY = 'vacunatorios_cache_v5';
+        this.COORDINATES_CACHE_KEY = 'coordinates_cache_v5';
         this.CACHE_EXPIRY = 24 * 60 * 60 * 1000;
-        this.PRELOAD_CACHE_KEY = 'vacunatorios_preload_v4';
+        this.PRELOAD_CACHE_KEY = 'vacunatorios_preload_v5';
 
         this.tileProviders = [
             {
@@ -642,10 +642,10 @@ class VacunatoriosMapOptimized {
 
     clearOldCache() {
         try {
-            localStorage.removeItem('vacunatorios_cache_v1');
-            localStorage.removeItem('vacunatorios_cache_v2');
-            localStorage.removeItem('coordinates_cache_v1');
-            localStorage.removeItem('coordinates_cache_v2');
+            localStorage.removeItem('vacunatorios_cache_v5');
+            localStorage.removeItem('vacunatorios_cache_v5');
+            localStorage.removeItem('coordinates_cache_v5');
+            localStorage.removeItem('coordinates_cache_v5');
         } catch (error) {
             console.error('Error limpiando caché:', error);
         }
@@ -672,7 +672,7 @@ class VacunatoriosMapOptimized {
     getMarkerIcon(tipo) {
         const icons = {
             'Hospital': '🏥',
-            'Farmacia': '💊',
+            'Farmacia': '💉',
             'Centro de Salud': '⚕️'
         };
         return icons[tipo] || icons['Centro de Salud'];

@@ -3859,16 +3859,16 @@ img#responsive-img {
 
 .custom-marker-container {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .marker-icon {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     background: var(--primary-color);
     border: 3px solid white;
@@ -3891,6 +3891,7 @@ img#responsive-img {
 
 .marker-icon[data-tipo="Farmacia"] {
     background: #2ecc71;
+    font-size: 15px;
 }
 
 .marker-icon[data-tipo="Centro de Salud"] {
