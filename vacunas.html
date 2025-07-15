@@ -352,17 +352,13 @@
         <!-- Sección del mapa de vacunatorios -->
         <section class="vacunatorios-section" style="background-color: #F2F8F8; padding: 5% 0;">
             <div class="vacunatorios-container">
-                <!-- Panel izquierdo - Filtros y resultados -->
                 <div class="panel-izquierdo">
-                    <!-- Header de búsqueda -->
                     <div class="header-busqueda">
                         <h2>Encontrá Vacunatorios</h2>
                         <p>Busca centros de vacunación cerca tuyo</p>
                     </div>
 
-                    <!-- Sección de filtros -->
                     <div class="seccion-filtros">
-                        <!-- Input de búsqueda -->
                         <div class="busqueda-wrapper">
                             <div class="icono-busqueda">🔍</div>
                             <input type="text" id="inputBusqueda" class="busqueda-input"
@@ -372,9 +368,9 @@
                         <!-- Grid de filtros -->
                         <div class="filtros-grid">
                             <div class="grupo-filtro">
-                                <label for="filtroProvincia">Provincia</label>
-                                <select id="filtroProvincia" class="select-filtro">
-                                    <option value="">Todas las provincias</option>
+                                <label for="filtroProvincia">Provincia <span style="color: #e74c3c;">*</span></label>
+                                <select id="filtroProvincia" class="select-filtro" required>
+                                    <option value="">Selecciona una provincia</option>
                                 </select>
                             </div>
                             <div class="grupo-filtro">
@@ -385,44 +381,50 @@
                             </div>
                         </div>
 
-                        <!-- Checkboxes de servicios -->
+                        <!-- Checkboxes de tipos de establecimientos -->
                         <div class="filtros-checkbox">
                             <div class="checkbox-item">
                                 <input type="checkbox" id="filtroVacunas">
                                 <div class="checkbox-content">
-                                    <div class="checkbox-title">Vacunas Generales</div>
-                                    <div class="checkbox-desc">Aplica vacunas para todas las edades</div>
+                                    <div class="checkbox-title">Hospitales</div>
+                                    <div class="checkbox-desc">Centros hospitalarios con servicios de vacunación</div>
+                                </div>
+                                <div class="checkbox-icon">🏥</div>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="filtroVacunatorios">
+                                <div class="checkbox-content">
+                                    <div class="checkbox-title">Vacunatorios</div>
+                                    <div class="checkbox-desc">Centros especializados en vacunación</div>
                                 </div>
                                 <div class="checkbox-icon">💉</div>
                             </div>
                             <div class="checkbox-item">
                                 <input type="checkbox" id="filtroMenores">
                                 <div class="checkbox-content">
-                                    <div class="checkbox-title">Vacunas para Menores</div>
-                                    <div class="checkbox-desc">Especializado en vacunación infantil</div>
+                                    <div class="checkbox-title">Farmacias</div>
+                                    <div class="checkbox-desc">Farmacias con servicios de vacunación</div>
                                 </div>
-                                <div class="checkbox-icon">👶</div>
+                                <div class="checkbox-icon">💊</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Sección de resultados -->
                     <div class="seccion-resultados">
                         <div class="resultados-header">
                             <h3>Resultados</h3>
                         </div>
                         <div id="listaResultados" class="lista-resultados">
-                            <!-- Los resultados se cargan dinámicamente -->
                             <div class="loading">Cargando vacunatorios...</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Panel derecho - Mapa -->
                 <div class="panel-mapa">
                     <div class="mapa-header">
                         <h3 class="mapa-titulo">Mapa de Vacunatorios</h3>
                     </div>
+
                     <div id="mapa"></div>
                 </div>
             </div>
@@ -1114,7 +1116,8 @@
                     Bacteriología, Instituto Nacional de Enfermedades Infecciosas (INEI) - ANLIS "Dr. Carlos G.
                     Malbrán
                     SIREVA (Sistema de Redes de Vigilancia de los Agentes Bacterianos Responsables de Neumonía y
-                    Meningitis) - Página web de Bacteriología Clínica INEI-ANLIS (jimdofree.com) (último acceso mayo 2025).</p>
+                    Meningitis) - Página web de Bacteriología Clínica INEI-ANLIS (jimdofree.com) (último acceso mayo
+                    2025).</p>
                 <p><sup>9</sup> Centers for Disease Control and Prevention (CDC). About Viral Meningitis, en
                     https://www.cdc.gov/meningitis/about/viral-meningitis.html (último acceso junio 2024).</p>
                 <p><sup>10</sup> Centers for Disease Control and Prevention (CDC). About Fungal Meningitis, en

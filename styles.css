@@ -7829,3 +7829,120 @@ button.btn-close {
         margin-top: 8px;
     }
 }
+
+/* Estilos para provincia obligatoria */
+.grupo-filtro label span {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.select-filtro:required:invalid {
+    border-color: #e74c3c;
+    background-color: #fdf2f2;
+}
+
+.select-filtro:required:valid {
+    border-color: #27ae60;
+}
+
+/* Mensaje inicial mejorado */
+.sin-resultados {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--text-gray);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    margin: 1rem 0;
+    border: 2px dashed #dee2e6;
+}
+
+.sin-resultados h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.sin-resultados h4::before {
+    content: "📍";
+    font-size: 1.5rem;
+}
+
+.sin-resultados p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-gray);
+}
+
+/* Animación sutil para el mensaje inicial */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sin-resultados {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Destacar el selector de provincia cuando está vacío */
+.select-filtro[required]:invalid:focus {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+    border-color: #e74c3c;
+}
+
+/* Mejorar la apariencia del mapa sin contenido */
+#mapa.empty-state {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mapa.empty-state::before {
+    content: "🗺️ Selecciona una provincia para ver los vacunatorios";
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 2rem;
+    border: 2px dashed #dee2e6;
+    border-radius: 12px;
+    background: white;
+}
+
+/* Estilos para diferentes tipos de marcadores */
+.marker-icon[data-tipo*="Hospital"], .marker-icon[data-tipo*="hospital"] {
+    background: #e74c3c !important;
+}
+
+.marker-icon[data-tipo*="Farmacia"], .marker-icon[data-tipo*="farmacia"] {
+    background: #2ecc71 !important;
+}
+
+.marker-icon[data-tipo*="Centro"], .marker-icon[data-tipo*="centro"], .marker-icon[data-tipo*="Vacunatorio"], .marker-icon[data-tipo*="vacunatorio"] {
+    background: var(--primary-color) !important;
+}
+
+/* Leyenda actualizada para tipos */
+.leyenda-item:nth-child(1)::before {
+    background: #e74c3c; /* Hospitales */
+}
+
+.leyenda-item:nth-child(2)::before {
+    background: var(--primary-color); /* Centros de Salud */
+}
+
+.leyenda-item:nth-child(3)::before {
+    background: #2ecc71; /* Farmacias */
+}
