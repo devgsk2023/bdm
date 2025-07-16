@@ -7946,3 +7946,198 @@ button.btn-close {
 .leyenda-item:nth-child(3)::before {
     background: #2ecc71; /* Farmacias */
 }
+
+/* Estilos adicionales para el filtro de barrios */
+
+/* Asegurar que el grid de filtros tenga el espacio correcto */
+.filtros-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el grupo de filtro de barrio */
+.grupo-filtro {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-filtro label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+.select-filtro {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.select-filtro:hover {
+    border-color: #7666EA;
+}
+
+.select-filtro:focus {
+    outline: none;
+    border-color: #7666EA;
+    box-shadow: 0 0 0 3px rgba(118, 102, 234, 0.1);
+}
+
+.select-filtro:disabled {
+    background-color: #f5f5f5;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* Responsive design para el grid de filtros */
+@media (max-width: 768px) {
+    .filtros-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .filtros-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .grupo-filtro:nth-child(3) {
+        grid-column: span 2;
+    }
+}
+
+/* Indicador visual para filtros activos */
+.select-filtro.active {
+    border-color: #7666EA;
+    background-color: #f8f7ff;
+}
+
+/* Estilos para el contador cuando hay filtros activos */
+.filtros-activos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #e8f4f8;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.filtro-tag {
+    background-color: #7666EA;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.filtro-tag button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.filtro-tag button:hover {
+    opacity: 0.8;
+}
+
+/* Animación para cambios de filtro */
+.lista-resultados {
+    transition: opacity 0.3s ease;
+}
+
+.lista-resultados.updating {
+    opacity: 0.6;
+}
+
+/* Mejoras para la visualización de direcciones con barrio */
+.info-primary {
+    font-weight: 500;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 2px;
+}
+
+.info-secondary {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.popup-content .info-value {
+    line-height: 1.4;
+    word-wrap: break-word;
+    max-width: 250px;
+}
+
+/* Estilos para el mensaje de carga durante filtrado */
+.filtro-loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+.filtro-loading::before {
+    content: "⏳ ";
+    margin-right: 5px;
+}
+
+/* Indicador de número de filtros activos */
+.filtros-contador {
+    position: relative;
+}
+
+.filtros-contador::after {
+    content: attr(data-count);
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #7666EA;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 10px;
+    min-width: 16px;
+    text-align: center;
+    display: none;
+}
+
+.filtros-contador.has-filters::after {
+    display: block;
+}
+
+/* Mejoras en la accesibilidad */
+.select-filtro:focus-visible {
+    outline: 2px solid #7666EA;
+    outline-offset: 2px;
+}
+
+/* Estilos para opciones agrupadas (si es necesario) */
+.select-filtro optgroup {
+    font-weight: bold;
+    color: #333;
+}
+
+.select-filtro optgroup option {
+    font-weight: normal;
+    padding-left: 20px;
+}

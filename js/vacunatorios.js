@@ -9,7 +9,7 @@ class VacunatoriosMapOptimized {
         this.isLoading = false;
         this.renderQueue = [];
 
-        this.COORDINATES_JSON_URL = '/data/vacunatorios_coordinates.json';
+        this.COORDINATES_JSON_URL = '/data/vacunatorios_coordinates_con_barrios.json';
         this.SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRMcbWuANTMtRJIPZ4_srNBSBrvXNxiBHyp2L37Gy1wZCFuXkmJmkeyPFzuEhnWj1OSiEODBqwQne2A/pub?output=csv';
         this.LOCAL_CSV_URL = '/vacunas.csv';
 
@@ -37,7 +37,8 @@ class VacunatoriosMapOptimized {
             localidad: '',
             hospital: false,
             vacunatorio: false,
-            farmacia: false
+            farmacia: false,
+            barrio: ''
         };
 
         this.currentTileProviderIndex = 0;
@@ -331,11 +332,13 @@ class VacunatoriosMapOptimized {
             const nombre = (v.nombre || '').toLowerCase();
             const domicilio = (v.domicilio || v.Domicilio || '').toLowerCase();
             const localidad = (v.localidad || v.Localidad || '').toLowerCase();
+            const barrio = (v.barrio || v.Barrio || '').toLowerCase();
 
             const matchesSearch = !searchText ||
                 nombre.includes(searchText) ||
                 domicilio.includes(searchText) ||
-                localidad.includes(searchText);
+                localidad.includes(searchText) ||
+                barrio.includes(searchText);
 
             if (!matchesSearch) return false;
 
@@ -344,11 +347,12 @@ class VacunatoriosMapOptimized {
 
             const matchesProvince = !this.filters.provincia || provincia === this.filters.provincia;
             const matchesLocalidad = !this.filters.localidad || localidad === this.filters.localidad.toLowerCase();
+            const matchesBarrio = !this.filters.barrio || barrio === this.filters.barrio.toLowerCase();
 
             const hasTypeFilters = this.filters.hospital || this.filters.vacunatorio || this.filters.farmacia;
 
             if (!hasTypeFilters) {
-                return matchesProvince && matchesLocalidad;
+                return matchesProvince && matchesLocalidad && matchesBarrio;
             }
 
             const matchesHospital = this.filters.hospital && tipo.includes('hospital');
@@ -357,7 +361,7 @@ class VacunatoriosMapOptimized {
 
             const matchesType = matchesHospital || matchesVacunatorio || matchesFarmacia;
 
-            return matchesProvince && matchesLocalidad && matchesType;
+            return matchesProvince && matchesLocalidad && matchesBarrio && matchesType;
         });
 
         console.log('Resultados filtrados:', filteredVacunatorios.length);
@@ -421,6 +425,9 @@ class VacunatoriosMapOptimized {
                 provinciaSelect.appendChild(option);
             });
         }
+
+        this.updateLocalidadesFilter();
+        this.updateBarriosFilter();
     }
 
     updateLocalidadesFilter() {
@@ -436,7 +443,7 @@ class VacunatoriosMapOptimized {
                 dataToUse
                     .filter(v => (v.provincia || v.Provincia) === this.filters.provincia)
                     .map(v => v.localidad || v.Localidad || '')
-                    .filter(l => l)
+                    .filter(l => l && l.trim() !== '')
             )].sort();
 
             localidades.forEach(localidad => {
@@ -446,6 +453,53 @@ class VacunatoriosMapOptimized {
                 localidadSelect.appendChild(option);
             });
         }
+
+        // Limpiar filtro de localidad si no hay opciones disponibles
+        if (this.filters.provincia && localidadSelect.options.length === 1) {
+            this.filters.localidad = '';
+        }
+
+        // Actualizar barrios cuando cambia la localidad
+        this.updateBarriosFilter();
+    }
+
+    updateBarriosFilter() {
+        const barrioSelect = document.getElementById('filtroBarrio');
+        if (!barrioSelect) return;
+
+        barrioSelect.innerHTML = '<option value="">Todos los barrios</option>';
+
+        let dataToUse = this.coordinatesData.length > 0 ? this.coordinatesData : this.vacunatorios;
+
+        // Filtrar por provincia si está seleccionada
+        if (this.filters.provincia) {
+            dataToUse = dataToUse.filter(v => (v.provincia || v.Provincia) === this.filters.provincia);
+        }
+
+        // Filtrar por localidad si está seleccionada
+        if (this.filters.localidad) {
+            dataToUse = dataToUse.filter(v => (v.localidad || v.Localidad) === this.filters.localidad);
+        }
+
+        // Obtener barrios únicos y filtrar valores vacíos
+        const barrios = [...new Set(
+            dataToUse
+                .map(v => v.barrio || v.Barrio || '')
+                .filter(b => b && b.trim() !== '')
+        )].sort();
+
+        // Agregar opciones al select
+        barrios.forEach(barrio => {
+            const option = document.createElement('option');
+            option.value = barrio;
+            option.textContent = barrio;
+            barrioSelect.appendChild(option);
+        });
+
+        // Limpiar filtro de barrio si no hay opciones disponibles
+        if (barrios.length === 0) {
+            this.filters.barrio = '';
+        }
     }
 
     createPopupContent(vacunatorio) {
@@ -453,8 +507,16 @@ class VacunatoriosMapOptimized {
         const tipo = vacunatorio.tipo || vacunatorio.Tipo || 'Centro de Salud';
         const domicilio = vacunatorio.domicilio || vacunatorio.Domicilio || '';
         const localidad = vacunatorio.localidad || vacunatorio.Localidad || '';
+        const barrio = vacunatorio.barrio || vacunatorio.Barrio || '';
         const provincia = vacunatorio.provincia || vacunatorio.Provincia || '';
         const telefono = vacunatorio.telefono || vacunatorio.Telefono || '';
+
+        // Construir dirección completa incluyendo barrio
+        let direccionCompleta = domicilio;
+        if (barrio) {
+            direccionCompleta += `, ${barrio}`;
+        }
+        direccionCompleta += `, ${localidad}, ${provincia}`;
 
         return `
             <div class="popup-content">
@@ -472,8 +534,7 @@ class VacunatoriosMapOptimized {
                         </svg>
                         <div>
                             <div class="info-label">Dirección</div>
-                            <div class="info-value">${domicilio}</div>
-                            <div class="info-value">${localidad}, ${provincia}</div>
+                            <div class="info-value">${direccionCompleta}</div>
                         </div>
                     </div>
                     ${telefono ? `
@@ -558,8 +619,16 @@ class VacunatoriosMapOptimized {
         const tipo = vacunatorio.tipo || vacunatorio.Tipo || 'Centro de Salud';
         const domicilio = vacunatorio.domicilio || vacunatorio.Domicilio || '';
         const localidad = vacunatorio.localidad || vacunatorio.Localidad || '';
+        const barrio = vacunatorio.barrio || vacunatorio.Barrio || '';
         const provincia = vacunatorio.provincia || vacunatorio.Provincia || '';
         const telefono = vacunatorio.telefono || vacunatorio.Telefono || '';
+
+        // Construir dirección completa incluyendo barrio
+        let direccionCompleta = domicilio;
+        if (barrio) {
+            direccionCompleta += `, ${barrio}`;
+        }
+        let ubicacionCompleta = `${localidad}, ${provincia}`;
 
         const card = document.createElement('div');
         card.className = 'card-vacunatorio';
@@ -578,8 +647,8 @@ class VacunatoriosMapOptimized {
                             <path d="M12,2C15.31,2 18,4.66 18,7.95C18,12.41 12,22 12,22S6,12.41 6,7.95C6,4.66 8.69,2 12,2M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6Z"/>
                         </svg>
                         <div>
-                            <div class="info-primary">${domicilio}</div>
-                            <div class="info-secondary">${localidad}, ${provincia}</div>
+                            <div class="info-primary">${direccionCompleta}</div>
+                            <div class="info-secondary">${ubicacionCompleta}</div>
                         </div>
                     </div>
                     ${telefono ? `
@@ -717,6 +786,14 @@ class VacunatoriosMapOptimized {
         if (provinciaFilter) {
             provinciaFilter.addEventListener('change', (e) => {
                 this.filters.provincia = e.target.value;
+                // Limpiar filtros dependientes
+                this.filters.localidad = '';
+                this.filters.barrio = '';
+                const localidadSelect = document.getElementById('filtroLocalidad');
+                const barrioSelect = document.getElementById('filtroBarrio');
+                if (localidadSelect) localidadSelect.value = '';
+                if (barrioSelect) barrioSelect.value = '';
+
                 this.updateLocalidadesFilter();
                 this.filterVacunatorios();
             }, { passive: true });
@@ -726,6 +803,21 @@ class VacunatoriosMapOptimized {
         if (localidadFilter) {
             localidadFilter.addEventListener('change', (e) => {
                 this.filters.localidad = e.target.value;
+                // Limpiar filtro de barrio
+                this.filters.barrio = '';
+                const barrioSelect = document.getElementById('filtroBarrio');
+                if (barrioSelect) barrioSelect.value = '';
+
+                this.updateBarriosFilter();
+                this.filterVacunatorios();
+            }, { passive: true });
+        }
+
+        // Event listener para el filtro de barrio
+        const barrioFilter = document.getElementById('filtroBarrio');
+        if (barrioFilter) {
+            barrioFilter.addEventListener('change', (e) => {
+                this.filters.barrio = e.target.value;
                 this.filterVacunatorios();
             }, { passive: true });
         }
@@ -908,6 +1000,7 @@ class VacunatoriosMapOptimized {
     }
 }
 
+// Inicialización y funciones globales
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         initMap();
@@ -939,12 +1032,14 @@ function seleccionarVacunatorio(id) {
     console.log('Seleccionando vacunatorio:', id);
 }
 
+// Service Worker para cache
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(err => {
         console.log('Service Worker registration failed: ', err);
     });
 }
 
+// Precarga en background cuando la página no está visible
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
         const map = window.vacunatoriosMapInstance;
