@@ -7738,14 +7738,14 @@ button.btn-close {
 
 
 .color-box.serogrupo-b {
-    background: #7566ea;
+    background: #7566EA;
     width: 18px;
     height: 18px;
     border-radius: 4px;
 }
 
 .color-box.serogrupo-w {
-    background: #fff49b;
+    background: #89D7F0;
     width: 18px;
     height: 18px;
     border-radius: 4px;
@@ -7753,21 +7753,21 @@ button.btn-close {
 }
 
 .color-box.serogrupo-c {
-    background: #5b4fb8;
+    background: #FFF49B;
     width: 18px;
     height: 18px;
     border-radius: 4px;
 }
 
 .color-box.serogrupo-y {
-    background: #89d7f0;
+    background: #FFE710;
     width: 18px;
     height: 18px;
     border-radius: 4px;
 }
 
 .color-box.serogrupo-ng {
-    background: #70b6cd;
+    background: #70B6CD;
     width: 18px;
     height: 18px;
     border-radius: 4px;
