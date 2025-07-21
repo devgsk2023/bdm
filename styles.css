@@ -4111,7 +4111,7 @@ img#responsive-img {
 
 .filtros-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
@@ -4585,7 +4585,7 @@ img#responsive-img {
 
     .panel-mapa {
         order: -1;
-        height: 400px;
+        height: 600px;
     }
 
     .panel-izquierdo {
@@ -4604,7 +4604,7 @@ img#responsive-img {
     }
 
     .panel-mapa {
-        height: 350px;
+        height: 600px;
     }
 
     .filtros-grid {
@@ -8140,4 +8140,41 @@ button.btn-close {
 .select-filtro optgroup option {
     font-weight: normal;
     padding-left: 20px;
+}
+.grupo-filtro {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.grupo-filtro label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+
+/* Agregar estilos para campos deshabilitados */
+.select-filtro:disabled {
+    background-color: #f5f5f5;
+    color: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Agregar indicador visual para campos obligatorios */
+.grupo-filtro.required label::after {
+    content: " *";
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Animación suave para cuando se habilitan los campos */
+.grupo-filtro {
+    transition: opacity 0.3s ease;
+}
+
+.grupo-filtro.disabled {
+    opacity: 0.6;
 }

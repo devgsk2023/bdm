@@ -35,10 +35,8 @@ class VacunatoriosMapOptimized {
         this.filters = {
             provincia: '',
             localidad: '',
-            hospital: false,
-            vacunatorio: false,
-            farmacia: false,
-            barrio: ''
+            barrio: '',
+            tipo: ''
         };
 
         this.currentTileProviderIndex = 0;
@@ -349,17 +347,22 @@ class VacunatoriosMapOptimized {
             const matchesLocalidad = !this.filters.localidad || localidad === this.filters.localidad.toLowerCase();
             const matchesBarrio = !this.filters.barrio || barrio === this.filters.barrio.toLowerCase();
 
-            const hasTypeFilters = this.filters.hospital || this.filters.vacunatorio || this.filters.farmacia;
-
-            if (!hasTypeFilters) {
-                return matchesProvince && matchesLocalidad && matchesBarrio;
+            let matchesType = true;
+            if (this.filters.tipo) {
+                switch (this.filters.tipo) {
+                    case 'hospital':
+                        matchesType = tipo.includes('hospital');
+                        break;
+                    case 'vacunatorio':
+                        matchesType = tipo.includes('vacunatorio') || tipo.includes('centro');
+                        break;
+                    case 'farmacia':
+                        matchesType = tipo.includes('farmacia');
+                        break;
+                    default:
+                        matchesType = true;
+                }
             }
-
-            const matchesHospital = this.filters.hospital && tipo.includes('hospital');
-            const matchesVacunatorio = this.filters.vacunatorio && (tipo.includes('vacunatorio') || tipo.includes('centro'));
-            const matchesFarmacia = this.filters.farmacia && tipo.includes('farmacia');
-
-            const matchesType = matchesHospital || matchesVacunatorio || matchesFarmacia;
 
             return matchesProvince && matchesLocalidad && matchesBarrio && matchesType;
         });
@@ -822,15 +825,15 @@ class VacunatoriosMapOptimized {
             }, { passive: true });
         }
 
-        const hospitalFilter = document.getElementById('filtroVacunas');
-        if (hospitalFilter) {
-            hospitalFilter.addEventListener('change', (e) => {
-                this.filters.hospital = e.target.checked;
-                console.log('Hospital filter:', this.filters.hospital);
+        const tipoFilter = document.getElementById('filtroTipo');
+        if (tipoFilter) {
+            tipoFilter.addEventListener('change', (e) => {
+                this.filters.tipo = e.target.value;
+                console.log('Tipo filter:', this.filters.tipo);
                 if (this.filters.provincia) {
                     this.filterVacunatorios();
                 }
-            });
+            }, { passive: true });
         }
 
         const vacunatorioFilter = document.getElementById('filtroVacunatorios');

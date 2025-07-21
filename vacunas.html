@@ -354,8 +354,8 @@
             <div class="vacunatorios-container">
                 <div class="panel-izquierdo">
                     <div class="header-busqueda">
-                        <h2>Encontrá Vacunatorios</h2>
-                        <p>Busca centros de vacunación cerca tuyo</p>
+                        <h2>Encontrá un centro de vacunación</h2>
+                        <p>Buscá el más cercano según tu ubicación</p>
                     </div>
 
                     <div class="seccion-filtros">
@@ -388,31 +388,14 @@
                         </div>
 
                         <!-- Checkboxes de tipos de establecimientos -->
-                        <div class="filtros-checkbox">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="filtroVacunas">
-                                <div class="checkbox-content">
-                                    <div class="checkbox-title">Hospitales</div>
-                                    <div class="checkbox-desc">Centros hospitalarios con servicios de vacunación</div>
-                                </div>
-                                <div class="checkbox-icon">🏥</div>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="filtroVacunatorios">
-                                <div class="checkbox-content">
-                                    <div class="checkbox-title">Vacunatorios</div>
-                                    <div class="checkbox-desc">Centros especializados en vacunación</div>
-                                </div>
-                                <div class="checkbox-icon">💉</div>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="filtroMenores">
-                                <div class="checkbox-content">
-                                    <div class="checkbox-title">Farmacias</div>
-                                    <div class="checkbox-desc">Farmacias con servicios de vacunación</div>
-                                </div>
-                                <div class="checkbox-icon">💊</div>
-                            </div>
+                        <div class="grupo-filtro">
+                            <label for="filtroTipo">Tipo de establecimiento</label>
+                            <select id="filtroTipo" class="select-filtro">
+                                <option value="">Todos los tipos</option>
+                                <option value="hospital">🏥 Hospitales</option>
+                                <option value="vacunatorio">💉 Vacunatorios y Centros de Salud</option>
+                                <option value="farmacia">💊 Farmacias</option>
+                            </select>
                         </div>
                     </div>
 
@@ -428,7 +411,7 @@
 
                 <div class="panel-mapa">
                     <div class="mapa-header">
-                        <h3 class="mapa-titulo">Mapa de Vacunatorios</h3>
+                        <h3 class="mapa-titulo">¿Dónde querés vacunarte?</h3>
                     </div>
 
                     <div id="mapa"></div>
