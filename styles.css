@@ -7753,21 +7753,21 @@ button.btn-close {
 }
 
 .color-box.serogrupo-c {
-    background: #FFF49B;
-    width: 18px;
-    height: 18px;
-    border-radius: 4px;
-}
-
-.color-box.serogrupo-y {
     background: #FFE710;
     width: 18px;
     height: 18px;
     border-radius: 4px;
 }
 
+.color-box.serogrupo-y {
+    background: #5D01C6;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+}
+
 .color-box.serogrupo-ng {
-    background: #70B6CD;
+    background: #5D01C6;
     width: 18px;
     height: 18px;
     border-radius: 4px;
