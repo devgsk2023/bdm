@@ -419,6 +419,9 @@ class VacunatoriosMapOptimized {
         ).filter(p => p))].sort();
 
         const provinciaSelect = document.getElementById('filtroProvincia');
+        const localidadSelect = document.getElementById('filtroLocalidad');
+        const barrioSelect = document.getElementById('filtroBarrio');
+
         if (provinciaSelect) {
             provinciaSelect.innerHTML = '<option value="">Selecciona una provincia</option>';
             provincias.forEach(provincia => {
@@ -429,12 +432,24 @@ class VacunatoriosMapOptimized {
             });
         }
 
+        if (localidadSelect) {
+            localidadSelect.innerHTML = '<option value="">Selecciona primero una provincia</option>';
+            localidadSelect.disabled = true;
+        }
+
+        if (barrioSelect) {
+            barrioSelect.innerHTML = '<option value="">Selecciona primero provincia y localidad</option>';
+            barrioSelect.disabled = true;
+        }
+
         this.updateLocalidadesFilter();
         this.updateBarriosFilter();
     }
 
     updateLocalidadesFilter() {
         const localidadSelect = document.getElementById('filtroLocalidad');
+        const barrioSelect = document.getElementById('filtroBarrio');
+
         if (!localidadSelect) return;
 
         localidadSelect.innerHTML = '<option value="">Todas las localidades</option>';
@@ -455,14 +470,22 @@ class VacunatoriosMapOptimized {
                 option.textContent = localidad;
                 localidadSelect.appendChild(option);
             });
+
+            localidadSelect.disabled = false;
+        } else {
+            localidadSelect.disabled = true;
         }
 
-        // Limpiar filtro de localidad si no hay opciones disponibles
+        if (barrioSelect) {
+            barrioSelect.innerHTML = '<option value="">Selecciona primero una localidad</option>';
+            barrioSelect.disabled = true;
+            this.filters.barrio = '';
+        }
+
         if (this.filters.provincia && localidadSelect.options.length === 1) {
             this.filters.localidad = '';
         }
 
-        // Actualizar barrios cuando cambia la localidad
         this.updateBarriosFilter();
     }
 
@@ -470,28 +493,32 @@ class VacunatoriosMapOptimized {
         const barrioSelect = document.getElementById('filtroBarrio');
         if (!barrioSelect) return;
 
+        if (!this.filters.provincia || !this.filters.localidad) {
+            if (!this.filters.provincia) {
+                barrioSelect.innerHTML = '<option value="">Selecciona primero provincia y localidad</option>';
+            } else {
+                barrioSelect.innerHTML = '<option value="">Selecciona primero una localidad</option>';
+            }
+            barrioSelect.disabled = true;
+            this.filters.barrio = '';
+            return;
+        }
+
         barrioSelect.innerHTML = '<option value="">Todos los barrios</option>';
 
         let dataToUse = this.coordinatesData.length > 0 ? this.coordinatesData : this.vacunatorios;
 
-        // Filtrar por provincia si está seleccionada
-        if (this.filters.provincia) {
-            dataToUse = dataToUse.filter(v => (v.provincia || v.Provincia) === this.filters.provincia);
-        }
+        dataToUse = dataToUse.filter(v =>
+            (v.provincia || v.Provincia) === this.filters.provincia &&
+            (v.localidad || v.Localidad) === this.filters.localidad
+        );
 
-        // Filtrar por localidad si está seleccionada
-        if (this.filters.localidad) {
-            dataToUse = dataToUse.filter(v => (v.localidad || v.Localidad) === this.filters.localidad);
-        }
-
-        // Obtener barrios únicos y filtrar valores vacíos
         const barrios = [...new Set(
             dataToUse
                 .map(v => v.barrio || v.Barrio || '')
                 .filter(b => b && b.trim() !== '')
         )].sort();
 
-        // Agregar opciones al select
         barrios.forEach(barrio => {
             const option = document.createElement('option');
             option.value = barrio;
@@ -499,7 +526,8 @@ class VacunatoriosMapOptimized {
             barrioSelect.appendChild(option);
         });
 
-        // Limpiar filtro de barrio si no hay opciones disponibles
+        barrioSelect.disabled = false;
+
         if (barrios.length === 0) {
             this.filters.barrio = '';
         }
@@ -514,7 +542,6 @@ class VacunatoriosMapOptimized {
         const provincia = vacunatorio.provincia || vacunatorio.Provincia || '';
         const telefono = vacunatorio.telefono || vacunatorio.Telefono || '';
 
-        // Construir dirección completa incluyendo barrio
         let direccionCompleta = domicilio;
         if (barrio) {
             direccionCompleta += `, ${barrio}`;
@@ -626,7 +653,6 @@ class VacunatoriosMapOptimized {
         const provincia = vacunatorio.provincia || vacunatorio.Provincia || '';
         const telefono = vacunatorio.telefono || vacunatorio.Telefono || '';
 
-        // Construir dirección completa incluyendo barrio
         let direccionCompleta = domicilio;
         if (barrio) {
             direccionCompleta += `, ${barrio}`;
@@ -744,8 +770,6 @@ class VacunatoriosMapOptimized {
     clearOldCache() {
         try {
             localStorage.removeItem('vacunatorios_cache_v5');
-            localStorage.removeItem('vacunatorios_cache_v5');
-            localStorage.removeItem('coordinates_cache_v5');
             localStorage.removeItem('coordinates_cache_v5');
         } catch (error) {
             console.error('Error limpiando caché:', error);
@@ -789,7 +813,6 @@ class VacunatoriosMapOptimized {
         if (provinciaFilter) {
             provinciaFilter.addEventListener('change', (e) => {
                 this.filters.provincia = e.target.value;
-                // Limpiar filtros dependientes
                 this.filters.localidad = '';
                 this.filters.barrio = '';
                 const localidadSelect = document.getElementById('filtroLocalidad');
@@ -806,7 +829,6 @@ class VacunatoriosMapOptimized {
         if (localidadFilter) {
             localidadFilter.addEventListener('change', (e) => {
                 this.filters.localidad = e.target.value;
-                // Limpiar filtro de barrio
                 this.filters.barrio = '';
                 const barrioSelect = document.getElementById('filtroBarrio');
                 if (barrioSelect) barrioSelect.value = '';
@@ -816,7 +838,6 @@ class VacunatoriosMapOptimized {
             }, { passive: true });
         }
 
-        // Event listener para el filtro de barrio
         const barrioFilter = document.getElementById('filtroBarrio');
         if (barrioFilter) {
             barrioFilter.addEventListener('change', (e) => {
@@ -1003,7 +1024,6 @@ class VacunatoriosMapOptimized {
     }
 }
 
-// Inicialización y funciones globales
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         initMap();
@@ -1035,14 +1055,12 @@ function seleccionarVacunatorio(id) {
     console.log('Seleccionando vacunatorio:', id);
 }
 
-// Service Worker para cache
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(err => {
         console.log('Service Worker registration failed: ', err);
     });
 }
 
-// Precarga en background cuando la página no está visible
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
         const map = window.vacunatoriosMapInstance;
