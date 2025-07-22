@@ -4072,7 +4072,10 @@ img#responsive-img {
 
 /* SECCIÓN DE FILTROS */
 .seccion-filtros {
-    padding: 1.5rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    padding-bottom: 0;
+    padding-top: 4px;
     border-bottom: 1px solid var(--border-color);
     background: var(--bg-light);
     flex-shrink: 0;
@@ -4113,7 +4116,7 @@ img#responsive-img {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0rem;
 }
 
 .grupo-filtro label {
@@ -4212,8 +4215,7 @@ img#responsive-img {
 
 /* CONTADOR DE RESULTADOS */
 .resultados-counter {
-    padding: 1rem 1.5rem;
-    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    padding: 0.25rem 1.5rem;
     flex-shrink: 0;
 }
 
@@ -4221,14 +4223,14 @@ img#responsive-img {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.2rem;
     background: linear-gradient(90deg, #f9f9ff, #ecebfc);
-    padding: 1rem 2rem;
+    padding: 0.25rem 2rem;
     border-radius: 12px;
     color: var(--text-dark);
     font-size: 1rem;
     font-weight: 500;
-    margin-top: 1rem;
+    margin-top: 0.25rem;
 }
 
 .counter-number {
@@ -4616,7 +4618,10 @@ img#responsive-img {
     }
 
     .seccion-filtros {
-        padding: 1rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        padding-bottom: 0;
+        padding-top: 4px;
     }
 
     .seccion-resultados {
@@ -7954,7 +7959,7 @@ button.btn-close {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 /* Estilos para el grupo de filtro de barrio */
@@ -7965,7 +7970,7 @@ button.btn-close {
 
 .grupo-filtro label {
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     color: #333;
     font-size: 14px;
 }

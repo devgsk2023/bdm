@@ -301,6 +301,9 @@ class VacunatoriosMapOptimized {
     }
 
     async filterVacunatorios() {
+        console.log('=== INICIANDO FILTRADO ===');
+        console.log('Filtros actuales:', this.filters);
+
         if (this.isLoading) return;
 
         if (!this.filters.provincia) {
@@ -324,6 +327,25 @@ class VacunatoriosMapOptimized {
         console.log('Filtros activos:', this.filters);
         console.log('Total de datos:', dataToFilter.length);
 
+        // Ver qué tipos únicos hay en los datos cuando se filtran hospitales
+        if (this.filters.tipo === 'hospital') {
+            const tiposUnicos = [...new Set(dataToFilter
+                .filter(v => (v.provincia || v.Provincia) === this.filters.provincia)
+                .map(v => v.tipo || v.Tipo || 'Sin tipo')
+            )].sort();
+            console.log('Tipos únicos en Buenos Aires:', tiposUnicos);
+
+            // Ver algunos ejemplos específicos
+            const ejemplosHospitales = dataToFilter
+                .filter(v => (v.provincia || v.Provincia) === this.filters.provincia)
+                .slice(0, 10)
+                .map(v => ({
+                    nombre: v.nombre || v.Nombre,
+                    tipo: v.tipo || v.Tipo
+                }));
+            console.log('Primeros 10 ejemplos:', ejemplosHospitales);
+        }
+
         const filteredVacunatorios = dataToFilter.filter(v => {
             if (!v) return false;
 
@@ -341,7 +363,8 @@ class VacunatoriosMapOptimized {
             if (!matchesSearch) return false;
 
             const provincia = v.provincia || v.Provincia || '';
-            const tipo = (v.tipo || v.Tipo || 'Centro de Salud').toLowerCase();
+            const tipoOriginal = v.tipo || v.Tipo || 'Centro de Salud';
+            const tipo = tipoOriginal.toLowerCase();
 
             const matchesProvince = !this.filters.provincia || provincia === this.filters.provincia;
             const matchesLocalidad = !this.filters.localidad || localidad === this.filters.localidad.toLowerCase();
@@ -349,18 +372,38 @@ class VacunatoriosMapOptimized {
 
             let matchesType = true;
             if (this.filters.tipo) {
+                const tipoNormalizado = tipoOriginal.toLowerCase().trim();
                 switch (this.filters.tipo) {
                     case 'hospital':
-                        matchesType = tipo.includes('hospital');
+                        matchesType = tipoNormalizado.includes('hospital') ||
+                            tipoNormalizado.includes('clínica') ||
+                            tipoNormalizado.includes('clinica') ||
+                            tipoNormalizado.includes('instituto') ||
+                            tipoNormalizado.includes('sanatorio') ||
+                            tipoNormalizado.includes('medical') ||
+                            tipoNormalizado.includes('médico');
                         break;
                     case 'vacunatorio':
-                        matchesType = tipo.includes('vacunatorio') || tipo.includes('centro');
+                        matchesType = tipoNormalizado.includes('vacunatorio') ||
+                            tipoNormalizado.includes('centro') ||
+                            tipoNormalizado.includes('salud') ||
+                            tipoNormalizado.includes('caps') ||
+                            tipoNormalizado.includes('puesto') ||
+                            tipoNormalizado.includes('dispensario') ||
+                            tipoNormalizado.includes('unidad');
                         break;
                     case 'farmacia':
-                        matchesType = tipo.includes('farmacia');
+                        matchesType = tipoNormalizado.includes('farmacia') ||
+                            tipoNormalizado.includes('pharmacy') ||
+                            tipoNormalizado.includes('droguería') ||
+                            tipoNormalizado.includes('drogueria');
                         break;
                     default:
                         matchesType = true;
+                }
+
+                if (this.filters.tipo === 'hospital') {
+                    console.log('Filtrando hospital - Tipo original:', tipoOriginal, 'Normalizado:', tipoNormalizado, 'Coincide:', matchesType);
                 }
             }
 
@@ -850,9 +893,13 @@ class VacunatoriosMapOptimized {
         if (tipoFilter) {
             tipoFilter.addEventListener('change', (e) => {
                 this.filters.tipo = e.target.value;
-                console.log('Tipo filter:', this.filters.tipo);
+                console.log('FILTRO TIPO CAMBIADO A:', this.filters.tipo);
+                console.log('¿Hay provincia seleccionada?', this.filters.provincia);
                 if (this.filters.provincia) {
+                    console.log('Ejecutando filtrado...');
                     this.filterVacunatorios();
+                } else {
+                    console.log('No hay provincia, no se ejecuta filtrado');
                 }
             }, { passive: true });
         }
