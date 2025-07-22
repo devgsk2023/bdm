@@ -454,6 +454,15 @@ header#vacunacion__header {
         width: 200px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+      #mapa {
+    height: 400px; /* o el valor que prefieras */
+    width: 100%;
+  }
+
+  .panel-izquierdo {
+    order: -1;
+    width: 100%;
+  }
 
     .menu-toggle {
         display: block;
@@ -3858,7 +3867,7 @@ img#responsive-img {
 .vacunatorios-container {
     display: grid;
     grid-template-columns: 420px 1fr;
-    height: 90vh;
+    height: 100vh;
     max-width: 1400px;
     margin: 2rem auto;
     background: var(--bg-white);
@@ -4601,14 +4610,19 @@ img#responsive-img {
 
 @media (max-width: 768px) {
     .vacunatorios-container {
-        margin: 0.5rem;
-        border-radius: 8px;
+        grid-template-columns: 1fr;
+        height: auto;
+        margin: 1rem;
     }
 
     .panel-mapa {
+        order: -1;
         height: 600px;
     }
 
+    .panel-izquierdo {
+        max-height: 3000px;
+    }
     .filtros-grid {
         grid-template-columns: 1fr;
     }
