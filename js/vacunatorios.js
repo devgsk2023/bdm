@@ -865,6 +865,12 @@ class VacunatoriosMapOptimized {
 
                 this.updateLocalidadesFilter();
                 this.filterVacunatorios();
+
+                if (this.filters.provincia && isMobile()) {
+                    setTimeout(() => {
+                        scrollToMap();
+                    }, 300);
+                }
             }, { passive: true });
         }
 
@@ -1116,5 +1122,19 @@ document.addEventListener('visibilitychange', () => {
         }
     }
 });
+
+function isMobile() {
+    return window.innerWidth <= 1024;
+}
+
+function scrollToMap() {
+    const mapElement = document.getElementById('mapa');
+    if (mapElement && isMobile()) {
+        mapElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
 
 window.VacunatoriosMapOptimized = VacunatoriosMapOptimized;
