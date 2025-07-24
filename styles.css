@@ -4070,7 +4070,7 @@ img#responsive-img {
 .header-busqueda h2 {
     font-size: 1.25rem;
     font-weight: 600;
-    margin: 0 0 0.5rem 0;
+    margin: 0;
 }
 
 .header-busqueda p {
@@ -4628,14 +4628,14 @@ img#responsive-img {
     }
 
     .header-busqueda {
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
     .seccion-filtros {
         padding-right: 1rem;
         padding-left: 1rem;
         padding-bottom: 0;
-        padding-top: 4px;
+        padding-top: 8px;
     }
 
     .seccion-resultados {
@@ -8196,4 +8196,16 @@ button.btn-close {
 
 .grupo-filtro.disabled {
     opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .header-busqueda p {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-busqueda p {
+        display: none;
+    }
 }
