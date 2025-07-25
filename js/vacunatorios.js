@@ -840,7 +840,7 @@ class VacunatoriosMapOptimized {
     getMarkerIcon(tipo) {
         const tipoLower = tipo.toLowerCase();
         if (tipoLower.includes('hospital')) return '🏥';
-        if (tipoLower.includes('farmacia')) return '💊';
+        if (tipoLower.includes('farmacia')) return '✚';
         if (tipoLower.includes('vacunatorio')) return '💉';
         if (tipoLower.includes('centro')) return '💉';
         return '⚕️';

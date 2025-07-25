@@ -7946,7 +7946,10 @@ button.btn-close {
 }
 
 .marker-icon[data-tipo*="Farmacia"], .marker-icon[data-tipo*="farmacia"] {
-    background: #2ecc71 !important;
+    background-color: #2ecc71 !important;
+    border: 2px solid white !important;
+    color: white !important;
+    box-shadow: 0 2px 8px rgba(46, 204, 113, 0.3);
 }
 
 .marker-icon[data-tipo*="Centro"], .marker-icon[data-tipo*="centro"], .marker-icon[data-tipo*="Vacunatorio"], .marker-icon[data-tipo*="vacunatorio"] {
@@ -8208,4 +8211,64 @@ button.btn-close {
     .header-busqueda p {
         display: none;
     }
+}
+
+.custom-marker-wrapper .marker-icon[data-tipo*="farmacia"] {
+    background-color: #28a745 !important;
+    border: 2px solid white !important;
+    color: white !important;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.custom-marker-wrapper .marker-icon[data-tipo*="pharmacy"] {
+    background-color: #28a745 !important;
+    border: 2px solid white !important;
+    color: white !important;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.custom-marker-wrapper .marker-icon[data-tipo*="droguería"] {
+    background-color: #28a745 !important;
+    border: 2px solid white !important;
+    color: white !important;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.custom-marker-wrapper .marker-icon[data-tipo*="drogueria"] {
+    background-color: #28a745 !important;
+    border: 2px solid white !important;
+    color: white !important;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
 }
