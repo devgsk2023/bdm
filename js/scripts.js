@@ -288,24 +288,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Si no hay fecha guardada o ya ha pasado más de 1 día, permitir mostrar el pop-up
     if (!lastPopupShown || daysBetween(new Date(lastPopupShown), currentDate) >= popupDisplayTime) {
-        const triggerElement = document.getElementById('prevencion');
         const modalElement = document.getElementById('exampleModalToggle');
 
-        if (triggerElement && modalElement) {
+        if (modalElement) {
             const modal = new bootstrap.Modal(modalElement);
 
-            function checkVisibility() {
-                const rect = triggerElement.getBoundingClientRect();
-                const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+            function checkIfAtBottom() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
 
-                if (isVisible) {
+                if (scrollTop + windowHeight >= documentHeight - 50) {
                     modal.show();
                     localStorage.setItem('popupShownDate', currentDate.toISOString());
-                    window.removeEventListener('scroll', checkVisibility);
+                    window.removeEventListener('scroll', checkIfAtBottom);
                 }
             }
-
-            window.addEventListener('scroll', checkVisibility);
+            window.addEventListener('scroll', checkIfAtBottom);
         }
     } else {
         console.log('El pop-up ya se mostró recientemente, no se mostrará de nuevo.');
